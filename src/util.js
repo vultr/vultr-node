@@ -1,11 +1,13 @@
-exports.makeApiRequest = (apiKey, requestType, url) => {
+exports.makeApiRequest = (config, endpoint, parameters) => {
   const request = require('request')
+  const baseUrl = config.baseUrl || 'https://api.vultr.com/v1'
   const options = {
-    method: requestType,
-    url: `https://api.vultr.com/v1${url}`,
+    method: endpoint.requestType,
+    url: `${baseUrl}${endpoint.url}`,
     headers: {
-      'API-Key': apiKey
-    }
+      'API-Key': config.apiKey || ''
+    },
+    qs: parameters || ''
   }
 
   request(options, function (error, response, body) {

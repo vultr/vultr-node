@@ -10,7 +10,9 @@ Official Vultr client node module.
 
 ```
 const vultr = require('vultr-node')
-vultr.initialize('yourApiKeyHere')
+vultr.initialize({
+  apiKey: 'your-api-key-here'
+})
 
 vultr.account.info()
 ```
