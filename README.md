@@ -8,6 +8,13 @@ Official Vultr client node module.
 
 ## Usage
 
+```
+const vultr = require('vultr-node')
+vultr.initialize('yourApiKeyHere')
+
+vultr.account.info()
+```
+
 ## Versioning
 
 ## Documentation
