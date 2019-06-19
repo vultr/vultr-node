@@ -5,7 +5,9 @@
   "description": "Node module to communicate with the Vultr API",
   "main": "src/index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "babel src -d dist",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "lint": "eslint src"
   },
   "repository": {
     "type": "git",
@@ -19,5 +21,20 @@
   "bugs": {
     "url": "https://github.com/ddymko/vultr-node/issues"
   },
-  "homepage": "https://github.com/ddymko/vultr-node#readme"
+  "homepage": "https://github.com/ddymko/vultr-node#readme",
+  "devDependencies": {
+    "@babel/cli": "^7.4.4",
+    "@babel/core": "^7.4.5",
+    "@babel/preset-env": "^7.4.5",
+    "eslint": "^5.16.0",
+    "eslint-config-standard": "^12.0.0",
+    "eslint-plugin-import": "^2.17.3",
+    "eslint-plugin-node": "^9.1.0",
+    "eslint-plugin-promise": "^4.1.1",
+    "eslint-plugin-standard": "^4.0.0",
+    "prettier": "^1.18.2"
+  },
+  "dependencies": {
+    "request": "^2.88.0"
+  }
 }
