@@ -1,5 +1,5 @@
 exports.makeApiRequest = (config, endpoint, parameters) => {
-  const request = require('request')
+  const rp = require('request-promise-native')
   const baseUrl = config.baseUrl || 'https://api.vultr.com/v1'
   const options = {
     method: endpoint.requestType,
@@ -7,13 +7,15 @@ exports.makeApiRequest = (config, endpoint, parameters) => {
     headers: {
       'API-Key': config.apiKey || ''
     },
-    qs: parameters || ''
+    qs: parameters || '',
+    json: true
   }
 
-  request(options, function (error, response, body) {
-    if (!error && response.statusCode === 200) {
-      const responseInfo = JSON.parse(body)
-      console.log(responseInfo)
-    }
-  })
+  return rp(options)
+    .then(response => {
+      return response
+    })
+    .catch(error => {
+      return error
+    })
 }

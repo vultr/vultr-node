@@ -4,6 +4,15 @@ exports.initialize = config => {
   const plans = require('./api/plans')
   const userConfiguration = config
 
+  /**
+   * Creates a function that allows a user to pass parameters to the functions
+   * defined in the returned object of the initialize function. The function returned
+   * allows a user to pass parameters to the functions called by passing an Object. This
+   * function will then check the endpoint configuration to ensure all parameters passed
+   * are valid and complete before sending out an API request.
+   *
+   * @param {*} endpoint the API endpoint configuration as defined in /api
+   */
   const createRequestFunction = endpoint => {
     return parameters => {
       if (endpoint.parameters) {
