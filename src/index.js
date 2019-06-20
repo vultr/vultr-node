@@ -15,6 +15,11 @@ exports.initialize = config => {
    */
   const createRequestFunction = endpoint => {
     return parameters => {
+      if (endpoint.apiKeyRequired) {
+        if (!userConfiguration.apiKey) {
+          return new Error('API key required for ', endpoint.url)
+        }
+      }
       if (endpoint.parameters) {
         if (typeof parameters !== 'object') {
           return new Error('Parameters must be passed in as an object.')

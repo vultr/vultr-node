@@ -1,4 +1,5 @@
 exports.info = {
   url: '/account/info',
-  requestType: 'GET'
+  requestType: 'GET',
+  apiKeyRequired: true
 }
