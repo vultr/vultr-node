@@ -4,6 +4,7 @@ exports.initialize = config => {
   const app = require('./api/app')
   const auth = require('./api/auth')
   const backup = require('./api/backup')
+  const block = require('./api/block')
   const plans = require('./api/plans')
   const userConfiguration = config
 
@@ -21,7 +22,7 @@ exports.initialize = config => {
       // Check if the endpoint requires an API key
       if (endpoint.apiKeyRequired) {
         if (!userConfiguration.apiKey) {
-          return new Error('API key required for ', endpoint.url)
+          throw new Error(`API key required for ${endpoint.url}`)
         }
       }
 
@@ -29,7 +30,7 @@ exports.initialize = config => {
       if (endpoint.parameters) {
         if (parameters) {
           if (typeof parameters !== 'object') {
-            return new Error('Parameters must be passed in as an object.')
+            throw new Error('Parameters must be passed in as an object.')
           } else {
             // Validate the parameters the user passed in
             let requestParameters = {}
@@ -39,10 +40,7 @@ exports.initialize = config => {
                 !endpoint.parameters[parameter].optional &&
                 !parameters[parameter]
               ) {
-                return new Error(
-                  'Missing parameter',
-                  endpoint.parameters[parameter]
-                )
+                throw new Error(`Missing parameter: ${parameter}`)
               } else if (parameters[parameter]) {
                 requestParameters[parameter] = parameters[parameter]
               }
@@ -58,10 +56,7 @@ exports.initialize = config => {
           // No parameters passed, check that none are required
           for (let parameter in endpoint.parameters) {
             if (!endpoint.parameters[parameter].optional) {
-              return new Error(
-                'Missing parameter',
-                endpoint.parameters[parameter]
-              )
+              throw new Error(`Missing parameter: ${parameter}`)
             }
           }
         }
@@ -84,6 +79,9 @@ exports.initialize = config => {
     },
     backup: {
       list: createRequestFunction(backup.list)
+    },
+    block: {
+      attach: createRequestFunction(block.attach)
     },
     plans: {
       list: createRequestFunction(plans.list)

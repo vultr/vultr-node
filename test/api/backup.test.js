@@ -25,7 +25,11 @@ const mock = {
 describe('backup', () => {
   describe('list()', () => {
     beforeEach(() => {
-      nock('https://api.vultr.com')
+      nock('https://api.vultr.com', {
+        reqheaders: {
+          'API-Key': /[A-Z0-9]{36}/i
+        }
+      })
         .get('/v1/backup/list')
         .reply(200, mock.list)
     })
@@ -46,12 +50,12 @@ describe('backup', () => {
     })
   })
 
-  describe('list({ backupId })', () => {
+  describe('list({ BACKUPID })', () => {
     beforeEach(() => {
       nock('https://api.vultr.com')
         .get('/v1/backup/list')
         .query({
-          backupId: '543d340f6dbce'
+          BACKUPID: '543d340f6dbce'
         })
         .reply(200, mock.list['543d340f6dbce'])
     })
@@ -60,7 +64,7 @@ describe('backup', () => {
       const vultrInstance = vultr.initialize({ apiKey: config.apiKey })
       return vultrInstance.backup
         .list({
-          backupId: '543d340f6dbce'
+          BACKUPID: '543d340f6dbce'
         })
         .then(response => {
           expect(typeof response).to.equal('object')

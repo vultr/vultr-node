@@ -3,11 +3,11 @@ exports.list = {
   requestType: 'GET',
   apiKeyRequired: true,
   parameters: {
-    subId: {
+    SUBID: {
       type: Number,
       optional: true
     },
-    backupId: {
+    BACKUPID: {
       type: String,
       optional: true
     }

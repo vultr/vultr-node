@@ -14,7 +14,11 @@ const mock = {
 describe('auth', () => {
   describe('info()', () => {
     beforeEach(() => {
-      nock('https://api.vultr.com')
+      nock('https://api.vultr.com', {
+        reqheaders: {
+          'API-Key': /[A-Z0-9]{36}/i
+        }
+      })
         .get('/v1/auth/info')
         .reply(200, mock.info)
     })
