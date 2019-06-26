@@ -17,3 +17,23 @@ exports.attach = {
     }
   }
 }
+
+exports.create = {
+  url: '/block/create',
+  requestType: 'POST',
+  apiKeyRequired: true,
+  parameters: {
+    DCID: {
+      type: Number,
+      optional: false
+    },
+    size_gb: {
+      type: Number,
+      optional: false
+    },
+    label: {
+      type: String,
+      optional: true
+    }
+  }
+}

@@ -81,7 +81,8 @@ exports.initialize = config => {
       list: createRequestFunction(backup.list)
     },
     block: {
-      attach: createRequestFunction(block.attach)
+      attach: createRequestFunction(block.attach),
+      create: createRequestFunction(block.create)
     },
     plans: {
       list: createRequestFunction(plans.list)
