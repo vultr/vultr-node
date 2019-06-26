@@ -6,6 +6,7 @@ exports.initialize = config => {
   const backup = require('./api/backup')
   const block = require('./api/block')
   const plans = require('./api/plans')
+  const sshkey = require('./api/sshkey')
   const userConfiguration = config
 
   /**
@@ -86,6 +87,9 @@ exports.initialize = config => {
     },
     plans: {
       list: createRequestFunction(plans.list)
+    },
+    sshkey: {
+      list: createRequestFunction(sshkey.list)
     }
   }
 }
