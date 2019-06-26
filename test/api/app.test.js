@@ -22,8 +22,8 @@ const mock = {
   }
 }
 
-describe('account', () => {
-  describe('info()', () => {
+describe('app', () => {
+  describe('list()', () => {
     beforeEach(() => {
       nock('https://api.vultr.com')
         .get('/v1/app/list')

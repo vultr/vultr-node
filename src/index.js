@@ -2,6 +2,7 @@ exports.initialize = config => {
   const util = require('./util')
   const account = require('./api/account')
   const app = require('./api/app')
+  const auth = require('./api/auth')
   const plans = require('./api/plans')
   const userConfiguration = config
 
@@ -59,6 +60,9 @@ exports.initialize = config => {
     },
     app: {
       list: createRequestFunction(app.list)
+    },
+    auth: {
+      info: createRequestFunction(auth.info)
     },
     plans: {
       list: createRequestFunction(plans.list)
