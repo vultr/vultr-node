@@ -20,7 +20,6 @@ describe('account', () => {
           'API-Key': /[A-Z0-9]{36}/i
         }
       })
-        .log(console.log)
         .get('/v1/account/info')
         .reply(200, mock.info)
     })

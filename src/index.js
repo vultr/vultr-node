@@ -1,6 +1,7 @@
 exports.initialize = config => {
   const util = require('./util')
   const account = require('./api/account')
+  const app = require('./api/app')
   const plans = require('./api/plans')
   const userConfiguration = config
 
@@ -31,7 +32,6 @@ exports.initialize = config => {
               !endpoint.parameters[parameter].optional &&
               !parameters[parameter]
             ) {
-              console.error('Missing parameter', endpoint.parameters[parameter])
               return new Error(
                 'Missing parameter',
                 endpoint.parameters[parameter]
@@ -56,6 +56,9 @@ exports.initialize = config => {
   return {
     account: {
       info: createRequestFunction(account.info)
+    },
+    app: {
+      list: createRequestFunction(app.list)
     },
     plans: {
       list: createRequestFunction(plans.list)
