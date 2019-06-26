@@ -22,7 +22,7 @@ describe('auth', () => {
     it('requires an API key', () => {
       const vultrInstance = vultr.initialize()
       expect(() => {
-        vultrInstance.account.info()
+        vultrInstance.auth.info()
       }).to.throw(Error)
     })
 

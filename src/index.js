@@ -3,6 +3,7 @@ exports.initialize = config => {
   const account = require('./api/account')
   const app = require('./api/app')
   const auth = require('./api/auth')
+  const backup = require('./api/backup')
   const plans = require('./api/plans')
   const userConfiguration = config
 
@@ -13,43 +14,60 @@ exports.initialize = config => {
    * function will then check the endpoint configuration to ensure all parameters passed
    * are valid and complete before sending out an API request.
    *
-   * @param {*} endpoint the API endpoint configuration as defined in /api
+   * @param {String} endpoint the API endpoint configuration as defined in /api
    */
   const createRequestFunction = endpoint => {
     return parameters => {
+      // Check if the endpoint requires an API key
       if (endpoint.apiKeyRequired) {
         if (!userConfiguration.apiKey) {
           return new Error('API key required for ', endpoint.url)
         }
       }
-      if (endpoint.parameters) {
-        if (typeof parameters !== 'object') {
-          return new Error('Parameters must be passed in as an object.')
-        } else {
-          let requestParameters = {}
 
+      // Check if the endpoint has parameters specified
+      if (endpoint.parameters) {
+        if (parameters) {
+          if (typeof parameters !== 'object') {
+            return new Error('Parameters must be passed in as an object.')
+          } else {
+            // Validate the parameters the user passed in
+            let requestParameters = {}
+
+            for (let parameter in endpoint.parameters) {
+              if (
+                !endpoint.parameters[parameter].optional &&
+                !parameters[parameter]
+              ) {
+                return new Error(
+                  'Missing parameter',
+                  endpoint.parameters[parameter]
+                )
+              } else if (parameters[parameter]) {
+                requestParameters[parameter] = parameters[parameter]
+              }
+            }
+
+            return util.makeApiRequest(
+              userConfiguration,
+              endpoint,
+              requestParameters
+            )
+          }
+        } else {
+          // No parameters passed, check that none are required
           for (let parameter in endpoint.parameters) {
-            if (
-              !endpoint.parameters[parameter].optional &&
-              !parameters[parameter]
-            ) {
+            if (!endpoint.parameters[parameter].optional) {
               return new Error(
                 'Missing parameter',
                 endpoint.parameters[parameter]
               )
-            } else if (parameters[parameter]) {
-              requestParameters[parameter] = parameters[parameter]
             }
           }
-
-          return util.makeApiRequest(
-            userConfiguration,
-            endpoint,
-            requestParameters
-          )
         }
       }
 
+      // All options are validated, return a function to call the endpoint
       return util.makeApiRequest(userConfiguration, endpoint)
     }
   }
@@ -63,6 +81,9 @@ exports.initialize = config => {
     },
     auth: {
       info: createRequestFunction(auth.info)
+    },
+    backup: {
+      list: createRequestFunction(backup.list)
     },
     plans: {
       list: createRequestFunction(plans.list)
