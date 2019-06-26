@@ -4,17 +4,17 @@ Official Vultr client node module.
 
 ## Installation
 
-`npm install node-vultr`
+`npm install vultr-node`
 
 ## Usage
 
 ### Initialize
 ```
-const vultr = require('vultr-node')
+const VultrNode = require('vultr-node')
 
 // Initialize the instance with your configuration
-vultr.initialize({
-  apiKey: 'your-api-key-here'
+const vultr = VultrNode.initialize({
+  apiKey: 'your-api-key-here',
   baseUrl: 'https://example.com' // Optional
 })
 ```
