@@ -17,11 +17,7 @@ describe('block', () => {
           'API-Key': /[A-Z0-9]{36}/i
         }
       })
-        .post('/v1/block/attach')
-        .query({
-          SUBID: 1,
-          attach_to_SUBID: 2
-        })
+        .post('/v1/block/attach', { SUBID: 1, attach_to_SUBID: 2 })
         .reply(200)
     })
 
@@ -66,11 +62,7 @@ describe('block', () => {
           'API-Key': /[A-Z0-9]{36}/i
         }
       })
-        .post('/v1/block/create')
-        .query({
-          DCID: 1,
-          size_gb: 2
-        })
+        .post('/v1/block/create', { DCID: 1, size_gb: 2 })
         .reply(200, mock.create)
     })
 

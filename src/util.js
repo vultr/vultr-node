@@ -1,14 +1,18 @@
 exports.makeApiRequest = (config, endpoint, parameters) => {
   const rp = require('request-promise-native')
   const baseUrl = (config && config.baseUrl) || 'https://api.vultr.com/v1'
-  const options = {
+  let options = {
     method: endpoint.requestType,
     url: `${baseUrl}${endpoint.url}`,
     headers: {
       'API-Key': (config && config.apiKey) || ''
     },
-    qs: parameters || '',
     json: true
+  }
+  if (endpoint.requestType === 'GET') {
+    options.qs = parameters || ''
+  } else {
+    options.form = parameters || ''
   }
 
   return rp(options)
