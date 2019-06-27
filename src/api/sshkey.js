@@ -19,3 +19,23 @@ exports.create = {
     }
   }
 }
+
+exports.update = {
+  url: '/sshkey/update',
+  requestType: 'POST',
+  apiKeyRequired: true,
+  parameters: {
+    SSHKEYID: {
+      type: String,
+      optional: false
+    },
+    name: {
+      type: String,
+      optional: true
+    },
+    ssh_key: {
+      type: String,
+      optional: true
+    }
+  }
+}
