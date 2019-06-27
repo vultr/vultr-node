@@ -12,7 +12,7 @@ exports.makeApiRequest = (config, endpoint, parameters) => {
   if (endpoint.requestType === 'GET') {
     options.qs = parameters || ''
   } else {
-    options.form = parameters
+    options.form = parameters || ''
   }
 
   return rp(options)
