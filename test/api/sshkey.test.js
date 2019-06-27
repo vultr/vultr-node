@@ -92,4 +92,48 @@ describe('sshkey', () => {
       })
     })
   })
+
+  describe('update()', () => {
+    beforeEach(() => {
+      nock('https://api.vultr.com', {
+        reqheaders: {
+          'API-Key': /[A-Z0-9]{36}/i
+        }
+      })
+        .post('/v1/sshkey/update', {
+          SSHKEYID: '5d14f139037a1',
+          name: 'vultr-node-sshkey-update',
+          ssh_key: 'ssh-rsa AA... test@example.com'
+        })
+        .reply(200, undefined)
+    })
+
+    it('requires an API key', () => {
+      const vultrInstance = vultr.initialize()
+      expect(() => {
+        vultrInstance.sshkey.create()
+      }).to.throw(Error)
+    })
+
+    it('requires the SSHKEYID parameter', () => {
+      const vultrInstance = vultr.initialize({ apiKey: config.apiKey })
+      expect(() => {
+        vultrInstance.sshkey.create({ name: 'vultr-node-sshkey-update' })
+      }).to.throw(Error)
+    })
+
+    it('updates an ssh key', () => {
+      const vultrInstance = vultr.initialize({ apiKey: config.apiKey })
+      return vultrInstance.sshkey
+        .update({
+          SSHKEYID: '5d14f139037a1',
+          name: 'vultr-node-sshkey-update',
+          ssh_key: 'ssh-rsa AA... test@example.com'
+        })
+        .then(response => {
+          expect(typeof response).to.equal('undefined')
+          expect(response).to.deep.equal(undefined)
+        })
+    })
+  })
 })
