@@ -89,6 +89,7 @@ exports.initialize = config => {
       list: createRequestFunction(plans.list)
     },
     sshkey: {
+      create: createRequestFunction(sshkey.create),
       list: createRequestFunction(sshkey.list)
     }
   }

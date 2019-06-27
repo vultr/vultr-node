@@ -4,6 +4,9 @@ const config = require('../config')
 const nock = require('nock')
 
 const mock = {
+  create: {
+    SSHKEYID: '5d13cdbd9cbae'
+  },
   list: {
     '541b4960f23bd': {
       SSHKEYID: '541b4960f23bd',
@@ -21,6 +24,48 @@ const mock = {
 }
 
 describe('sshkey', () => {
+  describe('create()', () => {
+    beforeEach(() => {
+      nock('https://api.vultr.com', {
+        reqheaders: {
+          'API-Key': /[A-Z0-9]{36}/i
+        }
+      })
+        .post('/v1/sshkey/create', {
+          name: 'vultr-node-sshkey',
+          ssh_key: 'ssh-rsa AA... test@example.com'
+        })
+        .reply(200, mock.create)
+    })
+
+    it('requires an API key', () => {
+      const vultrInstance = vultr.initialize()
+      expect(() => {
+        vultrInstance.sshkey.create()
+      }).to.throw(Error)
+    })
+
+    it('requires the ssh_key parameter', () => {
+      const vultrInstance = vultr.initialize({ apiKey: config.apiKey })
+      expect(() => {
+        vultrInstance.sshkey.create({ name: 'vultr-node-sshkey' })
+      }).to.throw(Error)
+    })
+
+    it('creates an ssh key', () => {
+      const vultrInstance = vultr.initialize({ apiKey: config.apiKey })
+      return vultrInstance.sshkey
+        .create({
+          name: 'vultr-node-sshkey',
+          ssh_key: 'ssh-rsa AA... test@example.com'
+        })
+        .then(response => {
+          expect(typeof response).to.equal('object')
+          expect(response).to.deep.equal(mock.create)
+        })
+    })
+  })
+
   describe('list()', () => {
     beforeEach(() => {
       nock('https://api.vultr.com', {
