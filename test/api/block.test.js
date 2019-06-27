@@ -100,4 +100,41 @@ describe('block', () => {
         })
     })
   })
+
+  describe('delete({ SUBID })', () => {
+    beforeEach(() => {
+      nock('https://api.vultr.com', {
+        reqheaders: {
+          'API-Key': /[A-Z0-9]{36}/i
+        }
+      })
+        .post('/v1/block/delete', { SUBID: 1 })
+        .reply(200)
+    })
+
+    it('requires an API key', () => {
+      const vultrInstance = vultr.initialize()
+      expect(() => {
+        vultrInstance.block.delete()
+      }).to.throw(Error)
+    })
+
+    it('requires the SUBID parameter', () => {
+      const vultrInstance = vultr.initialize({ apiKey: config.apiKey })
+      expect(() => {
+        vultrInstance.block.delete()
+      }).to.throw(Error)
+    })
+
+    it('deletes the block storage subscription at the specified SUBID', () => {
+      const vultrInstance = vultr.initialize({ apiKey: config.apiKey })
+      return vultrInstance.block
+        .delete({
+          SUBID: 1
+        })
+        .then(response => {
+          expect(typeof response).to.equal('undefined')
+        })
+    })
+  })
 })

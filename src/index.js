@@ -83,7 +83,8 @@ exports.initialize = config => {
     },
     block: {
       attach: createRequestFunction(block.attach),
-      create: createRequestFunction(block.create)
+      create: createRequestFunction(block.create),
+      delete: createRequestFunction(block.delete)
     },
     plans: {
       list: createRequestFunction(plans.list)
