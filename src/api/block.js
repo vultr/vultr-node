@@ -37,3 +37,15 @@ exports.create = {
     }
   }
 }
+
+exports.delete = {
+  url: '/block/delete',
+  requestType: 'POST',
+  apiKeyRequired: true,
+  parameters: {
+    SUBID: {
+      type: Number,
+      optional: false
+    }
+  }
+}
