@@ -49,3 +49,15 @@ exports.delete = {
     }
   }
 }
+
+exports.detach = {
+  url: '/block/detach',
+  requestType: 'POST',
+  apiKeyRequired: true,
+  parameters: {
+    SUBID: {
+      type: Number,
+      optional: false
+    }
+  }
+}
