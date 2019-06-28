@@ -96,6 +96,7 @@ exports.initialize = config => {
     sshkey: {
       create: createRequestFunction(sshkey.create),
       list: createRequestFunction(sshkey.list),
+      delete: createRequestFunction(sshkey.delete),
       update: createRequestFunction(sshkey.update)
     }
   }
