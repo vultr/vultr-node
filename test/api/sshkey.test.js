@@ -66,6 +66,45 @@ describe('sshkey', () => {
     })
   })
 
+  describe('delete()', () => {
+    beforeEach(() => {
+      nock('https://api.vultr.com', {
+        reqheaders: {
+          'API-Key': /[A-Z0-9]{36}/i
+        }
+      })
+        .post('/v1/sshkey/destroy', {
+          SSHKEYID: '5d14f139037a1'
+        })
+        .reply(200, undefined)
+    })
+
+    it('requires an API key', () => {
+      const vultrInstance = vultr.initialize()
+      expect(() => {
+        vultrInstance.sshkey.delete()
+      }).to.throw(Error)
+    })
+
+    it('requires the SSHKEYID parameter', () => {
+      const vultrInstance = vultr.initialize({ apiKey: config.apiKey })
+      expect(() => {
+        vultrInstance.sshkey.delete({})
+      }).to.throw(Error)
+    })
+
+    it('deletes an ssh key', () => {
+      const vultrInstance = vultr.initialize({ apiKey: config.apiKey })
+      return vultrInstance.sshkey
+        .delete({
+          SSHKEYID: '5d14f139037a1'
+        })
+        .then(response => {
+          expect(typeof response).to.equal('undefined')
+        })
+    })
+  })
+
   describe('list()', () => {
     beforeEach(() => {
       nock('https://api.vultr.com', {
@@ -111,14 +150,14 @@ describe('sshkey', () => {
     it('requires an API key', () => {
       const vultrInstance = vultr.initialize()
       expect(() => {
-        vultrInstance.sshkey.create()
+        vultrInstance.sshkey.update()
       }).to.throw(Error)
     })
 
     it('requires the SSHKEYID parameter', () => {
       const vultrInstance = vultr.initialize({ apiKey: config.apiKey })
       expect(() => {
-        vultrInstance.sshkey.create({ name: 'vultr-node-sshkey-update' })
+        vultrInstance.sshkey.update({ name: 'vultr-node-sshkey-update' })
       }).to.throw(Error)
     })
 
@@ -132,7 +171,6 @@ describe('sshkey', () => {
         })
         .then(response => {
           expect(typeof response).to.equal('undefined')
-          expect(response).to.deep.equal(undefined)
         })
     })
   })

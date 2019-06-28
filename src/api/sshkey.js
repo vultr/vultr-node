@@ -20,6 +20,18 @@ exports.create = {
   }
 }
 
+exports.delete = {
+  url: '/sshkey/destroy',
+  requestType: 'POST',
+  apiKeyRequired: true,
+  parameters: {
+    SSHKEYID: {
+      type: String,
+      optional: false
+    }
+  }
+}
+
 exports.update = {
   url: '/sshkey/update',
   requestType: 'POST',
