@@ -4,7 +4,7 @@ exports.list = {
   apiKeyRequired: true,
   parameters: {
     type: {
-      type: String,
+      type: 'string',
       optional: true
     }
   }

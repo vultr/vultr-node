@@ -10,11 +10,11 @@ exports.create = {
   apiKeyRequired: true,
   parameters: {
     name: {
-      type: String,
+      type: 'string',
       optional: true
     },
     ssh_key: {
-      type: String,
+      type: 'string',
       optional: false
     }
   }
@@ -26,7 +26,7 @@ exports.delete = {
   apiKeyRequired: true,
   parameters: {
     SSHKEYID: {
-      type: String,
+      type: 'string',
       optional: false
     }
   }
@@ -38,15 +38,15 @@ exports.update = {
   apiKeyRequired: true,
   parameters: {
     SSHKEYID: {
-      type: String,
+      type: 'string',
       optional: false
     },
     name: {
-      type: String,
+      type: 'string',
       optional: true
     },
     ssh_key: {
-      type: String,
+      type: 'string',
       optional: true
     }
   }

@@ -4,11 +4,11 @@ exports.list = {
   apiKeyRequired: true,
   parameters: {
     SUBID: {
-      type: Number,
+      type: 'number',
       optional: true
     },
     BACKUPID: {
-      type: String,
+      type: 'string',
       optional: true
     }
   }

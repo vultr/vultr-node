@@ -44,7 +44,15 @@ exports.initialize = config => {
               ) {
                 throw new Error(`Missing parameter: ${parameter}`)
               } else if (parameters[parameter]) {
-                requestParameters[parameter] = parameters[parameter]
+                if (
+                  typeof parameters[parameter] !==
+                  // eslint-disable-next-line valid-typeof
+                  endpoint.parameters[parameter].type
+                ) {
+                  throw new Error(`Invalid parameter type: ${parameter}`)
+                } else {
+                  requestParameters[parameter] = parameters[parameter]
+                }
               }
             }
 
