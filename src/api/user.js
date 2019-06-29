@@ -4,23 +4,23 @@ exports.create = {
   apiKeyRequired: true,
   parameters: {
     email: {
-      type: String,
+      type: 'string',
       optional: false
     },
     name: {
-      type: String,
+      type: 'string',
       optional: false
     },
     password: {
-      type: String,
+      type: 'string',
       optional: false
     },
     api_enabled: {
-      type: String,
+      type: 'string',
       optional: true
     },
     acls: {
-      type: Array,
+      type: 'array',
       optional: false
     }
   }
