@@ -137,4 +137,41 @@ describe('block', () => {
         })
     })
   })
+
+  describe('detach({ SUBID })', () => {
+    beforeEach(() => {
+      nock('https://api.vultr.com', {
+        reqheaders: {
+          'API-Key': /[A-Z0-9]{36}/i
+        }
+      })
+        .post('/v1/block/detach', { SUBID: 1 })
+        .reply(200)
+    })
+
+    it('requires an API key', () => {
+      const vultrInstance = vultr.initialize()
+      expect(() => {
+        vultrInstance.block.detach()
+      }).to.throw(Error)
+    })
+
+    it('requires the SUBID parameter', () => {
+      const vultrInstance = vultr.initialize({ apiKey: config.apiKey })
+      expect(() => {
+        vultrInstance.block.detach()
+      }).to.throw(Error)
+    })
+
+    it('detaches the block storage subscription at the specified SUBID', () => {
+      const vultrInstance = vultr.initialize({ apiKey: config.apiKey })
+      return vultrInstance.block
+        .detach({
+          SUBID: 1
+        })
+        .then(response => {
+          expect(typeof response).to.equal('undefined')
+        })
+    })
+  })
 })
