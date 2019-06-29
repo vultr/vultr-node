@@ -4,15 +4,15 @@ exports.attach = {
   apiKeyRequired: true,
   parameters: {
     SUBID: {
-      type: Number,
+      type: 'number',
       optional: false
     },
     attach_to_SUBID: {
-      type: Number,
+      type: 'number',
       optional: false
     },
     live: {
-      type: String,
+      type: 'string',
       optional: true
     }
   }
@@ -24,15 +24,15 @@ exports.create = {
   apiKeyRequired: true,
   parameters: {
     DCID: {
-      type: Number,
+      type: 'number',
       optional: false
     },
     size_gb: {
-      type: Number,
+      type: 'number',
       optional: false
     },
     label: {
-      type: String,
+      type: 'string',
       optional: true
     }
   }
@@ -44,7 +44,7 @@ exports.delete = {
   apiKeyRequired: true,
   parameters: {
     SUBID: {
-      type: Number,
+      type: 'number',
       optional: false
     }
   }
