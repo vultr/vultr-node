@@ -56,7 +56,7 @@ exports.detach = {
   apiKeyRequired: true,
   parameters: {
     SUBID: {
-      type: Number,
+      type: 'number',
       optional: false
     }
   }
