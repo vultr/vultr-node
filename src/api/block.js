@@ -61,3 +61,19 @@ exports.detach = {
     }
   }
 }
+
+exports.setLabel = {
+  url: '/block/label_set',
+  requestType: 'POST',
+  apiKeyRequired: true,
+  parameters: {
+    SUBID: {
+      type: 'number',
+      optional: false
+    },
+    label: {
+      type: 'string',
+      optional: false
+    }
+  }
+}

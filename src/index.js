@@ -95,7 +95,8 @@ exports.initialize = config => {
       attach: createRequestFunction(block.attach),
       create: createRequestFunction(block.create),
       delete: createRequestFunction(block.delete),
-      detach: createRequestFunction(block.detach)
+      detach: createRequestFunction(block.detach),
+      setLabel: createRequestFunction(block.setLabel)
     },
     os: {
       list: createRequestFunction(os.list)

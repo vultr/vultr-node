@@ -174,4 +174,49 @@ describe('block', () => {
         })
     })
   })
+
+  describe('setLabel({ SUBID, label })', () => {
+    beforeEach(() => {
+      nock('https://api.vultr.com', {
+        reqheaders: {
+          'API-Key': /[A-Z0-9]{36}/i
+        }
+      })
+        .post('/v1/block/label_set', { SUBID: 1, label: 'example' })
+        .reply(200)
+    })
+
+    it('requires an API key', () => {
+      const vultrInstance = vultr.initialize()
+      expect(() => {
+        vultrInstance.block.setLabel()
+      }).to.throw(Error)
+    })
+
+    it('requires the SUBID parameter', () => {
+      const vultrInstance = vultr.initialize({ apiKey: config.apiKey })
+      expect(() => {
+        vultrInstance.block.setLabel({ label: 'example' })
+      }).to.throw(Error)
+    })
+
+    it('requires the label parameter', () => {
+      const vultrInstance = vultr.initialize({ apiKey: config.apiKey })
+      expect(() => {
+        vultrInstance.block.setLabel({ SUBID: 1 })
+      }).to.throw(Error)
+    })
+
+    it('sets the label of a block storage subscription', () => {
+      const vultrInstance = vultr.initialize({ apiKey: config.apiKey })
+      return vultrInstance.block
+        .setLabel({
+          SUBID: 1,
+          label: 'example'
+        })
+        .then(response => {
+          expect(typeof response).to.equal('undefined')
+        })
+    })
+  })
 })
