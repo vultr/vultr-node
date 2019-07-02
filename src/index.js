@@ -39,20 +39,26 @@ exports.initialize = config => {
             let requestParameters = {}
 
             for (let parameter in endpoint.parameters) {
-              if (
-                !endpoint.parameters[parameter].optional &&
-                !parameters[parameter]
-              ) {
+              const endpointParameter = endpoint.parameters[parameter]
+              const userParameter = parameters[parameter]
+
+              if (!endpointParameter.optional && !userParameter) {
                 throw new Error(`Missing parameter: ${parameter}`)
-              } else if (parameters[parameter]) {
+              } else if (userParameter) {
                 if (
-                  typeof parameters[parameter] !==
-                  // eslint-disable-next-line valid-typeof
-                  endpoint.parameters[parameter].type
+                  endpointParameter.type !== 'array' &&
+                  typeof userParameter !==
+                    // eslint-disable-next-line valid-typeof
+                    endpointParameter.type
+                ) {
+                  throw new Error(`Invalid parameter type: ${parameter}`)
+                } else if (
+                  endpointParameter.type === 'array' &&
+                  !Array.isArray(userParameter)
                 ) {
                   throw new Error(`Invalid parameter type: ${parameter}`)
                 } else {
-                  requestParameters[parameter] = parameters[parameter]
+                  requestParameters[parameter] = userParameter
                 }
               }
             }
