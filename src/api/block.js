@@ -77,3 +77,15 @@ exports.setLabel = {
     }
   }
 }
+
+exports.list = {
+  url: '/block/list',
+  requestType: 'GET',
+  apiKeyRequired: true,
+  parameters: {
+    SUBID: {
+      type: 'number',
+      optional: true
+    }
+  }
+}
