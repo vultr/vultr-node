@@ -268,4 +268,49 @@ describe('block', () => {
       })
     })
   })
+
+  describe('resize({ SUBID, size_gb })', () => {
+    beforeEach(() => {
+      nock('https://api.vultr.com', {
+        reqheaders: {
+          'API-Key': /[A-Z0-9]{36}/i
+        }
+      })
+        .post('/v1/block/resize', { SUBID: 1, size_gb: 2 })
+        .reply(200)
+    })
+
+    it('requires an API key', () => {
+      const vultrInstance = vultr.initialize()
+      expect(() => {
+        vultrInstance.block.resize()
+      }).to.throw(Error)
+    })
+
+    it('requires the SUBID parameter', () => {
+      const vultrInstance = vultr.initialize({ apiKey: config.apiKey })
+      expect(() => {
+        vultrInstance.block.resize({ size_gb: 2 })
+      }).to.throw(Error)
+    })
+
+    it('requires the size_gb parameter', () => {
+      const vultrInstance = vultr.initialize({ apiKey: config.apiKey })
+      expect(() => {
+        vultrInstance.block.resize({ SUBID: 1 })
+      }).to.throw(Error)
+    })
+
+    it('resizes the specified block storage volume', () => {
+      const vultrInstance = vultr.initialize({ apiKey: config.apiKey })
+      return vultrInstance.block
+        .resize({
+          SUBID: 1,
+          size_gb: 2
+        })
+        .then(response => {
+          expect(typeof response).to.equal('undefined')
+        })
+    })
+  })
 })

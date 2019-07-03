@@ -89,3 +89,19 @@ exports.list = {
     }
   }
 }
+
+exports.resize = {
+  url: '/block/resize',
+  requestType: 'POST',
+  apiKeyRequired: true,
+  parameters: {
+    SUBID: {
+      type: 'number',
+      optional: false
+    },
+    size_gb: {
+      type: 'number',
+      optional: false
+    }
+  }
+}
