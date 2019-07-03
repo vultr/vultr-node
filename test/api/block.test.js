@@ -6,7 +6,29 @@ const nock = require('nock')
 const mock = {
   create: {
     SUBID: '1313217'
-  }
+  },
+  list: [
+    {
+      SUBID: 1313216,
+      date_created: '2016-03-29 10:10:04',
+      cost_per_month: 10,
+      status: 'pending',
+      size_gb: 100,
+      DCID: 1,
+      attached_to_SUBID: null,
+      label: 'files1'
+    },
+    {
+      SUBID: 1313217,
+      date_created: '2016-31-29 10:10:48',
+      cost_per_month: 5,
+      status: 'active',
+      size_gb: 50,
+      DCID: 1,
+      attached_to_SUBID: 1313207,
+      label: 'files2'
+    }
+  ]
 }
 
 describe('block', () => {
@@ -217,6 +239,33 @@ describe('block', () => {
         .then(response => {
           expect(typeof response).to.equal('undefined')
         })
+    })
+  })
+
+  describe('list()', () => {
+    beforeEach(() => {
+      nock('https://api.vultr.com', {
+        reqheaders: {
+          'API-Key': /[A-Z0-9]{36}/i
+        }
+      })
+        .get('/v1/block/list')
+        .reply(200, mock.list)
+    })
+
+    it('requires an API key', () => {
+      const vultrInstance = vultr.initialize()
+      expect(() => {
+        vultrInstance.block.setLabel()
+      }).to.throw(Error)
+    })
+
+    it('gets the list of active block storage subscriptions', () => {
+      const vultrInstance = vultr.initialize({ apiKey: config.apiKey })
+      return vultrInstance.block.list().then(response => {
+        expect(Array.isArray(response))
+        expect(response).to.deep.equal(mock.list)
+      })
     })
   })
 })
