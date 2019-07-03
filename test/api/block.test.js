@@ -40,7 +40,7 @@ describe('block', () => {
         }
       })
         .post('/v1/block/attach', { SUBID: 1, attach_to_SUBID: 2 })
-        .reply(200)
+        .reply(200, undefined)
     })
 
     it('requires an API key', () => {
@@ -131,7 +131,7 @@ describe('block', () => {
         }
       })
         .post('/v1/block/delete', { SUBID: 1 })
-        .reply(200)
+        .reply(200, undefined)
     })
 
     it('requires an API key', () => {
@@ -168,7 +168,7 @@ describe('block', () => {
         }
       })
         .post('/v1/block/detach', { SUBID: 1 })
-        .reply(200)
+        .reply(200, undefined)
     })
 
     it('requires an API key', () => {
@@ -205,7 +205,7 @@ describe('block', () => {
         }
       })
         .post('/v1/block/label_set', { SUBID: 1, label: 'example' })
-        .reply(200)
+        .reply(200, undefined)
     })
 
     it('requires an API key', () => {
