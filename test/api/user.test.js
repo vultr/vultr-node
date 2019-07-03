@@ -93,4 +93,43 @@ describe('user', () => {
         })
     })
   })
+
+  describe('delete({ USERID })', () => {
+    beforeEach(() => {
+      nock('https://api.vultr.com', {
+        reqheaders: {
+          'API-Key': /[A-Z0-9]{36}/i
+        }
+      })
+        .post('/v1/user/delete', {
+          USERID: '564a1a88947b4'
+        })
+        .reply(200, undefined)
+    })
+
+    it('requires an API key', () => {
+      const vultrInstance = vultr.initialize()
+      expect(() => {
+        vultrInstance.user.delete()
+      }).to.throw(Error)
+    })
+
+    it('requires the USERID parameter', () => {
+      const vultrInstance = vultr.initialize()
+      expect(() => {
+        vultrInstance.user.delete()
+      }).to.throw(Error)
+    })
+
+    it('deletes the specified user', () => {
+      const vultrInstance = vultr.initialize({ apiKey: config.apiKey })
+      return vultrInstance.user
+        .delete({
+          USERID: '564a1a88947b4'
+        })
+        .then(response => {
+          expect(typeof response).to.equal('undefined')
+        })
+    })
+  })
 })

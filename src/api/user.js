@@ -25,3 +25,15 @@ exports.create = {
     }
   }
 }
+
+exports.delete = {
+  url: '/user/delete',
+  requestType: 'POST',
+  apiKeyRequired: true,
+  parameters: {
+    USERID: {
+      type: 'string',
+      optional: false
+    }
+  }
+}
