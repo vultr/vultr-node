@@ -7,6 +7,7 @@ exports.initialize = config => {
   const block = require('./api/block')
   const os = require('./api/os')
   const plans = require('./api/plans')
+  const snapshot = require('./api/snapshot')
   const sshkey = require('./api/sshkey')
   const user = require('./api/user')
   const userConfiguration = config
@@ -112,6 +113,9 @@ exports.initialize = config => {
     plans: {
       list: createRequestFunction(plans.list),
       listBareMetal: createRequestFunction(plans.listBareMetal)
+    },
+    snapshot: {
+      create: createRequestFunction(snapshot.create)
     },
     sshkey: {
       create: createRequestFunction(sshkey.create),
