@@ -7,7 +7,23 @@ const mock = {
   create: {
     USERID: '564a1a88947b4',
     api_key: 'AAAAAAAA'
-  }
+  },
+  list: [
+    {
+      USERID: '564a1a7794d83',
+      name: 'example user 1',
+      email: 'example@vultr.com',
+      api_enabled: 'yes',
+      acls: ['manage_users', 'subscriptions', 'billing', 'provisioning']
+    },
+    {
+      USERID: '564a1a88947b4',
+      name: 'example user 2',
+      email: 'example@vultr.com',
+      api_enabled: 'no',
+      acls: ['support', 'dns']
+    }
+  ]
 }
 
 describe('user', () => {
@@ -130,6 +146,33 @@ describe('user', () => {
         .then(response => {
           expect(typeof response).to.equal('undefined')
         })
+    })
+  })
+
+  describe('list()', () => {
+    beforeEach(() => {
+      nock('https://api.vultr.com', {
+        reqheaders: {
+          'API-Key': /[A-Z0-9]{36}/i
+        }
+      })
+        .get('/v1/user/list')
+        .reply(200, mock.list)
+    })
+
+    it('requires an API key', () => {
+      const vultrInstance = vultr.initialize()
+      expect(() => {
+        vultrInstance.user.delete()
+      }).to.throw(Error)
+    })
+
+    it('lists the users on the account', () => {
+      const vultrInstance = vultr.initialize({ apiKey: config.apiKey })
+      return vultrInstance.user.list().then(response => {
+        expect(response).to.be.an('array')
+        expect(response).to.deep.equal(mock.list)
+      })
     })
   })
 })
