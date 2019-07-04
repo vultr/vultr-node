@@ -5,6 +5,7 @@ exports.initialize = config => {
   const auth = require('./api/auth')
   const backup = require('./api/backup')
   const block = require('./api/block')
+  const firewall = require('./api/firewall')
   const os = require('./api/os')
   const plans = require('./api/plans')
   const snapshot = require('./api/snapshot')
@@ -106,6 +107,9 @@ exports.initialize = config => {
       setLabel: createRequestFunction(block.setLabel),
       list: createRequestFunction(block.list),
       resize: createRequestFunction(block.resize)
+    },
+    firewall: {
+      ruleList: createRequestFunction(firewall.ruleList)
     },
     os: {
       list: createRequestFunction(os.list)
