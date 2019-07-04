@@ -110,7 +110,8 @@ exports.initialize = config => {
       list: createRequestFunction(os.list)
     },
     plans: {
-      list: createRequestFunction(plans.list)
+      list: createRequestFunction(plans.list),
+      listBareMetal: createRequestFunction(plans.listBareMetal)
     },
     sshkey: {
       create: createRequestFunction(sshkey.create),

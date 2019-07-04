@@ -9,3 +9,9 @@ exports.list = {
     }
   }
 }
+
+exports.listBareMetal = {
+  url: '/plans/list_baremetal',
+  requestType: 'GET',
+  apiKeyRequired: true
+}
