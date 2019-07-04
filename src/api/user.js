@@ -37,3 +37,9 @@ exports.delete = {
     }
   }
 }
+
+exports.list = {
+  url: '/user/list',
+  requestType: 'GET',
+  apiKeyRequired: true
+}

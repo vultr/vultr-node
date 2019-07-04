@@ -263,7 +263,7 @@ describe('block', () => {
     it('gets the list of active block storage subscriptions', () => {
       const vultrInstance = vultr.initialize({ apiKey: config.apiKey })
       return vultrInstance.block.list().then(response => {
-        expect(Array.isArray(response))
+        expect(response).to.be.an('array')
         expect(response).to.deep.equal(mock.list)
       })
     })
