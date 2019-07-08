@@ -11,11 +11,11 @@ exports.create = {
   parameters: {
     name: {
       type: 'string',
-      optional: true
+      required: false
     },
     ssh_key: {
       type: 'string',
-      optional: false
+      required: true
     }
   }
 }
@@ -27,7 +27,7 @@ exports.delete = {
   parameters: {
     SSHKEYID: {
       type: 'string',
-      optional: false
+      required: true
     }
   }
 }
@@ -39,15 +39,15 @@ exports.update = {
   parameters: {
     SSHKEYID: {
       type: 'string',
-      optional: false
+      required: true
     },
     name: {
       type: 'string',
-      optional: true
+      required: false
     },
     ssh_key: {
       type: 'string',
-      optional: true
+      required: false
     }
   }
 }

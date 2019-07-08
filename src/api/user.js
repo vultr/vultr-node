@@ -5,23 +5,23 @@ exports.create = {
   parameters: {
     email: {
       type: 'string',
-      optional: false
+      required: true
     },
     name: {
       type: 'string',
-      optional: false
+      required: true
     },
     password: {
       type: 'string',
-      optional: false
+      required: true
     },
     api_enabled: {
       type: 'string',
-      optional: true
+      required: false
     },
     acls: {
       type: 'array',
-      optional: false
+      required: true
     }
   }
 }
@@ -33,7 +33,7 @@ exports.delete = {
   parameters: {
     USERID: {
       type: 'string',
-      optional: false
+      required: true
     }
   }
 }
@@ -51,27 +51,27 @@ exports.update = {
   parameters: {
     USERID: {
       type: 'string',
-      optional: false
+      required: true
     },
     email: {
       type: 'string',
-      optional: true
+      required: false
     },
     name: {
       type: 'string',
-      optional: true
+      required: false
     },
     password: {
       type: 'string',
-      optional: true
+      required: false
     },
     api_enabled: {
       type: 'string',
-      optional: true
+      required: false
     },
     acls: {
       type: 'array',
-      optional: true
+      required: false
     }
   }
 }

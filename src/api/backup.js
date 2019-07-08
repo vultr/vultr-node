@@ -5,11 +5,11 @@ exports.list = {
   parameters: {
     SUBID: {
       type: 'number',
-      optional: true
+      required: false
     },
     BACKUPID: {
       type: 'string',
-      optional: true
+      required: false
     }
   }
 }

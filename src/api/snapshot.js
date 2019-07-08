@@ -5,11 +5,11 @@ exports.create = {
   parameters: {
     SUBID: {
       type: 'number',
-      optional: false
+      required: true
     },
     description: {
       type: 'string',
-      optional: true
+      required: false
     }
   }
 }
@@ -21,7 +21,7 @@ exports.list = {
   parameters: {
     SNAPSHOTID: {
       type: 'string',
-      optional: true
+      required: false
     }
   }
 }
