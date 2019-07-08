@@ -43,3 +43,35 @@ exports.list = {
   requestType: 'GET',
   apiKeyRequired: true
 }
+
+exports.update = {
+  url: '/user/update',
+  requestType: 'POST',
+  apiKeyRequired: true,
+  parameters: {
+    USERID: {
+      type: 'string',
+      optional: false
+    },
+    email: {
+      type: 'string',
+      optional: true
+    },
+    name: {
+      type: 'string',
+      optional: true
+    },
+    password: {
+      type: 'string',
+      optional: true
+    },
+    api_enabled: {
+      type: 'string',
+      optional: true
+    },
+    acls: {
+      type: 'array',
+      optional: true
+    }
+  }
+}

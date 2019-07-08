@@ -52,7 +52,7 @@ describe('firewall', () => {
     })
 
     it('requires all non-optional parameters', () => {
-      const vultrInstance = vultr.initialize()
+      const vultrInstance = vultr.initialize({ apiKey: config.apiKey })
 
       expect(() => {
         vultrInstance.firewall.ruleList()

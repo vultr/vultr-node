@@ -175,4 +175,46 @@ describe('user', () => {
       })
     })
   })
+
+  describe('update()', () => {
+    beforeEach(() => {
+      nock('https://api.vultr.com', {
+        reqheaders: {
+          'API-Key': /[A-Z0-9]{36}/i
+        }
+      })
+        .post('/v1/user/update', {
+          USERID: '564a1a88947b4'
+        })
+        .reply(200, undefined)
+    })
+
+    it('requires an API key', () => {
+      const vultrInstance = vultr.initialize()
+
+      expect(() => {
+        vultrInstance.user.update()
+      }).to.throw(Error)
+    })
+
+    it('requires all non-optional parameters', () => {
+      const vultrInstance = vultr.initialize({ apiKey: config.apiKey })
+
+      expect(() => {
+        vultrInstance.user.update()
+      }).to.throw(Error)
+    })
+
+    it('updates a user', () => {
+      const vultrInstance = vultr.initialize({ apiKey: config.apiKey })
+
+      return vultrInstance.user
+        .update({
+          USERID: '564a1a88947b4'
+        })
+        .then(response => {
+          expect(typeof response).to.equal('undefined')
+        })
+    })
+  })
 })
