@@ -6,6 +6,7 @@ exports.initialize = config => {
   const backup = require('./api/backup')
   const block = require('./api/block')
   const firewall = require('./api/firewall')
+  const iso = require('./api/iso')
   const os = require('./api/os')
   const plans = require('./api/plans')
   const snapshot = require('./api/snapshot')
@@ -110,6 +111,9 @@ exports.initialize = config => {
     },
     firewall: {
       ruleList: createRequestFunction(firewall.ruleList)
+    },
+    iso: {
+      listPublic: createRequestFunction(iso.listPublic)
     },
     os: {
       list: createRequestFunction(os.list)
