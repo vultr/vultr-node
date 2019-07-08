@@ -130,7 +130,8 @@ exports.initialize = config => {
     user: {
       create: createRequestFunction(user.create),
       delete: createRequestFunction(user.delete),
-      list: createRequestFunction(user.list)
+      list: createRequestFunction(user.list),
+      update: createRequestFunction(user.update)
     }
   }
 }
