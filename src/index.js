@@ -119,7 +119,8 @@ exports.initialize = config => {
       listBareMetal: createRequestFunction(plans.listBareMetal)
     },
     snapshot: {
-      create: createRequestFunction(snapshot.create)
+      create: createRequestFunction(snapshot.create),
+      list: createRequestFunction(snapshot.list)
     },
     sshkey: {
       create: createRequestFunction(sshkey.create),
