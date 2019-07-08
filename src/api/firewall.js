@@ -5,15 +5,15 @@ exports.ruleList = {
   parameters: {
     FIREWALLGROUPID: {
       type: 'string',
-      optional: false
+      required: true
     },
     direction: {
       type: 'string',
-      optional: false
+      required: true
     },
     ip_type: {
       type: 'string',
-      optional: false
+      required: true
     }
   }
 }

@@ -5,15 +5,15 @@ exports.attach = {
   parameters: {
     SUBID: {
       type: 'number',
-      optional: false
+      required: true
     },
     attach_to_SUBID: {
       type: 'number',
-      optional: false
+      required: true
     },
     live: {
       type: 'string',
-      optional: true
+      required: false
     }
   }
 }
@@ -25,15 +25,15 @@ exports.create = {
   parameters: {
     DCID: {
       type: 'number',
-      optional: false
+      required: true
     },
     size_gb: {
       type: 'number',
-      optional: false
+      required: true
     },
     label: {
       type: 'string',
-      optional: true
+      required: false
     }
   }
 }
@@ -45,7 +45,7 @@ exports.delete = {
   parameters: {
     SUBID: {
       type: 'number',
-      optional: false
+      required: true
     }
   }
 }
@@ -57,7 +57,7 @@ exports.detach = {
   parameters: {
     SUBID: {
       type: 'number',
-      optional: false
+      required: true
     }
   }
 }
@@ -69,11 +69,11 @@ exports.setLabel = {
   parameters: {
     SUBID: {
       type: 'number',
-      optional: false
+      required: true
     },
     label: {
       type: 'string',
-      optional: false
+      required: true
     }
   }
 }
@@ -85,7 +85,7 @@ exports.list = {
   parameters: {
     SUBID: {
       type: 'number',
-      optional: true
+      required: false
     }
   }
 }
@@ -97,11 +97,11 @@ exports.resize = {
   parameters: {
     SUBID: {
       type: 'number',
-      optional: false
+      required: true
     },
     size_gb: {
       type: 'number',
-      optional: false
+      required: true
     }
   }
 }

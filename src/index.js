@@ -44,7 +44,7 @@ exports.initialize = config => {
               const endpointParameter = endpoint.parameters[parameter]
               const userParameter = parameters[parameter]
 
-              if (!endpointParameter.optional && !userParameter) {
+              if (endpointParameter.required && !userParameter) {
                 throw new Error(`Missing parameter: ${parameter}`)
               } else if (userParameter) {
                 if (
@@ -74,7 +74,7 @@ exports.initialize = config => {
         } else {
           // No parameters passed, check that none are required
           for (let parameter in endpoint.parameters) {
-            if (!endpoint.parameters[parameter].optional) {
+            if (endpoint.parameters[parameter].required) {
               throw new Error(`Missing parameter: ${parameter}`)
             }
           }

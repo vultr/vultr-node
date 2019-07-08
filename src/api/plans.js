@@ -5,7 +5,7 @@ exports.list = {
   parameters: {
     type: {
       type: 'string',
-      optional: true
+      required: false
     }
   }
 }
