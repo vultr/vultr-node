@@ -113,6 +113,7 @@ exports.initialize = config => {
       ruleList: createRequestFunction(firewall.ruleList)
     },
     iso: {
+      list: createRequestFunction(iso.list),
       listPublic: createRequestFunction(iso.listPublic)
     },
     os: {
