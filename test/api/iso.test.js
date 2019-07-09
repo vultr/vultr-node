@@ -36,6 +36,39 @@ const mock = {
 }
 
 describe('iso', () => {
+  describe('delete({ ISOID })', () => {
+    beforeEach(() => {
+      nock('https://api.vultr.com', {
+        reqheaders: {
+          'API-Key': /[A-Z0-9]{36}/i
+        }
+      })
+        .post('/v1/iso/destroy')
+        .reply(200, undefined)
+    })
+
+    it('requires an API key', () => {
+      const vultrInstance = vultr.initialize()
+      expect(() => {
+        vultrInstance.iso.delete({ ISOID: 24 })
+      }).to.throw(Error)
+    })
+
+    it('requires all non-optional parameters', () => {
+      const vultrInstance = vultr.initialize({ apiKey: config.apiKey })
+      expect(() => {
+        vultrInstance.iso.delete()
+      }).to.throw(Error)
+    })
+
+    it('deletes a private ISO', () => {
+      const vultrInstance = vultr.initialize({ apiKey: config.apiKey })
+      return vultrInstance.iso.delete({ ISOID: 24 }).then(response => {
+        expect(typeof response).to.equal('undefined')
+      })
+    })
+  })
+
   describe('list()', () => {
     beforeEach(() => {
       nock('https://api.vultr.com', {
