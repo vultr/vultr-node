@@ -4,6 +4,7 @@ const config = require('../config')
 const nock = require('nock')
 
 const mock = {
+  create: { ISOID: 24 },
   list: {
     '24': {
       ISOID: 24,
@@ -36,6 +37,42 @@ const mock = {
 }
 
 describe('iso', () => {
+  describe('create({ url })', () => {
+    beforeEach(() => {
+      nock('https://api.vultr.com', {
+        reqheaders: {
+          'API-Key': /[A-Z0-9]{36}/i
+        }
+      })
+        .post('/v1/iso/create_from_url')
+        .reply(200, mock.create)
+    })
+
+    it('requires an API key', () => {
+      const vultrInstance = vultr.initialize()
+      expect(() => {
+        vultrInstance.iso.create({ ISOID: 24 })
+      }).to.throw(Error)
+    })
+
+    it('requires all non-optional parameters', () => {
+      const vultrInstance = vultr.initialize({ apiKey: config.apiKey })
+      expect(() => {
+        vultrInstance.iso.create()
+      }).to.throw(Error)
+    })
+
+    it('creates a private ISO', () => {
+      const vultrInstance = vultr.initialize({ apiKey: config.apiKey })
+      return vultrInstance.iso
+        .create({ url: 'https://templeos.org/Downloads/TempleOSLite.ISO' })
+        .then(response => {
+          expect(typeof response).to.equal('object')
+          expect(response).to.deep.equal(mock.create)
+        })
+    })
+  })
+
   describe('delete({ ISOID })', () => {
     beforeEach(() => {
       nock('https://api.vultr.com', {
