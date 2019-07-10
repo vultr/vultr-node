@@ -7,6 +7,9 @@ const mock = {
   create: {
     SNAPSHOTID: '544e52f31c706'
   },
+  createFromUrl: {
+    SNAPSHOTID: '544e52f31c706'
+  },
   list: {
     '5359435d28b9a': {
       SNAPSHOTID: '5359435d28b9a',
@@ -45,6 +48,7 @@ describe('snapshot', () => {
 
     it('requires an API key', () => {
       const vultrInstance = vultr.initialize()
+
       expect(() => {
         vultrInstance.snapshot.create()
       }).to.throw(Error)
@@ -52,6 +56,7 @@ describe('snapshot', () => {
 
     it('requires the SUBID parameter', () => {
       const vultrInstance = vultr.initialize({ apiKey: config.apiKey })
+
       expect(() => {
         vultrInstance.snapshot.create()
       }).to.throw(Error)
@@ -64,6 +69,47 @@ describe('snapshot', () => {
         expect(typeof response).to.equal('object')
         expect(response).to.deep.equal(mock.create)
       })
+    })
+  })
+
+  describe('createFromUrl({ url })', () => {
+    beforeEach(() => {
+      nock('https://api.vultr.com', {
+        reqheaders: {
+          'API-Key': /[A-Z0-9]{36}/i
+        }
+      })
+        .post('/v1/snapshot/create_from_url', {
+          url: 'http://example.com/path/to/disk_image.raw'
+        })
+        .reply(200, mock.createFromUrl)
+    })
+
+    it('requires an API key', () => {
+      const vultrInstance = vultr.initialize()
+
+      expect(() => {
+        vultrInstance.snapshot.createFromUrl()
+      }).to.throw(Error)
+    })
+
+    it('requires the url parameter', () => {
+      const vultrInstance = vultr.initialize({ apiKey: config.apiKey })
+
+      expect(() => {
+        vultrInstance.snapshot.createFromUrl()
+      }).to.throw(Error)
+    })
+
+    it('creates a snapshot from a provided URL', () => {
+      const vultrInstance = vultr.initialize({ apiKey: config.apiKey })
+
+      return vultrInstance.snapshot
+        .createFromUrl({ url: 'http://example.com/path/to/disk_image.raw' })
+        .then(response => {
+          expect(typeof response).to.equal('object')
+          expect(response).to.deep.equal(mock.createFromUrl)
+        })
     })
   })
 
