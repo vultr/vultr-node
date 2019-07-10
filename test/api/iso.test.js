@@ -44,14 +44,18 @@ describe('iso', () => {
           'API-Key': /[A-Z0-9]{36}/i
         }
       })
-        .post('/v1/iso/create_from_url')
+        .post('/v1/iso/create_from_url', {
+          url: 'https://templeos.org/Downloads/TempleOSLite.ISO'
+        })
         .reply(200, mock.create)
     })
 
     it('requires an API key', () => {
       const vultrInstance = vultr.initialize()
       expect(() => {
-        vultrInstance.iso.create({ ISOID: 24 })
+        vultrInstance.iso.create({
+          url: 'https://templeos.org/Downloads/TempleOSLite.ISO'
+        })
       }).to.throw(Error)
     })
 
@@ -80,7 +84,7 @@ describe('iso', () => {
           'API-Key': /[A-Z0-9]{36}/i
         }
       })
-        .post('/v1/iso/destroy')
+        .post('/v1/iso/destroy', { ISOID: 24 })
         .reply(200, undefined)
     })
 
