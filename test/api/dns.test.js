@@ -44,4 +44,43 @@ describe('dns', () => {
         })
     })
   })
+
+  describe('deleteDomain({ domain})', () => {
+    beforeEach(() => {
+      nock('https://api.vultr.com', {
+        reqheaders: {
+          'API-Key': /[A-Z0-9]{36}/i
+        }
+      })
+        .post('/v1/dns/delete_domain', {
+          domain: 'example.com'
+        })
+        .reply(200, undefined)
+    })
+
+    it('requires an API key', () => {
+      const vultrInstance = vultr.initialize()
+      expect(() => {
+        vultrInstance.dns.deleteDomain({
+          domain: 'example.com'
+        })
+      }).to.throw(Error)
+    })
+
+    it('requires all non-optional parameters', () => {
+      const vultrInstance = vultr.initialize({ apiKey: config.apiKey })
+      expect(() => {
+        vultrInstance.dns.deleteDomain()
+      }).to.throw(Error)
+    })
+
+    it('deletes a DNS domain', () => {
+      const vultrInstance = vultr.initialize({ apiKey: config.apiKey })
+      return vultrInstance.dns
+        .deleteDomain({ domain: 'example.com' })
+        .then(response => {
+          expect(typeof response).to.equal('undefined')
+        })
+    })
+  })
 })
