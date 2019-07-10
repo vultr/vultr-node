@@ -112,13 +112,13 @@ exports.initialize = config => {
     },
     dns: {
       createDomain: createRequestFunction(dns.createDomain),
-      deleteDomain: createRequestFunction(dns.deleteDomain)
+      deleteDomain: createRequestFunction(dns.deleteDomain),
+      list: createRequestFunction(dns.list)
     },
     firewall: {
       ruleList: createRequestFunction(firewall.ruleList)
     },
     iso: {
-      create: createRequestFunction(iso.create),
       delete: createRequestFunction(iso.delete),
       list: createRequestFunction(iso.list),
       listPublic: createRequestFunction(iso.listPublic)

@@ -25,3 +25,9 @@ exports.deleteDomain = {
     }
   }
 }
+
+exports.list = {
+  url: '/dns/list',
+  requestType: 'GET',
+  apiKeyRequired: true
+}
