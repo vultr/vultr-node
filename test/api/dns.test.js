@@ -11,7 +11,10 @@ describe('dns', () => {
           'API-Key': /[A-Z0-9]{36}/i
         }
       })
-        .post('/v1/dns/create_domain')
+        .post('/v1/dns/create_domain', {
+          domain: 'example.com',
+          serverip: '10.0.0.0'
+        })
         .reply(200, undefined)
     })
 
