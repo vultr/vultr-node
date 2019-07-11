@@ -1,4 +1,5 @@
 exports.list = {
   url: '/startupscript/list',
-  requestType: 'GET'
+  requestType: 'GET',
+  apiKeyRequired: true
 }

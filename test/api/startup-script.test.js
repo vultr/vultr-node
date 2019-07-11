@@ -27,31 +27,29 @@ const mock = {
 describe('startup-script', () => {
   describe('list()', () => {
     beforeEach(() => {
-      beforeEach(() => {
-        nock('https://api.vultr.com', {
-          reqheaders: {
-            'API-Key': /[A-Z0-9]{36}/i
-          }
-        })
-          .get('/v1/startupscript/list')
-          .reply(200, mock.list)
+      nock('https://api.vultr.com', {
+        reqheaders: {
+          'API-Key': /[A-Z0-9]{36}/i
+        }
       })
+        .get('/v1/startupscript/list')
+        .reply(200, mock.list)
+    })
 
-      it('requires an API key', () => {
-        const vultrInstance = vultr.initialize()
+    it('requires an API key', () => {
+      const vultrInstance = vultr.initialize()
 
-        expect(() => {
-          vultrInstance.startupScript.list()
-        }).to.throw(Error)
-      })
+      expect(() => {
+        vultrInstance.startupScript.list()
+      }).to.throw(Error)
+    })
 
-      it('lists the startup on the account', () => {
-        const vultrInstance = vultr.initialize({ apiKey: config.apiKey })
+    it('lists the startup on the account', () => {
+      const vultrInstance = vultr.initialize({ apiKey: config.apiKey })
 
-        vultrInstance.startupScript.list().then(response => {
-          expect(typeof response).to.equal('object')
-          expect(response).to.deep.equal(mock.list)
-        })
+      vultrInstance.startupScript.list().then(response => {
+        expect(typeof response).to.equal('object')
+        expect(response).to.deep.equal(mock.list)
       })
     })
   })
