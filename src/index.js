@@ -12,6 +12,7 @@ exports.initialize = config => {
   const plans = require('./api/plans')
   const snapshot = require('./api/snapshot')
   const sshkey = require('./api/sshkey')
+  const startupScript = require('./api/startup-script')
   const user = require('./api/user')
   const userConfiguration = config
 
@@ -141,6 +142,9 @@ exports.initialize = config => {
       list: createRequestFunction(sshkey.list),
       delete: createRequestFunction(sshkey.delete),
       update: createRequestFunction(sshkey.update)
+    },
+    startupScript: {
+      list: createRequestFunction(startupScript.list)
     },
     user: {
       create: createRequestFunction(user.create),
