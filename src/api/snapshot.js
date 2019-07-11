@@ -14,6 +14,18 @@ exports.create = {
   }
 }
 
+exports.createFromUrl = {
+  url: '/snapshot/create_from_url',
+  requestType: 'POST',
+  apiKeyRequired: true,
+  parameters: {
+    url: {
+      type: 'string',
+      required: true
+    }
+  }
+}
+
 exports.list = {
   url: '/snapshot/list',
   requestType: 'GET',
