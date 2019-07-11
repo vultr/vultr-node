@@ -10,6 +10,7 @@ exports.initialize = config => {
   const iso = require('./api/iso')
   const os = require('./api/os')
   const plans = require('./api/plans')
+  const regions = require('./api/regions')
   const snapshot = require('./api/snapshot')
   const sshkey = require('./api/sshkey')
   const startupScript = require('./api/startup-script')
@@ -131,6 +132,9 @@ exports.initialize = config => {
     plans: {
       list: createRequestFunction(plans.list),
       listBareMetal: createRequestFunction(plans.listBareMetal)
+    },
+    regions: {
+      list: createRequestFunction(regions.list)
     },
     snapshot: {
       create: createRequestFunction(snapshot.create),
