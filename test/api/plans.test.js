@@ -119,24 +119,22 @@ describe('plans', () => {
 
   describe('listVc2()', () => {
     beforeEach(() => {
-      nock('https://api.vultr.com', {
-        reqheaders: {
-          'API-Key': /[A-Z0-9]{36}/i
-        }
-      })
+      nock('https://api.vultr.com')
         .get('/v1/plans/list_vc2')
         .reply(200, mock.listVc2)
     })
 
-    it('requires an API key', () => {
+    it('does not require an API key', () => {
       const vultrInstance = vultr.initialize()
-      expect(() => {
-        vultrInstance.plans.listVc2()
-      }).to.throw(Error)
+
+      return vultrInstance.plans.listVc2().then(response => {
+        expect(typeof response).to.equal('object')
+        expect(response).to.deep.equal(mock.listVc2)
+      })
     })
 
-    it('gets the list of bare metal plans', () => {
-      const vultrInstance = vultr.initialize({ apiKey: config.apiKey })
+    it('gets a list of all active vc2 plans', () => {
+      const vultrInstance = vultr.initialize()
 
       return vultrInstance.plans.listVc2().then(response => {
         expect(typeof response).to.equal('object')
