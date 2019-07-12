@@ -15,3 +15,9 @@ exports.listBareMetal = {
   requestType: 'GET',
   apiKeyRequired: true
 }
+
+exports.listVc2 = {
+  url: '/plans/list_vc2',
+  requestType: 'GET',
+  apiKeyRequired: true
+}

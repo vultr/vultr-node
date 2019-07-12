@@ -45,6 +45,18 @@ const mock = {
       deprecated: false,
       available_locations: [1, 2, 3]
     }
+  },
+  listVc2: {
+    '1': {
+      VPSPLANID: '1',
+      name: 'Starter',
+      vcpu_count: '1',
+      ram: '512',
+      disk: '20',
+      bandwidth: '1',
+      price_per_month: '5.00',
+      plan_type: 'SSD'
+    }
   }
 }
 
@@ -91,7 +103,7 @@ describe('plans', () => {
     it('requires an API key', () => {
       const vultrInstance = vultr.initialize()
       expect(() => {
-        vultrInstance.block.attach()
+        vultrInstance.plans.listBareMetal()
       }).to.throw(Error)
     })
 
@@ -101,6 +113,34 @@ describe('plans', () => {
       return vultrInstance.plans.listBareMetal().then(response => {
         expect(typeof response).to.equal('object')
         expect(response).to.deep.equal(mock.listBareMetal)
+      })
+    })
+  })
+
+  describe('listVc2()', () => {
+    beforeEach(() => {
+      nock('https://api.vultr.com', {
+        reqheaders: {
+          'API-Key': /[A-Z0-9]{36}/i
+        }
+      })
+        .get('/v1/plans/list_vc2')
+        .reply(200, mock.listVc2)
+    })
+
+    it('requires an API key', () => {
+      const vultrInstance = vultr.initialize()
+      expect(() => {
+        vultrInstance.plans.listVc2()
+      }).to.throw(Error)
+    })
+
+    it('gets the list of bare metal plans', () => {
+      const vultrInstance = vultr.initialize({ apiKey: config.apiKey })
+
+      return vultrInstance.plans.listVc2().then(response => {
+        expect(typeof response).to.equal('object')
+        expect(response).to.deep.equal(mock.listVc2)
       })
     })
   })
