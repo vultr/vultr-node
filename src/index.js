@@ -8,6 +8,7 @@ exports.initialize = config => {
   const dns = require('./api/dns')
   const firewall = require('./api/firewall')
   const iso = require('./api/iso')
+  const network = require('./api/network')
   const os = require('./api/os')
   const plans = require('./api/plans')
   const regions = require('./api/regions')
@@ -125,6 +126,9 @@ exports.initialize = config => {
       delete: createRequestFunction(iso.delete),
       list: createRequestFunction(iso.list),
       listPublic: createRequestFunction(iso.listPublic)
+    },
+    network: {
+      list: createRequestFunction(network.list)
     },
     os: {
       list: createRequestFunction(os.list)
