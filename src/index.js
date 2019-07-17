@@ -128,6 +128,7 @@ exports.initialize = config => {
       listPublic: createRequestFunction(iso.listPublic)
     },
     network: {
+      create: createRequestFunction(network.create),
       list: createRequestFunction(network.list)
     },
     os: {
