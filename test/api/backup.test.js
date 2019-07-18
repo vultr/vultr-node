@@ -25,11 +25,7 @@ const mock = {
 describe('backup', () => {
   describe('list()', () => {
     beforeEach(() => {
-      nock('https://api.vultr.com', {
-        reqheaders: {
-          'API-Key': /[A-Z0-9]{36}/i
-        }
-      })
+      nock(config.baseUrl, config.headers)
         .get('/v1/backup/list')
         .reply(200, mock.list)
     })
@@ -52,7 +48,7 @@ describe('backup', () => {
 
   describe('list({ BACKUPID })', () => {
     beforeEach(() => {
-      nock('https://api.vultr.com')
+      nock(config.baseUrl)
         .get('/v1/backup/list')
         .query({
           BACKUPID: '543d340f6dbce'

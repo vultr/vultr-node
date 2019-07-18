@@ -35,11 +35,7 @@ const mock = {
 describe('snapshot', () => {
   describe('create({ SUBID })', () => {
     beforeEach(() => {
-      nock('https://api.vultr.com', {
-        reqheaders: {
-          'API-Key': /[A-Z0-9]{36}/i
-        }
-      })
+      nock(config.baseUrl, config.headers)
         .post('/v1/snapshot/create', {
           SUBID: 1
         })
@@ -74,11 +70,7 @@ describe('snapshot', () => {
 
   describe('createFromUrl({ url })', () => {
     beforeEach(() => {
-      nock('https://api.vultr.com', {
-        reqheaders: {
-          'API-Key': /[A-Z0-9]{36}/i
-        }
-      })
+      nock(config.baseUrl, config.headers)
         .post('/v1/snapshot/create_from_url', {
           url: 'http://example.com/path/to/disk_image.raw'
         })
@@ -115,11 +107,7 @@ describe('snapshot', () => {
 
   describe('list()', () => {
     beforeEach(() => {
-      nock('https://api.vultr.com', {
-        reqheaders: {
-          'API-Key': /[A-Z0-9]{36}/i
-        }
-      })
+      nock(config.baseUrl, config.headers)
         .get('/v1/snapshot/list')
         .reply(200, mock.list)
     })
@@ -144,11 +132,7 @@ describe('snapshot', () => {
 
   describe('delete({ SNAPSHOTID })', () => {
     beforeEach(() => {
-      nock('https://api.vultr.com', {
-        reqheaders: {
-          'API-Key': /[A-Z0-9]{36}/i
-        }
-      })
+      nock(config.baseUrl, config.headers)
         .post('/v1/snapshot/destroy', { SNAPSHOTID: '5359435d28b9a' })
         .reply(200, undefined)
     })

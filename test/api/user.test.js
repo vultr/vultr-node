@@ -29,11 +29,7 @@ const mock = {
 describe('user', () => {
   describe('create({ email, name, password, acls })', () => {
     beforeEach(() => {
-      nock('https://api.vultr.com', {
-        reqheaders: {
-          'API-Key': /[A-Z0-9]{36}/i
-        }
-      })
+      nock(config.baseUrl, config.headers)
         .post('/v1/user/create', {
           email: 'test@test.com',
           name: 'test testerson',
@@ -112,11 +108,7 @@ describe('user', () => {
 
   describe('delete({ USERID })', () => {
     beforeEach(() => {
-      nock('https://api.vultr.com', {
-        reqheaders: {
-          'API-Key': /[A-Z0-9]{36}/i
-        }
-      })
+      nock(config.baseUrl, config.headers)
         .post('/v1/user/delete', {
           USERID: '564a1a88947b4'
         })
@@ -151,11 +143,7 @@ describe('user', () => {
 
   describe('list()', () => {
     beforeEach(() => {
-      nock('https://api.vultr.com', {
-        reqheaders: {
-          'API-Key': /[A-Z0-9]{36}/i
-        }
-      })
+      nock(config.baseUrl, config.headers)
         .get('/v1/user/list')
         .reply(200, mock.list)
     })
@@ -178,11 +166,7 @@ describe('user', () => {
 
   describe('update()', () => {
     beforeEach(() => {
-      nock('https://api.vultr.com', {
-        reqheaders: {
-          'API-Key': /[A-Z0-9]{36}/i
-        }
-      })
+      nock(config.baseUrl, config.headers)
         .post('/v1/user/update', {
           USERID: '564a1a88947b4'
         })

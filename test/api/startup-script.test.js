@@ -27,11 +27,7 @@ const mock = {
 describe('startup-script', () => {
   describe('list()', () => {
     beforeEach(() => {
-      nock('https://api.vultr.com', {
-        reqheaders: {
-          'API-Key': /[A-Z0-9]{36}/i
-        }
-      })
+      nock(config.baseUrl, config.headers)
         .get('/v1/startupscript/list')
         .reply(200, mock.list)
     })
@@ -56,11 +52,7 @@ describe('startup-script', () => {
 
   describe('delete({ SCRIPTID })', () => {
     beforeEach(() => {
-      nock('https://api.vultr.com', {
-        reqheaders: {
-          'API-Key': /[A-Z0-9]{36}/i
-        }
-      })
+      nock(config.baseUrl, config.headers)
         .post('/v1/startupscript/destroy', {
           SCRIPTID: 5
         })

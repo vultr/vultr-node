@@ -34,11 +34,7 @@ const mock = {
 describe('block', () => {
   describe('attach({ SUBID, attach_to_SUBID })', () => {
     beforeEach(() => {
-      nock('https://api.vultr.com', {
-        reqheaders: {
-          'API-Key': /[A-Z0-9]{36}/i
-        }
-      })
+      nock(config.baseUrl, config.headers)
         .post('/v1/block/attach', { SUBID: 1, attach_to_SUBID: 2 })
         .reply(200, undefined)
     })
@@ -79,11 +75,7 @@ describe('block', () => {
 
   describe('create({ DCID, size_gb })', () => {
     beforeEach(() => {
-      nock('https://api.vultr.com', {
-        reqheaders: {
-          'API-Key': /[A-Z0-9]{36}/i
-        }
-      })
+      nock(config.baseUrl, config.headers)
         .post('/v1/block/create', { DCID: 1, size_gb: 2 })
         .reply(200, mock.create)
     })
@@ -125,11 +117,7 @@ describe('block', () => {
 
   describe('delete({ SUBID })', () => {
     beforeEach(() => {
-      nock('https://api.vultr.com', {
-        reqheaders: {
-          'API-Key': /[A-Z0-9]{36}/i
-        }
-      })
+      nock(config.baseUrl, config.headers)
         .post('/v1/block/delete', { SUBID: 1 })
         .reply(200, undefined)
     })
@@ -162,11 +150,7 @@ describe('block', () => {
 
   describe('detach({ SUBID })', () => {
     beforeEach(() => {
-      nock('https://api.vultr.com', {
-        reqheaders: {
-          'API-Key': /[A-Z0-9]{36}/i
-        }
-      })
+      nock(config.baseUrl, config.headers)
         .post('/v1/block/detach', { SUBID: 1 })
         .reply(200, undefined)
     })
@@ -199,11 +183,7 @@ describe('block', () => {
 
   describe('setLabel({ SUBID, label })', () => {
     beforeEach(() => {
-      nock('https://api.vultr.com', {
-        reqheaders: {
-          'API-Key': /[A-Z0-9]{36}/i
-        }
-      })
+      nock(config.baseUrl, config.headers)
         .post('/v1/block/label_set', { SUBID: 1, label: 'example' })
         .reply(200, undefined)
     })
@@ -244,11 +224,7 @@ describe('block', () => {
 
   describe('list()', () => {
     beforeEach(() => {
-      nock('https://api.vultr.com', {
-        reqheaders: {
-          'API-Key': /[A-Z0-9]{36}/i
-        }
-      })
+      nock(config.baseUrl, config.headers)
         .get('/v1/block/list')
         .reply(200, mock.list)
     })
@@ -271,11 +247,7 @@ describe('block', () => {
 
   describe('resize({ SUBID, size_gb })', () => {
     beforeEach(() => {
-      nock('https://api.vultr.com', {
-        reqheaders: {
-          'API-Key': /[A-Z0-9]{36}/i
-        }
-      })
+      nock(config.baseUrl, config.headers)
         .post('/v1/block/resize', { SUBID: 1, size_gb: 2 })
         .reply(200)
     })

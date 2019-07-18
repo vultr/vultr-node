@@ -31,7 +31,7 @@ const mock = {
 describe('regions', () => {
   describe('list()', () => {
     beforeEach(() => {
-      nock('https://api.vultr.com')
+      nock(config.baseUrl)
         .get('/v1/regions/list')
         .reply(200, mock.list)
     })

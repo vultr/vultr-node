@@ -26,11 +26,7 @@ const mock = {
 describe('sshkey', () => {
   describe('create()', () => {
     beforeEach(() => {
-      nock('https://api.vultr.com', {
-        reqheaders: {
-          'API-Key': /[A-Z0-9]{36}/i
-        }
-      })
+      nock(config.baseUrl, config.headers)
         .post('/v1/sshkey/create', {
           name: 'vultr-node-sshkey',
           ssh_key: 'ssh-rsa AA... test@example.com'
@@ -68,11 +64,7 @@ describe('sshkey', () => {
 
   describe('delete()', () => {
     beforeEach(() => {
-      nock('https://api.vultr.com', {
-        reqheaders: {
-          'API-Key': /[A-Z0-9]{36}/i
-        }
-      })
+      nock(config.baseUrl, config.headers)
         .post('/v1/sshkey/destroy', {
           SSHKEYID: '5d14f139037a1'
         })
@@ -107,11 +99,7 @@ describe('sshkey', () => {
 
   describe('list()', () => {
     beforeEach(() => {
-      nock('https://api.vultr.com', {
-        reqheaders: {
-          'API-Key': /[A-Z0-9]{36}/i
-        }
-      })
+      nock(config.baseUrl, config.headers)
         .get('/v1/sshkey/list')
         .reply(200, mock.list)
     })
@@ -134,11 +122,7 @@ describe('sshkey', () => {
 
   describe('update()', () => {
     beforeEach(() => {
-      nock('https://api.vultr.com', {
-        reqheaders: {
-          'API-Key': /[A-Z0-9]{36}/i
-        }
-      })
+      nock(config.baseUrl, config.headers)
         .post('/v1/sshkey/update', {
           SSHKEYID: '5d14f139037a1',
           name: 'vultr-node-sshkey-update',

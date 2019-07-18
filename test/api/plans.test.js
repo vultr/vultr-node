@@ -63,11 +63,7 @@ const mock = {
 describe('plans', () => {
   describe('list()', () => {
     beforeEach(() => {
-      nock('https://api.vultr.com', {
-        reqheaders: {
-          'API-Key': /[A-Z0-9]{36}/i
-        }
-      })
+      nock(config.baseUrl, config.headers)
         .get('/v1/plans/list')
         .reply(200, mock.list)
     })
@@ -91,11 +87,7 @@ describe('plans', () => {
 
   describe('listBareMetal()', () => {
     beforeEach(() => {
-      nock('https://api.vultr.com', {
-        reqheaders: {
-          'API-Key': /[A-Z0-9]{36}/i
-        }
-      })
+      nock(config.baseUrl, config.headers)
         .get('/v1/plans/list_baremetal')
         .reply(200, mock.listBareMetal)
     })
@@ -119,7 +111,7 @@ describe('plans', () => {
 
   describe('listVc2()', () => {
     beforeEach(() => {
-      nock('https://api.vultr.com')
+      nock(config.baseUrl)
         .get('/v1/plans/list_vc2')
         .reply(200, mock.listVc2)
     })
