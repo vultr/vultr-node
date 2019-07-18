@@ -53,4 +53,44 @@ describe('startup-script', () => {
       })
     })
   })
+
+  describe('delete({ SCRIPTID })', () => {
+    beforeEach(() => {
+      nock('https://api.vultr.com', {
+        reqheaders: {
+          'API-Key': /[A-Z0-9]{36}/i
+        }
+      })
+        .post('/v1/startupscript/destroy', {
+          SCRIPTID: 5
+        })
+        .reply(200, undefined)
+    })
+
+    it('requires an API key', () => {
+      const vultrInstance = vultr.initialize()
+
+      expect(() => {
+        vultrInstance.startupScript.delete()
+      }).to.throw(Error)
+    })
+
+    it('requires all non-optional parameters', () => {
+      const vultrInstance = vultr.initialize({ apiKey: config.apiKey })
+
+      expect(() => {
+        vultrInstance.startupScript.delete()
+      }).to.throw(Error)
+    })
+
+    it('deletes the specified start up script', () => {
+      const vultrInstance = vultr.initialize({ apiKey: config.apiKey })
+
+      expect(() => {
+        vultrInstance.startupScript.delete({ SCRIPTID: 5 }).then(response => {
+          expect(response).to.equal('undefined')
+        })
+      })
+    })
+  })
 })
