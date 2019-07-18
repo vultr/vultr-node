@@ -154,7 +154,8 @@ exports.initialize = config => {
       update: createRequestFunction(sshkey.update)
     },
     startupScript: {
-      list: createRequestFunction(startupScript.list)
+      list: createRequestFunction(startupScript.list),
+      delete: createRequestFunction(startupScript.delete)
     },
     user: {
       create: createRequestFunction(user.create),
