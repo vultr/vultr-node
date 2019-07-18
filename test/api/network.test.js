@@ -30,11 +30,7 @@ const mock = {
 describe('network', () => {
   describe('create({ DCID, description, v4_subnet, v4_subnet_mask})', () => {
     beforeEach(() => {
-      nock('https://api.vultr.com', {
-        reqheaders: {
-          'API-Key': /[A-Z0-9]{36}/i
-        }
-      })
+      nock(config.baseUrl, config.headers)
         .post('/v1/network/create', {
           DCID: 1,
           description: 'my network',
@@ -81,11 +77,7 @@ describe('network', () => {
 
   describe('list()', () => {
     beforeEach(() => {
-      nock('https://api.vultr.com', {
-        reqheaders: {
-          'API-Key': /[A-Z0-9]{36}/i
-        }
-      })
+      nock(config.baseUrl, config.headers)
         .get('/v1/network/list')
         .reply(200, mock.list)
     })

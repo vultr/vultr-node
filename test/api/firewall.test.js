@@ -29,11 +29,7 @@ const mock = {
 describe('firewall', () => {
   describe('ruleList({ FIREWALLGROUPID, direction, ip_type })', () => {
     beforeEach(() => {
-      nock('https://api.vultr.com', {
-        reqheaders: {
-          'API-Key': /[A-Z0-9]{36}/i
-        }
-      })
+      nock(config.baseUrl, config.headers)
         .get('/v1/firewall/rule_list')
         .query({
           FIREWALLGROUPID: '1234abcd',

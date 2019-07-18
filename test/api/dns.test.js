@@ -13,11 +13,7 @@ const mock = {
 describe('dns', () => {
   describe('list()', () => {
     beforeEach(() => {
-      nock('https://api.vultr.com', {
-        reqheaders: {
-          'API-Key': /[A-Z0-9]{36}/i
-        }
-      })
+      nock(config.baseUrl, config.headers)
         .get('/v1/dns/list')
         .reply(200, mock.list)
     })
@@ -40,11 +36,7 @@ describe('dns', () => {
 
   describe('createDomain({ domain, serverip })', () => {
     beforeEach(() => {
-      nock('https://api.vultr.com', {
-        reqheaders: {
-          'API-Key': /[A-Z0-9]{36}/i
-        }
-      })
+      nock(config.baseUrl, config.headers)
         .post('/v1/dns/create_domain', {
           domain: 'example.com',
           serverip: '10.0.0.0'
@@ -81,11 +73,7 @@ describe('dns', () => {
 
   describe('deleteDomain({ domain})', () => {
     beforeEach(() => {
-      nock('https://api.vultr.com', {
-        reqheaders: {
-          'API-Key': /[A-Z0-9]{36}/i
-        }
-      })
+      nock(config.baseUrl, config.headers)
         .post('/v1/dns/delete_domain', {
           domain: 'example.com'
         })

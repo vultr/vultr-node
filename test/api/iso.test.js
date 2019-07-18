@@ -39,11 +39,7 @@ const mock = {
 describe('iso', () => {
   describe('create({ url })', () => {
     beforeEach(() => {
-      nock('https://api.vultr.com', {
-        reqheaders: {
-          'API-Key': /[A-Z0-9]{36}/i
-        }
-      })
+      nock(config.baseUrl, config.headers)
         .post('/v1/iso/create_from_url', {
           url: 'https://templeos.org/Downloads/TempleOSLite.ISO'
         })
@@ -79,11 +75,7 @@ describe('iso', () => {
 
   describe('delete({ ISOID })', () => {
     beforeEach(() => {
-      nock('https://api.vultr.com', {
-        reqheaders: {
-          'API-Key': /[A-Z0-9]{36}/i
-        }
-      })
+      nock(config.baseUrl, config.headers)
         .post('/v1/iso/destroy', { ISOID: 24 })
         .reply(200, undefined)
     })
@@ -112,11 +104,7 @@ describe('iso', () => {
 
   describe('list()', () => {
     beforeEach(() => {
-      nock('https://api.vultr.com', {
-        reqheaders: {
-          'API-Key': /[A-Z0-9]{36}/i
-        }
-      })
+      nock(config.baseUrl, config.headers)
         .get('/v1/iso/list')
         .reply(200, mock.list)
     })
@@ -139,11 +127,7 @@ describe('iso', () => {
 
   describe('listPublic()', () => {
     beforeEach(() => {
-      nock('https://api.vultr.com', {
-        reqheaders: {
-          'API-Key': /[A-Z0-9]{36}/i
-        }
-      })
+      nock(config.baseUrl, config.headers)
         .get('/v1/iso/list_public')
         .reply(200, mock.listPublic)
     })
