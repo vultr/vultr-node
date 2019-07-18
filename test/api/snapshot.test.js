@@ -141,4 +141,42 @@ describe('snapshot', () => {
       })
     })
   })
+
+  describe('delete({ SNAPSHOTID })', () => {
+    beforeEach(() => {
+      nock('https://api.vultr.com', {
+        reqheaders: {
+          'API-Key': /[A-Z0-9]{36}/i
+        }
+      })
+        .post('/v1/snapshot/destroy', { SNAPSHOTID: '5359435d28b9a' })
+        .reply(200, undefined)
+    })
+
+    it('requires an API key', () => {
+      const vultrInstance = vultr.initialize()
+
+      expect(() => {
+        vultrInstance.snapshot.delete({ SNAPSHOTID: '5359435d28b9a' })
+      }).to.throw(Error)
+    })
+
+    it('requires all non-optional parameters', () => {
+      const vultrInstance = vultr.initialize({ apiKey: config.apiKey })
+
+      expect(() => {
+        vultrInstance.snapshot.delete()
+      }).to.throw(Error)
+    })
+
+    it('deletes the snapshot with the specified ID', () => {
+      const vultrInstance = vultr.initialize({ apiKey: config.apiKey })
+
+      vultrInstance.snapshot
+        .delete({ SNAPSHOTID: '5359435d28b9a' })
+        .then(response => {
+          expect(response).to.equal(undefined)
+        })
+    })
+  })
 })

@@ -37,3 +37,15 @@ exports.list = {
     }
   }
 }
+
+exports.delete = {
+  url: '/snapshot/destroy',
+  requestType: 'POST',
+  apiKeyRequired: true,
+  parameters: {
+    SNAPSHOTID: {
+      type: 'string',
+      required: true
+    }
+  }
+}
