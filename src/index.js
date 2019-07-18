@@ -145,7 +145,8 @@ exports.initialize = config => {
     snapshot: {
       create: createRequestFunction(snapshot.create),
       createFromUrl: createRequestFunction(snapshot.createFromUrl),
-      list: createRequestFunction(snapshot.list)
+      list: createRequestFunction(snapshot.list),
+      delete: createRequestFunction(snapshot.delete)
     },
     sshkey: {
       create: createRequestFunction(sshkey.create),
