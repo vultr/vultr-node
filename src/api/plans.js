@@ -1,7 +1,7 @@
 exports.list = {
   url: '/plans/list',
   requestType: 'GET',
-  apiKeyRequired: true,
+  apiKeyRequired: false,
   parameters: {
     type: {
       type: 'string',
@@ -13,11 +13,17 @@ exports.list = {
 exports.listBareMetal = {
   url: '/plans/list_baremetal',
   requestType: 'GET',
-  apiKeyRequired: true
+  apiKeyRequired: false
 }
 
 exports.listVc2 = {
   url: '/plans/list_vc2',
+  requestType: 'GET',
+  apiKeyRequired: false
+}
+
+exports.listVdc2 = {
+  url: '/plans/list_vdc2',
   requestType: 'GET',
   apiKeyRequired: false
 }
