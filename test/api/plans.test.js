@@ -57,6 +57,18 @@ const mock = {
       price_per_month: '5.00',
       plan_type: 'SSD'
     }
+  },
+  listVdc2: {
+    '115': {
+      VPSPLANID: '115',
+      name: '8192 MB RAM,110 GB SSD,10.00 TB BW',
+      vcpu_count: '2',
+      ram: '8192',
+      disk: '110',
+      bandwidth: '10.00',
+      price_per_month: '60.00',
+      plan_type: 'DEDICATED'
+    }
   }
 }
 
@@ -135,6 +147,32 @@ describe('plans', () => {
       return vultrInstance.plans.listVc2().then(response => {
         expect(typeof response).to.equal('object')
         expect(response).to.deep.equal(mock.listVc2)
+      })
+    })
+  })
+
+  describe('listVdc2()', () => {
+    beforeEach(() => {
+      nock(config.baseUrl)
+        .get('/v1/plans/list_vdc2')
+        .reply(200, mock.listVdc2)
+    })
+
+    it('does not require an API key', () => {
+      const vultrInstance = vultr.initialize()
+
+      return vultrInstance.plans.listVdc2().then(response => {
+        expect(typeof response).to.equal('object')
+        expect(response).to.deep.equal(mock.listVdc2)
+      })
+    })
+
+    it('gets a list of all active vdc2 plans', () => {
+      const vultrInstance = vultr.initialize()
+
+      return vultrInstance.plans.listVdc2().then(response => {
+        expect(typeof response).to.equal('object')
+        expect(response).to.deep.equal(mock.listVdc2)
       })
     })
   })
