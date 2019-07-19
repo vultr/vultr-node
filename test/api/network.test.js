@@ -75,6 +75,43 @@ describe('network', () => {
     })
   })
 
+  describe('delete({ NETWORKID })', () => {
+    beforeEach(() => {
+      nock(config.baseUrl, config.headers)
+        .post('/v1/network/destroy', {
+          NETWORKID: 'net539626f0798d7'
+        })
+        .reply(200, undefined)
+    })
+
+    it('requires an API key', () => {
+      const vultrInstance = vultr.initialize()
+      expect(() => {
+        vultrInstance.network.delete({
+          NETWORKID: 'net539626f0798d7'
+        })
+      }).to.throw(Error)
+    })
+
+    it('requires all non-optional parameters', () => {
+      const vultrInstance = vultr.initialize({ apiKey: config.apiKey })
+      expect(() => {
+        vultrInstance.network.delete()
+      }).to.throw(Error)
+    })
+
+    it('deletes a private network', () => {
+      const vultrInstance = vultr.initialize({ apiKey: config.apiKey })
+      return vultrInstance.network
+        .delete({
+          NETWORKID: 'net539626f0798d7'
+        })
+        .then(response => {
+          expect(typeof response).to.equal('undefined')
+        })
+    })
+  })
+
   describe('list()', () => {
     beforeEach(() => {
       nock(config.baseUrl, config.headers)

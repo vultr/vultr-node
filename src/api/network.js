@@ -27,3 +27,15 @@ exports.create = {
     }
   }
 }
+
+exports.delete = {
+  url: '/network/destroy',
+  requestType: 'POST',
+  apiKeyRequired: true,
+  parameters: {
+    NETWORKID: {
+      type: 'string',
+      required: true
+    }
+  }
+}
