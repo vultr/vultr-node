@@ -63,20 +63,22 @@ const mock = {
 describe('plans', () => {
   describe('list()', () => {
     beforeEach(() => {
-      nock(config.baseUrl, config.headers)
+      nock(config.baseUrl)
         .get('/v1/plans/list')
         .reply(200, mock.list)
     })
 
-    it('requires an API key', () => {
+    it('does not requires an API key', () => {
       const vultrInstance = vultr.initialize()
-      expect(() => {
-        vultrInstance.block.attach()
-      }).to.throw(Error)
+
+      return vultrInstance.plans.list().then(response => {
+        expect(typeof response).to.equal('object')
+        expect(response).to.deep.equal(mock.list)
+      })
     })
 
     it('gets the list of plans', () => {
-      const vultrInstance = vultr.initialize({ apiKey: config.apiKey })
+      const vultrInstance = vultr.initialize()
 
       return vultrInstance.plans.list().then(response => {
         expect(typeof response).to.equal('object')
@@ -87,20 +89,22 @@ describe('plans', () => {
 
   describe('listBareMetal()', () => {
     beforeEach(() => {
-      nock(config.baseUrl, config.headers)
+      nock(config.baseUrl)
         .get('/v1/plans/list_baremetal')
         .reply(200, mock.listBareMetal)
     })
 
-    it('requires an API key', () => {
+    it('does not requires an API key', () => {
       const vultrInstance = vultr.initialize()
-      expect(() => {
-        vultrInstance.plans.listBareMetal()
-      }).to.throw(Error)
+
+      return vultrInstance.plans.listBareMetal().then(response => {
+        expect(typeof response).to.equal('object')
+        expect(response).to.deep.equal(mock.listBareMetal)
+      })
     })
 
     it('gets the list of bare metal plans', () => {
-      const vultrInstance = vultr.initialize({ apiKey: config.apiKey })
+      const vultrInstance = vultr.initialize()
 
       return vultrInstance.plans.listBareMetal().then(response => {
         expect(typeof response).to.equal('object')
