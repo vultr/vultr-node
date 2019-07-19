@@ -139,7 +139,8 @@ exports.initialize = config => {
       list: createRequestFunction(plans.list),
       listBareMetal: createRequestFunction(plans.listBareMetal),
       listVc2: createRequestFunction(plans.listVc2),
-      listVdc2: createRequestFunction(plans.listVdc2)
+      listVdc2: createRequestFunction(plans.listVdc2),
+      listVc2z: createRequestFunction(plans.listVc2z)
     },
     regions: {
       list: createRequestFunction(regions.list)

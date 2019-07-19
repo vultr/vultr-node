@@ -27,3 +27,9 @@ exports.listVdc2 = {
   requestType: 'GET',
   apiKeyRequired: false
 }
+
+exports.listVc2z = {
+  url: '/plans/list_vc2z',
+  requestType: 'GET',
+  apiKeyRequired: false
+}
