@@ -129,6 +129,7 @@ exports.initialize = config => {
     },
     network: {
       create: createRequestFunction(network.create),
+      delete: createRequestFunction(network.delete),
       list: createRequestFunction(network.list)
     },
     os: {
