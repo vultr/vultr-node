@@ -69,6 +69,18 @@ const mock = {
       price_per_month: '60.00',
       plan_type: 'DEDICATED'
     }
+  },
+  listVc2z: {
+    '401': {
+      VPSPLANID: '401',
+      name: '2048 MB RAM,64 GB SSD,2.00 TB BW',
+      vcpu_count: '1',
+      ram: '2048',
+      disk: '64',
+      bandwidth: '2.00',
+      price_per_month: '12.00',
+      plan_type: 'HIGHFREQUENCY'
+    }
   }
 }
 
@@ -173,6 +185,32 @@ describe('plans', () => {
       return vultrInstance.plans.listVdc2().then(response => {
         expect(typeof response).to.equal('object')
         expect(response).to.deep.equal(mock.listVdc2)
+      })
+    })
+  })
+
+  describe('listVc2z()', () => {
+    beforeEach(() => {
+      nock(config.baseUrl)
+        .get('/v1/plans/list_vc2z')
+        .reply(200, mock.listVc2z)
+    })
+
+    it('does not require an API key', () => {
+      const vultrInstance = vultr.initialize()
+
+      return vultrInstance.plans.listVc2z().then(response => {
+        expect(typeof response).to.equal('object')
+        expect(response).to.deep.equal(mock.listVc2z)
+      })
+    })
+
+    it('gets a list of all active vc2z plans', () => {
+      const vultrInstance = vultr.initialize()
+
+      return vultrInstance.plans.listVc2z().then(response => {
+        expect(typeof response).to.equal('object')
+        expect(response).to.deep.equal(mock.listVc2z)
       })
     })
   })
