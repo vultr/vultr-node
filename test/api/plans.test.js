@@ -118,7 +118,7 @@ describe('plans', () => {
         .reply(200, mock.listBareMetal)
     })
 
-    it('does not requires an API key', () => {
+    it('does not require an API key', () => {
       const vultrInstance = vultr.initialize()
 
       return vultrInstance.plans.listBareMetal().then(response => {

@@ -15,3 +15,23 @@ exports.delete = {
     }
   }
 }
+
+exports.create = {
+  url: '/startupscript/create',
+  requestType: 'POST',
+  apiKeyRequired: 'true',
+  parameters: {
+    name: {
+      type: 'string',
+      required: true
+    },
+    script: {
+      type: 'string',
+      required: true
+    },
+    type: {
+      type: 'string',
+      required: false
+    }
+  }
+}
