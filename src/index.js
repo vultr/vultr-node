@@ -143,7 +143,8 @@ exports.initialize = config => {
       listVc2z: createRequestFunction(plans.listVc2z)
     },
     regions: {
-      list: createRequestFunction(regions.list)
+      list: createRequestFunction(regions.list),
+      availability: createRequestFunction(regions.availability)
     },
     snapshot: {
       create: createRequestFunction(snapshot.create),
