@@ -86,4 +86,38 @@ describe('firewall', () => {
         })
     })
   })
+
+  describe('deleteGroup({ FIREWALLGROUPID })', () => {
+    beforeEach(() => {
+      nock(config.baseUrl, config.headers)
+        .post('/v1/firewall/group_delete', { FIREWALLGROUPID: '1234abcd' })
+        .reply(200, undefined)
+    })
+
+    it('requires an API key', () => {
+      const vultrInstance = vultr.initialize()
+
+      expect(() => {
+        vultrInstance.firewall.deleteGroup({ FIREWALLGROUPID: '1234abcd' })
+      }).to.throw(Error)
+    })
+
+    it('requires all non-optional parameters', () => {
+      const vultrInstance = vultr.initialize({ apiKey: config.apiKey })
+
+      expect(() => {
+        vultrInstance.firewall.deleteGroup()
+      }).to.throw(Error)
+    })
+
+    it('deletes the specified firewall group', () => {
+      const vultrInstance = vultr.initialize({ apiKey: config.apiKey })
+
+      vultrInstance.firewall
+        .deleteGroup({ FIREWALLGROUPID: '1234abcd' })
+        .then(response => {
+          expect(typeof response).to.equal('undefined')
+        })
+    })
+  })
 })

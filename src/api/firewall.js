@@ -17,3 +17,15 @@ exports.ruleList = {
     }
   }
 }
+
+exports.deleteGroup = {
+  url: '/firewall/group_delete',
+  requestType: 'POST',
+  apiKeyRequired: true,
+  parameters: {
+    FIREWALLGROUPID: {
+      type: 'string',
+      required: true
+    }
+  }
+}
