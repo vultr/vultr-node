@@ -9,3 +9,19 @@ exports.list = {
     }
   }
 }
+
+exports.availability = {
+  url: '/regions/availability',
+  requestType: 'GET',
+  apiKeyRequired: false,
+  parameters: {
+    DCID: {
+      type: 'number',
+      required: true
+    },
+    type: {
+      type: 'string',
+      required: false
+    }
+  }
+}
