@@ -21,6 +21,9 @@ const mock = {
       type: 'pxe',
       script: '#!ipxe\necho Hello World\nshell'
     }
+  },
+  create: {
+    SCRIPTID: 5
   }
 }
 
@@ -83,6 +86,68 @@ describe('startup-script', () => {
           expect(response).to.equal('undefined')
         })
       })
+    })
+  })
+
+  describe('create({ name, script })', () => {
+    beforeEach(() => {
+      nock(config.baseUrl, config.headers)
+        .post('/v1/startupscript/create', {
+          name: 'Hello World',
+          script: '#!/bin/bash\necho hello world > /root/hello'
+        })
+        .reply(200, mock.create)
+    })
+
+    it('requires an API key', () => {
+      const vultrInstance = vultr.initialize()
+
+      expect(() => {
+        vultrInstance.startupScript.create({
+          name: 'Hello World',
+          script: '#!/bin/bash\necho hello world > /root/hello'
+        })
+      }).to.throw(Error)
+    })
+
+    it('requires all non-optional parameters', () => {
+      const vultrInstance = vultr.initialize({ apiKey: config.apiKey })
+
+      expect(() => {
+        vultrInstance.startupScript.create({
+          name: 'Hello World'
+        })
+      }).to.throw(Error)
+
+      expect(() => {
+        vultrInstance.startupScript.create({
+          script: '#!/bin/bash\necho hello world > /root/hello'
+        })
+      }).to.throw(Error)
+
+      vultrInstance.startupScript
+        .create({
+          name: 'Hello World',
+          script: '#!/bin/bash\necho hello world > /root/hello'
+        })
+        .then(response => {
+          expect(typeof response).to.equal('object')
+          expect(response).to.deep.equal(mock.create)
+        })
+    })
+
+    it('creates a start up script', () => {
+      const vultrInstance = vultr.initialize({ apiKey: config.apiKey })
+
+      vultrInstance.startupScript
+        .create({
+          name: 'Hello World',
+          script: '#!/bin/bash\necho hello world > /root/hello'
+        })
+        .then(response => {
+          expect(typeof response).to.equal('object')
+          expect(response).to.deep.equal(mock.create)
+        })
     })
   })
 })
