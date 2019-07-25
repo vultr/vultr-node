@@ -150,4 +150,68 @@ describe('startup-script', () => {
         })
     })
   })
+
+  describe('update({ SCRIPTID, name, script })', () => {
+    beforeEach(() => {
+      nock(config.baseUrl, config.headers)
+        .post('/v1/startupscript/update', {
+          SCRIPTID: '5',
+          name: 'Hello World',
+          script: '#!/bin/bash\necho hello world > /root/hello'
+        })
+        .reply(200, undefined)
+    })
+
+    it('requires an API key', () => {
+      const vultrInstance = vultr.initialize()
+
+      expect(() => {
+        vultrInstance.startupScript.update({
+          SCRIPTID: '5',
+          name: 'Hello World',
+          script: '#!/bin/bash\necho hello world > /root/hello'
+        })
+      }).to.throw(Error)
+    })
+
+    it('requires all non-optional parameters', () => {
+      const vultrInstance = vultr.initialize({ apiKey: config.apiKey })
+
+      expect(() => {
+        vultrInstance.startupScript.update({
+          name: 'Hello World'
+        })
+      }).to.throw(Error)
+
+      expect(() => {
+        vultrInstance.startupScript.update({
+          script: '#!/bin/bash\necho hello world > /root/hello'
+        })
+      }).to.throw(Error)
+
+      vultrInstance.startupScript
+        .update({
+          SCRIPTID: '5',
+          name: 'Hello World',
+          script: '#!/bin/bash\necho hello world > /root/hello'
+        })
+        .then(response => {
+          expect(typeof response).to.equal('undefined')
+        })
+    })
+
+    it('updates a start up script', () => {
+      const vultrInstance = vultr.initialize({ apiKey: config.apiKey })
+
+      vultrInstance.startupScript
+        .update({
+          SCRIPTID: '5',
+          name: 'Hello World',
+          script: '#!/bin/bash\necho hello world > /root/hello'
+        })
+        .then(response => {
+          expect(typeof response).to.equal('undefined')
+        })
+    })
+  })
 })

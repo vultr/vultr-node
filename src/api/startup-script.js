@@ -35,3 +35,23 @@ exports.create = {
     }
   }
 }
+
+exports.update = {
+  url: '/startupscript/update',
+  requestType: 'POST',
+  apiKeyRequired: 'true',
+  parameters: {
+    SCRIPTID: {
+      type: 'string',
+      required: true
+    },
+    name: {
+      type: 'string',
+      required: false
+    },
+    script: {
+      type: 'string',
+      required: false
+    }
+  }
+}
