@@ -19,7 +19,7 @@ exports.delete = {
 exports.create = {
   url: '/startupscript/create',
   requestType: 'POST',
-  apiKeyRequired: 'true',
+  apiKeyRequired: true,
   parameters: {
     name: {
       type: 'string',
@@ -39,7 +39,7 @@ exports.create = {
 exports.update = {
   url: '/startupscript/update',
   requestType: 'POST',
-  apiKeyRequired: 'true',
+  apiKeyRequired: true,
   parameters: {
     SCRIPTID: {
       type: 'string',
