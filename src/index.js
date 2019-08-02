@@ -162,7 +162,8 @@ exports.initialize = config => {
     startupScript: {
       list: createRequestFunction(startupScript.list),
       delete: createRequestFunction(startupScript.delete),
-      create: createRequestFunction(startupScript.create)
+      create: createRequestFunction(startupScript.create),
+      update: createRequestFunction(startupScript.update)
     },
     user: {
       create: createRequestFunction(user.create),
