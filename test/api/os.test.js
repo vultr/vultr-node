@@ -1,6 +1,4 @@
-const expect = require('chai').expect
-const vultr = require('../../src/index')
-const nock = require('nock')
+const util = require('../util')
 
 const mock = {
   list: {
@@ -28,20 +26,4 @@ const mock = {
   }
 }
 
-describe('os', () => {
-  describe('list()', () => {
-    beforeEach(() => {
-      nock('https://api.vultr.com', {})
-        .get('/v1/os/list')
-        .reply(200, mock.list)
-    })
-
-    it('gets the os list', () => {
-      const vultrInstance = vultr.initialize()
-      return vultrInstance.os.list().then(response => {
-        expect(typeof response).to.equal('object')
-        expect(response).to.deep.equal(mock.list)
-      })
-    })
-  })
-})
+util.createTestSuite('os', mock)

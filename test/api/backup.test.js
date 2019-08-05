@@ -1,7 +1,4 @@
-const expect = require('chai').expect
-const vultr = require('../../src/index')
-const config = require('../config')
-const nock = require('nock')
+const util = require('../util')
 
 const mock = {
   list: {
@@ -22,50 +19,10 @@ const mock = {
   }
 }
 
-describe('backup', () => {
-  describe('list()', () => {
-    beforeEach(() => {
-      nock(config.baseUrl, config.headers)
-        .get('/v1/backup/list')
-        .reply(200, mock.list)
-    })
+const mockParameters = {
+  list: {
+    BACKUPID: '543d340f6dbce'
+  }
+}
 
-    it('requires an API key', () => {
-      const vultrInstance = vultr.initialize()
-      expect(() => {
-        vultrInstance.backup.list()
-      }).to.throw(Error)
-    })
-
-    it('gets the list of backups', () => {
-      const vultrInstance = vultr.initialize({ apiKey: config.apiKey })
-      return vultrInstance.backup.list().then(response => {
-        expect(typeof response).to.equal('object')
-        expect(response).to.deep.equal(mock.list)
-      })
-    })
-  })
-
-  describe('list({ BACKUPID })', () => {
-    beforeEach(() => {
-      nock(config.baseUrl)
-        .get('/v1/backup/list')
-        .query({
-          BACKUPID: '543d340f6dbce'
-        })
-        .reply(200, mock.list['543d340f6dbce'])
-    })
-
-    it('gets the list of filtered backups', () => {
-      const vultrInstance = vultr.initialize({ apiKey: config.apiKey })
-      return vultrInstance.backup
-        .list({
-          BACKUPID: '543d340f6dbce'
-        })
-        .then(response => {
-          expect(typeof response).to.equal('object')
-          expect(response).to.deep.equal(mock.list['543d340f6dbce'])
-        })
-    })
-  })
-})
+util.createTestSuite('backup', mock, mockParameters)

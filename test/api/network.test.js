@@ -1,7 +1,4 @@
-const expect = require('chai').expect
-const vultr = require('../../src/index')
-const config = require('../config')
-const nock = require('nock')
+const util = require('../util')
 
 const mock = {
   create: {
@@ -27,113 +24,16 @@ const mock = {
   }
 }
 
-describe('network', () => {
-  describe('create({ DCID, description, v4_subnet, v4_subnet_mask})', () => {
-    beforeEach(() => {
-      nock(config.baseUrl, config.headers)
-        .post('/v1/network/create', {
-          DCID: 1,
-          description: 'my network',
-          v4_subnet: '10.0.0.0',
-          v4_subnet_mask: 24
-        })
-        .reply(200, mock.create)
-    })
+const mockParameters = {
+  create: {
+    DCID: 1,
+    description: 'my network',
+    v4_subnet: '10.0.0.0',
+    v4_subnet_mask: 24
+  },
+  delete: {
+    NETWORKID: 'net539626f0798d7'
+  }
+}
 
-    it('requires an API key', () => {
-      const vultrInstance = vultr.initialize()
-      expect(() => {
-        vultrInstance.network.create({
-          DCID: 1,
-          description: 'my network',
-          v4_subnet: '10.0.0.0',
-          v4_subnet_mask: 24
-        })
-      }).to.throw(Error)
-    })
-
-    it('requires all non-optional parameters', () => {
-      const vultrInstance = vultr.initialize({ apiKey: config.apiKey })
-      expect(() => {
-        vultrInstance.network.create()
-      }).to.throw(Error)
-    })
-
-    it('creates a private network', () => {
-      const vultrInstance = vultr.initialize({ apiKey: config.apiKey })
-      return vultrInstance.network
-        .create({
-          DCID: 1,
-          description: 'my network',
-          v4_subnet: '10.0.0.0',
-          v4_subnet_mask: 24
-        })
-        .then(response => {
-          expect(typeof response).to.equal('object')
-          expect(response).to.deep.equal(mock.create)
-        })
-    })
-  })
-
-  describe('delete({ NETWORKID })', () => {
-    beforeEach(() => {
-      nock(config.baseUrl, config.headers)
-        .post('/v1/network/destroy', {
-          NETWORKID: 'net539626f0798d7'
-        })
-        .reply(200, undefined)
-    })
-
-    it('requires an API key', () => {
-      const vultrInstance = vultr.initialize()
-      expect(() => {
-        vultrInstance.network.delete({
-          NETWORKID: 'net539626f0798d7'
-        })
-      }).to.throw(Error)
-    })
-
-    it('requires all non-optional parameters', () => {
-      const vultrInstance = vultr.initialize({ apiKey: config.apiKey })
-      expect(() => {
-        vultrInstance.network.delete()
-      }).to.throw(Error)
-    })
-
-    it('deletes a private network', () => {
-      const vultrInstance = vultr.initialize({ apiKey: config.apiKey })
-      return vultrInstance.network
-        .delete({
-          NETWORKID: 'net539626f0798d7'
-        })
-        .then(response => {
-          expect(typeof response).to.equal('undefined')
-        })
-    })
-  })
-
-  describe('list()', () => {
-    beforeEach(() => {
-      nock(config.baseUrl, config.headers)
-        .get('/v1/network/list')
-        .reply(200, mock.list)
-    })
-
-    it('requires an API key', () => {
-      const vultrInstance = vultr.initialize()
-
-      expect(() => {
-        vultrInstance.network.list()
-      }).to.throw(Error)
-    })
-
-    it('lists all private networks', () => {
-      const vultrInstance = vultr.initialize({ apiKey: config.apiKey })
-
-      vultrInstance.network.list().then(response => {
-        expect(typeof response).to.equal('object')
-        expect(response).to.deep.equal(mock.list)
-      })
-    })
-  })
-})
+util.createTestSuite('network', mock, mockParameters)
