@@ -29,3 +29,15 @@ exports.deleteGroup = {
     }
   }
 }
+
+exports.createGroup = {
+  url: '/firewall/group_create',
+  requestType: 'POST',
+  apiKeyRequired: true,
+  parameters: {
+    FIREWALLGROUPID: {
+      type: 'string',
+      required: true
+    }
+  }
+}

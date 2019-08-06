@@ -31,6 +31,9 @@ const mockParameters = {
   },
   deleteGroup: {
     FIREWALLGROUPID: '1234abcd'
+  },
+  createGroup: {
+    FIREWALLGROUPID: '1234abcd'
   }
 }
 
