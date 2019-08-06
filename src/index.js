@@ -120,7 +120,8 @@ exports.initialize = config => {
     },
     firewall: {
       ruleList: createRequestFunction(firewall.ruleList),
-      deleteGroup: createRequestFunction(firewall.deleteGroup)
+      deleteGroup: createRequestFunction(firewall.deleteGroup),
+      createGroup: createRequestFunction(firewall.createGroup)
     },
     iso: {
       create: createRequestFunction(iso.create),
