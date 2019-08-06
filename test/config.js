@@ -5,3 +5,4 @@ exports.headers = {
     'API-Key': /[A-Z0-9]{36}/i
   }
 }
+exports.apiVersion = 'v1'

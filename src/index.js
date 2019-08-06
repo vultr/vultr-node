@@ -31,7 +31,7 @@ exports.initialize = config => {
     return parameters => {
       // Check if the endpoint requires an API key
       if (endpoint.apiKeyRequired) {
-        if (!userConfiguration.apiKey) {
+        if (userConfiguration === undefined || !userConfiguration.apiKey) {
           throw new Error(`API key required for ${endpoint.url}`)
         }
       }

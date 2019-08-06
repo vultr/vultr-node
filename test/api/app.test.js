@@ -1,7 +1,4 @@
-const expect = require('chai').expect
-const vultr = require('../../src/index')
-const config = require('../config')
-const nock = require('nock')
+const util = require('../util')
 
 const mock = {
   list: {
@@ -22,28 +19,4 @@ const mock = {
   }
 }
 
-describe('app', () => {
-  describe('list()', () => {
-    beforeEach(() => {
-      nock(config.baseUrl)
-        .get('/v1/app/list')
-        .reply(200, mock.list)
-    })
-
-    it('does not require an API key', () => {
-      const vultrInstance = vultr.initialize()
-      return vultrInstance.app.list().then(response => {
-        expect(typeof response).to.equal('object')
-        expect(response).to.deep.equal(mock.list)
-      })
-    })
-
-    it('gets the list of available applications', () => {
-      const vultrInstance = vultr.initialize({ apiKey: config.apiKey })
-      return vultrInstance.app.list().then(response => {
-        expect(typeof response).to.equal('object')
-        expect(response).to.deep.equal(mock.list)
-      })
-    })
-  })
-})
+util.createTestSuite('app', mock)

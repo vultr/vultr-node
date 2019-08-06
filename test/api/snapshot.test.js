@@ -1,7 +1,4 @@
-const expect = require('chai').expect
-const vultr = require('../../src/index')
-const config = require('../config')
-const nock = require('nock')
+const util = require('../util')
 
 const mock = {
   create: {
@@ -32,135 +29,16 @@ const mock = {
   }
 }
 
-describe('snapshot', () => {
-  describe('create({ SUBID })', () => {
-    beforeEach(() => {
-      nock(config.baseUrl, config.headers)
-        .post('/v1/snapshot/create', {
-          SUBID: 1
-        })
-        .reply(200, mock.create)
-    })
+const mockParameters = {
+  create: {
+    SUBID: 1
+  },
+  createFromUrl: {
+    url: 'http://example.com/path/to/disk_image.raw'
+  },
+  delete: {
+    SNAPSHOTID: '5359435d28b9a'
+  }
+}
 
-    it('requires an API key', () => {
-      const vultrInstance = vultr.initialize()
-
-      expect(() => {
-        vultrInstance.snapshot.create()
-      }).to.throw(Error)
-    })
-
-    it('requires the SUBID parameter', () => {
-      const vultrInstance = vultr.initialize({ apiKey: config.apiKey })
-
-      expect(() => {
-        vultrInstance.snapshot.create()
-      }).to.throw(Error)
-    })
-
-    it('creates a snapshot', () => {
-      const vultrInstance = vultr.initialize({ apiKey: config.apiKey })
-
-      return vultrInstance.snapshot.create({ SUBID: 1 }).then(response => {
-        expect(typeof response).to.equal('object')
-        expect(response).to.deep.equal(mock.create)
-      })
-    })
-  })
-
-  describe('createFromUrl({ url })', () => {
-    beforeEach(() => {
-      nock(config.baseUrl, config.headers)
-        .post('/v1/snapshot/create_from_url', {
-          url: 'http://example.com/path/to/disk_image.raw'
-        })
-        .reply(200, mock.createFromUrl)
-    })
-
-    it('requires an API key', () => {
-      const vultrInstance = vultr.initialize()
-
-      expect(() => {
-        vultrInstance.snapshot.createFromUrl()
-      }).to.throw(Error)
-    })
-
-    it('requires the url parameter', () => {
-      const vultrInstance = vultr.initialize({ apiKey: config.apiKey })
-
-      expect(() => {
-        vultrInstance.snapshot.createFromUrl()
-      }).to.throw(Error)
-    })
-
-    it('creates a snapshot from a provided URL', () => {
-      const vultrInstance = vultr.initialize({ apiKey: config.apiKey })
-
-      return vultrInstance.snapshot
-        .createFromUrl({ url: 'http://example.com/path/to/disk_image.raw' })
-        .then(response => {
-          expect(typeof response).to.equal('object')
-          expect(response).to.deep.equal(mock.createFromUrl)
-        })
-    })
-  })
-
-  describe('list()', () => {
-    beforeEach(() => {
-      nock(config.baseUrl, config.headers)
-        .get('/v1/snapshot/list')
-        .reply(200, mock.list)
-    })
-
-    it('requires an API key', () => {
-      const vultrInstance = vultr.initialize()
-
-      expect(() => {
-        vultrInstance.snapshot.list()
-      }).to.throw(Error)
-    })
-
-    it('lists all snapshots', () => {
-      const vultrInstance = vultr.initialize({ apiKey: config.apiKey })
-
-      return vultrInstance.snapshot.list().then(response => {
-        expect(typeof response).to.equal('object')
-        expect(response).to.deep.equal(mock.list)
-      })
-    })
-  })
-
-  describe('delete({ SNAPSHOTID })', () => {
-    beforeEach(() => {
-      nock(config.baseUrl, config.headers)
-        .post('/v1/snapshot/destroy', { SNAPSHOTID: '5359435d28b9a' })
-        .reply(200, undefined)
-    })
-
-    it('requires an API key', () => {
-      const vultrInstance = vultr.initialize()
-
-      expect(() => {
-        vultrInstance.snapshot.delete({ SNAPSHOTID: '5359435d28b9a' })
-      }).to.throw(Error)
-    })
-
-    it('requires all non-optional parameters', () => {
-      const vultrInstance = vultr.initialize({ apiKey: config.apiKey })
-
-      expect(() => {
-        vultrInstance.snapshot.delete()
-      }).to.throw(Error)
-    })
-
-    it('deletes the snapshot with the specified ID', () => {
-      const vultrInstance = vultr.initialize({ apiKey: config.apiKey })
-
-      vultrInstance.snapshot
-        .delete({ SNAPSHOTID: '5359435d28b9a' })
-        .then(response => {
-          expect(response).to.equal(undefined)
-        })
-    })
-  })
-})
+util.createTestSuite('snapshot', mock, mockParameters)
