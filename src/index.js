@@ -145,7 +145,10 @@ exports.initialize = config => {
     },
     regions: {
       list: createRequestFunction(regions.list),
-      availability: createRequestFunction(regions.availability)
+      availability: createRequestFunction(regions.availability),
+      availabilityBareMetal: createRequestFunction(
+        regions.availabilityBareMetal
+      )
     },
     snapshot: {
       create: createRequestFunction(snapshot.create),

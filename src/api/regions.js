@@ -25,3 +25,15 @@ exports.availability = {
     }
   }
 }
+
+exports.availabilityBareMetal = {
+  url: '/regions/availability_baremetal',
+  requestType: 'GET',
+  apiKeyRequired: true,
+  parameters: {
+    DCID: {
+      type: 'number',
+      required: true
+    }
+  }
+}
