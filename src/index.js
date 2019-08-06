@@ -12,6 +12,7 @@ exports.initialize = config => {
   const os = require('./api/os')
   const plans = require('./api/plans')
   const regions = require('./api/regions')
+  const reservedIp = require('./api/reserved-ip')
   const snapshot = require('./api/snapshot')
   const sshkey = require('./api/sshkey')
   const startupScript = require('./api/startup-script')
@@ -150,6 +151,9 @@ exports.initialize = config => {
       availabilityBareMetal: createRequestFunction(
         regions.availabilityBareMetal
       )
+    },
+    reservedIp: {
+      list: createRequestFunction(reservedIp.list)
     },
     snapshot: {
       create: createRequestFunction(snapshot.create),
