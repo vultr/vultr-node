@@ -32,6 +32,9 @@ const mockParameters = {
   },
   availabilityBareMetal: {
     DCID: 1
+  },
+  availabilityVc2: {
+    DCID: 1
   }
 }
 

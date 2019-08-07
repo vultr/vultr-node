@@ -37,3 +37,15 @@ exports.availabilityBareMetal = {
     }
   }
 }
+
+exports.availabilityVc2 = {
+  url: '/regions/availability_vc2',
+  requestType: 'GET',
+  apiKeyRequired: false,
+  parameters: {
+    DCID: {
+      type: 'number',
+      required: true
+    }
+  }
+}

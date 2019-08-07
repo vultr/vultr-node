@@ -151,7 +151,8 @@ exports.initialize = config => {
       availability: createRequestFunction(regions.availability),
       availabilityBareMetal: createRequestFunction(
         regions.availabilityBareMetal
-      )
+      ),
+      availabilityVc2: createRequestFunction(regions.availabilityVc2)
     },
     reservedIp: {
       list: createRequestFunction(reservedIp.list)
