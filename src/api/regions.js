@@ -49,3 +49,15 @@ exports.availabilityVc2 = {
     }
   }
 }
+
+exports.availabilityVdc2 = {
+  url: '/regions/availability_vdc2',
+  requestType: 'GET',
+  apiKeyRequired: false,
+  parameters: {
+    DCID: {
+      type: 'number',
+      required: true
+    }
+  }
+}
