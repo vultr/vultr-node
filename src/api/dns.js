@@ -31,3 +31,15 @@ exports.list = {
   requestType: 'GET',
   apiKeyRequired: true
 }
+
+exports.records = {
+  url: '/dns/records',
+  requestType: 'GET',
+  apiKeyRequired: true,
+  parameters: {
+    domain: {
+      type: 'string',
+      required: true
+    }
+  }
+}
