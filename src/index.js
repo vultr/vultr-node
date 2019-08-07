@@ -12,6 +12,7 @@ exports.initialize = config => {
   const os = require('./api/os')
   const plans = require('./api/plans')
   const regions = require('./api/regions')
+  const reservedIp = require('./api/reserved-ip')
   const server = require('./api/server')
   const snapshot = require('./api/snapshot')
   const sshkey = require('./api/sshkey')
@@ -121,7 +122,8 @@ exports.initialize = config => {
     },
     firewall: {
       ruleList: createRequestFunction(firewall.ruleList),
-      deleteGroup: createRequestFunction(firewall.deleteGroup)
+      deleteGroup: createRequestFunction(firewall.deleteGroup),
+      createGroup: createRequestFunction(firewall.createGroup)
     },
     iso: {
       create: createRequestFunction(iso.create),
@@ -146,7 +148,13 @@ exports.initialize = config => {
     },
     regions: {
       list: createRequestFunction(regions.list),
-      availability: createRequestFunction(regions.availability)
+      availability: createRequestFunction(regions.availability),
+      availabilityBareMetal: createRequestFunction(
+        regions.availabilityBareMetal
+      )
+    },
+    reservedIp: {
+      list: createRequestFunction(reservedIp.list)
     },
     server: {
       list: createRequestFunction(server.list)
