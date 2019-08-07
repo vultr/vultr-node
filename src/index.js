@@ -4,6 +4,7 @@ exports.initialize = config => {
   const app = require('./api/app')
   const auth = require('./api/auth')
   const backup = require('./api/backup')
+  const baremetal = require('./api/baremetal')
   const block = require('./api/block')
   const dns = require('./api/dns')
   const firewall = require('./api/firewall')
@@ -105,6 +106,9 @@ exports.initialize = config => {
     },
     backup: {
       list: createRequestFunction(backup.list)
+    },
+    baremetal: {
+      list: createRequestFunction(baremetal.list)
     },
     block: {
       attach: createRequestFunction(block.attach),
