@@ -23,7 +23,10 @@ const mock = {
       regioncode: 'ORD'
     }
   },
-  availability: [40, 11, 45, 29, 41, 61]
+  availability: [40, 11, 45, 29, 41, 61],
+  availabilityBareMetal: [40, 11, 45, 29, 41, 61],
+  availabilityVc2: [40, 11, 45, 29, 41, 61],
+  availabilityVdc2: [40, 11, 45, 29, 41, 61]
 }
 
 const mockParameters = {
@@ -34,6 +37,9 @@ const mockParameters = {
     DCID: 1
   },
   availabilityVc2: {
+    DCID: 1
+  },
+  availabilityVdc2: {
     DCID: 1
   }
 }
