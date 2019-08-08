@@ -35,6 +35,10 @@ const mockParameters = {
   },
   records: {
     domain: 'example.com'
+  },
+  deleteRecord: {
+    domain: 'example.com',
+    RECORDID: 1265277
   }
 }
 
