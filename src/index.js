@@ -162,7 +162,8 @@ exports.initialize = config => {
       availabilityVdc2: createRequestFunction(regions.availabilityVdc2)
     },
     reservedIp: {
-      list: createRequestFunction(reservedIp.list)
+      list: createRequestFunction(reservedIp.list),
+      delete: createRequestFunction(reservedIp.delete)
     },
     server: {
       list: createRequestFunction(server.list)
