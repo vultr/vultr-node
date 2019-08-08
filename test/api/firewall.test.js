@@ -45,6 +45,10 @@ const mockParameters = {
     protocol: 'tcp',
     subnet: '10.234.22.0',
     subnet_size: 24
+  },
+  deleteRule: {
+    FIREWALLGROUPID: '1234abcd',
+    rulenumber: 2
   }
 }
 

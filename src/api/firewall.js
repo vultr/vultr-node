@@ -81,3 +81,19 @@ exports.createRule = {
     }
   }
 }
+
+exports.deleteRule = {
+  url: '/firewall/rule_delete',
+  requestType: 'POST',
+  apiKeyRequired: true,
+  parameters: {
+    FIREWALLGROUPID: {
+      type: 'string',
+      required: true
+    },
+    rulenumber: {
+      type: 'number',
+      required: true
+    }
+  }
+}
