@@ -165,7 +165,8 @@ exports.initialize = config => {
       list: createRequestFunction(reservedIp.list)
     },
     server: {
-      list: createRequestFunction(server.list)
+      list: createRequestFunction(server.list),
+      create: createRequestFunction(server.create)
     },
     snapshot: {
       create: createRequestFunction(snapshot.create),
