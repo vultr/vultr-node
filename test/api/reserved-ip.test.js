@@ -23,4 +23,10 @@ const mock = {
   }
 }
 
-util.createTestSuite('reserved-ip', mock)
+const mockParameters = {
+  delete: {
+    ip_address: '2001:db8:8000::/64'
+  }
+}
+
+util.createTestSuite('reserved-ip', mock, mockParameters)
