@@ -1,7 +1,7 @@
 const util = require('../util')
 
 const mock = {
-  ruleList: {
+  listRules: {
     '1': {
       rulenumber: 1,
       action: 'accept',
@@ -20,11 +20,14 @@ const mock = {
       subnet_size: 24,
       notes: 'example'
     }
+  },
+  createRule: {
+    rulenumber: 2
   }
 }
 
 const mockParameters = {
-  ruleList: {
+  listRules: {
     FIREWALLGROUPID: '1234abcd',
     direction: 'in',
     ip_type: 'v4'
@@ -34,6 +37,14 @@ const mockParameters = {
   },
   createGroup: {
     FIREWALLGROUPID: '1234abcd'
+  },
+  createRule: {
+    FIREWALLGROUPID: '1234abcd',
+    direction: 'in',
+    ip_type: 'v4',
+    protocol: 'tcp',
+    subnet: '10.234.22.0',
+    subnet_size: 24
   }
 }
 

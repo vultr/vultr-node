@@ -126,9 +126,10 @@ exports.initialize = config => {
       records: createRequestFunction(dns.records)
     },
     firewall: {
-      ruleList: createRequestFunction(firewall.ruleList),
+      listRules: createRequestFunction(firewall.listRules),
       deleteGroup: createRequestFunction(firewall.deleteGroup),
-      createGroup: createRequestFunction(firewall.createGroup)
+      createGroup: createRequestFunction(firewall.createGroup),
+      createRule: createRequestFunction(firewall.createRule)
     },
     iso: {
       create: createRequestFunction(iso.create),
