@@ -43,3 +43,19 @@ exports.records = {
     }
   }
 }
+
+exports.deleteRecord = {
+  url: '/dns/delete_record',
+  requestType: 'POST',
+  apiKeyRequired: true,
+  parameters: {
+    domain: {
+      type: 'string',
+      required: true
+    },
+    RECORDID: {
+      type: 'number',
+      required: true
+    }
+  }
+}

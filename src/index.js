@@ -123,7 +123,8 @@ exports.initialize = config => {
       createDomain: createRequestFunction(dns.createDomain),
       deleteDomain: createRequestFunction(dns.deleteDomain),
       list: createRequestFunction(dns.list),
-      records: createRequestFunction(dns.records)
+      records: createRequestFunction(dns.records),
+      deleteRecord: createRequestFunction(dns.deleteRecord)
     },
     firewall: {
       listRules: createRequestFunction(firewall.listRules),
