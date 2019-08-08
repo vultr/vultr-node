@@ -168,7 +168,8 @@ exports.initialize = config => {
       delete: createRequestFunction(reservedIp.delete)
     },
     server: {
-      list: createRequestFunction(server.list)
+      list: createRequestFunction(server.list),
+      create: createRequestFunction(server.create)
     },
     snapshot: {
       create: createRequestFunction(snapshot.create),

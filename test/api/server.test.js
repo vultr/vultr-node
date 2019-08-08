@@ -42,7 +42,18 @@ const mock = {
       APPID: '0',
       FIREWALLGROUPID: '0'
     }
+  },
+  create: {
+    SUBID: '1312965'
   }
 }
 
-util.createTestSuite('server', mock)
+const mockParameters = {
+  create: {
+    DCID: 1,
+    VPSPLANID: 202,
+    OSID: 127
+  }
+}
+
+util.createTestSuite('server', mock, mockParameters)
