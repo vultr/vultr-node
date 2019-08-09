@@ -124,7 +124,8 @@ exports.initialize = config => {
       deleteDomain: createRequestFunction(dns.deleteDomain),
       list: createRequestFunction(dns.list),
       records: createRequestFunction(dns.records),
-      deleteRecord: createRequestFunction(dns.deleteRecord)
+      deleteRecord: createRequestFunction(dns.deleteRecord),
+      enableDNSSec: createRequestFunction(dns.enableDNSSec)
     },
     firewall: {
       listRules: createRequestFunction(firewall.listRules),

@@ -59,3 +59,19 @@ exports.deleteRecord = {
     }
   }
 }
+
+exports.enableDNSSec = {
+  url: '/dns/dnssec_enable',
+  requestType: 'POST',
+  apiKeyRequired: true,
+  parameters: {
+    domain: {
+      type: 'string',
+      required: true
+    },
+    enable: {
+      type: 'string',
+      required: true
+    }
+  }
+}

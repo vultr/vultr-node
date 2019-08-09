@@ -39,6 +39,10 @@ const mockParameters = {
   deleteRecord: {
     domain: 'example.com',
     RECORDID: 1265277
+  },
+  enableDNSSec: {
+    domain: 'example.com',
+    enable: 'yes'
   }
 }
 
