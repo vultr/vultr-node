@@ -59,3 +59,35 @@ exports.deleteRecord = {
     }
   }
 }
+
+exports.createRecord = {
+  url: '/dns/create_record',
+  requestType: 'POST',
+  apiKeyRequired: true,
+  parameters: {
+    domain: {
+      type: 'string',
+      required: true
+    },
+    name: {
+      type: 'string',
+      required: true
+    },
+    type: {
+      type: 'string',
+      required: true
+    },
+    data: {
+      type: 'string',
+      required: true
+    },
+    ttl: {
+      type: 'number',
+      required: false
+    },
+    priority: {
+      type: 'number',
+      required: false
+    }
+  }
+}
