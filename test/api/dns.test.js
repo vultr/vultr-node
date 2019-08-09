@@ -40,6 +40,12 @@ const mockParameters = {
     domain: 'example.com',
     RECORDID: 1265277
   },
+  createRecord: {
+    domain: 'example.com',
+    name: 'vultr',
+    type: 'A',
+    data: '192.0.2.1'
+  },
   enableDNSSec: {
     domain: 'example.com',
     enable: 'yes'
