@@ -49,6 +49,10 @@ const mockParameters = {
   deleteRule: {
     FIREWALLGROUPID: '1234abcd',
     rulenumber: 2
+  },
+  setGroupDescription: {
+    FIREWALLGROUPID: '1234abcd',
+    description: 'group2'
   }
 }
 

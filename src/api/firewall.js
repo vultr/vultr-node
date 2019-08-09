@@ -97,3 +97,19 @@ exports.deleteRule = {
     }
   }
 }
+
+exports.setGroupDescription = {
+  url: '/firewall/group_set_description',
+  requestType: 'POST',
+  apiKeyRequired: true,
+  parameters: {
+    FIREWALLGROUPID: {
+      type: 'string',
+      required: true
+    },
+    description: {
+      type: 'string',
+      required: true
+    }
+  }
+}
