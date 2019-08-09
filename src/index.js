@@ -125,14 +125,16 @@ exports.initialize = config => {
       list: createRequestFunction(dns.list),
       records: createRequestFunction(dns.records),
       deleteRecord: createRequestFunction(dns.deleteRecord),
-      createRecord: createRequestFunction(dns.createRecord)
+      createRecord: createRequestFunction(dns.createRecord),
+      enableDNSSec: createRequestFunction(dns.enableDNSSec)
     },
     firewall: {
       listRules: createRequestFunction(firewall.listRules),
       deleteGroup: createRequestFunction(firewall.deleteGroup),
       createGroup: createRequestFunction(firewall.createGroup),
       createRule: createRequestFunction(firewall.createRule),
-      deleteRule: createRequestFunction(firewall.deleteRule)
+      deleteRule: createRequestFunction(firewall.deleteRule),
+      setGroupDescription: createRequestFunction(firewall.setGroupDescription)
     },
     iso: {
       create: createRequestFunction(iso.create),
@@ -166,7 +168,8 @@ exports.initialize = config => {
     },
     reservedIp: {
       list: createRequestFunction(reservedIp.list),
-      delete: createRequestFunction(reservedIp.delete)
+      delete: createRequestFunction(reservedIp.delete),
+      detach: createRequestFunction(reservedIp.detach)
     },
     server: {
       list: createRequestFunction(server.list),

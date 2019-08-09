@@ -45,6 +45,10 @@ const mockParameters = {
     name: 'vultr',
     type: 'A',
     data: '192.0.2.1'
+  },
+  enableDNSSec: {
+    domain: 'example.com',
+    enable: 'yes'
   }
 }
 
