@@ -23,6 +23,17 @@ const mock = {
   },
   createRule: {
     rulenumber: 2
+  },
+  listGroup: {
+    '1234abcd': {
+      FIREWALLGROUPID: '1234abcd',
+      description: 'my http firewall',
+      date_created: '2017-02-14 17:48:40',
+      date_modified: '2017-02-14 17:48:40',
+      instance_count: 2,
+      rule_count: 2,
+      max_rule_count: 50
+    }
   }
 }
 
