@@ -107,3 +107,15 @@ exports.enableDNSSec = {
     }
   }
 }
+
+exports.getDNSSecInfo = {
+  url: '/dns/dnssec_info',
+  requestType: 'GET',
+  apiKeyRequired: true,
+  parameters: {
+    domain: {
+      type: 'string',
+      required: true
+    }
+  }
+}
