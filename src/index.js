@@ -108,7 +108,8 @@ exports.initialize = config => {
       list: createRequestFunction(backup.list)
     },
     baremetal: {
-      list: createRequestFunction(baremetal.list)
+      list: createRequestFunction(baremetal.list),
+      delete: createRequestFunction(baremetal.delete)
     },
     block: {
       attach: createRequestFunction(block.attach),

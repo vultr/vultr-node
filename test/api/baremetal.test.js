@@ -32,4 +32,10 @@ const mock = {
   }
 }
 
-util.createTestSuite('baremetal', mock)
+const mockParameters = {
+  delete: {
+    SUBID: 90000
+  }
+}
+
+util.createTestSuite('baremetal', mock, mockParameters)
