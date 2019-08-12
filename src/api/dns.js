@@ -163,3 +163,23 @@ exports.getSOAInfo = {
     }
   }
 }
+
+exports.updateSOA = {
+  url: '/dns/soa_update',
+  requestType: 'POST',
+  apiKeyRequired: true,
+  parameters: {
+    domain: {
+      type: 'string',
+      required: true
+    },
+    nsprimary: {
+      type: 'string',
+      required: false
+    },
+    email: {
+      type: 'string',
+      required: false
+    }
+  }
+}

@@ -68,6 +68,9 @@ const mockParameters = {
   },
   getSOAInfo: {
     domain: 'example.com'
+  },
+  updateSOA: {
+    domain: 'example.com'
   }
 }
 

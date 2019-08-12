@@ -130,7 +130,8 @@ exports.initialize = config => {
       enableDNSSec: createRequestFunction(dns.enableDNSSec),
       getDNSSecInfo: createRequestFunction(dns.getDNSSecInfo),
       updateRecord: createRequestFunction(dns.updateRecord),
-      getSOAInfo: createRequestFunction(dns.getSOAInfo)
+      getSOAInfo: createRequestFunction(dns.getSOAInfo),
+      updateSOA: createRequestFunction(dns.updateSOA)
     },
     firewall: {
       listRules: createRequestFunction(firewall.listRules),
