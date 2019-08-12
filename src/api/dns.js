@@ -151,3 +151,15 @@ exports.getDNSSecInfo = {
     }
   }
 }
+
+exports.getSOAInfo = {
+  url: '/dns/soa_info',
+  requestType: 'GET',
+  apiKeyRequired: true,
+  parameters: {
+    domain: {
+      type: 'string',
+      required: true
+    }
+  }
+}
