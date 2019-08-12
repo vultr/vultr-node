@@ -113,3 +113,15 @@ exports.setGroupDescription = {
     }
   }
 }
+
+exports.listGroup = {
+  url: '/firewall/group_list',
+  requestType: 'GET',
+  apiKeyRequired: true,
+  parameters: {
+    FIREWALLGROUPID: {
+      type: 'string',
+      required: false
+    }
+  }
+}

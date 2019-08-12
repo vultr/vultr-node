@@ -20,6 +20,9 @@ const mock = {
       label: '',
       attached_SUBID: false
     }
+  },
+  convert: {
+    SUBID: 365352
   }
 }
 
@@ -30,6 +33,10 @@ const mockParameters = {
   detach: {
     ip_address: '123.123.123.124/32',
     detach_SUBID: 5342543
+  },
+  convert: {
+    SUBID: 5344234,
+    ip_address: '2001:db8:8000:/64'
   }
 }
 

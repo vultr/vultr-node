@@ -31,3 +31,23 @@ exports.detach = {
     }
   }
 }
+
+exports.convert = {
+  url: '/reservedip/convert',
+  requestType: 'POST',
+  apiKeyRequired: true,
+  parameters: {
+    SUBID: {
+      type: 'number',
+      required: true
+    },
+    ip_address: {
+      type: 'string',
+      required: true
+    },
+    label: {
+      type: 'string',
+      required: false
+    }
+  }
+}
