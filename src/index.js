@@ -170,7 +170,8 @@ exports.initialize = config => {
     reservedIp: {
       list: createRequestFunction(reservedIp.list),
       delete: createRequestFunction(reservedIp.delete),
-      detach: createRequestFunction(reservedIp.detach)
+      detach: createRequestFunction(reservedIp.detach),
+      convert: createRequestFunction(reservedIp.convert)
     },
     server: {
       list: createRequestFunction(server.list),
