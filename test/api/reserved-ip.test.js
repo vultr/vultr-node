@@ -23,6 +23,9 @@ const mock = {
   },
   convert: {
     SUBID: 365352
+  },
+  create: {
+    SUBID: 1312965
   }
 }
 
@@ -37,6 +40,10 @@ const mockParameters = {
   convert: {
     SUBID: 5344234,
     ip_address: '2001:db8:8000:/64'
+  },
+  create: {
+    DCID: 1,
+    ip_type: 'v4'
   }
 }
 
