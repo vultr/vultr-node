@@ -126,6 +126,7 @@ exports.initialize = config => {
       records: createRequestFunction(dns.records),
       deleteRecord: createRequestFunction(dns.deleteRecord),
       createRecord: createRequestFunction(dns.createRecord),
+      updateRecord: createRequestFunction(dns.updateRecord),
       enableDNSSec: createRequestFunction(dns.enableDNSSec)
     },
     firewall: {

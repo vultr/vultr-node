@@ -46,6 +46,10 @@ const mockParameters = {
     type: 'A',
     data: '192.0.2.1'
   },
+  updateRecord: {
+    domain: 'example.com',
+    RECORDID: 126577
+  },
   enableDNSSec: {
     domain: 'example.com',
     enable: 'yes'

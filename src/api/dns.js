@@ -92,6 +92,38 @@ exports.createRecord = {
   }
 }
 
+exports.updateRecord = {
+  url: '/dns/update_record',
+  requestType: 'POST',
+  apiKeyRequired: true,
+  parameters: {
+    domain: {
+      type: 'string',
+      required: true
+    },
+    RECORDID: {
+      type: 'number',
+      required: true
+    },
+    name: {
+      type: 'string',
+      required: false
+    },
+    data: {
+      type: 'string',
+      required: false
+    },
+    ttl: {
+      type: 'number',
+      required: false
+    },
+    priority: {
+      type: 'number',
+      required: false
+    }
+  }
+}
+
 exports.enableDNSSec = {
   url: '/dns/dnssec_enable',
   requestType: 'POST',
