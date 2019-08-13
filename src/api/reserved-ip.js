@@ -51,3 +51,23 @@ exports.convert = {
     }
   }
 }
+
+exports.create = {
+  url: '/reservedip/create',
+  requestType: 'POST',
+  apiKeyRequired: true,
+  parameters: {
+    DCID: {
+      type: 'number',
+      required: true
+    },
+    ip_type: {
+      type: 'string',
+      required: true
+    },
+    label: {
+      type: 'string',
+      required: false
+    }
+  }
+}
