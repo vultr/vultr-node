@@ -44,6 +44,10 @@ const mockParameters = {
   create: {
     DCID: 1,
     ip_type: 'v4'
+  },
+  attach: {
+    ip_address: '123.123.123.124/32',
+    attach_SUBID: 5342543
   }
 }
 
