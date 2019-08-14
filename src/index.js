@@ -110,6 +110,7 @@ exports.initialize = config => {
     baremetal: {
       list: createRequestFunction(baremetal.list),
       delete: createRequestFunction(baremetal.delete),
+      changeApp: createRequestFunction(baremetal.changeApp),
       setTag: createRequestFunction(baremetal.setTag)
     },
     block: {
