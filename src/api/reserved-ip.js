@@ -71,3 +71,19 @@ exports.create = {
     }
   }
 }
+
+exports.attach = {
+  url: '/reservedip/attach',
+  requestType: 'POST',
+  apiKeyRequired: true,
+  parameters: {
+    ip_address: {
+      type: 'string',
+      required: true
+    },
+    attach_SUBID: {
+      type: 'number',
+      required: true
+    }
+  }
+}

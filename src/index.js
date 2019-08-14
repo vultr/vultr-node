@@ -179,7 +179,8 @@ exports.initialize = config => {
       delete: createRequestFunction(reservedIp.delete),
       detach: createRequestFunction(reservedIp.detach),
       convert: createRequestFunction(reservedIp.convert),
-      create: createRequestFunction(reservedIp.create)
+      create: createRequestFunction(reservedIp.create),
+      attach: createRequestFunction(reservedIp.attach)
     },
     server: {
       list: createRequestFunction(server.list),
