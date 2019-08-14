@@ -110,7 +110,8 @@ exports.initialize = config => {
     baremetal: {
       list: createRequestFunction(baremetal.list),
       delete: createRequestFunction(baremetal.delete),
-      changeApp: createRequestFunction(baremetal.changeApp)
+      changeApp: createRequestFunction(baremetal.changeApp),
+      setTag: createRequestFunction(baremetal.setTag)
     },
     block: {
       attach: createRequestFunction(block.attach),
@@ -182,7 +183,8 @@ exports.initialize = config => {
     },
     server: {
       list: createRequestFunction(server.list),
-      create: createRequestFunction(server.create)
+      create: createRequestFunction(server.create),
+      setLabel: createRequestFunction(server.setLabel)
     },
     snapshot: {
       create: createRequestFunction(snapshot.create),

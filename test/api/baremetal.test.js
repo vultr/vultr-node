@@ -39,6 +39,10 @@ const mockParameters = {
   changeApp: {
     SUBID: 90000,
     APPID: 150
+  },
+  setTag: {
+    SUBID: 90000,
+    tag: 'my tag'
   }
 }
 

@@ -53,6 +53,10 @@ const mockParameters = {
     DCID: 1,
     VPSPLANID: 202,
     OSID: 127
+  },
+  setLabel: {
+    SUBID: 1312965,
+    label: 'my label'
   }
 }
 
