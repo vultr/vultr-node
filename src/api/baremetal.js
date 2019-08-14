@@ -33,3 +33,19 @@ exports.delete = {
     }
   }
 }
+
+exports.setTag = {
+  url: '/baremetal/tag_set',
+  requestType: 'POST',
+  apiKeyRequired: true,
+  parameters: {
+    SUBID: {
+      type: 'number',
+      required: true
+    },
+    tag: {
+      type: 'string',
+      required: true
+    }
+  }
+}

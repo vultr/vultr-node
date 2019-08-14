@@ -35,6 +35,10 @@ const mock = {
 const mockParameters = {
   delete: {
     SUBID: 90000
+  },
+  setTag: {
+    SUBID: 90000,
+    tag: 'my tag'
   }
 }
 
