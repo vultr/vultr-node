@@ -109,7 +109,8 @@ exports.initialize = config => {
     },
     baremetal: {
       list: createRequestFunction(baremetal.list),
-      delete: createRequestFunction(baremetal.delete)
+      delete: createRequestFunction(baremetal.delete),
+      setTag: createRequestFunction(baremetal.setTag)
     },
     block: {
       attach: createRequestFunction(block.attach),
