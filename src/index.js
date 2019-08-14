@@ -181,7 +181,8 @@ exports.initialize = config => {
     },
     server: {
       list: createRequestFunction(server.list),
-      create: createRequestFunction(server.create)
+      create: createRequestFunction(server.create),
+      setLabel: createRequestFunction(server.setLabel)
     },
     snapshot: {
       create: createRequestFunction(snapshot.create),
