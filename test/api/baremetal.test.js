@@ -35,6 +35,10 @@ const mock = {
 const mockParameters = {
   delete: {
     SUBID: 90000
+  },
+  changeApp: {
+    SUBID: 90000,
+    APPID: 150
   }
 }
 

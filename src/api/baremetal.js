@@ -33,3 +33,19 @@ exports.delete = {
     }
   }
 }
+
+exports.changeApp = {
+  url: '/baremetal/app_change',
+  requestType: 'POST',
+  apiKeyRequired: true,
+  parameters: {
+    SUBID: {
+      type: 'number',
+      required: true
+    },
+    APPID: {
+      type: 'number',
+      required: true
+    }
+  }
+}
