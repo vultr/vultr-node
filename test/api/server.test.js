@@ -61,6 +61,10 @@ const mockParameters = {
   },
   listUpgradePlan: {
     SUBID: 1337123
+  },
+  setTag: {
+    SUBID: 1312965,
+    tag: 'mytag'
   }
 }
 
