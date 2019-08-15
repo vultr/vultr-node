@@ -112,7 +112,8 @@ exports.initialize = config => {
       delete: createRequestFunction(baremetal.delete),
       changeApp: createRequestFunction(baremetal.changeApp),
       setTag: createRequestFunction(baremetal.setTag),
-      reinstall: createRequestFunction(baremetal.reinstall)
+      reinstall: createRequestFunction(baremetal.reinstall),
+      reboot: createRequestFunction(baremetal.reboot)
     },
     block: {
       attach: createRequestFunction(block.attach),

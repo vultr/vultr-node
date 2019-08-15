@@ -77,3 +77,15 @@ exports.reinstall = {
     }
   }
 }
+
+exports.reboot = {
+  url: '/baremetal/reboot',
+  requestType: 'POST',
+  apiKeyRequired: true,
+  parameters: {
+    SUBID: {
+      type: 'number',
+      required: true
+    }
+  }
+}
