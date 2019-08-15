@@ -61,6 +61,10 @@ const mockParameters = {
   },
   listUpgradePlan: {
     SUBID: 1337123
+  },
+  upgradePlan: {
+    SUBID: 1337123,
+    VPSPLANID: 401
   }
 }
 

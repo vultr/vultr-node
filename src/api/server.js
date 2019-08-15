@@ -138,3 +138,13 @@ exports.listUpgradePlan = {
     SUBID: { type: 'number', required: true }
   }
 }
+
+exports.upgradePlan = {
+  url: '/server/upgrade_plan',
+  requestType: 'POST',
+  apiKeyRequired: true,
+  parameters: {
+    SUBID: { type: 'number', required: true },
+    VPSPLANID: { type: 'number', required: true }
+  }
+}
