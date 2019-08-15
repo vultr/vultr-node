@@ -49,6 +49,11 @@ const mockParameters = {
   },
   reboot: {
     SUBID: 90000
+  },
+  create: {
+    DCID: 1,
+    METALPLANID: 1,
+    OSID: 127
   }
 }
 
