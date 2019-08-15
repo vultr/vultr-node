@@ -57,6 +57,10 @@ const mockParameters = {
   setLabel: {
     SUBID: 1312965,
     label: 'my label'
+  },
+  setTag: {
+    SUBID: 1312965,
+    tag: 'mytag'
   }
 }
 

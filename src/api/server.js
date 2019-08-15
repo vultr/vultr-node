@@ -129,3 +129,19 @@ exports.setLabel = {
     }
   }
 }
+
+exports.setTag = {
+  url: '/server/tag_set',
+  requestType: 'POST',
+  apiKeyRequired: true,
+  parameters: {
+    SUBID: {
+      type: 'number',
+      required: true
+    },
+    tag: {
+      type: 'string',
+      required: true
+    }
+  }
+}
