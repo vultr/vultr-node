@@ -89,3 +89,67 @@ exports.reboot = {
     }
   }
 }
+
+exports.create = {
+  url: '/baremetal/create',
+  requestType: 'POST',
+  apiKeyRequired: true,
+  parameters: {
+    DCID: {
+      type: 'number',
+      required: true
+    },
+    METALPLANID: {
+      type: 'number',
+      required: true
+    },
+    OSID: {
+      type: 'number',
+      required: true
+    },
+    SCRIPTID: {
+      type: 'number',
+      required: false
+    },
+    SNAPSHOTID: {
+      type: 'string',
+      required: false
+    },
+    enable_ipv6: {
+      type: 'string',
+      required: false
+    },
+    label: {
+      type: 'string',
+      required: false
+    },
+    SSHKEYID: {
+      type: 'string',
+      required: false
+    },
+    APPID: {
+      type: 'number',
+      required: false
+    },
+    userdata: {
+      type: 'string',
+      required: false
+    },
+    notify_activate: {
+      type: 'string',
+      required: false
+    },
+    hostname: {
+      type: 'string',
+      required: false
+    },
+    tag: {
+      type: 'string',
+      required: false
+    },
+    reserved_ip_v4: {
+      type: 'string',
+      required: false
+    }
+  }
+}
