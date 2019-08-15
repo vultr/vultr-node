@@ -189,7 +189,8 @@ exports.initialize = config => {
       create: createRequestFunction(server.create),
       setLabel: createRequestFunction(server.setLabel),
       listUpgradePlan: createRequestFunction(server.listUpgradePlan),
-      upgradePlan: createRequestFunction(server.upgradePlan)
+      upgradePlan: createRequestFunction(server.upgradePlan),
+      setTag: createRequestFunction(server.setTag)
     },
     snapshot: {
       create: createRequestFunction(snapshot.create),

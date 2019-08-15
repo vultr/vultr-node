@@ -65,6 +65,10 @@ const mockParameters = {
   upgradePlan: {
     SUBID: 1337123,
     VPSPLANID: 401
+  },
+  setTag: {
+    SUBID: 1312965,
+    tag: 'mytag'
   }
 }
 
