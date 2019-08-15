@@ -43,6 +43,9 @@ const mockParameters = {
   setTag: {
     SUBID: 90000,
     tag: 'my tag'
+  },
+  reinstall: {
+    SUBID: 90000
   }
 }
 

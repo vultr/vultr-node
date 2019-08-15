@@ -65,3 +65,15 @@ exports.setTag = {
     }
   }
 }
+
+exports.reinstall = {
+  url: '/baremetal/reinstall',
+  requestType: 'POST',
+  apiKeyRequired: true,
+  parameters: {
+    SUBID: {
+      type: 'number',
+      required: true
+    }
+  }
+}
