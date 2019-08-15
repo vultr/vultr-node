@@ -135,9 +135,9 @@ exports.listUpgradePlan = {
   requestType: 'GET',
   apiKeyRequired: true,
   parameters: {
-    SUBID: { 
-      type: 'number', 
-      required: true 
+    SUBID: {
+      type: 'number',
+      required: true
     }
   }
 }
