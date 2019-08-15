@@ -46,6 +46,9 @@ const mockParameters = {
   },
   reinstall: {
     SUBID: 90000
+  },
+  reboot: {
+    SUBID: 90000
   }
 }
 
