@@ -187,7 +187,8 @@ exports.initialize = config => {
     server: {
       list: createRequestFunction(server.list),
       create: createRequestFunction(server.create),
-      setLabel: createRequestFunction(server.setLabel)
+      setLabel: createRequestFunction(server.setLabel),
+      listUpgradePlan: createRequestFunction(server.listUpgradePlan)
     },
     snapshot: {
       create: createRequestFunction(snapshot.create),
