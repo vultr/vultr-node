@@ -45,7 +45,8 @@ const mock = {
   },
   create: {
     SUBID: '1312965'
-  }
+  },
+  listUpgradePlan: [29, 41, 61]
 }
 
 const mockParameters = {
@@ -57,6 +58,9 @@ const mockParameters = {
   setLabel: {
     SUBID: 1312965,
     label: 'my label'
+  },
+  listUpgradePlan: {
+    SUBID: 1337123
   },
   setTag: {
     SUBID: 1312965,

@@ -130,6 +130,18 @@ exports.setLabel = {
   }
 }
 
+exports.listUpgradePlan = {
+  url: '/server/upgrade_plan_list',
+  requestType: 'GET',
+  apiKeyRequired: true,
+  parameters: {
+    SUBID: { 
+      type: 'number', 
+      required: true 
+    }
+  }
+}
+
 exports.setTag = {
   url: '/server/tag_set',
   requestType: 'POST',
