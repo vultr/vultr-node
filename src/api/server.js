@@ -168,6 +168,15 @@ exports.upgradePlan = {
   }
 }
 
+exports.halt = {
+  url: '/server/halt',
+  requestType: 'POST',
+  apiKeyRequired: true,
+  parameters: {
+    SUBID: { type: 'number', required: true }
+  }
+}
+
 exports.start = {
   url: '/server/start',
   requestType: 'POST',
