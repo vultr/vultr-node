@@ -114,7 +114,8 @@ exports.initialize = config => {
       setTag: createRequestFunction(baremetal.setTag),
       reinstall: createRequestFunction(baremetal.reinstall),
       reboot: createRequestFunction(baremetal.reboot),
-      create: createRequestFunction(baremetal.create)
+      create: createRequestFunction(baremetal.create),
+      listApps: createRequestFunction(baremetal.listApps)
     },
     block: {
       attach: createRequestFunction(block.attach),
@@ -192,7 +193,8 @@ exports.initialize = config => {
       listUpgradePlan: createRequestFunction(server.listUpgradePlan),
       upgradePlan: createRequestFunction(server.upgradePlan),
       setTag: createRequestFunction(server.setTag),
-      halt: createRequestFunction(server.halt)
+      halt: createRequestFunction(server.halt),
+      start: createRequestFunction(server.start)
     },
     snapshot: {
       create: createRequestFunction(snapshot.create),

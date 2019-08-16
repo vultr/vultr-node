@@ -72,6 +72,9 @@ const mockParameters = {
   },
   halt: {
     SUBID: 1312965
+  },
+  start: {
+    SUBID: 1312965
   }
 }
 
