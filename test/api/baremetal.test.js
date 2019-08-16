@@ -73,6 +73,9 @@ const mockParameters = {
   },
   listApps: {
     SUBID: 90000
+  },
+  halt: {
+    SUBID: 90000
   }
 }
 
