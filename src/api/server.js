@@ -167,3 +167,12 @@ exports.upgradePlan = {
     VPSPLANID: { type: 'number', required: true }
   }
 }
+
+exports.halt = {
+  url: '/server/halt',
+  requestType: 'POST',
+  apiKeyRequired: true,
+  parameters: {
+    SUBID: { type: 'number', required: true }
+  }
+}
