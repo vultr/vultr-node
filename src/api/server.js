@@ -167,3 +167,12 @@ exports.upgradePlan = {
     VPSPLANID: { type: 'number', required: true }
   }
 }
+
+exports.delete = {
+  url: '/server/destroy',
+  requestType: 'POST',
+  apiKeyRequired: true,
+  parameters: {
+    SUBID: { type: 'number', required: true }
+  }
+}
