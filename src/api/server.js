@@ -194,3 +194,12 @@ exports.start = {
     SUBID: { type: 'number', required: true }
   }
 }
+
+exports.reboot = {
+  url: '/server/reboot',
+  requestType: 'POST',
+  apiKeyRequired: true,
+  parameters: {
+    SUBID: { type: 'number', required: true }
+  }
+}
