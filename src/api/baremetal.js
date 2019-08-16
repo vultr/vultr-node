@@ -153,3 +153,15 @@ exports.create = {
     }
   }
 }
+
+exports.listApps = {
+  url: '/baremetal/app_change_list',
+  requestType: 'GET',
+  apiKeyRequired: true,
+  parameters: {
+    SUBID: {
+      type: 'number',
+      required: true
+    }
+  }
+}

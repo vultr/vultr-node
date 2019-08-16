@@ -72,6 +72,12 @@ const mockParameters = {
   },
   delete: {
     SUBID: 1312965
+  },
+  halt: {
+    SUBID: 1312965
+  },
+  start: {
+    SUBID: 1312965
   }
 }
 

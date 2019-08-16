@@ -29,6 +29,22 @@ const mock = {
       OSID: '127',
       APPID: '0'
     }
+  },
+  listApps: {
+    '1': {
+      APPID: '1',
+      name: 'LEMP',
+      short_name: 'lemp',
+      deploy_name: 'LEMP on CentOS 6 x64',
+      surcharge: 0
+    },
+    '2': {
+      APPID: '2',
+      name: 'WordPress',
+      short_name: 'wordpress',
+      deploy_name: 'WordPress on CentOS 6 x64',
+      surcharge: 0
+    }
   }
 }
 
@@ -54,6 +70,9 @@ const mockParameters = {
     DCID: 1,
     METALPLANID: 1,
     OSID: 127
+  },
+  listApps: {
+    SUBID: 90000
   }
 }
 
