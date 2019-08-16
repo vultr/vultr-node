@@ -78,6 +78,9 @@ const mockParameters = {
   },
   start: {
     SUBID: 1312965
+  },
+  reboot: {
+    SUBID: 1312965
   }
 }
 
