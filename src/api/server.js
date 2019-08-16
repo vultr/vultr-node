@@ -168,6 +168,15 @@ exports.upgradePlan = {
   }
 }
 
+exports.delete = {
+  url: '/server/destroy',
+  requestType: 'POST',
+  apiKeyRequired: true,
+  parameters: {
+    SUBID: { type: 'number', required: true }
+  }
+}
+
 exports.halt = {
   url: '/server/halt',
   requestType: 'POST',

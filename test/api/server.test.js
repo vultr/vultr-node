@@ -70,6 +70,9 @@ const mockParameters = {
     SUBID: 1312965,
     tag: 'mytag'
   },
+  delete: {
+    SUBID: 1312965
+  },
   halt: {
     SUBID: 1312965
   },

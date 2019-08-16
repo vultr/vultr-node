@@ -193,6 +193,7 @@ exports.initialize = config => {
       listUpgradePlan: createRequestFunction(server.listUpgradePlan),
       upgradePlan: createRequestFunction(server.upgradePlan),
       setTag: createRequestFunction(server.setTag),
+      delete: createRequestFunction(server.delete),
       halt: createRequestFunction(server.halt),
       start: createRequestFunction(server.start)
     },
