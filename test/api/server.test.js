@@ -46,7 +46,8 @@ const mock = {
   create: {
     SUBID: '1312965'
   },
-  listUpgradePlan: [29, 41, 61]
+  listUpgradePlan: [29, 41, 61],
+  neighbors: [23456]
 }
 
 const mockParameters = {
@@ -80,6 +81,9 @@ const mockParameters = {
     SUBID: 1312965
   },
   reboot: {
+    SUBID: 1312965
+  },
+  neighbors: {
     SUBID: 1312965
   }
 }

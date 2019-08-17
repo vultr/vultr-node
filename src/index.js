@@ -197,7 +197,8 @@ exports.initialize = config => {
       delete: createRequestFunction(server.delete),
       halt: createRequestFunction(server.halt),
       start: createRequestFunction(server.start),
-      reboot: createRequestFunction(server.reboot)
+      reboot: createRequestFunction(server.reboot),
+      neighbors: createRequestFunction(server.neighbors)
     },
     snapshot: {
       create: createRequestFunction(snapshot.create),
