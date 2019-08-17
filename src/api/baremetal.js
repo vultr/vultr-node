@@ -165,3 +165,15 @@ exports.listApps = {
     }
   }
 }
+
+exports.halt = {
+  url: '/baremetal/halt',
+  requestType: 'POST',
+  apiKeyRequired: true,
+  parameters: {
+    SUBID: {
+      type: 'number',
+      required: true
+    }
+  }
+}
