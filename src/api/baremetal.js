@@ -177,3 +177,15 @@ exports.halt = {
     }
   }
 }
+
+exports.getAppInfo = {
+  url: '/baremetal/get_app_info',
+  requestType: 'GET',
+  apiKeyRequired: true,
+  parameters: {
+    SUBID: {
+      type: 'number',
+      required: true
+    }
+  }
+}

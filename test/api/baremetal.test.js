@@ -45,6 +45,9 @@ const mock = {
       deploy_name: 'WordPress on CentOS 6 x64',
       surcharge: 0
     }
+  },
+  getAppInfo: {
+    app_info: ''
   }
 }
 
@@ -75,6 +78,9 @@ const mockParameters = {
     SUBID: 90000
   },
   halt: {
+    SUBID: 90000
+  },
+  getAppInfo: {
     SUBID: 90000
   }
 }
