@@ -201,3 +201,15 @@ exports.bandwidth = {
     }
   }
 }
+
+exports.getUserData = {
+  url: '/baremetal/get_user_data',
+  requestType: 'GET',
+  apiKeyRequired: true,
+  parameters: {
+    SUBID: {
+      type: 'number',
+      required: true
+    }
+  }
+}

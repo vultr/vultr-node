@@ -118,7 +118,8 @@ exports.initialize = config => {
       listApps: createRequestFunction(baremetal.listApps),
       halt: createRequestFunction(baremetal.halt),
       getAppInfo: createRequestFunction(baremetal.getAppInfo),
-      bandwidth: createRequestFunction(baremetal.bandwidth)
+      bandwidth: createRequestFunction(baremetal.bandwidth),
+      getUserData: createRequestFunction(baremetal.getUserData)
     },
     block: {
       attach: createRequestFunction(block.attach),
