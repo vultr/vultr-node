@@ -203,3 +203,15 @@ exports.reboot = {
     SUBID: { type: 'number', required: true }
   }
 }
+
+exports.neighbors = {
+  url: '/server/neighbors',
+  requestType: 'GET',
+  apiKeyRequired: true,
+  parameters: {
+    SUBID: {
+      type: 'number',
+      required: true
+    }
+  }
+}
