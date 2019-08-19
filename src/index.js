@@ -116,7 +116,8 @@ exports.initialize = config => {
       reboot: createRequestFunction(baremetal.reboot),
       create: createRequestFunction(baremetal.create),
       listApps: createRequestFunction(baremetal.listApps),
-      halt: createRequestFunction(baremetal.halt)
+      halt: createRequestFunction(baremetal.halt),
+      getAppInfo: createRequestFunction(baremetal.getAppInfo)
     },
     block: {
       attach: createRequestFunction(block.attach),
