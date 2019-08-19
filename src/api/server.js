@@ -215,3 +215,15 @@ exports.neighbors = {
     }
   }
 }
+
+exports.getAppInfo = {
+  url: '/server/get_app_info',
+  requestType: 'GET',
+  apiKeyRequired: true,
+  parameters: {
+    SUBID: {
+      type: 'number',
+      required: true
+    }
+  }
+}
