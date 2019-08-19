@@ -60,6 +60,9 @@ const mock = {
       ['2017-04-02', 1810478],
       ['2017-04-03', 2729604]
     ]
+  },
+  getUserData: {
+    userdata: 'ZWNobyBIZWxsbyBXb3JsZA=='
   }
 }
 
@@ -96,6 +99,9 @@ const mockParameters = {
     SUBID: 90000
   },
   bandwidth: {
+    SUBID: 90000
+  },
+  getUserData: {
     SUBID: 90000
   }
 }
