@@ -189,3 +189,15 @@ exports.getAppInfo = {
     }
   }
 }
+
+exports.bandwidth = {
+  url: '/baremetal/bandwidth',
+  requestType: 'GET',
+  apiKeyRequired: true,
+  parameters: {
+    SUBID: {
+      type: 'number',
+      required: true
+    }
+  }
+}

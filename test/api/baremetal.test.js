@@ -48,6 +48,18 @@ const mock = {
   },
   getAppInfo: {
     app_info: ''
+  },
+  bandwidth: {
+    incoming_bytes: [
+      ['2017-04-01', 91571055],
+      ['2017-04-02', 78355758],
+      ['2017-04-03', 85827590]
+    ],
+    outgoing_bytes: [
+      ['2017-04-01', 3084731],
+      ['2017-04-02', 1810478],
+      ['2017-04-03', 2729604]
+    ]
   }
 }
 
@@ -81,6 +93,9 @@ const mockParameters = {
     SUBID: 90000
   },
   getAppInfo: {
+    SUBID: 90000
+  },
+  bandwidth: {
     SUBID: 90000
   }
 }
