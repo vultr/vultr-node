@@ -227,3 +227,19 @@ exports.getAppInfo = {
     }
   }
 }
+
+exports.changeOS = {
+  url: '/server/os_change',
+  requestType: 'POST',
+  apiKeyRequired: true,
+  parameters: {
+    SUBID: {
+      type: 'number',
+      required: true
+    },
+    OSID: {
+      type: 'number',
+      required: true
+    }
+  }
+}

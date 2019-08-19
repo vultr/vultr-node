@@ -89,6 +89,10 @@ const mockParameters = {
   },
   getAppInfo: {
     SUBID: 1312965
+  },
+  changeOS: {
+    SUBID: 1312965,
+    OSID: 127
   }
 }
 
