@@ -47,7 +47,8 @@ const mock = {
     SUBID: '1312965'
   },
   listUpgradePlan: [29, 41, 61],
-  neighbors: [23456]
+  neighbors: [23456],
+  getAppInfo: { app_info: '' }
 }
 
 const mockParameters = {
@@ -84,6 +85,9 @@ const mockParameters = {
     SUBID: 1312965
   },
   neighbors: {
+    SUBID: 1312965
+  },
+  getAppInfo: {
     SUBID: 1312965
   }
 }
