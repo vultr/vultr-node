@@ -106,6 +106,10 @@ const mockParameters = {
   },
   enableIPv6: {
     SUBID: 90000
+  },
+  setLabel: {
+    SUBID: 90000,
+    label: 'my label'
   }
 }
 
