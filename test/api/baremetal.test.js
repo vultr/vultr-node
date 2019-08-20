@@ -63,6 +63,16 @@ const mock = {
   },
   getUserData: {
     userdata: 'ZWNobyBIZWxsbyBXb3JsZA=='
+  },
+  listIPv6: {
+    '900000': [
+      {
+        ip: '2001:DB8:9000::100',
+        network: '2001:DB8:9000::',
+        network_size: 64,
+        type: 'main_ip'
+      }
+    ]
   }
 }
 
@@ -110,6 +120,9 @@ const mockParameters = {
   setLabel: {
     SUBID: 90000,
     label: 'my label'
+  },
+  listIPv6: {
+    SUBID: 90000
   }
 }
 
