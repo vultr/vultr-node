@@ -213,3 +213,15 @@ exports.getUserData = {
     }
   }
 }
+
+exports.enableIPv6 = {
+  url: '/baremetal/ipv6_enable',
+  requestType: 'POST',
+  apiKeyRequired: true,
+  parameters: {
+    SUBID: {
+      type: 'number',
+      required: true
+    }
+  }
+}

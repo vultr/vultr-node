@@ -103,6 +103,9 @@ const mockParameters = {
   },
   getUserData: {
     SUBID: 90000
+  },
+  enableIPv6: {
+    SUBID: 90000
   }
 }
 
