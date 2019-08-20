@@ -96,6 +96,10 @@ const mockParameters = {
   },
   reinstall: {
     SUBID: 1312965
+  },
+  setUserData: {
+    SUBID: 1312965,
+    userdata: 'aHR0cHM6Ly93d3cudnVsdHIuY29tL2FwaS8jc2VydmVyX3NldF91c2VyX2RhdGE='
   }
 }
 
