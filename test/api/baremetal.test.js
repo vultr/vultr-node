@@ -73,6 +73,16 @@ const mock = {
         type: 'main_ip'
       }
     ]
+  },
+  listIPv4: {
+    '900000': [
+      {
+        ip: '203.0.113.10',
+        netmask: '255.255.255.0',
+        gateway: '203.0.113.1',
+        type: 'main_ip'
+      }
+    ]
   }
 }
 
@@ -122,6 +132,9 @@ const mockParameters = {
     label: 'my label'
   },
   listIPv6: {
+    SUBID: 90000
+  },
+  listIPv4: {
     SUBID: 90000
   }
 }
