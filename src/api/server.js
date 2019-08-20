@@ -259,3 +259,19 @@ exports.reinstall = {
     }
   }
 }
+
+exports.setUserData = {
+  url: '/server/set_user_data',
+  requestType: 'POST',
+  apiKeyRequired: true,
+  parameters: {
+    SUBID: {
+      type: 'number',
+      required: true
+    },
+    userdata: {
+      type: 'string',
+      required: true
+    }
+  }
+}

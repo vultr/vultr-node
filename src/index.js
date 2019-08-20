@@ -206,7 +206,8 @@ exports.initialize = config => {
       neighbors: createRequestFunction(server.neighbors),
       getAppInfo: createRequestFunction(server.getAppInfo),
       changeOS: createRequestFunction(server.changeOS),
-      reinstall: createRequestFunction(server.reinstall)
+      reinstall: createRequestFunction(server.reinstall),
+      setUserData: createRequestFunction(server.setUserData)
     },
     snapshot: {
       create: createRequestFunction(snapshot.create),
