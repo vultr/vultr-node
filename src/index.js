@@ -119,7 +119,8 @@ exports.initialize = config => {
       halt: createRequestFunction(baremetal.halt),
       getAppInfo: createRequestFunction(baremetal.getAppInfo),
       bandwidth: createRequestFunction(baremetal.bandwidth),
-      getUserData: createRequestFunction(baremetal.getUserData)
+      getUserData: createRequestFunction(baremetal.getUserData),
+      enableIPv6: createRequestFunction(baremetal.enableIPv6)
     },
     block: {
       attach: createRequestFunction(block.attach),
