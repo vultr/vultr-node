@@ -225,3 +225,19 @@ exports.enableIPv6 = {
     }
   }
 }
+
+exports.setLabel = {
+  url: '/baremetal/label_set',
+  requestType: 'POST',
+  apiKeyRequired: true,
+  parameters: {
+    SUBID: {
+      type: 'number',
+      required: true
+    },
+    label: {
+      type: 'string',
+      required: true
+    }
+  }
+}
