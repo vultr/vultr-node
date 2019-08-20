@@ -243,3 +243,19 @@ exports.changeOS = {
     }
   }
 }
+
+exports.reinstall = {
+  url: '/server/reinstall',
+  requestType: 'POST',
+  apiKeyRequired: true,
+  parameters: {
+    SUBID: {
+      type: 'number',
+      required: true
+    },
+    hostname: {
+      type: 'string',
+      required: false
+    }
+  }
+}

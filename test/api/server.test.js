@@ -93,6 +93,9 @@ const mockParameters = {
   changeOS: {
     SUBID: 1312965,
     OSID: 127
+  },
+  reinstall: {
+    SUBID: 1312965
   }
 }
 
