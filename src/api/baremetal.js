@@ -241,3 +241,15 @@ exports.setLabel = {
     }
   }
 }
+
+exports.listIPv6 = {
+  url: '/baremetal/list_ipv6',
+  requestType: 'GET',
+  apiKeyRequired: true,
+  parameters: {
+    SUBID: {
+      type: 'number',
+      required: true
+    }
+  }
+}
