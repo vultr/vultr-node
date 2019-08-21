@@ -126,6 +126,10 @@ const mockParameters = {
   bandwidth: {
     SUBID: 576965
   },
+  changeApp: {
+    SUBID: 1312965,
+    APPID: 2
+  },
   getUserData: {
     SUBID: 1312965
   },
