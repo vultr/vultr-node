@@ -293,3 +293,19 @@ exports.listChangeOS = {
     }
   }
 }
+
+exports.setUserData = {
+  url: '/baremetal/set_user_data',
+  requestType: 'POST',
+  apiKeyRequired: true,
+  parameters: {
+    SUBID: {
+      type: 'number',
+      required: true
+    },
+    userdata: {
+      type: 'string',
+      required: true
+    }
+  }
+}

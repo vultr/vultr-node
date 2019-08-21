@@ -161,6 +161,11 @@ const mockParameters = {
   },
   listChangeOS: {
     SUBID: 90000
+  },
+  setUserData: {
+    SUBID: 1312965,
+    userdata:
+      'aHR0cHM6Ly93d3cudnVsdHIuY29tL2FwaS8jYmFyZW1ldGFsX3NldF91c2VyX2RhdGE='
   }
 }
 
