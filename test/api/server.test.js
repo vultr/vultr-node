@@ -62,6 +62,9 @@ const mock = {
       ['2014-06-12', '2455005'],
       ['2014-06-13', '1106963']
     ]
+  },
+  getUserData: {
+    userdata: 'ZWNobyBIZWxsbyBXb3JsZA=='
   }
 }
 
@@ -126,6 +129,14 @@ const mockParameters = {
   changeApp: {
     SUBID: 1312965,
     APPID: 2
+  },
+  getUserData: {
+    SUBID: 1312965
+  },
+  setReverseIPv6: {
+    SUBID: 1312965,
+    ip: '2001:db8:1234::',
+    entry: 'example.vultr.com'
   }
 }
 
