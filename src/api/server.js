@@ -307,3 +307,15 @@ exports.bandwidth = {
     }
   }
 }
+
+exports.getUserData = {
+  url: '/server/get_user_data',
+  requestType: 'GET',
+  apiKeyRequired: true,
+  parameters: {
+    SUBID: {
+      type: 'number',
+      required: true
+    }
+  }
+}
