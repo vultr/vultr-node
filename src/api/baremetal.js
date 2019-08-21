@@ -265,3 +265,19 @@ exports.listIPv4 = {
     }
   }
 }
+
+exports.changeOS = {
+  url: '/baremetal/os_change',
+  requestType: 'POST',
+  apiKeyRequired: true,
+  parameters: {
+    SUBID: {
+      type: 'number',
+      required: true
+    },
+    OSID: {
+      type: 'number',
+      required: true
+    }
+  }
+}
