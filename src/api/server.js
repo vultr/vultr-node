@@ -295,3 +295,15 @@ exports.setReverseIPv4 = {
     }
   }
 }
+
+exports.bandwidth = {
+  url: '/server/bandwidth',
+  requestType: 'GET',
+  apiKeyRequired: true,
+  parameters: {
+    SUBID: {
+      type: 'number',
+      required: true
+    }
+  }
+}
