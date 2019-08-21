@@ -137,6 +137,9 @@ const mockParameters = {
     SUBID: 1312965,
     ip: '2001:db8:1234::',
     entry: 'example.vultr.com'
+  },
+  enableIPv6: {
+    SUBID: 1312965
   }
 }
 
