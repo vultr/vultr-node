@@ -125,6 +125,7 @@ exports.initialize = config => {
       listIPv6: createRequestFunction(baremetal.listIPv6),
       listIPv4: createRequestFunction(baremetal.listIPv4),
       changeOS: createRequestFunction(baremetal.changeOS),
+      listChangeOS: createRequestFunction(baremetal.listChangeOS),
       setUserData: createRequestFunction(baremetal.setUserData)
     },
     block: {
