@@ -136,6 +136,10 @@ const mockParameters = {
   },
   listIPv4: {
     SUBID: 90000
+  },
+  changeOS: {
+    SUBID: 90000,
+    OSID: 127
   }
 }
 
