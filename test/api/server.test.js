@@ -48,7 +48,21 @@ const mock = {
   },
   listUpgradePlan: [29, 41, 61],
   neighbors: [23456],
-  getAppInfo: { app_info: '' }
+  getAppInfo: { app_info: '' },
+  bandwidth: {
+    incoming_bytes: [
+      ['2014-06-10', '81072581'],
+      ['2014-06-11', '222387466'],
+      ['2014-06-12', '216885232'],
+      ['2014-06-13', '117262318']
+    ],
+    outgoing_bytes: [
+      ['2014-06-10', '4059610'],
+      ['2014-06-11', '13432380'],
+      ['2014-06-12', '2455005'],
+      ['2014-06-13', '1106963']
+    ]
+  }
 }
 
 const mockParameters = {
@@ -105,6 +119,9 @@ const mockParameters = {
     SUBID: 1312965,
     ip: '192.0.2.1',
     entry: 'example.vultr.com'
+  },
+  bandwidth: {
+    SUBID: 576965
   }
 }
 
