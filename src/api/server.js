@@ -307,3 +307,23 @@ exports.bandwidth = {
     }
   }
 }
+
+exports.setReverseIPv6 = {
+  url: '/server/reverse_set_ipv6',
+  requestType: 'POST',
+  apiKeyRequired: true,
+  parameters: {
+    SUBID: {
+      type: 'number',
+      required: true
+    },
+    ip: {
+      type: 'string',
+      required: true
+    },
+    entry: {
+      type: 'string',
+      required: true
+    }
+  }
+}

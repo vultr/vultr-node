@@ -122,6 +122,11 @@ const mockParameters = {
   },
   bandwidth: {
     SUBID: 576965
+  },
+  setReverseIPv6: {
+    SUBID: 1312965,
+    ip: '2001:db8:1234::',
+    entry: 'example.vultr.com'
   }
 }
 
