@@ -83,6 +83,24 @@ const mock = {
         type: 'main_ip'
       }
     ]
+  },
+  listChangeOS: {
+    '127': {
+      OSID: '127',
+      name: 'CentOS 6 x64',
+      arch: 'x64',
+      family: 'centos',
+      windows: false,
+      surcharge: 0
+    },
+    '148': {
+      OSID: '148',
+      name: 'Ubuntu 12.04 i386',
+      arch: 'i386',
+      family: 'ubuntu',
+      windows: false,
+      surcharge: 0
+    }
   }
 }
 
@@ -140,6 +158,14 @@ const mockParameters = {
   changeOS: {
     SUBID: 90000,
     OSID: 127
+  },
+  listChangeOS: {
+    SUBID: 90000
+  },
+  setUserData: {
+    SUBID: 1312965,
+    userdata:
+      'aHR0cHM6Ly93d3cudnVsdHIuY29tL2FwaS8jYmFyZW1ldGFsX3NldF91c2VyX2RhdGE='
   }
 }
 

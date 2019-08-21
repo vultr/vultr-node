@@ -124,7 +124,9 @@ exports.initialize = config => {
       setLabel: createRequestFunction(baremetal.setLabel),
       listIPv6: createRequestFunction(baremetal.listIPv6),
       listIPv4: createRequestFunction(baremetal.listIPv4),
-      changeOS: createRequestFunction(baremetal.changeOS)
+      changeOS: createRequestFunction(baremetal.changeOS),
+      listChangeOS: createRequestFunction(baremetal.listChangeOS),
+      setUserData: createRequestFunction(baremetal.setUserData)
     },
     block: {
       attach: createRequestFunction(block.attach),
@@ -213,7 +215,10 @@ exports.initialize = config => {
       setUserData: createRequestFunction(server.setUserData),
       setReverseIPv4: createRequestFunction(server.setReverseIPv4),
       bandwidth: createRequestFunction(server.bandwidth),
-      enablePrivateNetwork: createRequestFunction(server.enablePrivateNetwork)
+      enablePrivateNetwork: createRequestFunction(server.enablePrivateNetwork),
+      changeApp: createRequestFunction(server.changeApp),
+      getUserData: createRequestFunction(server.getUserData),
+      setReverseIPv6: createRequestFunction(server.setReverseIPv6)
     },
     snapshot: {
       create: createRequestFunction(snapshot.create),
