@@ -208,7 +208,8 @@ exports.initialize = config => {
       getAppInfo: createRequestFunction(server.getAppInfo),
       changeOS: createRequestFunction(server.changeOS),
       reinstall: createRequestFunction(server.reinstall),
-      setUserData: createRequestFunction(server.setUserData)
+      setUserData: createRequestFunction(server.setUserData),
+      setReverseIPv4: createRequestFunction(server.setReverseIPv4)
     },
     snapshot: {
       create: createRequestFunction(snapshot.create),

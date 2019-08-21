@@ -100,6 +100,11 @@ const mockParameters = {
   setUserData: {
     SUBID: 1312965,
     userdata: 'aHR0cHM6Ly93d3cudnVsdHIuY29tL2FwaS8jc2VydmVyX3NldF91c2VyX2RhdGE='
+  },
+  setReverseIPv4: {
+    SUBID: 1312965,
+    ip: '192.0.2.1',
+    entry: 'example.vultr.com'
   }
 }
 

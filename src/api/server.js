@@ -275,3 +275,23 @@ exports.setUserData = {
     }
   }
 }
+
+exports.setReverseIPv4 = {
+  url: '/server/reverse_set_ipv4',
+  requestType: 'POST',
+  apiKeyRequired: true,
+  parameters: {
+    SUBID: {
+      type: 'number',
+      required: true
+    },
+    ip: {
+      type: 'string',
+      required: true
+    },
+    entry: {
+      type: 'string',
+      required: true
+    }
+  }
+}
