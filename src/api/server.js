@@ -308,6 +308,18 @@ exports.bandwidth = {
   }
 }
 
+exports.getUserData = {
+  url: '/server/get_user_data',
+  requestType: 'GET',
+  apiKeyRequired: true,
+  parameters: {
+    SUBID: {
+      type: 'number',
+      required: true
+    }
+  }
+}
+
 exports.setReverseIPv6 = {
   url: '/server/reverse_set_ipv6',
   requestType: 'POST',
