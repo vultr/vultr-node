@@ -316,7 +316,7 @@ exports.changeApp = {
     SUBID: {
       type: 'number',
       required: true
-    },    
+    },
     APPID: {
       type: 'number',
       required: true
@@ -351,6 +351,18 @@ exports.setReverseIPv6 = {
     },
     entry: {
       type: 'string',
+      required: true
+    }
+  }
+}
+
+exports.enableBackup = {
+  url: '/server/backup_enable',
+  requestType: 'POST',
+  apiKeyRequired: true,
+  parameters: {
+    SUBID: {
+      type: 'number',
       required: true
     }
   }

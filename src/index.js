@@ -217,7 +217,8 @@ exports.initialize = config => {
       bandwidth: createRequestFunction(server.bandwidth),
       changeApp: createRequestFunction(server.changeApp),
       getUserData: createRequestFunction(server.getUserData),
-      setReverseIPv6: createRequestFunction(server.setReverseIPv6)
+      setReverseIPv6: createRequestFunction(server.setReverseIPv6),
+      enableBackup: createRequestFunction(server.enableBackup)
     },
     snapshot: {
       create: createRequestFunction(snapshot.create),
