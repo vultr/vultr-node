@@ -308,6 +308,22 @@ exports.bandwidth = {
   }
 }
 
+exports.enablePrivateNetwork = {
+  url: '/server/private_network_enable',
+  requestType: 'POST',
+  apiKeyRequired: true,
+  parameters: {
+    SUBID: {
+      type: 'number',
+      required: true
+    },
+    NETWORKID: {
+      type: 'string',
+      required: true
+    }
+  }
+}
+
 exports.changeApp = {
   url: '/server/app_change',
   requestType: 'POST',
@@ -316,7 +332,7 @@ exports.changeApp = {
     SUBID: {
       type: 'number',
       required: true
-    },    
+    },
     APPID: {
       type: 'number',
       required: true
