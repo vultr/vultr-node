@@ -65,6 +65,14 @@ const mock = {
   },
   getUserData: {
     userdata: 'ZWNobyBIZWxsbyBXb3JsZA=='
+  },
+  getBackupSchedule: {
+    enabled: true,
+    cron_type: 'weekly',
+    next_scheduled_time_utc: '2016-05-07 08:00:00',
+    hour: 8,
+    dow: 6,
+    dom: 0
   }
 }
 
@@ -149,6 +157,9 @@ const mockParameters = {
     SUBID: 1312965
   },
   disableBackup: {
+    SUBID: 1312965
+  },
+  getBackupSchedule: {
     SUBID: 1312965
   }
 }
