@@ -407,3 +407,31 @@ exports.disableBackup = {
     }
   }
 }
+
+exports.setBackupSchedule = {
+  url: '/server/backup_set_schedule',
+  requestType: 'POST',
+  apiKeyRequired: true,
+  parameters: {
+    SUBID: {
+      type: 'number',
+      required: true
+    },
+    cron_type: {
+      type: 'string',
+      required: true
+    },
+    hour: {
+      type: 'number',
+      required: false
+    },
+    dow: {
+      type: 'number',
+      required: false
+    },
+    dom: {
+      type: 'number',
+      required: false
+    }
+  }
+}
