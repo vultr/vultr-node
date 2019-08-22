@@ -126,6 +126,10 @@ const mockParameters = {
   bandwidth: {
     SUBID: 576965
   },
+  enablePrivateNetwork: {
+    SUBID: 576965,
+    NETWORKID: 'net539626f0798d7'
+  },
   changeApp: {
     SUBID: 1312965,
     APPID: 2
@@ -139,6 +143,9 @@ const mockParameters = {
     entry: 'example.vultr.com'
   },
   enableBackup: {
+    SUBID: 1312965
+  },
+  enableIPv6: {
     SUBID: 1312965
   }
 }

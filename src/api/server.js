@@ -308,6 +308,22 @@ exports.bandwidth = {
   }
 }
 
+exports.enablePrivateNetwork = {
+  url: '/server/private_network_enable',
+  requestType: 'POST',
+  apiKeyRequired: true,
+  parameters: {
+    SUBID: {
+      type: 'number',
+      required: true
+    },
+    NETWORKID: {
+      type: 'string',
+      required: true
+    }
+  }
+}
+
 exports.changeApp = {
   url: '/server/app_change',
   requestType: 'POST',
@@ -358,6 +374,18 @@ exports.setReverseIPv6 = {
 
 exports.enableBackup = {
   url: '/server/backup_enable',
+  requestType: 'POST',
+  apiKeyRequired: true,
+  parameters: {
+    SUBID: {
+      type: 'number',
+      required: true
+    }
+  }
+}
+
+exports.enableIPv6 = {
+  url: '/server/ipv6_enable',
   requestType: 'POST',
   apiKeyRequired: true,
   parameters: {
