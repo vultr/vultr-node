@@ -407,3 +407,15 @@ exports.disableBackup = {
     }
   }
 }
+
+exports.listChangeApp = {
+  url: '/server/app_change_list',
+  requestType: 'GET',
+  apiKeyRequired: true,
+  parameters: {
+    SUBID: {
+      type: 'number',
+      required: true
+    }
+  }
+}
