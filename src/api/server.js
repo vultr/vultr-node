@@ -395,3 +395,15 @@ exports.enableIPv6 = {
     }
   }
 }
+
+exports.disableBackup = {
+  url: '/server/backup_disable',
+  requestType: 'POST',
+  apiKeyRequired: true,
+  parameters: {
+    SUBID: {
+      type: 'number',
+      required: true
+    }
+  }
+}
