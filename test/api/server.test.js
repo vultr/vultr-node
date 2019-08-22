@@ -65,6 +65,31 @@ const mock = {
   },
   getUserData: {
     userdata: 'ZWNobyBIZWxsbyBXb3JsZA=='
+  },
+  listIPv4: {
+    '576965': [
+      {
+        ip: '123.123.123.123',
+        netmask: '255.255.255.248',
+        gateway: '123.123.123.1',
+        type: 'main_ip',
+        reverse: 'host1.example.com'
+      },
+      {
+        ip: '123.123.123.124',
+        netmask: '255.255.255.255',
+        gateway: '',
+        type: 'secondary_ip',
+        reverse: 'host2.example.com'
+      },
+      {
+        ip: '10.99.0.10',
+        netmask: '255.255.0.0',
+        gateway: '',
+        type: 'private',
+        reverse: ''
+      }
+    ]
   }
 }
 
@@ -149,6 +174,9 @@ const mockParameters = {
     SUBID: 1312965
   },
   disableBackup: {
+    SUBID: 1312965
+  },
+  listIPv4: {
     SUBID: 1312965
   }
 }

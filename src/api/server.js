@@ -407,3 +407,19 @@ exports.disableBackup = {
     }
   }
 }
+
+exports.listIPv4 = {
+  url: '/server/list_ipv4',
+  requestType: 'GET',
+  apiKeyRequired: true,
+  parameters: {
+    SUBID: {
+      type: 'number',
+      required: true
+    },
+    public_network: {
+      type: 'string',
+      required: false
+    }
+  }
+}
