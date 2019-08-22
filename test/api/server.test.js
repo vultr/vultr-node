@@ -65,6 +65,18 @@ const mock = {
   },
   getUserData: {
     userdata: 'ZWNobyBIZWxsbyBXb3JsZA=='
+  },
+  listReverseIPv6: {
+    '576965': [
+      {
+        ip: '2001:DB8:1000::101',
+        reverse: 'host1.example.com'
+      },
+      {
+        ip: '2001:DB8:1000::102',
+        reverse: 'host2.example.com'
+      }
+    ]
   }
 }
 
@@ -149,6 +161,9 @@ const mockParameters = {
     SUBID: 1312965
   },
   disableBackup: {
+    SUBID: 1312965
+  },
+  listReverseIPv6: {
     SUBID: 1312965
   }
 }
