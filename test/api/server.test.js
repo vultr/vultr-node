@@ -150,6 +150,9 @@ const mockParameters = {
   },
   disableBackup: {
     SUBID: 1312965
+  },
+  createIPv4: {
+    SUBID: 1312965
   }
 }
 
