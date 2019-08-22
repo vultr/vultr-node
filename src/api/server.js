@@ -371,3 +371,15 @@ exports.setReverseIPv6 = {
     }
   }
 }
+
+exports.enableIPv6 = {
+  url: '/server/ipv6_enable',
+  requestType: 'POST',
+  apiKeyRequired: true,
+  parameters: {
+    SUBID: {
+      type: 'number',
+      required: true
+    }
+  }
+}
