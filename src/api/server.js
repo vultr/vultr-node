@@ -407,3 +407,15 @@ exports.disableBackup = {
     }
   }
 }
+
+exports.listIPv6 = {
+  url: '/server/list_ipv6',
+  requestType: 'GET',
+  apiKeyRequired: true,
+  parameters: {
+    SUBID: {
+      type: 'number',
+      required: true
+    }
+  }
+}

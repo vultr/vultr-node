@@ -65,6 +65,16 @@ const mock = {
   },
   getUserData: {
     userdata: 'ZWNobyBIZWxsbyBXb3JsZA=='
+  },
+  listIPv6: {
+    '576965': [
+      {
+        ip: '2001:DB8:1000::100',
+        network: '2001:DB8:1000::',
+        network_size: '64',
+        type: 'main_ip'
+      }
+    ]
   }
 }
 
@@ -149,6 +159,9 @@ const mockParameters = {
     SUBID: 1312965
   },
   disableBackup: {
+    SUBID: 1312965
+  },
+  listIPv6: {
     SUBID: 1312965
   }
 }
