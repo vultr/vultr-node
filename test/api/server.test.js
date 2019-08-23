@@ -75,6 +75,55 @@ const mock = {
         type: 'main_ip'
       }
     ]
+  },
+  getBackupSchedule: {
+    enabled: true,
+    cron_type: 'weekly',
+    next_scheduled_time_utc: '2016-05-07 08:00:00',
+    hour: 8,
+    dow: 6,
+    dom: 0
+  },
+  listIPv4: {
+    '576965': [
+      {
+        ip: '123.123.123.123',
+        netmask: '255.255.255.248',
+        gateway: '123.123.123.1',
+        type: 'main_ip',
+        reverse: 'host1.example.com'
+      },
+      {
+        ip: '123.123.123.124',
+        netmask: '255.255.255.255',
+        gateway: '',
+        type: 'secondary_ip',
+        reverse: 'host2.example.com'
+      },
+      {
+        ip: '10.99.0.10',
+        netmask: '255.255.0.0',
+        gateway: '',
+        type: 'private',
+        reverse: ''
+      }
+    ]
+  },
+  listChangeApp: {
+    '1': {
+      APPID: '1',
+      name: 'LEMP',
+      short_name: 'lemp',
+      deploy_name: 'LEMP on CentOS 6 x64',
+      surcharge: 0
+    },
+    '2': {
+      APPID: '2',
+      name: 'WordPress',
+      short_name: 'wordpress',
+      deploy_name: 'WordPress on CentOS 6 x64',
+      surcharge: 0
+    }
   }
 }
 
@@ -162,6 +211,19 @@ const mockParameters = {
     SUBID: 1312965
   },
   listIPv6: {
+    SUBID: 1312965
+  },
+  setBackupSchedule: {
+    SUBID: 1312965,
+    cron_type: 'daily'
+  },
+  getBackupSchedule: {
+    SUBID: 1312965
+  },
+  listIPv4: {
+    SUBID: 1312965
+  },
+  listChangeApp: {
     SUBID: 1312965
   }
 }

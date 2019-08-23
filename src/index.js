@@ -222,7 +222,11 @@ exports.initialize = config => {
       enableBackup: createRequestFunction(server.enableBackup),
       enableIPv6: createRequestFunction(server.enableIPv6),
       disableBackup: createRequestFunction(server.disableBackup),
-      listIPv6: createRequestFunction(server.listIPv6)
+      listIPv6: createRequestFunction(server.listIPv6),
+      setBackupSchedule: createRequestFunction(server.setBackupSchedule),
+      getBackupSchedule: createRequestFunction(server.getBackupSchedule),
+      listIPv4: createRequestFunction(server.listIPv4),
+      listChangeApp: createRequestFunction(server.listChangeApp)
     },
     snapshot: {
       create: createRequestFunction(snapshot.create),
