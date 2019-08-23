@@ -200,6 +200,10 @@ const mockParameters = {
   disableBackup: {
     SUBID: 1312965
   },
+  setBackupSchedule: {
+    SUBID: 1312965,
+    cron_type: 'daily'
+  },
   getBackupSchedule: {
     SUBID: 1312965
   },
