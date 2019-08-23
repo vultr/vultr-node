@@ -435,3 +435,43 @@ exports.setBackupSchedule = {
     }
   }
 }
+
+exports.getBackupSchedule = {
+  url: '/server/backup_get_schedule',
+  requestType: 'POST',
+  apiKeyRequired: true,
+  parameters: {
+    SUBID: {
+      type: 'number',
+      required: true
+    }
+  }
+}
+
+exports.listChangeApp = {
+  url: '/server/app_change_list',
+  requestType: 'GET',
+  apiKeyRequired: true,
+  parameters: {
+    SUBID: {
+      type: 'number',
+      required: true
+    }
+  }
+}
+
+exports.listIPv4 = {
+  url: '/server/list_ipv4',
+  requestType: 'GET',
+  apiKeyRequired: true,
+  parameters: {
+    SUBID: {
+      type: 'number',
+      required: true
+    },
+    public_network: {
+      type: 'string',
+      required: false
+    }
+  }
+}
