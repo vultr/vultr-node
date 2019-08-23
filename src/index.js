@@ -228,7 +228,8 @@ exports.initialize = config => {
       setBackupSchedule: createRequestFunction(server.setBackupSchedule),
       getBackupSchedule: createRequestFunction(server.getBackupSchedule),
       listIPv4: createRequestFunction(server.listIPv4),
-      listChangeApp: createRequestFunction(server.listChangeApp)
+      listChangeApp: createRequestFunction(server.listChangeApp),
+      deleteIPv4: createRequestFunction(server.deleteIPv4)
     },
     snapshot: {
       create: createRequestFunction(snapshot.create),

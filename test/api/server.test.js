@@ -243,6 +243,10 @@ const mockParameters = {
   },
   listChangeApp: {
     SUBID: 1312965
+  },
+  deleteIPv4: {
+    SUBID: 1312965,
+    ip: '192.0.2.1'
   }
 }
 
