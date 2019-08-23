@@ -408,6 +408,22 @@ exports.disableBackup = {
   }
 }
 
+exports.createIPv4 = {
+  url: '/server/create_ipv4',
+  requestType: 'POST',
+  apiKeyRequired: true,
+  parameters: {
+    SUBID: {
+      type: 'number',
+      required: true
+    },
+    reboot: {
+      type: 'string',
+      required: false
+    }
+  }
+}
+
 exports.listReverseIPv6 = {
   url: '/server/reverse_list_ipv6',
   requestType: 'POST',
