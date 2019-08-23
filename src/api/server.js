@@ -408,6 +408,18 @@ exports.disableBackup = {
   }
 }
 
+exports.getBackupSchedule = {
+  url: '/server/backup_get_schedule',
+  requestType: 'POST',
+  apiKeyRequired: true,
+  parameters: {
+    SUBID: {
+      type: 'number',
+      required: true
+    }
+  }
+}
+
 exports.listChangeApp = {
   url: '/server/app_change_list',
   requestType: 'GET',
