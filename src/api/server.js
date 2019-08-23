@@ -408,6 +408,18 @@ exports.disableBackup = {
   }
 }
 
+exports.listIPv6 = {
+  url: '/server/list_ipv6',
+  requestType: 'POST',
+  apiKeyRequired: true,
+  parameters: {
+    SUBID: {
+      type: 'number',
+      required: true
+    }
+  }
+}
+
 exports.setBackupSchedule = {
   url: '/server/backup_set_schedule',
   requestType: 'POST',
