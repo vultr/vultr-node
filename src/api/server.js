@@ -515,3 +515,19 @@ exports.listIPv4 = {
     }
   }
 }
+
+exports.setFirewallGroup = {
+  url: '/server/firewall_group_set',
+  requestType: 'POST',
+  apiKeyRequired: true,
+  parameters: {
+    SUBID: {
+      type: 'number',
+      required: true
+    },
+    FIREWALLGROUPID: {
+      type: 'string',
+      required: true
+    }
+  }
+}

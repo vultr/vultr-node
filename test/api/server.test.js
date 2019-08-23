@@ -243,6 +243,10 @@ const mockParameters = {
   },
   listChangeApp: {
     SUBID: 1312965
+  },
+  setFirewallGroup: {
+    SUBID: 1312965,
+    FIREWALLGROUPID: '1234abcd'
   }
 }
 
