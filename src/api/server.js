@@ -619,3 +619,15 @@ exports.isoStatus = {
     }
   }
 }
+
+exports.privateNetworks = {
+  url: '/server/private_networks',
+  requestType: 'GET',
+  apiKeyRequired: true,
+  parameters: {
+    SUBID: {
+      type: 'number',
+      required: true
+    }
+  }
+}
