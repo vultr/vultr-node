@@ -46,7 +46,7 @@ const mock = {
       surcharge: 0
     }
   },
-  getAppInfo: {
+  appInfo: {
     app_info: ''
   },
   bandwidth: {
@@ -133,7 +133,7 @@ const mockParameters = {
   halt: {
     SUBID: 90000
   },
-  getAppInfo: {
+  appInfo: {
     SUBID: 90000
   },
   bandwidth: {

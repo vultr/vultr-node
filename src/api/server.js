@@ -216,7 +216,7 @@ exports.neighbors = {
   }
 }
 
-exports.getAppInfo = {
+exports.appInfo = {
   url: '/server/get_app_info',
   requestType: 'GET',
   apiKeyRequired: true,

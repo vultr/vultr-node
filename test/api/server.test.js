@@ -48,7 +48,7 @@ const mock = {
   },
   listUpgradePlan: [29, 41, 61],
   neighbors: [23456],
-  getAppInfo: { app_info: '' },
+  appInfo: { app_info: '' },
   bandwidth: {
     incoming_bytes: [
       ['2014-06-10', '81072581'],
@@ -209,7 +209,7 @@ const mockParameters = {
   neighbors: {
     SUBID: 1312965
   },
-  getAppInfo: {
+  appInfo: {
     SUBID: 1312965
   },
   changeOS: {

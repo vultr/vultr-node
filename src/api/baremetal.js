@@ -178,7 +178,7 @@ exports.halt = {
   }
 }
 
-exports.getAppInfo = {
+exports.appInfo = {
   url: '/baremetal/get_app_info',
   requestType: 'GET',
   apiKeyRequired: true,
