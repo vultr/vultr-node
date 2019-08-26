@@ -436,7 +436,7 @@ exports.listReverseIPv6 = {
   }
 }
 
-exports.listIPv6 = {
+exports.ipv6Info = {
   url: '/server/list_ipv6',
   requestType: 'POST',
   apiKeyRequired: true,

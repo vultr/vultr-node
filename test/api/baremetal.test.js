@@ -64,7 +64,7 @@ const mock = {
   getUserData: {
     userdata: 'ZWNobyBIZWxsbyBXb3JsZA=='
   },
-  listIPv6: {
+  ipv6Info: {
     '900000': [
       {
         ip: '2001:DB8:9000::100',
@@ -149,7 +149,7 @@ const mockParameters = {
     SUBID: 90000,
     label: 'my label'
   },
-  listIPv6: {
+  ipv6Info: {
     SUBID: 90000
   },
   listIPv4: {

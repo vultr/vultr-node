@@ -242,7 +242,7 @@ exports.setLabel = {
   }
 }
 
-exports.listIPv6 = {
+exports.ipv6Info = {
   url: '/baremetal/list_ipv6',
   requestType: 'GET',
   apiKeyRequired: true,

@@ -78,7 +78,7 @@ const mock = {
       }
     ]
   },
-  listIPv6: {
+  ipv6Info: {
     '576965': [
       {
         ip: '2001:DB8:1000::100',
@@ -262,7 +262,7 @@ const mockParameters = {
   listReverseIPv6: {
     SUBID: 1312965
   },
-  listIPv6: {
+  ipv6Info: {
     SUBID: 1312965
   },
   setBackupSchedule: {
