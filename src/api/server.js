@@ -531,3 +531,19 @@ exports.setFirewallGroup = {
     }
   }
 }
+
+exports.deleteIPv4 = {
+  url: '/server/destroy_ipv4',
+  requestType: 'POST',
+  apiKeyRequired: true,
+  parameters: {
+    SUBID: {
+      type: 'number',
+      required: true
+    },
+    ip: {
+      type: 'string',
+      required: true
+    }
+  }
+}

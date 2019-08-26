@@ -247,6 +247,10 @@ const mockParameters = {
   setFirewallGroup: {
     SUBID: 1312965,
     FIREWALLGROUPID: '1234abcd'
+  },
+  deleteIPv4: {
+    SUBID: 1312965,
+    ip: '192.0.2.1'
   }
 }
 
