@@ -241,7 +241,10 @@ exports.initialize = config => {
       disablePrivateNetwork: createRequestFunction(
         server.disablePrivateNetwork
       ),
-      setDefaultReverseIPv4: createRequestFunction(server.setDefaultReverseIPv4)
+      setDefaultReverseIPv4: createRequestFunction(
+        server.setDefaultReverseIPv4
+      ),
+      deleteReverseIPv6: createRequestFunction(server.deleteReverseIPv6)
     },
     snapshot: {
       create: createRequestFunction(snapshot.create),
