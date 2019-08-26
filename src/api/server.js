@@ -675,3 +675,19 @@ exports.setDefaultReverseIPv4 = {
     }
   }
 }
+
+exports.deleteReverseIPv6 = {
+  url: '/server/reverse_delete_ipv6',
+  requestType: 'POST',
+  apiKeyRequired: true,
+  parameters: {
+    SUBID: {
+      type: 'number',
+      required: true
+    },
+    ip: {
+      type: 'string',
+      required: true
+    }
+  }
+}
