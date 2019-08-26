@@ -643,3 +643,19 @@ exports.detachISO = {
     }
   }
 }
+
+exports.disablePrivateNetwork = {
+  url: '/server/private_network_disable',
+  requestType: 'POST',
+  apiKeyRequired: true,
+  parameters: {
+    SUBID: {
+      type: 'number',
+      required: true
+    },
+    NETWORKID: {
+      type: 'string',
+      required: true
+    }
+  }
+}

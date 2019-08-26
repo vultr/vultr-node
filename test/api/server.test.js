@@ -309,6 +309,10 @@ const mockParameters = {
   },
   detachISO: {
     SUBID: 1312965
+  },
+  disablePrivateNetwork: {
+    SUBID: 1312965,
+    NETWORKID: 'net539626f0798d7'
   }
 }
 
