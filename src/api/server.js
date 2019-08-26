@@ -620,7 +620,7 @@ exports.isoStatus = {
   }
 }
 
-exports.privateNetworks = {
+exports.listPrivateNetworks = {
   url: '/server/private_networks',
   requestType: 'GET',
   apiKeyRequired: true,
