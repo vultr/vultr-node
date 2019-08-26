@@ -259,6 +259,10 @@ const mockParameters = {
   attachISO: {
     SUBID: 1312965,
     ISOID: 24
+  },
+  restoreSnapshot: {
+    SUBID: 1312965,
+    SNAPSHOTID: '5359435d28b9a'
   }
 }
 

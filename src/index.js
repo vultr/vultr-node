@@ -232,7 +232,8 @@ exports.initialize = config => {
       setFirewallGroup: createRequestFunction(server.setFirewallGroup),
       deleteIPv4: createRequestFunction(server.deleteIPv4),
       restoreBackup: createRequestFunction(server.restoreBackup),
-      attachISO: createRequestFunction(server.attachISO)
+      attachISO: createRequestFunction(server.attachISO),
+      restoreSnapshot: createRequestFunction(server.restoreSnapshot)
     },
     snapshot: {
       create: createRequestFunction(snapshot.create),
