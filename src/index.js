@@ -237,7 +237,7 @@ exports.initialize = config => {
       listChangeOS: createRequestFunction(server.listChangeOS),
       isoStatus: createRequestFunction(server.isoStatus),
       privateNetworks: createRequestFunction(server.privateNetworks),
-      detachISO: createRequestFunction(server.detachISO),
+      isoDetach: createRequestFunction(server.isoDetach),
       disablePrivateNetwork: createRequestFunction(
         server.disablePrivateNetwork
       ),

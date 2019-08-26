@@ -632,7 +632,7 @@ exports.privateNetworks = {
   }
 }
 
-exports.detachISO = {
+exports.isoDetach = {
   url: '/server/iso_detach',
   requestType: 'POST',
   apiKeyRequired: true,

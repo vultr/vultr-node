@@ -307,7 +307,7 @@ const mockParameters = {
   privateNetworks: {
     SUBID: 1312965
   },
-  detachISO: {
+  isoDetach: {
     SUBID: 1312965
   },
   disablePrivateNetwork: {
