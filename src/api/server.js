@@ -564,7 +564,7 @@ exports.restoreBackup = {
   }
 }
 
-exports.attachISO = {
+exports.isoAttach = {
   url: '/server/iso_attach',
   requestType: 'POST',
   apiKeyRequired: true,
