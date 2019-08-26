@@ -313,6 +313,10 @@ const mockParameters = {
   disablePrivateNetwork: {
     SUBID: 1312965,
     NETWORKID: 'net539626f0798d7'
+  },
+  setDefaultReverseIPv4: {
+    SUBID: 1312965,
+    ip: '192.0.2.1'
   }
 }
 
