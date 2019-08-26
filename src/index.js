@@ -222,7 +222,7 @@ exports.initialize = config => {
       enableBackup: createRequestFunction(server.enableBackup),
       enableIPv6: createRequestFunction(server.enableIPv6),
       disableBackup: createRequestFunction(server.disableBackup),
-      createIPv4: createRequestFunction(server.createIPv4),
+      addIPv4: createRequestFunction(server.addIPv4),
       listReverseIPv6: createRequestFunction(server.listReverseIPv6),
       listIPv6: createRequestFunction(server.listIPv6),
       setBackupSchedule: createRequestFunction(server.setBackupSchedule),

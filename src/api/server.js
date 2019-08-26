@@ -408,7 +408,7 @@ exports.disableBackup = {
   }
 }
 
-exports.createIPv4 = {
+exports.addIPv4 = {
   url: '/server/create_ipv4',
   requestType: 'POST',
   apiKeyRequired: true,
