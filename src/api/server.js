@@ -595,3 +595,15 @@ exports.restoreSnapshot = {
     }
   }
 }
+
+exports.listChangeOS = {
+  url: '/server/os_change_list',
+  requestType: 'GET',
+  apiKeyRequired: true,
+  parameters: {
+    SUBID: {
+      type: 'number',
+      required: true
+    }
+  }
+}
