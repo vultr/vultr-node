@@ -659,3 +659,19 @@ exports.disablePrivateNetwork = {
     }
   }
 }
+
+exports.setDefaultReverseIPv4 = {
+  url: '/server/reverse_default_ipv4',
+  requestType: 'POST',
+  apiKeyRequired: true,
+  parameters: {
+    SUBID: {
+      type: 'number',
+      required: true
+    },
+    ip: {
+      type: 'string',
+      required: true
+    }
+  }
+}

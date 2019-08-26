@@ -238,7 +238,10 @@ exports.initialize = config => {
       isoStatus: createRequestFunction(server.isoStatus),
       privateNetworks: createRequestFunction(server.privateNetworks),
       detachISO: createRequestFunction(server.detachISO),
-      disablePrivateNetwork: createRequestFunction(server.disablePrivateNetwork)
+      disablePrivateNetwork: createRequestFunction(
+        server.disablePrivateNetwork
+      ),
+      setDefaultReverseIPv4: createRequestFunction(server.setDefaultReverseIPv4)
     },
     snapshot: {
       create: createRequestFunction(snapshot.create),
