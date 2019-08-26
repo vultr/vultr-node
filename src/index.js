@@ -236,6 +236,7 @@ exports.initialize = config => {
       restoreSnapshot: createRequestFunction(server.restoreSnapshot),
       listChangeOS: createRequestFunction(server.listChangeOS),
       isoStatus: createRequestFunction(server.isoStatus),
+      privateNetworks: createRequestFunction(server.privateNetworks),
       detachISO: createRequestFunction(server.detachISO)
     },
     snapshot: {

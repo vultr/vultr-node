@@ -158,6 +158,18 @@ const mock = {
   isoStatus: {
     state: 'ready',
     ISOID: '0'
+  },
+  privateNetworks: {
+    net539626f0798d7: {
+      NETWORKID: 'net539626f0798d7',
+      mac_address: '5a:02:00:00:24:e9',
+      ip_address: '10.99.0.3'
+    },
+    net53962b0f2341f: {
+      NETWORKID: 'net53962b0f2341f',
+      mac_address: '5a:01:00:00:24:e9',
+      ip_address: '0.0.0.0'
+    }
   }
 }
 
@@ -290,6 +302,9 @@ const mockParameters = {
     SUBID: 1312965
   },
   isoStatus: {
+    SUBID: 1312965
+  },
+  privateNetworks: {
     SUBID: 1312965
   },
   detachISO: {
