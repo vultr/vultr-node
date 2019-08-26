@@ -233,7 +233,8 @@ exports.initialize = config => {
       deleteIPv4: createRequestFunction(server.deleteIPv4),
       restoreBackup: createRequestFunction(server.restoreBackup),
       attachISO: createRequestFunction(server.attachISO),
-      restoreSnapshot: createRequestFunction(server.restoreSnapshot)
+      restoreSnapshot: createRequestFunction(server.restoreSnapshot),
+      listChangeOS: createRequestFunction(server.listChangeOS)
     },
     snapshot: {
       create: createRequestFunction(snapshot.create),

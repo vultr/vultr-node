@@ -136,6 +136,24 @@ const mock = {
       deploy_name: 'WordPress on CentOS 6 x64',
       surcharge: 0
     }
+  },
+  listChangeOS: {
+    '127': {
+      OSID: '127',
+      name: 'CentOS 6 x64',
+      arch: 'x64',
+      family: 'centos',
+      windows: false,
+      surcharge: '0.00'
+    },
+    '148': {
+      OSID: '148',
+      name: 'Ubuntu 12.04 i386',
+      arch: 'i386',
+      family: 'ubuntu',
+      windows: false,
+      surcharge: '0.00'
+    }
   }
 }
 
@@ -263,6 +281,9 @@ const mockParameters = {
   restoreSnapshot: {
     SUBID: 1312965,
     SNAPSHOTID: '5359435d28b9a'
+  },
+  listChangeOS: {
+    SUBID: 1312965
   }
 }
 
