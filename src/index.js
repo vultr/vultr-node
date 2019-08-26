@@ -96,7 +96,7 @@ exports.initialize = config => {
 
   return {
     account: {
-      info: createRequestFunction(account.info)
+      getInfo: createRequestFunction(account.getInfo)
     },
     app: {
       list: createRequestFunction(app.list)
