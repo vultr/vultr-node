@@ -488,7 +488,7 @@ exports.getBackupSchedule = {
   }
 }
 
-exports.listChangeApp = {
+exports.listApps = {
   url: '/server/app_change_list',
   requestType: 'GET',
   apiKeyRequired: true,

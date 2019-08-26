@@ -121,7 +121,7 @@ const mock = {
       }
     ]
   },
-  listChangeApp: {
+  listApps: {
     '1': {
       APPID: '1',
       name: 'LEMP',
@@ -275,7 +275,7 @@ const mockParameters = {
   listIPv4: {
     SUBID: 1312965
   },
-  listChangeApp: {
+  listApps: {
     SUBID: 1312965
   },
   setFirewallGroup: {

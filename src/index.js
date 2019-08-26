@@ -228,7 +228,7 @@ exports.initialize = config => {
       setBackupSchedule: createRequestFunction(server.setBackupSchedule),
       getBackupSchedule: createRequestFunction(server.getBackupSchedule),
       listIPv4: createRequestFunction(server.listIPv4),
-      listChangeApp: createRequestFunction(server.listChangeApp),
+      listApps: createRequestFunction(server.listApps),
       setFirewallGroup: createRequestFunction(server.setFirewallGroup),
       deleteIPv4: createRequestFunction(server.deleteIPv4),
       restoreBackup: createRequestFunction(server.restoreBackup),
