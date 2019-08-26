@@ -619,3 +619,15 @@ exports.isoStatus = {
     }
   }
 }
+
+exports.detachISO = {
+  url: '/server/iso_detach',
+  requestType: 'POST',
+  apiKeyRequired: true,
+  parameters: {
+    SUBID: {
+      type: 'number',
+      required: true
+    }
+  }
+}

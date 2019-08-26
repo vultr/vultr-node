@@ -291,6 +291,9 @@ const mockParameters = {
   },
   isoStatus: {
     SUBID: 1312965
+  },
+  detachISO: {
+    SUBID: 1312965
   }
 }
 
