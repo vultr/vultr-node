@@ -547,3 +547,19 @@ exports.deleteIPv4 = {
     }
   }
 }
+
+exports.restoreBackup = {
+  url: '/server/restore_backup',
+  requestType: 'POST',
+  apiKeyRequired: true,
+  parameters: {
+    SUBID: {
+      type: 'number',
+      required: true
+    },
+    BACKUPID: {
+      type: 'string',
+      required: true
+    }
+  }
+}

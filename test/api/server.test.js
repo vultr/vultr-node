@@ -251,6 +251,10 @@ const mockParameters = {
   deleteIPv4: {
     SUBID: 1312965,
     ip: '192.0.2.1'
+  },
+  restoreBackup: {
+    SUBID: 1312965,
+    BACKUPID: '543d34149403a'
   }
 }
 
