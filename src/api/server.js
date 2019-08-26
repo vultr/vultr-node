@@ -607,3 +607,15 @@ exports.listChangeOS = {
     }
   }
 }
+
+exports.isoStatus = {
+  url: '/server/iso_status',
+  requestType: 'GET',
+  apiKeyRequired: true,
+  parameters: {
+    SUBID: {
+      type: 'number',
+      required: true
+    }
+  }
+}

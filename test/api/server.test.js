@@ -154,6 +154,10 @@ const mock = {
       windows: false,
       surcharge: '0.00'
     }
+  },
+  isoStatus: {
+    state: 'ready',
+    ISOID: '0'
   }
 }
 
@@ -283,6 +287,9 @@ const mockParameters = {
     SNAPSHOTID: '5359435d28b9a'
   },
   listChangeOS: {
+    SUBID: 1312965
+  },
+  isoStatus: {
     SUBID: 1312965
   }
 }
