@@ -123,7 +123,7 @@ exports.initialize = config => {
       enableIPv6: createRequestFunction(baremetal.enableIPv6),
       setLabel: createRequestFunction(baremetal.setLabel),
       ipv6Info: createRequestFunction(baremetal.ipv6Info),
-      listIPv4: createRequestFunction(baremetal.listIPv4),
+      ipv4Info: createRequestFunction(baremetal.ipv4Info),
       changeOS: createRequestFunction(baremetal.changeOS),
       listChangeOS: createRequestFunction(baremetal.listChangeOS),
       setUserData: createRequestFunction(baremetal.setUserData)
@@ -227,7 +227,7 @@ exports.initialize = config => {
       ipv6Info: createRequestFunction(server.ipv6Info),
       setBackupSchedule: createRequestFunction(server.setBackupSchedule),
       getBackupSchedule: createRequestFunction(server.getBackupSchedule),
-      listIPv4: createRequestFunction(server.listIPv4),
+      ipv4Info: createRequestFunction(server.ipv4Info),
       listApps: createRequestFunction(server.listApps),
       setFirewallGroup: createRequestFunction(server.setFirewallGroup),
       deleteIPv4: createRequestFunction(server.deleteIPv4),

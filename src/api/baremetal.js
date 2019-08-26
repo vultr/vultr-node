@@ -254,7 +254,7 @@ exports.ipv6Info = {
   }
 }
 
-exports.listIPv4 = {
+exports.ipv4Info = {
   url: '/baremetal/list_ipv4',
   requestType: 'GET',
   apiKeyRequired: true,

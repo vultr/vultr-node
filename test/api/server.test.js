@@ -96,7 +96,7 @@ const mock = {
     dow: 6,
     dom: 0
   },
-  listIPv4: {
+  ipv4Info: {
     '576965': [
       {
         ip: '123.123.123.123',
@@ -272,7 +272,7 @@ const mockParameters = {
   getBackupSchedule: {
     SUBID: 1312965
   },
-  listIPv4: {
+  ipv4Info: {
     SUBID: 1312965
   },
   listApps: {

@@ -500,7 +500,7 @@ exports.listApps = {
   }
 }
 
-exports.listIPv4 = {
+exports.ipv4Info = {
   url: '/server/list_ipv4',
   requestType: 'GET',
   apiKeyRequired: true,

@@ -74,7 +74,7 @@ const mock = {
       }
     ]
   },
-  listIPv4: {
+  ipv4Info: {
     '900000': [
       {
         ip: '203.0.113.10',
@@ -152,7 +152,7 @@ const mockParameters = {
   ipv6Info: {
     SUBID: 90000
   },
-  listIPv4: {
+  ipv4Info: {
     SUBID: 90000
   },
   changeOS: {
