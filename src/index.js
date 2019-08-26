@@ -230,7 +230,7 @@ exports.initialize = config => {
       ipv4Info: createRequestFunction(server.ipv4Info),
       listApps: createRequestFunction(server.listApps),
       setFirewallGroup: createRequestFunction(server.setFirewallGroup),
-      deleteIPv4: createRequestFunction(server.deleteIPv4),
+      destroyIPv4: createRequestFunction(server.destroyIPv4),
       restoreBackup: createRequestFunction(server.restoreBackup),
       attachISO: createRequestFunction(server.attachISO),
       restoreSnapshot: createRequestFunction(server.restoreSnapshot),

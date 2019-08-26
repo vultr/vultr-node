@@ -532,7 +532,7 @@ exports.setFirewallGroup = {
   }
 }
 
-exports.deleteIPv4 = {
+exports.destroyIPv4 = {
   url: '/server/destroy_ipv4',
   requestType: 'POST',
   apiKeyRequired: true,
