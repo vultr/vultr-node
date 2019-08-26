@@ -255,6 +255,10 @@ const mockParameters = {
   restoreBackup: {
     SUBID: 1312965,
     BACKUPID: '543d34149403a'
+  },
+  attachISO: {
+    SUBID: 1312965,
+    ISOID: 24
   }
 }
 

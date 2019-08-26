@@ -563,3 +563,18 @@ exports.restoreBackup = {
     }
   }
 }
+
+exports.attachISO = {
+  url: '/server/iso_attach',
+  requestType: 'POST',
+  parameters: {
+    SUBID: {
+      type: 'number',
+      required: true
+    },
+    ISOID: {
+      type: 'number',
+      required: true
+    }
+  }
+}
