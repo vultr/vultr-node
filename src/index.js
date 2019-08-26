@@ -125,7 +125,7 @@ exports.initialize = config => {
       ipv6Info: createRequestFunction(baremetal.ipv6Info),
       ipv4Info: createRequestFunction(baremetal.ipv4Info),
       changeOS: createRequestFunction(baremetal.changeOS),
-      listChangeOS: createRequestFunction(baremetal.listChangeOS),
+      listOS: createRequestFunction(baremetal.listOS),
       setUserData: createRequestFunction(baremetal.setUserData)
     },
     block: {
@@ -234,7 +234,7 @@ exports.initialize = config => {
       restoreBackup: createRequestFunction(server.restoreBackup),
       isoAttach: createRequestFunction(server.isoAttach),
       restoreSnapshot: createRequestFunction(server.restoreSnapshot),
-      listChangeOS: createRequestFunction(server.listChangeOS),
+      listOS: createRequestFunction(server.listOS),
       isoStatus: createRequestFunction(server.isoStatus),
       privateNetworks: createRequestFunction(server.privateNetworks),
       isoDetach: createRequestFunction(server.isoDetach),

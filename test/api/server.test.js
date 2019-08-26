@@ -137,7 +137,7 @@ const mock = {
       surcharge: 0
     }
   },
-  listChangeOS: {
+  listOS: {
     '127': {
       OSID: '127',
       name: 'CentOS 6 x64',
@@ -298,7 +298,7 @@ const mockParameters = {
     SUBID: 1312965,
     SNAPSHOTID: '5359435d28b9a'
   },
-  listChangeOS: {
+  listOS: {
     SUBID: 1312965
   },
   isoStatus: {

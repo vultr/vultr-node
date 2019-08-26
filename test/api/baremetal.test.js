@@ -84,7 +84,7 @@ const mock = {
       }
     ]
   },
-  listChangeOS: {
+  listOS: {
     '127': {
       OSID: '127',
       name: 'CentOS 6 x64',
@@ -159,7 +159,7 @@ const mockParameters = {
     SUBID: 90000,
     OSID: 127
   },
-  listChangeOS: {
+  listOS: {
     SUBID: 90000
   },
   setUserData: {

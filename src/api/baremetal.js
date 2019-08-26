@@ -282,7 +282,7 @@ exports.changeOS = {
   }
 }
 
-exports.listChangeOS = {
+exports.listOS = {
   url: '/baremetal/os_change_list',
   requestType: 'GET',
   apiKeyRequired: true,

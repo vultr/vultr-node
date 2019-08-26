@@ -596,7 +596,7 @@ exports.restoreSnapshot = {
   }
 }
 
-exports.listChangeOS = {
+exports.listOS = {
   url: '/server/os_change_list',
   requestType: 'GET',
   apiKeyRequired: true,
