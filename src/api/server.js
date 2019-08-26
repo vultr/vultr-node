@@ -567,6 +567,7 @@ exports.restoreBackup = {
 exports.attachISO = {
   url: '/server/iso_attach',
   requestType: 'POST',
+  apiKeyRequired: true,
   parameters: {
     SUBID: {
       type: 'number',
@@ -574,6 +575,22 @@ exports.attachISO = {
     },
     ISOID: {
       type: 'number',
+      required: true
+    }
+  }
+}
+
+exports.restoreSnapshot = {
+  url: '/server/restore_snapshot',
+  requestType: 'POST',
+  apiKeyRequired: true,
+  parameters: {
+    SUBID: {
+      type: 'number',
+      required: true
+    },
+    SNAPSHOTID: {
+      type: 'string',
       required: true
     }
   }
