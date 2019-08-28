@@ -140,7 +140,7 @@ exports.enableDNSSec = {
   }
 }
 
-exports.getDNSSecInfo = {
+exports.dnsSecInfo = {
   url: '/dns/dnssec_info',
   requestType: 'GET',
   apiKeyRequired: true,
@@ -152,7 +152,7 @@ exports.getDNSSecInfo = {
   }
 }
 
-exports.getSOAInfo = {
+exports.getSOA = {
   url: '/dns/soa_info',
   requestType: 'GET',
   apiKeyRequired: true,

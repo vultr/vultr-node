@@ -98,11 +98,11 @@ exports.initialize = config => {
     account: {
       getInfo: createRequestFunction(account.getInfo)
     },
-    app: {
-      list: createRequestFunction(app.list)
-    },
     api: {
       getInfo: createRequestFunction(api.getInfo)
+    },
+    app: {
+      list: createRequestFunction(app.list)
     },
     backup: {
       list: createRequestFunction(backup.list)
@@ -145,9 +145,9 @@ exports.initialize = config => {
       deleteRecord: createRequestFunction(dns.deleteRecord),
       createRecord: createRequestFunction(dns.createRecord),
       enableDNSSec: createRequestFunction(dns.enableDNSSec),
-      getDNSSecInfo: createRequestFunction(dns.getDNSSecInfo),
+      dnsSecInfo: createRequestFunction(dns.dnsSecInfo),
       updateRecord: createRequestFunction(dns.updateRecord),
-      getSOAInfo: createRequestFunction(dns.getSOAInfo),
+      getSOA: createRequestFunction(dns.getSOA),
       updateSOA: createRequestFunction(dns.updateSOA)
     },
     firewall: {
