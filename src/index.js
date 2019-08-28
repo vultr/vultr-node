@@ -2,7 +2,7 @@ exports.initialize = config => {
   const util = require('./util')
   const account = require('./api/account')
   const app = require('./api/app')
-  const auth = require('./api/auth')
+  const api = require('./api/api')
   const backup = require('./api/backup')
   const baremetal = require('./api/baremetal')
   const block = require('./api/block')
@@ -101,8 +101,8 @@ exports.initialize = config => {
     app: {
       list: createRequestFunction(app.list)
     },
-    auth: {
-      info: createRequestFunction(auth.info)
+    api: {
+      getInfo: createRequestFunction(api.getInfo)
     },
     backup: {
       list: createRequestFunction(backup.list)
