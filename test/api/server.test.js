@@ -48,7 +48,7 @@ const mock = {
   },
   listUpgradePlan: [29, 41, 61],
   neighbors: [23456],
-  getAppInfo: { app_info: '' },
+  appInfo: { app_info: '' },
   bandwidth: {
     incoming_bytes: [
       ['2014-06-10', '81072581'],
@@ -78,7 +78,7 @@ const mock = {
       }
     ]
   },
-  listIPv6: {
+  ipv6Info: {
     '576965': [
       {
         ip: '2001:DB8:1000::100',
@@ -96,7 +96,7 @@ const mock = {
     dow: 6,
     dom: 0
   },
-  listIPv4: {
+  ipv4Info: {
     '576965': [
       {
         ip: '123.123.123.123',
@@ -121,7 +121,7 @@ const mock = {
       }
     ]
   },
-  listChangeApp: {
+  listApps: {
     '1': {
       APPID: '1',
       name: 'LEMP',
@@ -137,7 +137,7 @@ const mock = {
       surcharge: 0
     }
   },
-  listChangeOS: {
+  listOS: {
     '127': {
       OSID: '127',
       name: 'CentOS 6 x64',
@@ -159,7 +159,7 @@ const mock = {
     state: 'ready',
     ISOID: '0'
   },
-  privateNetworks: {
+  listPrivateNetworks: {
     net539626f0798d7: {
       NETWORKID: 'net539626f0798d7',
       mac_address: '5a:02:00:00:24:e9',
@@ -209,7 +209,7 @@ const mockParameters = {
   neighbors: {
     SUBID: 1312965
   },
-  getAppInfo: {
+  appInfo: {
     SUBID: 1312965
   },
   changeOS: {
@@ -256,13 +256,13 @@ const mockParameters = {
   disableBackup: {
     SUBID: 1312965
   },
-  createIPv4: {
+  addIPv4: {
     SUBID: 1312965
   },
   listReverseIPv6: {
     SUBID: 1312965
   },
-  listIPv6: {
+  ipv6Info: {
     SUBID: 1312965
   },
   setBackupSchedule: {
@@ -272,17 +272,17 @@ const mockParameters = {
   getBackupSchedule: {
     SUBID: 1312965
   },
-  listIPv4: {
+  ipv4Info: {
     SUBID: 1312965
   },
-  listChangeApp: {
+  listApps: {
     SUBID: 1312965
   },
   setFirewallGroup: {
     SUBID: 1312965,
     FIREWALLGROUPID: '1234abcd'
   },
-  deleteIPv4: {
+  destroyIPv4: {
     SUBID: 1312965,
     ip: '192.0.2.1'
   },
@@ -290,7 +290,7 @@ const mockParameters = {
     SUBID: 1312965,
     BACKUPID: '543d34149403a'
   },
-  attachISO: {
+  isoAttach: {
     SUBID: 1312965,
     ISOID: 24
   },
@@ -298,16 +298,16 @@ const mockParameters = {
     SUBID: 1312965,
     SNAPSHOTID: '5359435d28b9a'
   },
-  listChangeOS: {
+  listOS: {
     SUBID: 1312965
   },
   isoStatus: {
     SUBID: 1312965
   },
-  privateNetworks: {
+  listPrivateNetworks: {
     SUBID: 1312965
   },
-  detachISO: {
+  isoDetach: {
     SUBID: 1312965
   },
   disablePrivateNetwork: {

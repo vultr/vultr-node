@@ -216,7 +216,7 @@ exports.neighbors = {
   }
 }
 
-exports.getAppInfo = {
+exports.appInfo = {
   url: '/server/get_app_info',
   requestType: 'GET',
   apiKeyRequired: true,
@@ -408,7 +408,7 @@ exports.disableBackup = {
   }
 }
 
-exports.createIPv4 = {
+exports.addIPv4 = {
   url: '/server/create_ipv4',
   requestType: 'POST',
   apiKeyRequired: true,
@@ -436,7 +436,7 @@ exports.listReverseIPv6 = {
   }
 }
 
-exports.listIPv6 = {
+exports.ipv6Info = {
   url: '/server/list_ipv6',
   requestType: 'POST',
   apiKeyRequired: true,
@@ -488,7 +488,7 @@ exports.getBackupSchedule = {
   }
 }
 
-exports.listChangeApp = {
+exports.listApps = {
   url: '/server/app_change_list',
   requestType: 'GET',
   apiKeyRequired: true,
@@ -500,7 +500,7 @@ exports.listChangeApp = {
   }
 }
 
-exports.listIPv4 = {
+exports.ipv4Info = {
   url: '/server/list_ipv4',
   requestType: 'GET',
   apiKeyRequired: true,
@@ -532,7 +532,7 @@ exports.setFirewallGroup = {
   }
 }
 
-exports.deleteIPv4 = {
+exports.destroyIPv4 = {
   url: '/server/destroy_ipv4',
   requestType: 'POST',
   apiKeyRequired: true,
@@ -564,7 +564,7 @@ exports.restoreBackup = {
   }
 }
 
-exports.attachISO = {
+exports.isoAttach = {
   url: '/server/iso_attach',
   requestType: 'POST',
   apiKeyRequired: true,
@@ -596,7 +596,7 @@ exports.restoreSnapshot = {
   }
 }
 
-exports.listChangeOS = {
+exports.listOS = {
   url: '/server/os_change_list',
   requestType: 'GET',
   apiKeyRequired: true,
@@ -620,7 +620,7 @@ exports.isoStatus = {
   }
 }
 
-exports.privateNetworks = {
+exports.listPrivateNetworks = {
   url: '/server/private_networks',
   requestType: 'GET',
   apiKeyRequired: true,
@@ -632,7 +632,7 @@ exports.privateNetworks = {
   }
 }
 
-exports.detachISO = {
+exports.isoDetach = {
   url: '/server/iso_detach',
   requestType: 'POST',
   apiKeyRequired: true,

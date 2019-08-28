@@ -2,7 +2,7 @@ exports.initialize = config => {
   const util = require('./util')
   const account = require('./api/account')
   const app = require('./api/app')
-  const auth = require('./api/auth')
+  const api = require('./api/api')
   const backup = require('./api/backup')
   const baremetal = require('./api/baremetal')
   const block = require('./api/block')
@@ -96,13 +96,13 @@ exports.initialize = config => {
 
   return {
     account: {
-      info: createRequestFunction(account.info)
+      getInfo: createRequestFunction(account.getInfo)
+    },
+    api: {
+      getInfo: createRequestFunction(api.getInfo)
     },
     app: {
       list: createRequestFunction(app.list)
-    },
-    auth: {
-      info: createRequestFunction(auth.info)
     },
     backup: {
       list: createRequestFunction(backup.list)
@@ -117,15 +117,15 @@ exports.initialize = config => {
       create: createRequestFunction(baremetal.create),
       listApps: createRequestFunction(baremetal.listApps),
       halt: createRequestFunction(baremetal.halt),
-      getAppInfo: createRequestFunction(baremetal.getAppInfo),
+      appInfo: createRequestFunction(baremetal.appInfo),
       bandwidth: createRequestFunction(baremetal.bandwidth),
       getUserData: createRequestFunction(baremetal.getUserData),
       enableIPv6: createRequestFunction(baremetal.enableIPv6),
       setLabel: createRequestFunction(baremetal.setLabel),
-      listIPv6: createRequestFunction(baremetal.listIPv6),
-      listIPv4: createRequestFunction(baremetal.listIPv4),
+      ipv6Info: createRequestFunction(baremetal.ipv6Info),
+      ipv4Info: createRequestFunction(baremetal.ipv4Info),
       changeOS: createRequestFunction(baremetal.changeOS),
-      listChangeOS: createRequestFunction(baremetal.listChangeOS),
+      listOS: createRequestFunction(baremetal.listOS),
       setUserData: createRequestFunction(baremetal.setUserData)
     },
     block: {
@@ -145,9 +145,9 @@ exports.initialize = config => {
       deleteRecord: createRequestFunction(dns.deleteRecord),
       createRecord: createRequestFunction(dns.createRecord),
       enableDNSSec: createRequestFunction(dns.enableDNSSec),
-      getDNSSecInfo: createRequestFunction(dns.getDNSSecInfo),
+      dnsSecInfo: createRequestFunction(dns.dnsSecInfo),
       updateRecord: createRequestFunction(dns.updateRecord),
-      getSOAInfo: createRequestFunction(dns.getSOAInfo),
+      getSOA: createRequestFunction(dns.getSOA),
       updateSOA: createRequestFunction(dns.updateSOA)
     },
     firewall: {
@@ -209,7 +209,7 @@ exports.initialize = config => {
       start: createRequestFunction(server.start),
       reboot: createRequestFunction(server.reboot),
       neighbors: createRequestFunction(server.neighbors),
-      getAppInfo: createRequestFunction(server.getAppInfo),
+      appInfo: createRequestFunction(server.appInfo),
       changeOS: createRequestFunction(server.changeOS),
       reinstall: createRequestFunction(server.reinstall),
       setUserData: createRequestFunction(server.setUserData),
@@ -222,22 +222,22 @@ exports.initialize = config => {
       enableBackup: createRequestFunction(server.enableBackup),
       enableIPv6: createRequestFunction(server.enableIPv6),
       disableBackup: createRequestFunction(server.disableBackup),
-      createIPv4: createRequestFunction(server.createIPv4),
+      addIPv4: createRequestFunction(server.addIPv4),
       listReverseIPv6: createRequestFunction(server.listReverseIPv6),
-      listIPv6: createRequestFunction(server.listIPv6),
+      ipv6Info: createRequestFunction(server.ipv6Info),
       setBackupSchedule: createRequestFunction(server.setBackupSchedule),
       getBackupSchedule: createRequestFunction(server.getBackupSchedule),
-      listIPv4: createRequestFunction(server.listIPv4),
-      listChangeApp: createRequestFunction(server.listChangeApp),
+      ipv4Info: createRequestFunction(server.ipv4Info),
+      listApps: createRequestFunction(server.listApps),
       setFirewallGroup: createRequestFunction(server.setFirewallGroup),
-      deleteIPv4: createRequestFunction(server.deleteIPv4),
+      destroyIPv4: createRequestFunction(server.destroyIPv4),
       restoreBackup: createRequestFunction(server.restoreBackup),
-      attachISO: createRequestFunction(server.attachISO),
+      isoAttach: createRequestFunction(server.isoAttach),
       restoreSnapshot: createRequestFunction(server.restoreSnapshot),
-      listChangeOS: createRequestFunction(server.listChangeOS),
+      listOS: createRequestFunction(server.listOS),
       isoStatus: createRequestFunction(server.isoStatus),
-      privateNetworks: createRequestFunction(server.privateNetworks),
-      detachISO: createRequestFunction(server.detachISO),
+      listPrivateNetworks: createRequestFunction(server.listPrivateNetworks),
+      isoDetach: createRequestFunction(server.isoDetach),
       disablePrivateNetwork: createRequestFunction(
         server.disablePrivateNetwork
       ),

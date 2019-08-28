@@ -46,7 +46,7 @@ const mock = {
       surcharge: 0
     }
   },
-  getAppInfo: {
+  appInfo: {
     app_info: ''
   },
   bandwidth: {
@@ -64,7 +64,7 @@ const mock = {
   getUserData: {
     userdata: 'ZWNobyBIZWxsbyBXb3JsZA=='
   },
-  listIPv6: {
+  ipv6Info: {
     '900000': [
       {
         ip: '2001:DB8:9000::100',
@@ -74,7 +74,7 @@ const mock = {
       }
     ]
   },
-  listIPv4: {
+  ipv4Info: {
     '900000': [
       {
         ip: '203.0.113.10',
@@ -84,7 +84,7 @@ const mock = {
       }
     ]
   },
-  listChangeOS: {
+  listOS: {
     '127': {
       OSID: '127',
       name: 'CentOS 6 x64',
@@ -133,7 +133,7 @@ const mockParameters = {
   halt: {
     SUBID: 90000
   },
-  getAppInfo: {
+  appInfo: {
     SUBID: 90000
   },
   bandwidth: {
@@ -149,17 +149,17 @@ const mockParameters = {
     SUBID: 90000,
     label: 'my label'
   },
-  listIPv6: {
+  ipv6Info: {
     SUBID: 90000
   },
-  listIPv4: {
+  ipv4Info: {
     SUBID: 90000
   },
   changeOS: {
     SUBID: 90000,
     OSID: 127
   },
-  listChangeOS: {
+  listOS: {
     SUBID: 90000
   },
   setUserData: {

@@ -178,7 +178,7 @@ exports.halt = {
   }
 }
 
-exports.getAppInfo = {
+exports.appInfo = {
   url: '/baremetal/get_app_info',
   requestType: 'GET',
   apiKeyRequired: true,
@@ -242,7 +242,7 @@ exports.setLabel = {
   }
 }
 
-exports.listIPv6 = {
+exports.ipv6Info = {
   url: '/baremetal/list_ipv6',
   requestType: 'GET',
   apiKeyRequired: true,
@@ -254,7 +254,7 @@ exports.listIPv6 = {
   }
 }
 
-exports.listIPv4 = {
+exports.ipv4Info = {
   url: '/baremetal/list_ipv4',
   requestType: 'GET',
   apiKeyRequired: true,
@@ -282,7 +282,7 @@ exports.changeOS = {
   }
 }
 
-exports.listChangeOS = {
+exports.listOS = {
   url: '/baremetal/os_change_list',
   requestType: 'GET',
   apiKeyRequired: true,
