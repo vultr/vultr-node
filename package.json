@@ -45,7 +45,6 @@
     "prettier": "^1.18.2",
     "codecov": "^3.5.0",
     "istanbul": "^0.4.5"
-
   },
   "dependencies": {
     "request": "^2.88.0",
