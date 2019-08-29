@@ -3,6 +3,7 @@ node_js:
   - 10
 
 install:
+  - npm install -g mocha
   - npm install -g codecov
   - npm install -g istanbul
 script:
