@@ -11,7 +11,7 @@ Official Vultr client node module.
 Vultr uses a PAT (Personal Access token) to interact/authenticate with the APIs. An API Key can be generated and acquired from the API menu in [settings](https://my.vultr.com/settings/#settingsapi).
 
 ### Initialize
-```
+```js
 const VultrNode = require('vultr-node')
 
 // Initialize the instance with your configuration
@@ -22,7 +22,7 @@ const vultr = VultrNode.initialize({
 ```
 
 ### Calling Endpoints
-```
+```js
 // Call endpoints using Promises
 vultr.account.info().then(response => {
   console.log(response)
