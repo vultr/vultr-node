@@ -4,7 +4,7 @@ We would love to get your feedback, thoughts, and overall improvements to `vultr
 
 ## Overview
 
-
+We use Husky to create a lint and test hook before each commit and push to maintain consistency and ensure code is tested thoroughly. Please be sure to respect these build steps.
 
 ## Getting started
 
@@ -18,12 +18,12 @@ We aim to have as much code coverage as possible.
 To run tests locally:
 
 ```
-npm test
+npm run test
 ```
 
 ## Versioning 
 
-Vultr-node follows [SemVer](http://semver.org/) for versioning. New functionality will result in a increment to the minor version. While, 
+vultr-node follows [SemVer](http://semver.org/) for versioning. New functionality will result in a increment to the minor version. While, 
 bug fixes will result in a increment to the patch version. 
 
 ## Releases
