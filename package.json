@@ -11,7 +11,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/ddymko/vultr-node.git"
+    "url": "git+https://github.com/vultr/vultr-node.git"
   },
   "keywords": [
     "vultr"
@@ -19,9 +19,9 @@
   "author": "Vultr",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/ddymko/vultr-node/issues"
+    "url": "https://github.com/vultr/vultr-node/issues"
   },
-  "homepage": "https://github.com/ddymko/vultr-node#readme",
+  "homepage": "https://github.com/vultr/vultr-node#readme",
   "husky": {
     "hooks": {
       "pre-commit": "npm run lint && npm test",
