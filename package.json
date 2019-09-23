@@ -1,6 +1,6 @@
 {
-  "name": "vultr-node",
-  "private": true,
+  "name": "@vultr/vultr-node",
+  "private": false,
   "version": "0.1.0",
   "description": "Node module to communicate with the Vultr API",
   "main": "src/index.js",
@@ -47,5 +47,8 @@
   "dependencies": {
     "request": "^2.88.0",
     "request-promise-native": "^1.0.7"
+  },
+  "directories": {
+    "test": "test"
   }
 }
