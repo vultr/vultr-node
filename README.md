@@ -4,7 +4,7 @@ Official Vultr client node module.
 
 ## Installation
 
-`npm install vultr-node`
+`npm install @vultr/vultr-node`
 
 ## Usage
 
@@ -17,7 +17,7 @@ const VultrNode = require('vultr-node')
 // Initialize the instance with your configuration
 const vultr = VultrNode.initialize({
   apiKey: 'your-api-key-here',
-  baseUrl: 'https://example.com' // Optional
+  baseUrl: 'https://example.com', // Optional
   rateLimit: 600 // Optional
 })
 ```
@@ -45,3 +45,7 @@ Feel free to send pull requests our way! Please see the [contributing guidelines
 ## License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE.md) file for details.
+
+## Authors
+* [**Spencer Kordecki**](https://github.com/spencerkordecki)
+* [**Fady Farid**](https://github.com/afady)
