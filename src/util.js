@@ -9,7 +9,8 @@ exports.makeApiRequest = (config, endpoint, parameters) => {
     },
     qs: endpoint.requestType === 'GET' && parameters ? parameters : {},
     form: endpoint.requestType === 'POST' && parameters ? parameters : {},
-    json: true
+    json: true,
+    timeout: config.rateLimit ? config.rateLimit : 700
   }
 
   return rp(options)
