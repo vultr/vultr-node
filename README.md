@@ -17,7 +17,7 @@ const VultrNode = require('vultr-node')
 // Initialize the instance with your configuration
 const vultr = VultrNode.initialize({
   apiKey: 'your-api-key-here',
-  baseUrl: 'https://example.com' // Optional
+  baseUrl: 'https://example.com', // Optional
   rateLimit: 600 // Optional
 })
 ```
