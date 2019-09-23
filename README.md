@@ -45,3 +45,7 @@ Feel free to send pull requests our way! Please see the [contributing guidelines
 ## License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE.md) file for details.
+
+## Authors
+* [**Spencer Kordecki**](https://github.com/spencerkordecki)
+* [**Fady Farid**](https://github.com/afady)
