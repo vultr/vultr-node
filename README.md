@@ -4,7 +4,7 @@ Official Vultr client node module.
 
 ## Installation
 
-`npm install vultr-node`
+`npm install @vultr/vultr-node`
 
 ## Usage
 
