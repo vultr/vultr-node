@@ -1,7 +1,7 @@
 {
   "name": "@vultr/vultr-node",
   "private": false,
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Node module to communicate with the Vultr API",
   "main": "src/index.js",
   "scripts": {
@@ -50,5 +50,8 @@
   },
   "directories": {
     "test": "test"
+  },
+  "publishConfig": {
+    "access": "public"
   }
 }
