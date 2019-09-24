@@ -2,7 +2,7 @@ language: node_js
 node_js:
   - 10
 
-install: 
+install:
   - npm install -g istanbul
   - npm install -g codecov
   - npm install
@@ -10,3 +10,11 @@ install:
 script:
   - npm test
   - istanbul cover ./node_modules/mocha/bin/_mocha --report lcovonly -- -R spec && codecov
+
+deploy:
+  provider: npm
+  email: ddymko@vultr.com
+  api_key:
+    secure: aoX0+I9Nc9V+il3HOGZlwlNNIyXEdFSFbxu7AOEQ0HyMhvXToRH6NNCZpr0vAYVQ1V/0xUcRcYClEBDTLGcrAqbv7UmLcjge61gaxRP++qiKn2WIbPrdphQXcQYspcu86pj5fNZsMZrp7iJ0eaq8VsqYkIOoGEHc0EGK767lB+5SsBoFTLLRmX5IVfOaUwJFeDXQiAsw13nz4LMzvZJspssWj3myuU9iy9scKzfL6EgmOWGCyPSxTruPLVACxz6I4pBblasdvRsGrbxg4TV93+9kVuzKapv/xBYYy3hrCpJWAOHkdJHPtt6c3tx6/F9dSuCcR53qOwzPkjhmKITyX4DoDpBXzRmGxP/PZTLO9yjoC5hd8J7rX218yVznMkr2KThI8PZAcvsZIhNWi6tpLGG4RtMtnTIqdK9svDOP01RL2Gck4mDphU/8b5boHWC7FMAsy0y3cwzwG9jRYLVCprwggxJaDgmYijvv5sCakUronv0OcyxWUCtl4dp1wps0wTR0WrL60C3LUh7Njt1dUnTtT1wq3tb2TSx+JWqfhFs7Lzs7oizIDZgVxbhvEUCWIuGMCJ4jJ1Rvoq8+AdWZL8fHXIx0OSEp3ObovQSYa2kBLj3oVqwL42OCS4rY4wTjioQeOZZVhKJMCYrrYMj7cgkvDg0uf/2GNPslqAFtMds=
+  on:
+    tags: true
