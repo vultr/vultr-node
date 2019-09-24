@@ -14,7 +14,6 @@ script:
 deploy:
   provider: npm
   email: ddymko@vultr.com
-  api_key:
-    secure: kt/tbm9M+25Cgq/gpT/AK42QStW132WlPRp2VlGIEDRPOKWe6zJzy5zaGFVGFKwNcg6I55B3hkqemk4orE44WBemREumpH0O149msazimABAryhFZtuY67+uoRmv6SksipfTIOlh2D8rQ916PaC1xqNoXWbWCdY73ZO/+5xfXEmOrxneSIBblwYyQ7JIS7mx8xfDF6VFgS+mFI2PzbYQ8TKUCB+r2rtIASiSJ1FDC2hClXcPwnzcRQBzOyUtN/WLU4xYzQ0C0Yli5YBSwTaM/AFXSowGVfGPUsTFDO75ZisC6uE+Fa+xECerS/jI7aZkoK3D1Vgs8V8TsRVBeDo0ArLRXPYhWTOVgO36qh4qWFDNKgkOlgw+nKEtryzsBhXFDmuMD0qSYuijCI273BjDzJ9kCGWkBsqEAicJXeI3W8LMXkqn0jJ8OpKhdORvW9jm8C4JMeYsQAeTt1lyVwdV/y+PgGvgxm9WjSRpHMaobdmAsxfZ/bo42YnTq/sxIPMwFXbFHCDx/q9cKmjRmvepRSoCi4CA+j7nyBnGv6i7LIyrWpD0ZO35syLALv+yTjK6WrJKPXH6UOHndPRD+AZ0k4OAMfrwo9huqs989hzeQOwLK5aCKkDsLQWt5porPagPqpXDzowe84jQTweRA6sBG9igy4UQdZLCtVTf3/1Ul6M=
-  on:
+  api_key: $NPM_TOKEN
+ on:
     tags: true
