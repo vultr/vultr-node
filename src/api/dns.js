@@ -1,3 +1,19 @@
+/**
+ * Methods for interacting with the DNS endpoints<br>
+ * {@link https://www.vultr.com/api/#dns}
+ * @namespace dns
+ */
+
+/**
+ * Create a domain name in DNS.<br>
+ * {@link https://www.vultr.com/api/#dns_create_domain}
+ * @function createDomain
+ * @memberof dns
+ * @instance
+ * @param {object} parameters
+ * @param {string} parameters.domain - Domain name to create.
+ * @param {string} parameters.serverip - Server IP to use when creating default records (A and MX).
+ */
 exports.createDomain = {
   url: '/dns/create_domain',
   requestType: 'POST',
@@ -14,6 +30,15 @@ exports.createDomain = {
   }
 }
 
+/**
+ * Delete a domain name and all associated records.<br>
+ * {@link https://www.vultr.com/api/#dns_delete_domain}
+ * @function deleteDomain
+ * @memberof dns
+ * @instance
+ * @param {object} parameters
+ * @param {string} parameters.domain - Domain name to delete.
+ */
 exports.deleteDomain = {
   url: '/dns/delete_domain',
   requestType: 'POST',
@@ -26,12 +51,26 @@ exports.deleteDomain = {
   }
 }
 
+/**
+ * List all domains associated with the current account.<br>
+ * {@link https://www.vultr.com/api/#dns_dns_list}
+ * @function list
+ * @memberof dns
+ * @instance
+ */
 exports.list = {
   url: '/dns/list',
   requestType: 'GET',
   apiKeyRequired: true
 }
 
+/**
+ * List all the records associated with a particular domain..<br>
+ * {@link https://www.vultr.com/api/#dns_records}
+ * @function records
+ * @memberof dns
+ * @instance
+ */
 exports.records = {
   url: '/dns/records',
   requestType: 'GET',
@@ -44,6 +83,13 @@ exports.records = {
   }
 }
 
+/**
+ * Delete an individual DNS record.<br>
+ * {@link https://www.vultr.com/api/#dns_delete_record}
+ * @function deleteRecord
+ * @memberof dns
+ * @instance
+ */
 exports.deleteRecord = {
   url: '/dns/delete_record',
   requestType: 'POST',
@@ -60,6 +106,20 @@ exports.deleteRecord = {
   }
 }
 
+/**
+ * Add a DNS record.<br>
+ * {@link https://www.vultr.com/api/#dns_create_record}
+ * @function createRecord
+ * @memberof dns
+ * @instance
+ * @param {object} parameters
+ * @param {string} parameters.domain - Domain name to add record to.
+ * @param {string} parameters.name - Name (subdomain) of record.
+ * @param {string} parameters.type - Type (A, AAAA, MX, etc) of record.
+ * @param {string} parameters.data - Data for this record.
+ * @param {number} [parameters.ttl] - TTL of this record.
+ * @param {number} [parameters.priority] - (only required for MX and SRV) Priority of this record (omit the priority from the data).
+ */
 exports.createRecord = {
   url: '/dns/create_record',
   requestType: 'POST',
@@ -92,6 +152,20 @@ exports.createRecord = {
   }
 }
 
+/**
+ * Update a DNS record.<br>
+ * {@link https://www.vultr.com/api/#dns_update_record}
+ * @function updateRecord
+ * @memberof dns
+ * @instance
+ * @param {object} parameters
+ * @param {string} parameters.domain - Domain name to update record.
+ * @param {number} parameters.RECORDID - ID of record to update.
+ * @param {string} [parameters.name] - Name (subdomain) of record.
+ * @param {string} [parameters.data] - Data for this record.
+ * @param {number} [parameters.ttl] - TTL of this record.
+ * @param {number} [parameters.priority] - (only required for MX and SRV) Priority of this record (omit the priority from the data).
+ */
 exports.updateRecord = {
   url: '/dns/update_record',
   requestType: 'POST',
@@ -124,6 +198,16 @@ exports.updateRecord = {
   }
 }
 
+/**
+ * Enable or disable DNSSEC for a domain.<br>
+ * {@link https://www.vultr.com/api/#dns_dnssec_enable}
+ * @function enableDNSSec
+ * @memberof dns
+ * @instance
+ * @param {object} parameters
+ * @param {string} parameters.domain - Domain name to update record.
+ * @param {string} parameters.enable - 'yes' or 'no'. If yes, DNSSEC will be enabled for the given domain.
+ */
 exports.enableDNSSec = {
   url: '/dns/dnssec_enable',
   requestType: 'POST',
@@ -140,6 +224,15 @@ exports.enableDNSSec = {
   }
 }
 
+/**
+ * Get the DNSSEC keys (if enabled) for a domain.<br>
+ * {@link https://www.vultr.com/api/#dns_dnssec_info}
+ * @function dnsSecInfo
+ * @memberof dns
+ * @instance
+ * @param {object} parameters
+ * @param {string} parameters.domain - Domain from which to gather DNSSEC keys.
+ */
 exports.dnsSecInfo = {
   url: '/dns/dnssec_info',
   requestType: 'GET',
@@ -152,6 +245,15 @@ exports.dnsSecInfo = {
   }
 }
 
+/**
+ * Get the SOA record information for a domain.<br>
+ * {@link https://www.vultr.com/api/#dns_soa_info}
+ * @function getSOA
+ * @memberof dns
+ * @instance
+ * @param {object} parameters
+ * @param {string} parameters.domain - Domain from which to gather DNSSEC keys.
+ */
 exports.getSOA = {
   url: '/dns/soa_info',
   requestType: 'GET',
@@ -164,6 +266,17 @@ exports.getSOA = {
   }
 }
 
+/**
+ * Update the SOA record information for a domain.<br>
+ * {@link https://www.vultr.com/api/#dns_soa_update}
+ * @function updateSOA
+ * @memberof dns
+ * @instance
+ * @param {object} parameters
+ * @param {string} parameters.domain - Domain from which to gather DNSSEC keys.
+ * @param {string} [parameters.nsprimary] - Primary nameserver to store in the SOA record.
+ * @param {string} [parameters.email] - Administrative email to store in the SOA record.
+ */
 exports.updateSOA = {
   url: '/dns/soa_update',
   requestType: 'POST',
