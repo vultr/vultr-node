@@ -35,9 +35,9 @@ exports.createGroup = {
   requestType: 'POST',
   apiKeyRequired: true,
   parameters: {
-    FIREWALLGROUPID: {
+    description: {
       type: 'string',
-      required: true
+      required: false
     }
   }
 }

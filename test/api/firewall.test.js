@@ -34,6 +34,9 @@ const mock = {
       rule_count: 2,
       max_rule_count: 50
     }
+  },
+  createGroup: {
+    FIREWALLGROUPID: '1234abcd'
   }
 }
 
@@ -47,7 +50,7 @@ const mockParameters = {
     FIREWALLGROUPID: '1234abcd'
   },
   createGroup: {
-    FIREWALLGROUPID: '1234abcd'
+    description: 'group1'
   },
   createRule: {
     FIREWALLGROUPID: '1234abcd',
