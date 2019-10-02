@@ -1,4 +1,4 @@
-# NodeVultr
+# vultr-node
 
 Official Vultr client node module.
 
