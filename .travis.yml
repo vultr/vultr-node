@@ -2,7 +2,7 @@ language: node_js
 node_js:
   - 10
 
-install: 
+install:
   - npm install -g istanbul
   - npm install -g codecov
   - npm install
@@ -10,3 +10,10 @@ install:
 script:
   - npm test
   - istanbul cover ./node_modules/mocha/bin/_mocha --report lcovonly -- -R spec && codecov
+
+deploy:
+  provider: npm
+  email: ddymko@vultr.com
+  api_key: $NPM_TOKEN
+  on:
+    tags: true
