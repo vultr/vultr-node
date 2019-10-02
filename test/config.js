@@ -6,4 +6,4 @@ exports.headers = {
   }
 }
 exports.apiVersion = 'v1'
-exports.rateLimit = '700'
+exports.rateLimit = 700
