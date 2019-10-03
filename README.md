@@ -33,7 +33,7 @@ const vultr = VultrNode.initialize({
 ### Calling Endpoints
 ```js
 // Call endpoints using Promises
-vultr.account.info().then(response => {
+vultr.account.getInfo().then(response => {
   console.log(response)
 })
 ```
