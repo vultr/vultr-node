@@ -10,7 +10,9 @@ Official Vultr client node module.
 
 ## Installation
 
-`npm install @vultr/vultr-node`
+```sh
+npm install @vultr/vultr-node
+```
 
 ## Usage
 

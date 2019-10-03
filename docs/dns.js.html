@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>JSDoc: Source: dns.js</title>
+
+    <script src="scripts/prettify/prettify.js"> </script>
+    <script src="scripts/prettify/lang-css.js"> </script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+</head>
+
+<body>
+
+<div id="main">
+
+    <h1 class="page-title">Source: dns.js</h1>
+
+    
+
+
+
+    
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>/**
+ * Methods for interacting with the DNS endpoints&lt;br>
+ * {@link https://www.vultr.com/api/#dns}
+ * @namespace dns
+ */
+
+/**
+ * Create a domain name in DNS.&lt;br>
+ * {@link https://www.vultr.com/api/#dns_create_domain}
+ * @function createDomain
+ * @memberof dns
+ * @instance
+ * @param {object} parameters
+ * @param {string} parameters.domain - Domain name to create.
+ * @param {string} parameters.serverip - Server IP to use when creating default records (A and MX).
+ */
+exports.createDomain = {
+  url: '/dns/create_domain',
+  requestType: 'POST',
+  apiKeyRequired: true,
+  parameters: {
+    domain: {
+      type: 'string',
+      required: true
+    },
+    serverip: {
+      type: 'string',
+      required: true
+    }
+  }
+}
+
+/**
+ * Delete a domain name and all associated records.&lt;br>
+ * {@link https://www.vultr.com/api/#dns_delete_domain}
+ * @function deleteDomain
+ * @memberof dns
+ * @instance
+ * @param {object} parameters
+ * @param {string} parameters.domain - Domain name to delete.
+ */
+exports.deleteDomain = {
+  url: '/dns/delete_domain',
+  requestType: 'POST',
+  apiKeyRequired: true,
+  parameters: {
+    domain: {
+      type: 'string',
+      required: true
+    }
+  }
+}
+
+/**
+ * List all domains associated with the current account.&lt;br>
+ * {@link https://www.vultr.com/api/#dns_dns_list}
+ * @function list
+ * @memberof dns
+ * @instance
+ */
+exports.list = {
+  url: '/dns/list',
+  requestType: 'GET',
+  apiKeyRequired: true
+}
+
+/**
+ * List all the records associated with a particular domain..&lt;br>
+ * {@link https://www.vultr.com/api/#dns_records}
+ * @function records
+ * @memberof dns
+ * @instance
+ */
+exports.records = {
+  url: '/dns/records',
+  requestType: 'GET',
+  apiKeyRequired: true,
+  parameters: {
+    domain: {
+      type: 'string',
+      required: true
+    }
+  }
+}
+
+/**
+ * Delete an individual DNS record.&lt;br>
+ * {@link https://www.vultr.com/api/#dns_delete_record}
+ * @function deleteRecord
+ * @memberof dns
+ * @instance
+ */
+exports.deleteRecord = {
+  url: '/dns/delete_record',
+  requestType: 'POST',
+  apiKeyRequired: true,
+  parameters: {
+    domain: {
+      type: 'string',
+      required: true
+    },
+    RECORDID: {
+      type: 'number',
+      required: true
+    }
+  }
+}
+
+/**
+ * Add a DNS record.&lt;br>
+ * {@link https://www.vultr.com/api/#dns_create_record}
+ * @function createRecord
+ * @memberof dns
+ * @instance
+ * @param {object} parameters
+ * @param {string} parameters.domain - Domain name to add record to.
+ * @param {string} parameters.name - Name (subdomain) of record.
+ * @param {string} parameters.type - Type (A, AAAA, MX, etc) of record.
+ * @param {string} parameters.data - Data for this record.
+ * @param {number} [parameters.ttl] - TTL of this record.
+ * @param {number} [parameters.priority] - (only required for MX and SRV) Priority of this record (omit the priority from the data).
+ */
+exports.createRecord = {
+  url: '/dns/create_record',
+  requestType: 'POST',
+  apiKeyRequired: true,
+  parameters: {
+    domain: {
+      type: 'string',
+      required: true
+    },
+    name: {
+      type: 'string',
+      required: true
+    },
+    type: {
+      type: 'string',
+      required: true
+    },
+    data: {
+      type: 'string',
+      required: true
+    },
+    ttl: {
+      type: 'number',
+      required: false
+    },
+    priority: {
+      type: 'number',
+      required: false
+    }
+  }
+}
+
+/**
+ * Update a DNS record.&lt;br>
+ * {@link https://www.vultr.com/api/#dns_update_record}
+ * @function updateRecord
+ * @memberof dns
+ * @instance
+ * @param {object} parameters
+ * @param {string} parameters.domain - Domain name to update record.
+ * @param {number} parameters.RECORDID - ID of record to update.
+ * @param {string} [parameters.name] - Name (subdomain) of record.
+ * @param {string} [parameters.data] - Data for this record.
+ * @param {number} [parameters.ttl] - TTL of this record.
+ * @param {number} [parameters.priority] - (only required for MX and SRV) Priority of this record (omit the priority from the data).
+ */
+exports.updateRecord = {
+  url: '/dns/update_record',
+  requestType: 'POST',
+  apiKeyRequired: true,
+  parameters: {
+    domain: {
+      type: 'string',
+      required: true
+    },
+    RECORDID: {
+      type: 'number',
+      required: true
+    },
+    name: {
+      type: 'string',
+      required: false
+    },
+    data: {
+      type: 'string',
+      required: false
+    },
+    ttl: {
+      type: 'number',
+      required: false
+    },
+    priority: {
+      type: 'number',
+      required: false
+    }
+  }
+}
+
+/**
+ * Enable or disable DNSSEC for a domain.&lt;br>
+ * {@link https://www.vultr.com/api/#dns_dnssec_enable}
+ * @function enableDNSSec
+ * @memberof dns
+ * @instance
+ * @param {object} parameters
+ * @param {string} parameters.domain - Domain name to update record.
+ * @param {string} parameters.enable - 'yes' or 'no'. If yes, DNSSEC will be enabled for the given domain.
+ */
+exports.enableDNSSec = {
+  url: '/dns/dnssec_enable',
+  requestType: 'POST',
+  apiKeyRequired: true,
+  parameters: {
+    domain: {
+      type: 'string',
+      required: true
+    },
+    enable: {
+      type: 'string',
+      required: true
+    }
+  }
+}
+
+/**
+ * Get the DNSSEC keys (if enabled) for a domain.&lt;br>
+ * {@link https://www.vultr.com/api/#dns_dnssec_info}
+ * @function dnsSecInfo
+ * @memberof dns
+ * @instance
+ * @param {object} parameters
+ * @param {string} parameters.domain - Domain from which to gather DNSSEC keys.
+ */
+exports.dnsSecInfo = {
+  url: '/dns/dnssec_info',
+  requestType: 'GET',
+  apiKeyRequired: true,
+  parameters: {
+    domain: {
+      type: 'string',
+      required: true
+    }
+  }
+}
+
+/**
+ * Get the SOA record information for a domain.&lt;br>
+ * {@link https://www.vultr.com/api/#dns_soa_info}
+ * @function getSOA
+ * @memberof dns
+ * @instance
+ * @param {object} parameters
+ * @param {string} parameters.domain - Domain from which to gather DNSSEC keys.
+ */
+exports.getSOA = {
+  url: '/dns/soa_info',
+  requestType: 'GET',
+  apiKeyRequired: true,
+  parameters: {
+    domain: {
+      type: 'string',
+      required: true
+    }
+  }
+}
+
+/**
+ * Update the SOA record information for a domain.&lt;br>
+ * {@link https://www.vultr.com/api/#dns_soa_update}
+ * @function updateSOA
+ * @memberof dns
+ * @instance
+ * @param {object} parameters
+ * @param {string} parameters.domain - Domain from which to gather DNSSEC keys.
+ * @param {string} [parameters.nsprimary] - Primary nameserver to store in the SOA record.
+ * @param {string} [parameters.email] - Administrative email to store in the SOA record.
+ */
+exports.updateSOA = {
+  url: '/dns/soa_update',
+  requestType: 'POST',
+  apiKeyRequired: true,
+  parameters: {
+    domain: {
+      type: 'string',
+      required: true
+    },
+    nsprimary: {
+      type: 'string',
+      required: false
+    },
+    email: {
+      type: 'string',
+      required: false
+    }
+  }
+}
+</code></pre>
+        </article>
+    </section>
+
+
+
+
+</div>
+
+<nav>
+    <h2><a href="index.html">Home</a></h2><h3>Namespaces</h3><ul><li><a href="account.html">account</a></li><li><a href="api.html">api</a></li><li><a href="app.html">app</a></li><li><a href="backup.html">backup</a></li><li><a href="baremetal.html">baremetal</a></li><li><a href="block.html">block</a></li><li><a href="dns.html">dns</a></li><li><a href="firewall.html">firewall</a></li><li><a href="iso.html">iso</a></li><li><a href="network.html">network</a></li><li><a href="os.html">os</a></li><li><a href="plans.html">plans</a></li><li><a href="regions.html">regions</a></li><li><a href="reservedIp.html">reservedIp</a></li><li><a href="server.html">server</a></li><li><a href="snapshot.html">snapshot</a></li><li><a href="sshkey.html">sshkey</a></li><li><a href="startupScript.html">startupScript</a></li><li><a href="user.html">user</a></li></ul>
+</nav>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 3.6.3</a> on Wed Oct 02 2019 14:15:09 GMT-0400 (Eastern Daylight Time)
+</footer>
+
+<script> prettyPrint(); </script>
+<script src="scripts/linenumber.js"> </script>
+</body>
+</html>
