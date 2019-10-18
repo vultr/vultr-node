@@ -23,7 +23,7 @@ Vultr uses a PAT (Personal Access token) to interact/authenticate with the APIs.
 const VultrNode = require('@vultr/vultr-node')
 
 // Initialize the instance with your configuration
-const Vultr = vultrNode.initialize({
+const vultr = VultrNode.initialize({
   apiKey: 'your-api-key-here',
   baseUrl: 'https://example.com', // Optional
   rateLimit: 600 // Optional
