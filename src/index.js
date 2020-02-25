@@ -10,6 +10,7 @@ exports.initialize = config => {
   const firewall = require('./api/firewall')
   const iso = require('./api/iso')
   const network = require('./api/network')
+  const objectStorage = require('./api/object-storage')
   const os = require('./api/os')
   const plans = require('./api/plans')
   const regions = require('./api/regions')
@@ -169,6 +170,14 @@ exports.initialize = config => {
       create: createRequestFunction(network.create),
       delete: createRequestFunction(network.delete),
       list: createRequestFunction(network.list)
+    },
+    objectStorage: {
+      create: createRequestFunction(objectStorage.create),
+      delete: createRequestFunction(objectStorage.delete),
+      list: createRequestFunction(objectStorage.list),
+      setLabel: createRequestFunction(objectStorage.setLabel),
+      listCluster: createRequestFunction(objectStorage.listCluster),
+      regenerateKeys: createRequestFunction(objectStorage.regenerateKeys)
     },
     os: {
       list: createRequestFunction(os.list)

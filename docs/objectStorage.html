@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>JSDoc: Namespace: snapshot</title>
+    <title>JSDoc: Namespace: objectStorage</title>
 
     <script src="scripts/prettify/prettify.js"> </script>
     <script src="scripts/prettify/lang-css.js"> </script>
@@ -17,7 +17,7 @@
 
 <div id="main">
 
-    <h1 class="page-title">Namespace: snapshot</h1>
+    <h1 class="page-title">Namespace: objectStorage</h1>
 
     
 
@@ -28,7 +28,7 @@
 
 <header>
     
-        <h2>snapshot</h2>
+        <h2>objectStorage</h2>
         
     
 </header>
@@ -37,8 +37,8 @@
     <div class="container-overview">
     
         
-            <div class="description">Methods for interacting with the Snapshot endpoints<br>
-<a href="https://www.vultr.com/api/#snapshot">https://www.vultr.com/api/#snapshot</a></div>
+            <div class="description">Methods for interacting with the Object Storage endpoints<br>
+<a href="https://www.vultr.com/api/#objectstorage">https://www.vultr.com/api/#objectstorage</a></div>
         
 
         
@@ -73,7 +73,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="snapshot.js.html">snapshot.js</a>, <a href="snapshot.js.html#line1">line 1</a>
+        <a href="object-storage.js.html">object-storage.js</a>, <a href="object-storage.js.html#line1">line 1</a>
     </li></ul></dd>
     
 
@@ -120,8 +120,8 @@
 
 
 <div class="description">
-    Create a snapshot from an existing virtual machine. The virtual machine does not need to be stopped.<br>
-<a href="https://www.vultr.com/api/#snapshot_create">https://www.vultr.com/api/#snapshot_create</a>
+    Create an object storage subscription.<br>
+<a href="https://www.vultr.com/api/#objectstorage_create">https://www.vultr.com/api/#objectstorage_create</a>
 </div>
 
 
@@ -201,7 +201,7 @@
 
         <tr>
             
-                <td class="name"><code>SUBID</code></td>
+                <td class="name"><code>OBJSTORECLUSTERID</code></td>
             
 
             <td class="type">
@@ -225,14 +225,14 @@
 
             
 
-            <td class="description last">Unique identifier of a subscription.</td>
+            <td class="description last">Cluster to use for object storage.</td>
         </tr>
 
     
 
         <tr>
             
-                <td class="name"><code>description</code></td>
+                <td class="name"><code>label</code></td>
             
 
             <td class="type">
@@ -258,7 +258,7 @@
 
             
 
-            <td class="description last">Description of snapshot contents.</td>
+            <td class="description last">Text label that will be associated with the subscription.</td>
         </tr>
 
     
@@ -306,194 +306,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="snapshot.js.html">snapshot.js</a>, <a href="snapshot.js.html#line7">line 7</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-        
-            
-
-    
-
-    
-    <h4 class="name" id="createFromUrl"><span class="type-signature"></span>createFromUrl<span class="signature">(parameters)</span><span class="type-signature"></span></h4>
-    
-
-    
-
-
-
-<div class="description">
-    Create a new snapshot on the current account. The snapshot will be downloaded from a given URL.<br>
-<a href="https://www.vultr.com/api/#snapshot_create_from_url">https://www.vultr.com/api/#snapshot_create_from_url</a>
-</div>
-
-
-
-
-
-
-
-
-
-    <h5>Parameters:</h5>
-    
-
-<table class="params">
-    <thead>
-    <tr>
-        
-        <th>Name</th>
-        
-
-        <th>Type</th>
-
-        
-
-        
-
-        <th class="last">Description</th>
-    </tr>
-    </thead>
-
-    <tbody>
-    
-
-        <tr>
-            
-                <td class="name"><code>parameters</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">object</span>
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last">
-                <h6>Properties</h6>
-                
-
-<table class="params">
-    <thead>
-    <tr>
-        
-        <th>Name</th>
-        
-
-        <th>Type</th>
-
-        
-
-        
-
-        <th class="last">Description</th>
-    </tr>
-    </thead>
-
-    <tbody>
-    
-
-        <tr>
-            
-                <td class="name"><code>url</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">string</span>
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last">Remote URL from where the snapshot will be downloaded.</td>
-        </tr>
-
-    
-    </tbody>
-</table>
-
-            </td>
-        </tr>
-
-    
-    </tbody>
-</table>
-
-
-
-
-
-
-<dl class="details">
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="snapshot.js.html">snapshot.js</a>, <a href="snapshot.js.html#line33">line 33</a>
+        <a href="object-storage.js.html">object-storage.js</a>, <a href="object-storage.js.html#line38">line 38</a>
     </li></ul></dd>
     
 
@@ -537,8 +350,8 @@
 
 
 <div class="description">
-    Destroy (delete) a snapshot. There is no going back from this call.<br>
-<a href="https://www.vultr.com/api/#snapshot_destroy">https://www.vultr.com/api/#snapshot_destroy</a>
+    Destroy an object storage subscription. All objects will be permanently deleted. There is no going back from this call.<br>
+<a href="https://www.vultr.com/api/#objectstorage_destroy">https://www.vultr.com/api/#objectstorage_destroy</a>
 </div>
 
 
@@ -616,13 +429,13 @@
 
         <tr>
             
-                <td class="name"><code>SNAPSHOTID</code></td>
+                <td class="name"><code>SUBID</code></td>
             
 
             <td class="type">
             
                 
-<span class="param-type">string</span>
+<span class="param-type">number</span>
 
 
             
@@ -632,7 +445,7 @@
 
             
 
-            <td class="description last">Unique identifier for this snapshot.</td>
+            <td class="description last">Unique identifier for this subscription.</td>
         </tr>
 
     
@@ -680,7 +493,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="snapshot.js.html">snapshot.js</a>, <a href="snapshot.js.html#line75">line 75</a>
+        <a href="object-storage.js.html">object-storage.js</a>, <a href="object-storage.js.html#line64">line 64</a>
     </li></ul></dd>
     
 
@@ -724,8 +537,8 @@
 
 
 <div class="description">
-    List all snapshots on the current account.<br>
-<a href="https://www.vultr.com/api/#snapshot_snapshot_list">https://www.vultr.com/api/#snapshot_snapshot_list</a>
+    List all object storage subscriptions on the current account. This includes both pending and active subscriptions.<br>
+<a href="https://www.vultr.com/api/#objectstorage__list">https://www.vultr.com/api/#objectstorage__list</a>
 </div>
 
 
@@ -795,6 +608,8 @@
         
 
         
+        <th>Default</th>
+        
 
         <th class="last">Description</th>
     </tr>
@@ -805,7 +620,7 @@
 
         <tr>
             
-                <td class="name"><code>SNAPSHOTID</code></td>
+                <td class="name"><code>include_s3</code></td>
             
 
             <td class="type">
@@ -830,8 +645,88 @@
             
 
             
+                <td class="default">
+                
+                    'yes'
+                
+                </td>
+            
 
-            <td class="description last">Filter result set to only contain this snapshot.</td>
+            <td class="description last">'yes' or 'no'. If 'yes', include S3 keys with each subscription entry.</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>SUBID</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">number</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+                <td class="default">
+                
+                </td>
+            
+
+            <td class="description last">Unique identifier of a subscription. Only the subscription object will be returned.</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>label</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+                <td class="default">
+                
+                </td>
+            
+
+            <td class="description last">A text label string. Only subscription objects with this text label will be returned.</td>
         </tr>
 
     
@@ -879,7 +774,516 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="snapshot.js.html">snapshot.js</a>, <a href="snapshot.js.html#line54">line 54</a>
+        <a href="object-storage.js.html">object-storage.js</a>, <a href="object-storage.js.html#line7">line 7</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id="listCluster"><span class="type-signature"></span>listCluster<span class="signature">()</span><span class="type-signature"></span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    Clusters may be removed over time. The "deploy" field can be used to determine whether or not new deployments are allowed in the cluster.<br>
+<a href="https://www.vultr.com/api/#objectstorage_list_cluster">https://www.vultr.com/api/#objectstorage_list_cluster</a>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="object-storage.js.html">object-storage.js</a>, <a href="object-storage.js.html#line111">line 111</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id="regenerateKeys"><span class="type-signature"></span>regenerateKeys<span class="signature">(parameters)</span><span class="type-signature"></span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    Regenerate the S3 API keys of an object storage subscription.<br>
+<a href="https://www.vultr.com/api/#objectstorage_s3key_regenerate">https://www.vultr.com/api/#objectstorage_s3key_regenerate</a>
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>parameters</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">object</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">
+                <h6>Properties</h6>
+                
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>SUBID</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">number</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">Unique identifier for this subscription.</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>s3_access_key</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">Access key from keypair to be regenerated.</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+            </td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="object-storage.js.html">object-storage.js</a>, <a href="object-storage.js.html#line124">line 124</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id="setLabel"><span class="type-signature"></span>setLabel<span class="signature">(parameters)</span><span class="type-signature"></span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    Set the label of an object storage subscription.<br>
+<a href="https://www.vultr.com/api/#objectstorage_label_set">https://www.vultr.com/api/#objectstorage_label_set</a>
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>parameters</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">object</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">
+                <h6>Properties</h6>
+                
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>SUBID</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">number</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">Unique identifier for this subscription.</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>label</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">Text label that will be shown in the control panel.</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+            </td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="object-storage.js.html">object-storage.js</a>, <a href="object-storage.js.html#line85">line 85</a>
     </li></ul></dd>
     
 
