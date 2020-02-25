@@ -16,7 +16,7 @@ npm install @vultr/vultr-node
 
 ## Usage
 
-Vultr uses a PAT (Personal Access token) to interact/authenticate with the APIs. An API Key can be generated and acquired from the API menu in [settings](https://my.vultr.com/settings/#settingsapi).
+Vultr uses a PAT (Personal Access Token) to interact/authenticate with the APIs. An API Key can be generated and acquired from the API menu in [settings](https://my.vultr.com/settings/#settingsapi).
 
 ### Initialize
 ```js
