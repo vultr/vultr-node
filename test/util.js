@@ -14,23 +14,26 @@ exports.createTestSuite = (specificationFile, mockData, mockParameters) => {
         const endpoint = specification[key]
         let requiredParameters = {}
 
-        for (let parameter in endpoint.parameters) {
-          if (endpoint.parameters[parameter].required) {
-            requiredParameters[parameter] = endpoint.parameters[parameter]
+        if (endpoint.parameters !== undefined) {
+          for (let parameter in endpoint.parameters) {
+            if (endpoint.parameters[parameter].required) {
+              requiredParameters[parameter] = endpoint.parameters[parameter]
+            }
           }
         }
+
 
         beforeEach(() => {
           if (endpoint.requestType === 'GET') {
             nock(config.baseUrl, endpoint.apiKeyRequired ? config.headers : {})
               .get(`/${config.apiVersion}${endpoint.url}`)
-              .query(mockParameters !== undefined ? mockParameters[key] : {})
+              .query((mockParameters && mockParameters[key]) || {})
               .reply(200, mockData[key] || undefined)
           } else if (endpoint.requestType === 'POST') {
             nock(config.baseUrl, config.headers)
               .post(
                 `/${config.apiVersion}${endpoint.url}`,
-                mockParameters !== undefined ? mockParameters[key] : {}
+                (mockParameters && mockParameters[key]) || {}
               )
               .reply(200, mockData[key] || undefined)
           }
@@ -51,7 +54,7 @@ exports.createTestSuite = (specificationFile, mockData, mockParameters) => {
             const vultrInstance = vultr.initialize()
 
             vultrInstance[apiModule][key](
-              mockParameters !== undefined ? mockParameters[key] : {}
+              (mockParameters && mockParameters[key]) || {}
             ).then(response => {
               if (mockData[key]) {
                 expect(response).to.deep.equal(mockData[key])
@@ -80,7 +83,7 @@ exports.createTestSuite = (specificationFile, mockData, mockParameters) => {
           )
 
           vultrInstance[apiModule][key](
-            mockParameters !== undefined ? mockParameters[key] : {}
+            (mockParameters && mockParameters[key]) || {}
           ).then(response => {
             if (mockData[key]) {
               expect(response).to.deep.equal(mockData[key])
