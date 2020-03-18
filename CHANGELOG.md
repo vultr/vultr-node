@@ -1,5 +1,9 @@
 # Change Log
 
+## [v0.2.1](https://github.com/vultr/vultr-node/compare/v0.2.0..v0.2.1) (2019-03-18)
+### Dependencies
+* To see all deps that were updated please check [milestone v0.2.1](https://github.com/vultr/vultr-node/milestone/23)
+
 ## [v0.2.0](https://github.com/vultr/vultr-node/compare/v0.1.2..v0.2.0) (2019-02-25)
 ### Features
 * Added support for Object Storage [#303](https://github.com/vultr/vultr-node/pull/303)
