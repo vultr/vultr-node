@@ -1,5 +1,9 @@
 # Change Log
 
+## [v0.2.2](https://github.com/vultr/vultr-node/compare/v0.2.1..v0.2.2) (2019-04-16)
+### Security
+* Updated all dependencies to ensure minimist security issues are resolved[#329](https://github.com/vultr/vultr-node/milestone/329)
+
 ## [v0.2.1](https://github.com/vultr/vultr-node/compare/v0.2.0..v0.2.1) (2019-03-18)
 ### Dependencies
 * To see all deps that were updated please check [milestone v0.2.1](https://github.com/vultr/vultr-node/milestone/23)
