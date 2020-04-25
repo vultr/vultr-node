@@ -39,7 +39,7 @@ exports.getFullConfig = {
  * @param {string} [parameters.cookie_name] - Name for your sticky session cookie.
  * @param {string} [parameters.balancing_algorithm] - Balancing algorithm for your load balancer; use `roundrobin` or `leastconn`.
  * @param {object} [parameters.health_check] - Define health checks for your attached back end nodes.
- * @param {object} [parameters.forwarding_rules] - Define forwarding rules the load balancer will follow.
+ * @param {array} [parameters.forwarding_rules] - Define forwarding rules the load balancer will follow.
  * @param {string} [parameters.ssl_private_key] - The SSL certificate's private key.
  * @param {string} [parameters.ssl_certificate] - The SSL certificate.
  * @param {string} [parameters.ssl_chain] - The SSL certificate chain.
@@ -78,7 +78,7 @@ exports.create = {
       required: false
     },
     forwarding_rules: {
-      type: 'object',
+      type: 'array',
       required: false
     },
     ssl_private_key: {
