@@ -38,11 +38,13 @@ exports.getFullConfig = {
  * @param {string} [parameters.sticky_sessions] - Enables sticky sessions for your load balancer; use `on` or `off`.
  * @param {string} [parameters.cookie_name] - Name for your sticky session cookie.
  * @param {string} [parameters.balancing_algorithm] - Balancing algorithm for your load balancer; use `roundrobin` or `leastconn`.
+ * @param {string} [parameters.proxy_protocol] - Enables proxy protocol; use `on` or `off`.
  * @param {object} [parameters.health_check] - Define health checks for your attached back end nodes.
  * @param {array} [parameters.forwarding_rules] - Define forwarding rules the load balancer will follow.
  * @param {string} [parameters.ssl_private_key] - The SSL certificate's private key.
  * @param {string} [parameters.ssl_certificate] - The SSL certificate.
  * @param {string} [parameters.ssl_chain] - The SSL certificate chain.
+ * @param {string} [parameters.attached_nodes] - List which instances to attach to the load balancer.
  */
 exports.create = {
   url: '/loadbalancer/create',
@@ -73,6 +75,10 @@ exports.create = {
       type: 'string',
       required: false
     },
+    proxy_protocol: {
+      type: 'string',
+      required: false
+    },
     health_check: {
       type: 'object',
       required: false
@@ -91,6 +97,10 @@ exports.create = {
     },
     ssl_chain: {
       type: 'string',
+      required: false
+    },
+    attached_nodes: {
+      type: 'array',
       required: false
     }
   }
@@ -241,6 +251,7 @@ exports.getGenericInfo = {
  * @param {string} [parameters.sticky_sessions] - Enables sticky sessions for your load balancer; use `on` or `off`.
  * @param {string} [parameters.cookie_name] - Name for your sticky session.
  * @param {boolean} [parameters.ssl_redirect] - Force HTTP to HTTPS.
+ * @param {string} [parameters.proxy_protocol] - Enables proxy protocol; use `on` or `off`.
  */
 exports.updateGenericInfo = {
   url: '/loadbalancer/generic_update',
@@ -269,6 +280,10 @@ exports.updateGenericInfo = {
     },
     ssl_redirect: {
       type: 'boolean',
+      required: false
+    },
+    proxy_protocol: {
+      type: 'string',
       required: false
     }
   }

@@ -7,7 +7,8 @@ const mock = {
       ssl_redirect: false,
       sticky_sessions: {
         cookie_name: 'tests'
-      }
+      },
+      proxy_protocol: false
     },
     health_checks_info: {
       protocol: 'http',
@@ -52,7 +53,8 @@ const mock = {
     ssl_redirect: false,
     sticky_sessions: {
       cookie_name: ''
-    }
+    },
+    proxy_protocol: false
   },
   getHealthCheckinfo: {
     protocol: 'https',
@@ -94,6 +96,7 @@ const mockParameters = {
     sticky_sessions: 'on',
     cookie_name: 'lbCookie1',
     balancing_algorithm: 'roundrobin',
+    proxy_protocol: 'off',
     health_check: {
       protocol: 'https',
       port: 81,
@@ -113,7 +116,8 @@ const mockParameters = {
     ],
     ssl_private_key: '1111',
     ssl_certificate: 'path/to/certificate',
-    ssl_chain: '2222'
+    ssl_chain: '2222',
+    attached_nodes: [12345, 54321]
   },
   delete: {
     SUBID: 1314840
@@ -141,7 +145,8 @@ const mockParameters = {
     balancing_algorithm: 'leastconn',
     sticky_sessions: 'off',
     cookie_name: 'genericCookie',
-    ssl_redirect: true
+    ssl_redirect: true,
+    proxy_protocol: 'off'
   },
   getHealthCheckInfo: {
     SUBID: 1314840
