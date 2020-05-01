@@ -9,6 +9,7 @@ exports.initialize = config => {
   const dns = require('./api/dns')
   const firewall = require('./api/firewall')
   const iso = require('./api/iso')
+  const loadBalancer = require('./api/load-balancer')
   const network = require('./api/network')
   const objectStorage = require('./api/object-storage')
   const os = require('./api/os')
@@ -59,8 +60,8 @@ exports.initialize = config => {
                 if (
                   endpointParameter.type !== 'array' &&
                   typeof userParameter !==
-                    // eslint-disable-next-line valid-typeof
-                    endpointParameter.type
+                  // eslint-disable-next-line valid-typeof
+                  endpointParameter.type
                 ) {
                   throw new Error(`Invalid parameter type: ${parameter}`)
                 } else if (
@@ -165,6 +166,26 @@ exports.initialize = config => {
       delete: createRequestFunction(iso.delete),
       list: createRequestFunction(iso.list),
       listPublic: createRequestFunction(iso.listPublic)
+    },
+    loadBalancer: {
+      getFullConfig: createRequestFunction(loadBalancer.getFullConfig),
+      create: createRequestFunction(loadBalancer.create),
+      delete: createRequestFunction(loadBalancer.delete),
+      createForwardingRule: createRequestFunction(loadBalancer.createForwardingRule),
+      deleteForwardingRule: createRequestFunction(loadBalancer.deleteForwardingRule),
+      listForwardingRules: createRequestFunction(loadBalancer.listForwardingRules),
+      getGenericInfo: createRequestFunction(loadBalancer.getGenericInfo),
+      updateGenericInfo: createRequestFunction(loadBalancer.updateGenericInfo),
+      getHealthCheckInfo: createRequestFunction(loadBalancer.getHealthCheckInfo),
+      setHealthCheck: createRequestFunction(loadBalancer.setHealthCheck),
+      attachInstance: createRequestFunction(loadBalancer.attachInstance),
+      detachInstance: createRequestFunction(loadBalancer.detachInstance),
+      attachedInstances: createRequestFunction(loadBalancer.attachedInstances),
+      setLabel: createRequestFunction(loadBalancer.setLabel),
+      list: createRequestFunction(loadBalancer.list),
+      addSSL: createRequestFunction(loadBalancer.addSSL),
+      hasSSL: createRequestFunction(loadBalancer.hasSSL),
+      removeSSL: createRequestFunction(loadBalancer.removeSSL)
     },
     network: {
       create: createRequestFunction(network.create),
