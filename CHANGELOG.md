@@ -1,5 +1,12 @@
 # Change Log
 
+## [v0.3.0](https://github.com/vultr/vultr-node/compare/v0.2.2..v0.3.0) (2019-05-01)
+### Features
+* Support for Load Balancers [#336](https://github.com/vultr/vultr-node/pull/336)
+
+### Dependencies
+* To see all deps that were updated please check [milestone v0.3.0](https://github.com/vultr/vultr-node/milestone/24?closed=1)
+
 ## [v0.2.2](https://github.com/vultr/vultr-node/compare/v0.2.1..v0.2.2) (2019-04-16)
 ### Security
 * Updated all dependencies to ensure minimist security issues are resolved[#329](https://github.com/vultr/vultr-node/milestone/329)
