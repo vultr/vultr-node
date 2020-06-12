@@ -1,23 +1,49 @@
 exports.makeApiRequest = (config, endpoint, parameters) => {
-  const rp = require('request-promise-native')
+  const nf = require('node-fetch')
   const baseUrl = (config && config.baseUrl) || 'https://api.vultr.com/v1'
+  let fetchUrl = `${baseUrl}${endpoint.url}`
   const options = {
     method: endpoint.requestType,
-    url: `${baseUrl}${endpoint.url}`,
     headers: {
       'API-Key': (config && config.apiKey) || ''
-    },
-    qs: endpoint.requestType === 'GET' && parameters ? parameters : {},
-    form: endpoint.requestType === 'POST' && parameters ? parameters : {},
-    json: true,
-    timeout: config ? config.rateLimit : 700
+    }
   }
 
-  return rp(options)
-    .then(response => {
-      return response
+  if (parameters !== undefined) {
+    const params = new URLSearchParams()
+    const userParams = Object.keys(parameters)
+
+    userParams.forEach((key) => {
+      params.append(key, parameters[key])
     })
-    .catch(error => {
-      return error
+
+    if (endpoint.requestType === 'POST') {
+      options.body = params
+    } else if (endpoint.requestType === 'GET') {
+      fetchUrl = `${fetchUrl}?${params}`
+    }
+  }
+
+  return nf(fetchUrl, options)
+    .then((response) => {
+      // The request was not successful
+      if (!response.ok) {
+        throw Error(response.statusText)
+      }
+
+      const contentType = response.headers.get('content-type')
+
+      // The request was successful, but does not return any data
+      if (!contentType || !contentType.includes('application/json')) {
+        return
+      }
+
+      // The request was successful and contains JSON data
+      return response.json().then((responseJSON) => {
+        return responseJSON
+      })
+    })
+    .catch((err) => {
+      return err
     })
 }

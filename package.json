@@ -47,8 +47,7 @@
     "prettier": "^2.0.5"
   },
   "dependencies": {
-    "request": "^2.88.0",
-    "request-promise-native": "^1.0.7"
+    "node-fetch": "^2.6.0"
   },
   "directories": {
     "test": "test"

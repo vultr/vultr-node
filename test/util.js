@@ -22,7 +22,6 @@ exports.createTestSuite = (specificationFile, mockData, mockParameters) => {
           }
         }
 
-
         beforeEach(() => {
           if (endpoint.requestType === 'GET') {
             nock(config.baseUrl, endpoint.apiKeyRequired ? config.headers : {})
@@ -55,7 +54,7 @@ exports.createTestSuite = (specificationFile, mockData, mockParameters) => {
 
             vultrInstance[apiModule][key](
               (mockParameters && mockParameters[key]) || {}
-            ).then(response => {
+            ).then((response) => {
               if (mockData[key]) {
                 expect(response).to.deep.equal(mockData[key])
               } else {
@@ -84,13 +83,19 @@ exports.createTestSuite = (specificationFile, mockData, mockParameters) => {
 
           vultrInstance[apiModule][key](
             (mockParameters && mockParameters[key]) || {}
-          ).then(response => {
-            if (mockData[key]) {
-              expect(response).to.deep.equal(mockData[key])
-            } else {
-              expect(response).to.equal(undefined)
-            }
-          })
+          )
+            .then((response) => {
+              if (mockData[key]) {
+                // Response successful and returns data
+                expect(response).to.deep.equal(mockData[key])
+              } else {
+                // Response successful but returns no data
+                expect(response).to.equal(undefined)
+              }
+            })
+            .catch((err) => {
+              return err
+            })
         })
       })
     }
