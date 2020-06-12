@@ -56,7 +56,7 @@ const mock = {
     },
     proxy_protocol: false
   },
-  getHealthCheckinfo: {
+  getHealthCheckInfo: {
     protocol: 'https',
     port: 80,
     path: '/',

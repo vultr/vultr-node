@@ -338,6 +338,10 @@ exports.setHealthCheck = {
       type: 'string',
       required: false
     },
+    port: {
+      type: 'number',
+      required: false
+    },
     check_interval: {
       type: 'number',
       required: false
