@@ -1,7 +1,7 @@
 {
   "name": "@vultr/vultr-node",
   "private": false,
-  "version": "0.3.0",
+  "version": "0.3.1",
   "description": "Node module to communicate with the Vultr API",
   "main": "src/index.js",
   "scripts": {
@@ -30,26 +30,24 @@
     }
   },
   "devDependencies": {
-    "@babel/cli": "^7.5.5",
-    "@babel/core": "^7.5.5",
-    "@babel/preset-env": "^7.5.5",
+    "@babel/cli": "^7.10.1",
+    "@babel/core": "^7.10.2",
+    "@babel/preset-env": "^7.10.2",
     "chai": "^4.2.0",
     "eslint": "^6.8.0",
     "eslint-config-standard": "^12.0.0",
-    "eslint-plugin-import": "^2.18.2",
+    "eslint-plugin-import": "^2.21.2",
     "eslint-plugin-node": "^11.0.0",
     "eslint-plugin-promise": "^4.2.1",
     "eslint-plugin-standard": "^4.0.1",
     "husky": "^4.2.3",
     "jsdoc": "^3.6.3",
-    "mocha": "^7.1.1",
+    "mocha": "^7.2.0",
     "nock": "^12.0.2",
     "prettier": "^2.0.5"
   },
   "dependencies": {
-    "node-fetch": "^2.6.0",
-    "request": "^2.88.0",
-    "request-promise-native": "^1.0.7"
+    "node-fetch": "^2.6.0"
   },
   "directories": {
     "test": "test"
