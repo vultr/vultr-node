@@ -10,15 +10,16 @@ exports.makeApiRequest = (config, endpoint, parameters) => {
   }
 
   if (parameters !== undefined) {
-    if (endpoint.requestType === 'POST') {
-      options.body = JSON.stringify(parameters)
-    } else if (endpoint.requestType === 'GET') {
-      const params = new URLSearchParams()
-      const userParams = Object.keys(parameters)
+    const params = new URLSearchParams()
+    const userParams = Object.keys(parameters)
 
-      userParams.forEach((key) => {
-        params.append(key, parameters[key])
-      })
+    userParams.forEach((key) => {
+      params.append(key, parameters[key])
+    })
+
+    if (endpoint.requestType === 'POST') {
+      options.body = params
+    } else if (endpoint.requestType === 'GET') {
       fetchUrl = `${fetchUrl}?${params}`
     }
   }
@@ -43,7 +44,6 @@ exports.makeApiRequest = (config, endpoint, parameters) => {
       })
     })
     .catch((err) => {
-      console.error(err)
       return err
     })
 }

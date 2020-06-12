@@ -94,7 +94,6 @@ exports.createTestSuite = (specificationFile, mockData, mockParameters) => {
               }
             })
             .catch((err) => {
-              console.error(err)
               return err
             })
         })
