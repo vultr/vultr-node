@@ -5,7 +5,7 @@
 * Replace request with node-fetch [#347](https://github.com/vultr/vultr-node/pull/347)
 
 ### Dependencies
-* To see all deps that were updated please check [milestone v0.4.0](https://github.com/vultr/vultr-node/milestone/25)
+* To see all deps that were updated please check [milestone v0.4.0](https://github.com/vultr/vultr-node/milestone/26)
 
 ## [v0.3.1](https://github.com/vultr/vultr-node/compare/v0.3.0..v0.3.1) (2019-06-10)
 ### Dependencies
