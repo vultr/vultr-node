@@ -1,5 +1,9 @@
 # Change Log
 
+## [v0.4.1](https://github.com/vultr/vultr-node/compare/v0.4.0..v0.4.1) (2019-08-13)
+### Dependencies
+* To see all deps that were updated please check [milestone v0.4.1](https://github.com/vultr/vultr-node/milestone/27)
+
 ## [v0.4.0](https://github.com/vultr/vultr-node/compare/v0.3.1..v0.4.0) (2019-07-15)
 ### Enhancements
 * Replace request with node-fetch [#347](https://github.com/vultr/vultr-node/pull/347)
