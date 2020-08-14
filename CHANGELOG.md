@@ -1,32 +1,36 @@
 # Change Log
 
-## [v0.4.0](https://github.com/vultr/vultr-node/compare/v0.3.1..v0.4.0) (2019-07-15)
+## [v0.4.1](https://github.com/vultr/vultr-node/compare/v0.4.0..v0.4.1) (2020-08-13)
+### Dependencies
+* To see all deps that were updated please check [milestone v0.4.1](https://github.com/vultr/vultr-node/milestone/27)
+
+## [v0.4.0](https://github.com/vultr/vultr-node/compare/v0.3.1..v0.4.0) (2020-07-15)
 ### Enhancements
 * Replace request with node-fetch [#347](https://github.com/vultr/vultr-node/pull/347)
 
 ### Dependencies
 * To see all deps that were updated please check [milestone v0.4.0](https://github.com/vultr/vultr-node/milestone/26)
 
-## [v0.3.1](https://github.com/vultr/vultr-node/compare/v0.3.0..v0.3.1) (2019-06-10)
+## [v0.3.1](https://github.com/vultr/vultr-node/compare/v0.3.0..v0.3.1) (2020-06-10)
 ### Dependencies
 * To see all deps that were updated please check [milestone v0.3.1](https://github.com/vultr/vultr-node/milestone/25)
 
-## [v0.3.0](https://github.com/vultr/vultr-node/compare/v0.2.2..v0.3.0) (2019-05-01)
+## [v0.3.0](https://github.com/vultr/vultr-node/compare/v0.2.2..v0.3.0) (2020-05-01)
 ### Features
 * Support for Load Balancers [#336](https://github.com/vultr/vultr-node/pull/336)
 
 ### Dependencies
 * To see all deps that were updated please check [milestone v0.3.0](https://github.com/vultr/vultr-node/milestone/24?closed=1)
 
-## [v0.2.2](https://github.com/vultr/vultr-node/compare/v0.2.1..v0.2.2) (2019-04-16)
+## [v0.2.2](https://github.com/vultr/vultr-node/compare/v0.2.1..v0.2.2) (2020-04-16)
 ### Security
 * Updated all dependencies to ensure minimist security issues are resolved[#329](https://github.com/vultr/vultr-node/milestone/329)
 
-## [v0.2.1](https://github.com/vultr/vultr-node/compare/v0.2.0..v0.2.1) (2019-03-18)
+## [v0.2.1](https://github.com/vultr/vultr-node/compare/v0.2.0..v0.2.1) (2020-03-18)
 ### Dependencies
 * To see all deps that were updated please check [milestone v0.2.1](https://github.com/vultr/vultr-node/milestone/23)
 
-## [v0.2.0](https://github.com/vultr/vultr-node/compare/v0.1.2..v0.2.0) (2019-02-25)
+## [v0.2.0](https://github.com/vultr/vultr-node/compare/v0.1.2..v0.2.0) (2020-02-25)
 ### Features
 * Added support for Object Storage [#303](https://github.com/vultr/vultr-node/pull/303)
 
