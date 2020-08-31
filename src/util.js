@@ -10,17 +10,12 @@ exports.makeApiRequest = (config, endpoint, parameters) => {
   }
 
   if (parameters !== undefined) {
-    const params = new URLSearchParams()
-    const userParams = Object.keys(parameters)
-
-    userParams.forEach((key) => {
-      params.append(key, parameters[key])
-    })
+    const userParams = Object.keys(parameters).map((key) => key + '=' + encodeURIComponent(parameters[key])).join('&')
 
     if (endpoint.requestType === 'POST') {
-      options.body = params
+      options.body = userParams
     } else if (endpoint.requestType === 'GET') {
-      fetchUrl = `${fetchUrl}?${params}`
+      fetchUrl = `${fetchUrl}?${userParams}`
     }
   }
 
