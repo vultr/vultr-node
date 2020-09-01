@@ -1133,3 +1133,45 @@ exports.deleteReverseIPv6 = {
     }
   }
 }
+
+/**
+ * Enables DDoS Protection for a server.<br>
+ * {@link https://www.vultr.com/api/#server_ddos_protection_enable}
+ * @function enableDDoSProtection
+ * @memberof server
+ * @instance
+ * @param {object} parameters
+ * @param {number} parameters.SUBID - Unique identifier of a subscription.
+ */
+exports.enableDDoSProtection = {
+  url: '/server/ddos_protection_enable',
+  requestType: 'POST',
+  apiKeyRequired: true,
+  parameters: {
+    SUBID: {
+      type: 'number',
+      required: true
+    }
+  }
+}
+
+/**
+ * Disables DDoS Protection for a server.<br>
+ * {@link https://www.vultr.com/api/#server_ddos_protection_disable}
+ * @function disableDDoSProtection
+ * @memberof server
+ * @instance
+ * @param {object} parameters
+ * @param {number} parameters.SUBID - Unique identifier of a subscription.
+ */
+exports.disableDDoSProtection = {
+  url: '/server/ddos_protection_disable',
+  requestType: 'POST',
+  apiKeyRequired: true,
+  parameters: {
+    SUBID: {
+      type: 'number',
+      required: true
+    }
+  }
+}

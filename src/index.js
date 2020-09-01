@@ -274,7 +274,9 @@ exports.initialize = config => {
       setDefaultReverseIPv4: createRequestFunction(
         server.setDefaultReverseIPv4
       ),
-      deleteReverseIPv6: createRequestFunction(server.deleteReverseIPv6)
+      deleteReverseIPv6: createRequestFunction(server.deleteReverseIPv6),
+      enableDDoSProtection: createRequestFunction(server.enableDDoSProtection),
+      disableDDoSProtection: createRequestFunction(server.disableDDoSProtection)
     },
     snapshot: {
       create: createRequestFunction(snapshot.create),
