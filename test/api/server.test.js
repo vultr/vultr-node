@@ -46,6 +46,9 @@ const mock = {
   create: {
     SUBID: '1312965'
   },
+  addIPv4: {
+    ipv4: '123.123.123.124'
+  },
   listUpgradePlan: [29, 41, 61],
   neighbors: [23456],
   appInfo: { app_info: '' },
