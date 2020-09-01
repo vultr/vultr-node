@@ -321,6 +321,12 @@ const mockParameters = {
   deleteReverseIPv6: {
     SUBID: 1312965,
     ip: '192.0.2.1'
+  },
+  enableDDoSProtection: {
+    SUBID: 1312965
+  },
+  disableDDoSProtection: {
+    SUBID: 1312965
   }
 }
 
