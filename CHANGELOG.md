@@ -1,4 +1,13 @@
 # Change Log
+## [v0.5.0](https://github.com/vultr/vultr-node/compare/v0.4.1..v0.5.0) (2020-09-02)
+### Features
+* Adds support for enabling and disabling DDoS protection [#370](https://github.com/vultr/vultr-node/issues/370)
+
+### Bug Fixes
+* Remove use of `URLSearchParams()` in favor of `.map()` for joining user parameters to support native iOS [#372](https://github.com/vultr/vultr-node/pull/373)
+
+### Dependencies 
+* To see all deps that were updated please check [milestone v0.5.0](https://github.com/vultr/vultr-node/milestone/28)
 
 ## [v0.4.1](https://github.com/vultr/vultr-node/compare/v0.4.0..v0.4.1) (2020-08-13)
 ### Dependencies
