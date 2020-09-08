@@ -1,4 +1,10 @@
 # Change Log
+
+## [v1.0.0](https://github.com/vultr/vultr-node/compare/v0.5.0..v1.0.0) (2020-09-08)
+### Features
+* Promoting Vultr-node to v1.0.0 no breaking changes [#385](https://github.com/vultr/vultr-node/issues/385)
+
+
 ## [v0.5.0](https://github.com/vultr/vultr-node/compare/v0.4.1..v0.5.0) (2020-09-02)
 ### Features
 * Adds support for enabling and disabling DDoS protection [#370](https://github.com/vultr/vultr-node/issues/370)
