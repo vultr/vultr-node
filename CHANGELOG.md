@@ -1,5 +1,12 @@
 # Change Log
 
+## [v1.0.1](https://github.com/vultr/vultr-node/compare/v1.0.0..v1.0.1) (2020-10-06)
+### Bug Fixes
+* Adds missing header for POST requests [#394](https://github.com/vultr/vultr-node/issues/394)
+
+### Dependencies
+* To see all deps that were updated please check [milestone v1.0.1](https://github.com/vultr/vultr-node/milestone/29)
+
 ## [v1.0.0](https://github.com/vultr/vultr-node/compare/v0.5.0..v1.0.0) (2020-09-08)
 ### Features
 * Promoting Vultr-node to v1.0.0 no breaking changes [#385](https://github.com/vultr/vultr-node/issues/385)
