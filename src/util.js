@@ -10,10 +10,13 @@ exports.makeApiRequest = (config, endpoint, parameters) => {
   }
 
   if (parameters !== undefined) {
-    const userParams = Object.keys(parameters).map((key) => key + '=' + encodeURIComponent(parameters[key])).join('&')
+    const userParams = Object.keys(parameters)
+      .map((key) => key + '=' + encodeURIComponent(parameters[key]))
+      .join('&')
 
     if (endpoint.requestType === 'POST') {
       options.body = userParams
+      options.headers['Content-Type'] = 'application/x-www-form-urlencoded'
     } else if (endpoint.requestType === 'GET') {
       fetchUrl = `${fetchUrl}?${userParams}`
     }
