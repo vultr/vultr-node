@@ -1,4 +1,4 @@
-exports.initialize = config => {
+exports.initialize = (config) => {
   const util = require('./util')
   const account = require('./api/account')
   const app = require('./api/app')
@@ -32,11 +32,12 @@ exports.initialize = config => {
    *
    * @param {String} endpoint the API endpoint configuration as defined in /api
    */
-  const createRequestFunction = endpoint => {
-    return parameters => {
+  const createRequestFunction = (endpoint) => {
+    return (parameters) => {
       // Check if the endpoint requires an API key
       if (endpoint.apiKeyRequired) {
         if (userConfiguration === undefined || !userConfiguration.apiKey) {
+          // API key was not provided
           throw new Error(`API key required for ${endpoint.url}`)
         }
       }
@@ -45,6 +46,7 @@ exports.initialize = config => {
       if (endpoint.parameters) {
         if (parameters) {
           if (typeof parameters !== 'object') {
+            // Parameters were not passed in as an object
             throw new Error('Parameters must be passed in as an object.')
           } else {
             // Validate the parameters the user passed in
@@ -55,21 +57,31 @@ exports.initialize = config => {
               const userParameter = parameters[parameter]
 
               if (endpointParameter.required && !userParameter) {
+                // Parameters for the request are required, but none were passed in
                 throw new Error(`Missing parameter: ${parameter}`)
               } else if (userParameter) {
-                if (
-                  endpointParameter.type !== 'array' &&
-                  typeof userParameter !==
-                  // eslint-disable-next-line valid-typeof
-                  endpointParameter.type
-                ) {
-                  throw new Error(`Invalid parameter type: ${parameter}`)
+                if (endpointParameter.type !== 'array') {
+                  if (endpointParameter.type === 'number') {
+                    if (isNaN(Number(userParameter))) {
+                      // Request requires a number but special character or alpha character was passed in
+                      throw new Error(`Invalid parameter type: ${parameter}`)
+                    }
+                  } else if (
+                    typeof userParameter !==
+                    // eslint-disable-next-line valid-typeof
+                    endpointParameter.type
+                  ) {
+                    // Request parameter type does not match the parameter type that was passed in
+                    throw new Error(`Invalid parameter type: ${parameter}`)
+                  }
                 } else if (
                   endpointParameter.type === 'array' &&
                   !Array.isArray(userParameter)
                 ) {
+                  // Request requires array but array was not passed in
                   throw new Error(`Invalid parameter type: ${parameter}`)
                 } else {
+                  // Parameters successfully validated
                   requestParameters[parameter] = userParameter
                 }
               }
@@ -171,12 +183,20 @@ exports.initialize = config => {
       getFullConfig: createRequestFunction(loadBalancer.getFullConfig),
       create: createRequestFunction(loadBalancer.create),
       delete: createRequestFunction(loadBalancer.delete),
-      createForwardingRule: createRequestFunction(loadBalancer.createForwardingRule),
-      deleteForwardingRule: createRequestFunction(loadBalancer.deleteForwardingRule),
-      listForwardingRules: createRequestFunction(loadBalancer.listForwardingRules),
+      createForwardingRule: createRequestFunction(
+        loadBalancer.createForwardingRule
+      ),
+      deleteForwardingRule: createRequestFunction(
+        loadBalancer.deleteForwardingRule
+      ),
+      listForwardingRules: createRequestFunction(
+        loadBalancer.listForwardingRules
+      ),
       getGenericInfo: createRequestFunction(loadBalancer.getGenericInfo),
       updateGenericInfo: createRequestFunction(loadBalancer.updateGenericInfo),
-      getHealthCheckInfo: createRequestFunction(loadBalancer.getHealthCheckInfo),
+      getHealthCheckInfo: createRequestFunction(
+        loadBalancer.getHealthCheckInfo
+      ),
       setHealthCheck: createRequestFunction(loadBalancer.setHealthCheck),
       attachInstance: createRequestFunction(loadBalancer.attachInstance),
       detachInstance: createRequestFunction(loadBalancer.detachInstance),
