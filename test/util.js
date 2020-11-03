@@ -54,13 +54,17 @@ exports.createTestSuite = (specificationFile, mockData, mockParameters) => {
 
             vultrInstance[apiModule][key](
               (mockParameters && mockParameters[key]) || {}
-            ).then((response) => {
-              if (mockData[key]) {
-                expect(response).to.deep.equal(mockData[key])
-              } else {
-                expect(response).to.equal(undefined)
-              }
-            })
+            )
+              .then((response) => {
+                if (mockData[key]) {
+                  expect(response).to.deep.equal(mockData[key])
+                } else {
+                  expect(response).to.equal(undefined)
+                }
+              })
+              .catch((err) => {
+                return err
+              })
           })
         }
 
