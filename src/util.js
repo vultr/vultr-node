@@ -15,9 +15,12 @@ exports.makeApiRequest = (config, endpoint, parameters) => {
       .join('&')
 
     if (endpoint.requestType === 'POST') {
-      options.body = userParams
+      if (userParams.length) {
+        options.body = userParams
+      }
+
       options.headers['Content-Type'] = 'application/x-www-form-urlencoded'
-    } else if (endpoint.requestType === 'GET') {
+    } else if (endpoint.requestType === 'GET' && userParams.length) {
       fetchUrl = `${fetchUrl}?${userParams}`
     }
   }
