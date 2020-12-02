@@ -50,9 +50,9 @@ exports.initialize = (config) => {
             throw new Error('Parameters must be passed in as an object.')
           } else {
             // Validate the parameters the user passed in
-            let requestParameters = {}
+            const requestParameters = {}
 
-            for (let parameter in endpoint.parameters) {
+            for (const parameter in endpoint.parameters) {
               const endpointParameter = endpoint.parameters[parameter]
               const userParameter = parameters[parameter]
 
@@ -95,7 +95,7 @@ exports.initialize = (config) => {
           }
         } else {
           // No parameters passed, check that none are required
-          for (let parameter in endpoint.parameters) {
+          for (const parameter in endpoint.parameters) {
             if (endpoint.parameters[parameter].required) {
               throw new Error(`Missing parameter: ${parameter}`)
             }

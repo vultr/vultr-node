@@ -1,5 +1,12 @@
 # Change Log
 
+## [v1.0.2](https://github.com/vultr/vultr-node/compare/v1.0.1..v1.0.2) (2020-12-02)
+### Bug Fixes
+* Auto-convert strings to numbers for number fields [#397](https://github.com/vultr/vultr-node/issues/397)
+
+### Dependencies
+* To see all deps that were updated please check [milestone v1.0.2](https://github.com/vultr/vultr-node/milestone/30)
+
 ## [v1.0.1](https://github.com/vultr/vultr-node/compare/v1.0.0..v1.0.1) (2020-10-06)
 ### Bug Fixes
 * Adds missing header for POST requests [#394](https://github.com/vultr/vultr-node/issues/394)

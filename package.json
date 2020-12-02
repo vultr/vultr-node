@@ -1,7 +1,7 @@
 {
   "name": "@vultr/vultr-node",
   "private": false,
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Node module to communicate with the Vultr API",
   "main": "src/index.js",
   "scripts": {
