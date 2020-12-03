@@ -1,9 +1,5 @@
 # Change Log
 
-## [v1.0.3](https://github.com/vultr/vultr-node/compare/v1.0.3..v1.0.2) (2020-12-03)
-### Bug Fixes
-* Fixes issue where parameter type checking was not properly covering all paths and setting valid parameters [#416](https://github.com/vultr/vultr-node/issues/416)
-
 ## [v1.0.2](https://github.com/vultr/vultr-node/compare/v1.0.1..v1.0.2) (2020-12-02)
 ### Bug Fixes
 * Auto-convert strings to numbers for number fields [#397](https://github.com/vultr/vultr-node/issues/397)

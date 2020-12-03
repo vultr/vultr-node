@@ -47,7 +47,29 @@ describe('Vultr Instance', () => {
     }).to.throw(Error)
   })
 
-  it('requires required non-array parameters to match the specified parameter type', () => {
+  it('allows number parameters to be passed in as a number or string', () => {
+    const vultrInstance = vultr.initialize({ apiKey: config.apiKey })
+    expect(
+      typeof vultrInstance.server.create({
+        DCID: '1',
+        VPSPLANID: '202',
+        OSID: '127'
+      })
+    ).to.equal('object')
+  })
+
+  it('requires number parameters to be contain only number characters', () => {
+    const vultrInstance = vultr.initialize({ apiKey: config.apiKey })
+    expect(() => {
+      vultrInstance.server.create({
+        DCID: '%',
+        VPSPLANID: '!@#$',
+        OSID: '^&*('
+      })
+    }).to.throw(Error)
+  })
+
+  it('requires required non-array and non-number parameters to match the specified parameter type', () => {
     const vultrInstance = vultr.initialize({ apiKey: config.apiKey })
     expect(() => {
       vultrInstance.iso.create({ url: 1 })
