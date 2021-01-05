@@ -1,6 +1,10 @@
 # Change Log
 
-## [v1.0.3](https://github.com/vultr/vultr-node/compare/v1.0.3..v1.0.2) (2020-12-03)
+## [v1.0.4](https://github.com/vultr/vultr-node/compare/v1.0.3..v1.0.4) (2021-01-05)
+### Dependencies
+* To see all deps that were updated please check [milestone v1.0.4](https://github.com/vultr/vultr-node/milestone/32)
+
+## [v1.0.3](https://github.com/vultr/vultr-node/compare/v1.0.2..v1.0.3) (2020-12-03)
 ### Bug Fixes
 * Fixes issue where parameter type checking was not properly covering all paths and setting valid parameters [#416](https://github.com/vultr/vultr-node/issues/416)
 
