@@ -1,42 +1,29 @@
 exports.createTestSuite = (specificationFile, mockData, mockParameters) => {
-  const expect = require('chai').expect
   const vultr = require('../src/index')
   const config = require('./config')
-  const nock = require('nock')
+  const fetch = require('node-fetch')
   const specification = require(`../src/api/${specificationFile}`)
+  const Headers = jest.requireActual('node-fetch').Headers
+  const Response = jest.requireActual('node-fetch').Response
   const apiModule = specificationFile.replace(/-([a-z])/g, function (str) {
     return str[1].toUpperCase()
   })
 
+  jest.mock('node-fetch', () => jest.fn())
+
   describe(`${apiModule}`, () => {
-    for (let key in specification) {
+    for (const key in specification) {
       describe(`${key}()`, () => {
         const endpoint = specification[key]
-        let requiredParameters = {}
+        const requiredParameters = {}
 
         if (endpoint.parameters !== undefined) {
-          for (let parameter in endpoint.parameters) {
+          for (const parameter in endpoint.parameters) {
             if (endpoint.parameters[parameter].required) {
               requiredParameters[parameter] = endpoint.parameters[parameter]
             }
           }
         }
-
-        beforeEach(() => {
-          if (endpoint.requestType === 'GET') {
-            nock(config.baseUrl, endpoint.apiKeyRequired ? config.headers : {})
-              .get(`/${config.apiVersion}${endpoint.url}`)
-              .query((mockParameters && mockParameters[key]) || {})
-              .reply(200, mockData[key] || undefined)
-          } else if (endpoint.requestType === 'POST') {
-            nock(config.baseUrl, config.headers)
-              .post(
-                `/${config.apiVersion}${endpoint.url}`,
-                (mockParameters && mockParameters[key]) || {}
-              )
-              .reply(200, mockData[key] || undefined)
-          }
-        })
 
         if (endpoint.apiKeyRequired) {
           it('requires an API key', () => {
@@ -44,27 +31,32 @@ exports.createTestSuite = (specificationFile, mockData, mockParameters) => {
 
             expect(() => {
               vultrInstance[apiModule][key]()
-            }).to.throw(Error)
+            }).toThrow(Error)
           })
-        }
-
-        if (!endpoint.apiKeyRequired) {
+        } else {
           it('does not require an API key', () => {
             const vultrInstance = vultr.initialize()
+            const data = mockData[key]
+            const responseData = {
+              ok: true,
+              headers: new Headers({
+                'Content-Type': data !== undefined ? 'application/json' : ''
+              })
+            }
+
+            fetch.mockResolvedValue(
+              new Response(JSON.stringify(data), responseData)
+            )
 
             vultrInstance[apiModule][key](
               (mockParameters && mockParameters[key]) || {}
-            )
-              .then((response) => {
-                if (mockData[key]) {
-                  expect(response).to.deep.equal(mockData[key])
-                } else {
-                  expect(response).to.equal(undefined)
-                }
-              })
-              .catch((err) => {
-                return err
-              })
+            ).then((response) => {
+              if (data !== undefined) {
+                expect(response).toEqual(data)
+              } else {
+                expect(response).toEqual(undefined)
+              }
+            })
           })
         }
 
@@ -76,7 +68,7 @@ exports.createTestSuite = (specificationFile, mockData, mockParameters) => {
 
             expect(() => {
               vultrInstance[apiModule][key]()
-            }).to.throw(Error)
+            }).toThrow(Error)
           })
         }
 
@@ -84,22 +76,27 @@ exports.createTestSuite = (specificationFile, mockData, mockParameters) => {
           const vultrInstance = vultr.initialize(
             endpoint.apiKeyRequired ? { apiKey: config.apiKey } : {}
           )
+          const data = mockData[key]
+          const responseData = {
+            ok: true,
+            headers: new Headers({
+              'Content-Type': data !== undefined ? 'application/json' : ''
+            })
+          }
+
+          fetch.mockResolvedValue(
+            new Response(JSON.stringify(data), responseData)
+          )
 
           vultrInstance[apiModule][key](
             (mockParameters && mockParameters[key]) || {}
-          )
-            .then((response) => {
-              if (mockData[key]) {
-                // Response successful and returns data
-                expect(response).to.deep.equal(mockData[key])
-              } else {
-                // Response successful but returns no data
-                expect(response).to.equal(undefined)
-              }
-            })
-            .catch((err) => {
-              return err
-            })
+          ).then((response) => {
+            if (data !== undefined) {
+              expect(response).toEqual(data)
+            } else {
+              expect(response).toEqual(undefined)
+            }
+          })
         })
       })
     }
