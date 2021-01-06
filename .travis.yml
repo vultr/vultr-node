@@ -3,13 +3,13 @@ node_js:
   - 10
 
 install:
-  - npm install -g istanbul
+  - npm install -g jest
   - npm install -g codecov
   - npm install
 
 script:
   - npm test
-  - istanbul cover ./node_modules/mocha/bin/_mocha --report lcovonly -- -R spec && codecov
+  - jest --ci --coverage && codecov
 
 deploy:
   provider: npm
