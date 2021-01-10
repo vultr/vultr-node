@@ -1,20 +1,35 @@
 /**
- * Methods for interacting with the ISO Image endpoints<br>
- * {@link https://www.vultr.com/api/#iso}
+ * Methods for interacting with the ISO endpoints<br>
+ * {@link https://www.vultr.com/api/v2/#tag/iso}
  * @namespace iso
  */
 
 /**
- * Create a new ISO image on the current account. The ISO image will be downloaded from a given URL.<br>
- * {@link https://www.vultr.com/api/#iso_create_from_url}
- * @function create
+ * List all ISOs in the account.<br>
+ * {@link https://www.vultr.com/api/v2/#operation/list-isos}
+ * @function listIsos
  * @memberof iso
  * @instance
- * @param {object} parameters
- * @param {string} parameters.url - Remote URL from where the ISO will be downloaded.
  */
-exports.create = {
-  url: '/iso/create_from_url',
+exports.listIsos = {
+  url: '/iso',
+  requestType: 'GET',
+  apiKeyRequired: true,
+  parameters: {
+    per_page: { type: 'string' },
+    cursor: { type: 'string' }
+  }
+}
+
+/**
+ * Create a new ISO in the account from a URL.<br>
+ * {@link https://www.vultr.com/api/v2/#operation/create-iso}
+ * @function createIso
+ * @memberof iso
+ * @instance
+ */
+exports.createIso = {
+  url: '/iso',
   requestType: 'POST',
   apiKeyRequired: true,
   parameters: {
@@ -26,48 +41,53 @@ exports.create = {
 }
 
 /**
- * Delete an ISO image. There is no going back from this call.<br>
- * {@link https://www.vultr.com/api/#iso_destroy}
- * @function delete
+ * Get information about the specified ISO.<br>
+ * {@link https://www.vultr.com/api/v2/#operation/iso-get}
+ * @function getIso
  * @memberof iso
  * @instance
- * @param {object} parameters
- * @param {number} parameters.ISOID - Unique identifier for this ISO image.
  */
-exports.delete = {
-  url: '/iso/destroy',
+exports.getIso = {
+  url: '/iso/{iso-id}',
   requestType: 'POST',
   apiKeyRequired: true,
   parameters: {
-    ISOID: {
-      type: 'number',
+    'iso-id': {
+      type: 'string',
+      path: true,
       required: true
     }
   }
 }
 
 /**
- * List all ISOs currently available on this account.<br>
- * {@link https://www.vultr.com/api/#iso_iso_list}
- * @function list
+ * Delete the specified ISO from the account.<br>
+ * {@link https://www.vultr.com/api/v2/#operation/delete-iso}
+ * @function deleteIso
  * @memberof iso
  * @instance
  */
-exports.list = {
-  url: '/iso/list',
-  requestType: 'GET',
-  apiKeyRequired: true
+exports.deleteIso = {
+  url: '/iso/{iso-id}',
+  requestType: 'DELETE',
+  apiKeyRequired: true,
+  parameters: {
+    'iso-id': {
+      type: 'string',
+      path: true,
+      required: true
+    }
+  }
 }
 
 /**
- * List public ISOs offered in the Vultr ISO library.<br>
- * {@link https://www.vultr.com/api/#iso_list_public}
- * @function listPublic
+ * List all Vultr public ISOs.<br>
+ * {@link https://www.vultr.com/api/v2/#operation/list-public-isos}
+ * @function listPublicIsos
  * @memberof iso
  * @instance
  */
-exports.listPublic = {
-  url: '/iso/list_public',
-  requestType: 'GET',
-  apiKeyRequired: true
+exports.listPublicIsos = {
+  url: '/iso-public',
+  requestType: 'GET'
 }

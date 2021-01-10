@@ -1,18 +1,18 @@
 /**
- * Methods for interacting with the Account endpoints<br>
- * {@link https://www.vultr.com/api/#account}
+ * Methods for interacting with the account endpoints<br>
+ * {@link https://www.vultr.com/api/v2/#tag/account}
  * @namespace account
  */
 
 /**
- * Retrieve information about the current account.<br>
- * {@link https://www.vultr.com/api/#account_info}
- * @function getInfo
+ * Get your Vultr account, permissions, and billing information.<br>
+ * {@link https://www.vultr.com/api/v2/#operation/get-account}
+ * @function getAccountInfo
  * @memberof account
  * @instance
  */
-exports.getInfo = {
-  url: '/account/info',
+exports.getAccountInfo = {
+  url: '/account',
   requestType: 'GET',
   apiKeyRequired: true
 }

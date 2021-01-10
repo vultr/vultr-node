@@ -1,13 +1,14 @@
 {
   "name": "@vultr/vultr-node",
   "private": false,
-  "version": "1.0.4",
+  "version": "2.0.0",
   "description": "Node module to communicate with the Vultr API",
   "main": "src/index.js",
   "scripts": {
     "build": "babel src -d dist",
     "test": "jest",
     "lint": "eslint src",
+    "prettier": "prettier --write src",
     "docs": "jsdoc --readme ./README.md ./src/api -r -d docs"
   },
   "repository": {
@@ -15,7 +16,9 @@
     "url": "git+https://github.com/vultr/vultr-node.git"
   },
   "keywords": [
-    "vultr"
+    "vultr",
+    "node",
+    "api"
   ],
   "author": "Vultr",
   "license": "MIT",
@@ -25,7 +28,7 @@
   "homepage": "https://github.com/vultr/vultr-node#readme",
   "husky": {
     "hooks": {
-      "pre-commit": "npm run lint && npm test",
+      "pre-commit": "npm run lint && npm run prettier && npm test",
       "pre-push": "npm run lint && npm test"
     }
   },

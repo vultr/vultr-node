@@ -1,4 +1,4 @@
-exports.createTestSuite = (specificationFile, mockData, mockParameters) => {
+exports.createTestSuite = (specificationFile, mockParameters, mockResponse) => {
   const vultr = require('../src/index')
   const config = require('./config')
   const fetch = require('node-fetch')
@@ -36,7 +36,7 @@ exports.createTestSuite = (specificationFile, mockData, mockParameters) => {
         } else {
           it('does not require an API key', () => {
             const vultrInstance = vultr.initialize()
-            const data = mockData[key]
+            const data = mockResponse[key]
             const responseData = {
               ok: true,
               headers: new Headers({
@@ -76,7 +76,7 @@ exports.createTestSuite = (specificationFile, mockData, mockParameters) => {
           const vultrInstance = vultr.initialize(
             endpoint.apiKeyRequired ? { apiKey: config.apiKey } : {}
           )
-          const data = mockData[key]
+          const data = mockResponse[key]
           const responseData = {
             ok: true,
             headers: new Headers({

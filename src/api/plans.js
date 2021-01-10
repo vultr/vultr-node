@@ -1,78 +1,37 @@
 /**
- * Methods for interacting with the Plans endpoints<br>
- * {@link https://www.vultr.com/api/#plans}
+ * Methods for interacting with the plan endpoints<br>
+ * {@link https://www.vultr.com/api/v2/#tag/plans}
  * @namespace plans
  */
 
 /**
- * Retrieve a list of all active plans. Plans that are no longer available will not be shown.<br>
- * {@link https://www.vultr.com/api/#plans_plan_list}
- * @function list
+ * Get a list of allavailable Vultr instance plans.<br>
+ * {@link https://www.vultr.com/api/v2/#operation/list-plans}
+ * @function listPlans
  * @memberof plans
  * @instance
- * @param {object} parameters
- * @param {string} [parameters.type] - The type of plans to return. Possible values: "all", "vc2", "ssd", "vdc2", "dedicated", "vc2z".
  */
-exports.list = {
-  url: '/plans/list',
+exports.listPlans = {
+  url: '/plans',
   requestType: 'GET',
-  apiKeyRequired: false,
   parameters: {
-    type: {
-      type: 'string',
-      required: false
-    }
+    type: { type: 'string' },
+    per_page: { type: 'string' },
+    cursor: { type: 'string' }
   }
 }
-
 /**
- * Retrieve a list of all active bare metal plans. Plans that are no longer available will not be shown.<br>
- * {@link https://www.vultr.com/api/#plans_plan_list_baremetal}
- * @function listBareMetal
+ * Get a list of all available Vultr bare metal plans.<br>
+ * {@link https://www.vultr.com/api/v2/#operation/list-metal-plans}
+ * @function listBareMetalPlans
  * @memberof plans
  * @instance
  */
-exports.listBareMetal = {
-  url: '/plans/list_baremetal',
+exports.listBareMetalPlans = {
+  url: '/plans-metal',
   requestType: 'GET',
-  apiKeyRequired: false
-}
-
-/**
- * Retrieve a list of all active vc2 plans. Plans that are no longer available will not be shown.<br>
- * {@link https://www.vultr.com/api/#plans_plan_list_vc2}
- * @function listVc2
- * @memberof plans
- * @instance
- */
-exports.listVc2 = {
-  url: '/plans/list_vc2',
-  requestType: 'GET',
-  apiKeyRequired: false
-}
-
-/**
- * Retrieve a list of all active vdc2 plans. Plans that are no longer available will not be shown.<br>
- * {@link https://www.vultr.com/api/#plans_plan_list_vdc2}
- * @function listVdc2
- * @memberof plans
- * @instance
- */
-exports.listVdc2 = {
-  url: '/plans/list_vdc2',
-  requestType: 'GET',
-  apiKeyRequired: false
-}
-
-/**
- * Retrieve a list of all active high frequency CPU plans. Plans that are no longer available will not be shown.<br>
- * {@link https://www.vultr.com/api/#plans_plan_list_vc2z}
- * @function listVc2z
- * @memberof plans
- * @instance
- */
-exports.listVc2z = {
-  url: '/plans/list_vc2z',
-  requestType: 'GET',
-  apiKeyRequired: false
+  parameters: {
+    per_page: { type: 'string' },
+    cursor: { type: 'string' }
+  }
 }

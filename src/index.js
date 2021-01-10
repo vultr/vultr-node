@@ -1,26 +1,25 @@
 exports.initialize = (config) => {
   const util = require('./util')
   const account = require('./api/account')
-  const app = require('./api/app')
-  const api = require('./api/api')
-  const backup = require('./api/backup')
-  const baremetal = require('./api/baremetal')
-  const block = require('./api/block')
+  const applications = require('./api/applications')
+  const backups = require('./api/backups')
+  const bareMetal = require('./api/bare-metal')
+  const blockStorage = require('./api/block-storage')
   const dns = require('./api/dns')
   const firewall = require('./api/firewall')
+  const instances = require('./api/instances')
   const iso = require('./api/iso')
-  const loadBalancer = require('./api/load-balancer')
-  const network = require('./api/network')
+  const loadBalancers = require('./api/load-balancers')
   const objectStorage = require('./api/object-storage')
-  const os = require('./api/os')
+  const operatingSystems = require('./api/operating-systems')
   const plans = require('./api/plans')
+  const privateNetworks = require('./api/private-networks')
   const regions = require('./api/regions')
-  const reservedIp = require('./api/reserved-ip')
-  const server = require('./api/server')
-  const snapshot = require('./api/snapshot')
-  const sshkey = require('./api/sshkey')
-  const startupScript = require('./api/startup-script')
-  const user = require('./api/user')
+  const reservedIps = require('./api/reserved-ips')
+  const snapshots = require('./api/snapshots')
+  const sshKeys = require('./api/ssh-keys')
+  const startupScripts = require('./api/startup-scripts')
+  const users = require('./api/users')
   const userConfiguration = config
 
   /**
@@ -117,217 +116,276 @@ exports.initialize = (config) => {
 
   return {
     account: {
-      getInfo: createRequestFunction(account.getInfo)
+      getAccountInfo: createRequestFunction(account.getAccountInfo)
     },
-    api: {
-      getInfo: createRequestFunction(api.getInfo)
+    applications: {
+      listApplications: createRequestFunction(applications.listApplications)
     },
-    app: {
-      list: createRequestFunction(app.list)
+    backups: {
+      listBackups: createRequestFunction(backups.listBackups),
+      getBackup: createRequestFunction(backups.getBackup)
     },
-    backup: {
-      list: createRequestFunction(backup.list)
+    bareMetal: {
+      listInstances: createRequestFunction(bareMetal.listInstances),
+      createInstance: createRequestFunction(bareMetal.createInstance),
+      getInstance: createRequestFunction(bareMetal.getInstance),
+      updateInstance: createRequestFunction(bareMetal.updateInstance),
+      deleteInstance: createRequestFunction(bareMetal.deleteInstance),
+      getInstanceIpv4Addresses: createRequestFunction(
+        bareMetal.getInstanceIpv4Addresses
+      ),
+      getInstanceIpv6Addresses: createRequestFunction(
+        bareMetal.getInstanceIpv6Addresses
+      ),
+      startInstance: createRequestFunction(bareMetal.startInstance),
+      rebootInstance: createRequestFunction(bareMetal.rebootInstance),
+      reinstallInstance: createRequestFunction(bareMetal.reinstallInstance),
+      haltInstance: createRequestFunction(bareMetal.haltInstance),
+      getInstanceBandwidth: createRequestFunction(
+        bareMetal.getInstanceBandwidth
+      ),
+      haltInstances: createRequestFunction(bareMetal.haltInstances),
+      rebootInstances: createRequestFunction(bareMetal.rebootInstances),
+      startInstances: createRequestFunction(bareMetal.startInstances),
+      getInstanceUserData: createRequestFunction(bareMetal.getInstanceUserData),
+      getInstanceAvailableUpgrades: createRequestFunction(
+        bareMetal.getInstanceAvailableUpgrades
+      ),
+      getInstanceVncUrl: createRequestFunction(bareMetal.getInstanceVncUrl)
     },
-    baremetal: {
-      list: createRequestFunction(baremetal.list),
-      delete: createRequestFunction(baremetal.delete),
-      changeApp: createRequestFunction(baremetal.changeApp),
-      setTag: createRequestFunction(baremetal.setTag),
-      reinstall: createRequestFunction(baremetal.reinstall),
-      reboot: createRequestFunction(baremetal.reboot),
-      create: createRequestFunction(baremetal.create),
-      listApps: createRequestFunction(baremetal.listApps),
-      halt: createRequestFunction(baremetal.halt),
-      appInfo: createRequestFunction(baremetal.appInfo),
-      bandwidth: createRequestFunction(baremetal.bandwidth),
-      getUserData: createRequestFunction(baremetal.getUserData),
-      enableIPv6: createRequestFunction(baremetal.enableIPv6),
-      setLabel: createRequestFunction(baremetal.setLabel),
-      ipv6Info: createRequestFunction(baremetal.ipv6Info),
-      ipv4Info: createRequestFunction(baremetal.ipv4Info),
-      changeOS: createRequestFunction(baremetal.changeOS),
-      listOS: createRequestFunction(baremetal.listOS),
-      setUserData: createRequestFunction(baremetal.setUserData)
-    },
-    block: {
-      attach: createRequestFunction(block.attach),
-      create: createRequestFunction(block.create),
-      delete: createRequestFunction(block.delete),
-      detach: createRequestFunction(block.detach),
-      setLabel: createRequestFunction(block.setLabel),
-      list: createRequestFunction(block.list),
-      resize: createRequestFunction(block.resize)
+    blockStorage: {
+      listStorages: createRequestFunction(blockStorage.listStorages),
+      createStorage: createRequestFunction(blockStorage.createStorage),
+      getStorage: createRequestFunction(blockStorage.getStorage),
+      deleteStorage: createRequestFunction(blockStorage.deleteStorage),
+      updateStorage: createRequestFunction(blockStorage.updateStorage),
+      attachStorage: createRequestFunction(blockStorage.attachStorage),
+      detachStorage: createRequestFunction(blockStorage.detachStorage)
     },
     dns: {
+      listDomains: createRequestFunction(dns.listDomains),
       createDomain: createRequestFunction(dns.createDomain),
+      getDomain: createRequestFunction(dns.getDomain),
       deleteDomain: createRequestFunction(dns.deleteDomain),
-      list: createRequestFunction(dns.list),
-      records: createRequestFunction(dns.records),
-      deleteRecord: createRequestFunction(dns.deleteRecord),
+      updateDomain: createRequestFunction(dns.updateDomain),
+      getSoaInfo: createRequestFunction(dns.getSoaInfo),
+      updateSoaInfo: createRequestFunction(dns.updateSoaInfo),
+      getDnsSecInfo: createRequestFunction(dns.getDnsSecInfo),
       createRecord: createRequestFunction(dns.createRecord),
-      enableDNSSec: createRequestFunction(dns.enableDNSSec),
-      dnsSecInfo: createRequestFunction(dns.dnsSecInfo),
+      listRecords: createRequestFunction(dns.listRecords),
+      getRecord: createRequestFunction(dns.getRecord),
       updateRecord: createRequestFunction(dns.updateRecord),
-      getSOA: createRequestFunction(dns.getSOA),
-      updateSOA: createRequestFunction(dns.updateSOA)
+      deleteRecord: createRequestFunction(dns.deleteRecord)
     },
     firewall: {
-      listRules: createRequestFunction(firewall.listRules),
-      deleteGroup: createRequestFunction(firewall.deleteGroup),
+      listGroups: createRequestFunction(firewall.listGroups),
       createGroup: createRequestFunction(firewall.createGroup),
-      createRule: createRequestFunction(firewall.createRule),
+      getGroup: createRequestFunction(firewall.getGroup),
+      updateGroup: createRequestFunction(firewall.updateGroup),
+      deleteGroup: createRequestFunction(firewall.deleteGroup),
+      listRules: createRequestFunction(firewall.listRules),
+      createRules: createRequestFunction(firewall.createRules),
       deleteRule: createRequestFunction(firewall.deleteRule),
-      setGroupDescription: createRequestFunction(firewall.setGroupDescription),
-      listGroup: createRequestFunction(firewall.listGroup)
+      getRule: createRequestFunction(firewall.getRule)
+    },
+    instances: {
+      listInstances: createRequestFunction(instances.listInstances),
+      createInstance: createRequestFunction(instances.createInstance),
+      getInstance: createRequestFunction(instances.getInstance),
+      updateInstance: createRequestFunction(instances.updateInstance),
+      deleteInstance: createRequestFunction(instances.deleteInstance),
+      haltInstances: createRequestFunction(instances.haltInstances),
+      rebootInstances: createRequestFunction(instances.rebootInstances),
+      startInstances: createRequestFunction(instances.startInstances),
+      startInstance: createRequestFunction(instances.startInstance),
+      rebootInstance: createRequestFunction(instances.rebootInstance),
+      reinstallInstance: createRequestFunction(instances.reinstallInstance),
+      getInstanceBandwidth: createRequestFunction(
+        instances.getInstanceBandwidth
+      ),
+      getInstanceNeighbors: createRequestFunction(
+        instances.getInstanceNeighbors
+      ),
+      listInstancePrivateNetworks: createRequestFunction(
+        instances.listInstancePrivateNetworks
+      ),
+      getInstanceIsoStatus: createRequestFunction(
+        instances.getInstanceIsoStatus
+      ),
+      attachIsoToInstance: createRequestFunction(instances.attachIsoToInstance),
+      detachIsoFromInstance: createRequestFunction(
+        instances.detachIsoFromInstance
+      ),
+      attachPrivateNetworkToInstance: createRequestFunction(
+        instances.attachPrivateNetworkToInstance
+      ),
+      detachPrivateNetworkFromInstance: createRequestFunction(
+        instances.detachPrivateNetworkFromInstance
+      ),
+      setInstanceBackupSchedule: createRequestFunction(
+        instances.setInstanceBackupSchedule
+      ),
+      getInstanceBackupSchedule: createRequestFunction(
+        instances.getInstanceBackupSchedule
+      ),
+      restoreInstance: createRequestFunction(instances.restoreInstance),
+      listInstanceIpv4Information: createRequestFunction(
+        instances.listInstanceIpv4Information
+      ),
+      createInstanceIpv4: createRequestFunction(instances.createInstanceIpv4),
+      getInstanceIpv6Information: createRequestFunction(
+        instances.getInstanceIpv6Information
+      ),
+      createInstanceReverseIpv6: createRequestFunction(
+        instances.createInstanceReverseIpv6
+      ),
+      listInstanceIpv6ReverseInformation: createRequestFunction(
+        instances.listInstanceIpv6ReverseInformation
+      ),
+      createInstanceReverseIpv4: createRequestFunction(
+        instances.createInstanceReverseIpv4
+      ),
+      getInstanceUserData: createRequestFunction(instances.getInstanceUserData),
+      haltInstance: createRequestFunction(instances.haltInstance),
+      setDefaultReverseDnsEntry: createRequestFunction(
+        instances.setDefaultReverseDnsEntry
+      ),
+      deleteIpv4Address: createRequestFunction(instances.deleteIpv4Address),
+      deleteInstanceReverseIpv6: createRequestFunction(
+        instances.deleteInstanceReverseIpv6
+      ),
+      getAvailableInstanceUpgrades: createRequestFunction(
+        instances.getAvailableInstanceUpgrades
+      )
     },
     iso: {
-      create: createRequestFunction(iso.create),
-      delete: createRequestFunction(iso.delete),
-      list: createRequestFunction(iso.list),
-      listPublic: createRequestFunction(iso.listPublic)
+      listIsos: createRequestFunction(iso.listIsos),
+      createIso: createRequestFunction(iso.createIso),
+      getIso: createRequestFunction(iso.getIso),
+      deleteIso: createRequestFunction(iso.deleteIso),
+      listPublicIsos: createRequestFunction(iso.listPublicIsos)
     },
-    loadBalancer: {
-      getFullConfig: createRequestFunction(loadBalancer.getFullConfig),
-      create: createRequestFunction(loadBalancer.create),
-      delete: createRequestFunction(loadBalancer.delete),
-      createForwardingRule: createRequestFunction(
-        loadBalancer.createForwardingRule
+    loadBalancers: {
+      listLoadBalancers: createRequestFunction(loadBalancers.listLoadBalancers),
+      createLoadBalancer: createRequestFunction(
+        loadBalancers.createLoadBalancer
       ),
-      deleteForwardingRule: createRequestFunction(
-        loadBalancer.deleteForwardingRule
+      getLoadBalancer: createRequestFunction(loadBalancers.getLoadBalancer),
+      updateLoadBalancer: createRequestFunction(
+        loadBalancers.updateLoadBalancer
+      ),
+      deleteLoadBalancer: createRequestFunction(
+        loadBalancers.deleteLoadBalancer
       ),
       listForwardingRules: createRequestFunction(
-        loadBalancer.listForwardingRules
+        loadBalancers.listForwardingRules
       ),
-      getGenericInfo: createRequestFunction(loadBalancer.getGenericInfo),
-      updateGenericInfo: createRequestFunction(loadBalancer.updateGenericInfo),
-      getHealthCheckInfo: createRequestFunction(
-        loadBalancer.getHealthCheckInfo
+      createForwardingRule: createRequestFunction(
+        loadBalancers.createForwardingRule
       ),
-      setHealthCheck: createRequestFunction(loadBalancer.setHealthCheck),
-      attachInstance: createRequestFunction(loadBalancer.attachInstance),
-      detachInstance: createRequestFunction(loadBalancer.detachInstance),
-      attachedInstances: createRequestFunction(loadBalancer.attachedInstances),
-      setLabel: createRequestFunction(loadBalancer.setLabel),
-      list: createRequestFunction(loadBalancer.list),
-      addSSL: createRequestFunction(loadBalancer.addSSL),
-      hasSSL: createRequestFunction(loadBalancer.hasSSL),
-      removeSSL: createRequestFunction(loadBalancer.removeSSL)
-    },
-    network: {
-      create: createRequestFunction(network.create),
-      delete: createRequestFunction(network.delete),
-      list: createRequestFunction(network.list)
+      getForwardingRule: createRequestFunction(loadBalancers.getForwardingRule),
+      deleteForwardingRule: createRequestFunction(
+        loadBalancers.deleteForwardingRule
+      )
     },
     objectStorage: {
-      create: createRequestFunction(objectStorage.create),
-      delete: createRequestFunction(objectStorage.delete),
-      list: createRequestFunction(objectStorage.list),
-      setLabel: createRequestFunction(objectStorage.setLabel),
-      listCluster: createRequestFunction(objectStorage.listCluster),
-      regenerateKeys: createRequestFunction(objectStorage.regenerateKeys)
+      listObjectStorages: createRequestFunction(
+        objectStorage.listObjectStorages
+      ),
+      createObjectStorage: createRequestFunction(
+        objectStorage.createObjectStorage
+      ),
+      getObjectStorage: createRequestFunction(objectStorage.getObjectStorage),
+      deleteObjectStorage: createRequestFunction(
+        objectStorage.deleteObjectStorage
+      ),
+      updateObjectStorage: createRequestFunction(
+        objectStorage.updateObjectStorage
+      ),
+      regenerateObjectStorageKeys: createRequestFunction(
+        objectStorage.regenerateObjectStorageKeys
+      ),
+      getAllClusters: createRequestFunction(objectStorage.getAllClusters)
     },
-    os: {
-      list: createRequestFunction(os.list)
+    operatingSystems: {
+      listImages: createRequestFunction(operatingSystems.listImages)
     },
     plans: {
-      list: createRequestFunction(plans.list),
-      listBareMetal: createRequestFunction(plans.listBareMetal),
-      listVc2: createRequestFunction(plans.listVc2),
-      listVdc2: createRequestFunction(plans.listVdc2),
-      listVc2z: createRequestFunction(plans.listVc2z)
+      listPlans: createRequestFunction(plans.listPlans),
+      listBareMetalPlans: createRequestFunction(plans.listBareMetalPlans)
+    },
+    privateNetworks: {
+      getPrivateNetwork: createRequestFunction(
+        privateNetworks.getPrivateNetwork
+      ),
+      deletePrivateNetwork: createRequestFunction(
+        privateNetworks.deletePrivateNetwork
+      ),
+      updatePrivateNetwork: createRequestFunction(
+        privateNetworks.updatePrivateNetwork
+      ),
+      listPrivateNetworks: createRequestFunction(
+        privateNetworks.listPrivateNetworks
+      ),
+      createPrivateNetwork: createRequestFunction(
+        privateNetworks.createPrivateNetwork
+      )
     },
     regions: {
-      list: createRequestFunction(regions.list),
-      availability: createRequestFunction(regions.availability),
-      availabilityBareMetal: createRequestFunction(
-        regions.availabilityBareMetal
+      listRegions: createRequestFunction(regions.listRegions),
+      listAvailableComputeInRegion: createRequestFunction(
+        regions.listAvailableComputeInRegion
+      )
+    },
+    reservedIps: {
+      getReservedIp: createRequestFunction(reservedIps.getReservedIp),
+      deleteReservedIp: createRequestFunction(reservedIps.deleteReservedIp),
+      listReservedIps: createRequestFunction(reservedIps.listReservedIps),
+      createReservedIp: createRequestFunction(reservedIps.createReservedIp),
+      attachReservedIp: createRequestFunction(reservedIps.attachReservedIp),
+      detachReservedIp: createRequestFunction(reservedIps.detachReservedIp),
+      convertInstanceIpToReservedIp: createRequestFunction(
+        reservedIps.convertInstanceIpToReservedIp
+      )
+    },
+    snapshots: {
+      deleteSnapshot: createRequestFunction(snapshots.deleteSnapshot),
+      getSnapshot: createRequestFunction(snapshots.getSnapshot),
+      updateSnapshot: createRequestFunction(snapshots.updateSnapshot),
+      listSnapshots: createRequestFunction(snapshots.listSnapshots),
+      createSnapshot: createRequestFunction(snapshots.createSnapshot),
+      createSnapshotFromUrl: createRequestFunction(
+        snapshots.createSnapshotFromUrl
+      )
+    },
+    sshKeys: {
+      getSshKey: createRequestFunction(sshKeys.getSshKey),
+      updateSshKey: createRequestFunction(sshKeys.updateSshKey),
+      deleteSshKey: createRequestFunction(sshKeys.deleteSshKey),
+      listSshKeys: createRequestFunction(sshKeys.listSshKeys),
+      createSshKey: createRequestFunction(sshKeys.createSshKey)
+    },
+    startupScripts: {
+      getStartupScript: createRequestFunction(startupScripts.getStartupScript),
+      deleteStartupScript: createRequestFunction(
+        startupScripts.deleteStartupScript
       ),
-      availabilityVc2: createRequestFunction(regions.availabilityVc2),
-      availabilityVdc2: createRequestFunction(regions.availabilityVdc2)
-    },
-    reservedIp: {
-      list: createRequestFunction(reservedIp.list),
-      delete: createRequestFunction(reservedIp.delete),
-      detach: createRequestFunction(reservedIp.detach),
-      convert: createRequestFunction(reservedIp.convert),
-      create: createRequestFunction(reservedIp.create),
-      attach: createRequestFunction(reservedIp.attach)
-    },
-    server: {
-      list: createRequestFunction(server.list),
-      create: createRequestFunction(server.create),
-      setLabel: createRequestFunction(server.setLabel),
-      listUpgradePlan: createRequestFunction(server.listUpgradePlan),
-      upgradePlan: createRequestFunction(server.upgradePlan),
-      setTag: createRequestFunction(server.setTag),
-      delete: createRequestFunction(server.delete),
-      halt: createRequestFunction(server.halt),
-      start: createRequestFunction(server.start),
-      reboot: createRequestFunction(server.reboot),
-      neighbors: createRequestFunction(server.neighbors),
-      appInfo: createRequestFunction(server.appInfo),
-      changeOS: createRequestFunction(server.changeOS),
-      reinstall: createRequestFunction(server.reinstall),
-      setUserData: createRequestFunction(server.setUserData),
-      setReverseIPv4: createRequestFunction(server.setReverseIPv4),
-      bandwidth: createRequestFunction(server.bandwidth),
-      enablePrivateNetwork: createRequestFunction(server.enablePrivateNetwork),
-      changeApp: createRequestFunction(server.changeApp),
-      getUserData: createRequestFunction(server.getUserData),
-      setReverseIPv6: createRequestFunction(server.setReverseIPv6),
-      enableBackup: createRequestFunction(server.enableBackup),
-      enableIPv6: createRequestFunction(server.enableIPv6),
-      disableBackup: createRequestFunction(server.disableBackup),
-      addIPv4: createRequestFunction(server.addIPv4),
-      listReverseIPv6: createRequestFunction(server.listReverseIPv6),
-      ipv6Info: createRequestFunction(server.ipv6Info),
-      setBackupSchedule: createRequestFunction(server.setBackupSchedule),
-      getBackupSchedule: createRequestFunction(server.getBackupSchedule),
-      ipv4Info: createRequestFunction(server.ipv4Info),
-      listApps: createRequestFunction(server.listApps),
-      setFirewallGroup: createRequestFunction(server.setFirewallGroup),
-      destroyIPv4: createRequestFunction(server.destroyIPv4),
-      restoreBackup: createRequestFunction(server.restoreBackup),
-      isoAttach: createRequestFunction(server.isoAttach),
-      restoreSnapshot: createRequestFunction(server.restoreSnapshot),
-      listOS: createRequestFunction(server.listOS),
-      isoStatus: createRequestFunction(server.isoStatus),
-      listPrivateNetworks: createRequestFunction(server.listPrivateNetworks),
-      isoDetach: createRequestFunction(server.isoDetach),
-      disablePrivateNetwork: createRequestFunction(
-        server.disablePrivateNetwork
+      updateStartupScript: createRequestFunction(
+        startupScripts.updateStartupScript
       ),
-      setDefaultReverseIPv4: createRequestFunction(
-        server.setDefaultReverseIPv4
+      listStartupScripts: createRequestFunction(
+        startupScripts.listStartupScripts
       ),
-      deleteReverseIPv6: createRequestFunction(server.deleteReverseIPv6),
-      enableDDoSProtection: createRequestFunction(server.enableDDoSProtection),
-      disableDDoSProtection: createRequestFunction(server.disableDDoSProtection)
+      createStartupScript: createRequestFunction(
+        startupScripts.createStartupScript
+      )
     },
-    snapshot: {
-      create: createRequestFunction(snapshot.create),
-      createFromUrl: createRequestFunction(snapshot.createFromUrl),
-      list: createRequestFunction(snapshot.list),
-      delete: createRequestFunction(snapshot.delete)
-    },
-    sshkey: {
-      create: createRequestFunction(sshkey.create),
-      list: createRequestFunction(sshkey.list),
-      delete: createRequestFunction(sshkey.delete),
-      update: createRequestFunction(sshkey.update)
-    },
-    startupScript: {
-      list: createRequestFunction(startupScript.list),
-      delete: createRequestFunction(startupScript.delete),
-      create: createRequestFunction(startupScript.create),
-      update: createRequestFunction(startupScript.update)
-    },
-    user: {
-      create: createRequestFunction(user.create),
-      delete: createRequestFunction(user.delete),
-      list: createRequestFunction(user.list),
-      update: createRequestFunction(user.update)
+    users: {
+      getUser: createRequestFunction(users.getUser),
+      deleteUser: createRequestFunction(users.deleteUser),
+      updateUser: createRequestFunction(users.updateUser),
+      getUsers: createRequestFunction(users.getUsers),
+      createUser: createRequestFunction(users.createUser)
     }
   }
 }

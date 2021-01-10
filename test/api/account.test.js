@@ -1,12 +1,31 @@
 const util = require('../util')
 
-const mock = {
-  getInfo: {
-    balance: '-460.37',
-    pending_charges: '9.87',
-    last_payment_date: '2019-04-16 20:10:18',
-    last_payment_amount: '-500.00'
+const mockResponses = {
+  getAccountInfo: {
+    account: {
+      name: 'vultr-api',
+      email: 'api@vultr.com',
+      acls: [
+        'manage_users',
+        'subscriptions_view',
+        'subscriptions',
+        'billing',
+        'support',
+        'provisioning',
+        'dns',
+        'abuse',
+        'upgrade',
+        'firewall',
+        'alerts',
+        'objstore',
+        'loadbalancer'
+      ],
+      balance: -100,
+      pending_charges: 60,
+      last_payment_date: '2020-10-10T01:56:20+00:00',
+      last_payment_amount: -1
+    }
   }
 }
 
-util.createTestSuite('account', mock)
+util.createTestSuite('account', null, mockResponses)

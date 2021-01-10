@@ -1,27 +1,56 @@
-exports.makeApiRequest = (config, endpoint, parameters) => {
+exports.makeApiRequest = (config, endpoint, userParameters) => {
   const nf = require('node-fetch')
-  const baseUrl = (config && config.baseUrl) || 'https://api.vultr.com/v1'
+  const baseUrl = (config && config.baseUrl) || 'https://api.vultr.com/v2'
   let fetchUrl = `${baseUrl}${endpoint.url}`
   const options = {
     method: endpoint.requestType,
     headers: {
-      'API-Key': (config && config.apiKey) || ''
+      Authorization: config && config.apiKey ? `Bearer ${config.apiKey}` : ''
     }
   }
 
-  if (parameters !== undefined) {
-    const userParams = Object.keys(parameters)
-      .map((key) => key + '=' + encodeURIComponent(parameters[key]))
-      .join('&')
+  if (userParameters !== undefined) {
+    const { requestType, parameters } = endpoint
 
-    if (endpoint.requestType === 'POST') {
-      if (userParams.length) {
-        options.body = userParams
+    if (requestType === 'POST') {
+      // POST requests will just send all data as JSON to the endpoint
+      options.body = JSON.stringify(userParameters)
+      options.headers['Content-Type'] = 'application/json'
+    } else {
+      // GET, DELETE, PATCH, and PUT may have path parameters
+      const pathParams = Object.keys(userParameters).filter(
+        (key) => parameters[key].path
+      )
+
+      if (pathParams.length) {
+        pathParams.forEach((param) => {
+          // Ex. '/bare-metals/{baremetal-id}/ipv4' becomes '/bare-metals/123456/ipv4'
+          fetchUrl = fetchUrl.replace(`{${param}}`, userParameters[param])
+        })
       }
 
-      options.headers['Content-Type'] = 'application/x-www-form-urlencoded'
-    } else if (endpoint.requestType === 'GET' && userParams.length) {
-      fetchUrl = `${fetchUrl}?${userParams}`
+      if (requestType === 'GET' || requestType === 'DELETE') {
+        // GET and DELETE requests may have path parameters as well as query parameters
+        const queryParams = Object.keys(userParameters)
+          .filter((key) => !parameters[key].path)
+          .map((key) => key + '=' + encodeURIComponent(userParameters[key]))
+          .join('&')
+
+        if (queryParams.length) {
+          fetchUrl = `${fetchUrl}?${queryParams}`
+        }
+      } else if (requestType === 'PATCH' || requestType === 'PUT') {
+        // PATCH and PUT requests may have path parameters and data as a JSON object
+        const bodyParams = Object.keys(userParameters)
+          .filter((key) => !parameters[key].path)
+          .reduce(
+            (newObj, key) => Object.assign(newObj, { [key]: parameters[key] }),
+            {}
+          )
+
+        options.body = JSON.stringify(bodyParams)
+        options.headers['Content-Type'] = 'application/json'
+      }
     }
   }
 

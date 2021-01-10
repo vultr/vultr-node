@@ -1,47 +1,54 @@
 const util = require('../util')
 
-const mock = {
-  list: {
-    '1': {
-      DCID: '1',
-      name: 'New Jersey',
-      country: 'US',
-      continent: 'North America',
-      state: 'NJ',
-      ddos_protection: true,
-      block_storage: true,
-      regioncode: 'EWR'
-    },
-    '2': {
-      DCID: '2',
-      name: 'Chicago',
-      country: 'US',
-      continent: 'North America',
-      state: 'IL',
-      ddos_protection: false,
-      block_storage: false,
-      regioncode: 'ORD'
-    }
-  },
-  availability: [40, 11, 45, 29, 41, 61],
-  availabilityBareMetal: [40, 11, 45, 29, 41, 61],
-  availabilityVc2: [40, 11, 45, 29, 41, 61],
-  availabilityVdc2: [40, 11, 45, 29, 41, 61]
-}
-
 const mockParameters = {
-  availability: {
-    DCID: 1
-  },
-  availabilityBareMetal: {
-    DCID: 1
-  },
-  availabilityVc2: {
-    DCID: 1
-  },
-  availabilityVdc2: {
-    DCID: 1
+  listAvailableComputeInRegion: {
+    'region-id': 'ewr'
   }
 }
 
-util.createTestSuite('regions', mock, mockParameters)
+const mockResponses = {
+  listRegions: {
+    regions: [
+      {
+        id: 'ams',
+        city: 'Amsterdam',
+        country: 'NL',
+        continent: 'Europe',
+        options: ['ddos_protection']
+      }
+    ],
+    meta: {
+      total: 1,
+      links: {
+        next: '',
+        prev: ''
+      }
+    }
+  },
+  listAvailableComputeInRegion: {
+    available_plans: [
+      'vc2-1c-1gb',
+      'vc2-1c-2gb',
+      'vc2-2c-4gb',
+      'vc2-4c-8gb',
+      'vc2-6c-16gb',
+      'vc2-8c-32gb',
+      'vc2-16c-64gb',
+      'vc2-24c-96gb',
+      'vdc-4vcpu-8gb',
+      'vdc-4vcpu-16gb',
+      'vdc-6vcpu-24gb',
+      'vdc-8vcpu-32gb',
+      'vhf-1c-1gb',
+      'vhf-1c-2gb',
+      'vhf-2c-4gb',
+      'vhf-3c-8gb',
+      'vhf-4c-16gb',
+      'vhf-6c-24gb',
+      'vhf-8c-32gb',
+      'vhf-12c-48gb'
+    ]
+  }
+}
+
+util.createTestSuite('regions', mockParameters, mockResponses)

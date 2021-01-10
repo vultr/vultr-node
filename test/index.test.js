@@ -10,29 +10,33 @@ describe('Vultr Instance', () => {
   it('requires an API key for endpoints that require an API key', () => {
     const vultrInstance = vultr.initialize()
     expect(() => {
-      vultrInstance.account.getInfo()
+      vultrInstance.account.getAccountInfo()
     }).toThrow(Error)
   })
 
   it('requires parameters to be sent as an object', () => {
     const vultrInstance = vultr.initialize({ apiKey: config.apiKey })
     expect(() => {
-      vultrInstance.backup.list(1)
+      vultrInstance.backups.listBackups(1)
     }).toThrow(Error)
   })
 
   it('ignores parameters sent to endpoints that do not accept parameters', () => {
     const vultrInstance = vultr.initialize({ apiKey: config.apiKey })
     expect(
-      typeof vultrInstance.account.getInfo({ param1: 'foo', param2: 'bar' })
+      typeof vultrInstance.account.getAccountInfo({
+        param1: 'foo',
+        param2: 'bar'
+      })
     ).toEqual('object')
   })
 
   it('ignores extra parameters sent to endpoints that require parameters', () => {
     const vultrInstance = vultr.initialize({ apiKey: config.apiKey })
     expect(
-      typeof vultrInstance.iso.create({
-        url: 'https://templeos.org/Downloads/TempleOSLite.ISO',
+      typeof vultrInstance.bareMetal.createInstance({
+        region: 'ams',
+        plan: 'vbm-4c-32gb',
         param1: 'foo',
         param2: 'bar'
       })
@@ -42,17 +46,16 @@ describe('Vultr Instance', () => {
   it('requires all parameters', () => {
     const vultrInstance = vultr.initialize({ apiKey: config.apiKey })
     expect(() => {
-      vultrInstance.iso.create({})
+      vultrInstance.bareMetal.createInstance({})
     }).toThrow(Error)
   })
 
   it('allows number parameters to be passed in as a number or string', () => {
     const vultrInstance = vultr.initialize({ apiKey: config.apiKey })
     expect(
-      typeof vultrInstance.server.create({
-        DCID: '1',
-        VPSPLANID: '202',
-        OSID: '127'
+      typeof vultrInstance.blockStorage.createStorage({
+        region: 'EWR',
+        size_gb: '50'
       })
     ).toEqual('object')
   })
@@ -60,10 +63,9 @@ describe('Vultr Instance', () => {
   it('requires number parameters to be contain only number characters', () => {
     const vultrInstance = vultr.initialize({ apiKey: config.apiKey })
     expect(() => {
-      vultrInstance.server.create({
-        DCID: '%',
-        VPSPLANID: '!@#$',
-        OSID: '^&*('
+      vultrInstance.blockStorage.createStorage({
+        region: 'EWR',
+        size_gb: '!@#$'
       })
     }).toThrow(Error)
   })
@@ -71,17 +73,18 @@ describe('Vultr Instance', () => {
   it('requires required non-array and non-number parameters to match the specified parameter type', () => {
     const vultrInstance = vultr.initialize({ apiKey: config.apiKey })
     expect(() => {
-      vultrInstance.iso.create({ url: 1 })
+      vultrInstance.dns.createDomain({ domain: 1 })
     }).toThrow(Error)
   })
 
   it('requires required array parameters to be passed as an array', () => {
     const vultrInstance = vultr.initialize({ apiKey: config.apiKey })
     expect(() => {
-      vultrInstance.user.create({
+      vultrInstance.users.createUser({
         email: 'test@test.com',
         name: 'test testerson',
         password: 'password',
+        api_enabled: true,
         acls: 'manage_users'
       })
     }).toThrow(Error)

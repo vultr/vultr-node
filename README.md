@@ -3,7 +3,6 @@
 [![npm version](https://badge.fury.io/js/%40vultr%2Fvultr-node.svg)](https://badge.fury.io/js/%40vultr%2Fvultr-node)
 [![license](https://img.shields.io/github/license/vultr/vultr-node)](https://github.com/vultr/vultr-node/blob/master/LICENSE.md)
 
-
 # vultr-node
 
 Official Vultr client node module.
@@ -19,6 +18,7 @@ npm install @vultr/vultr-node
 Vultr uses a PAT (Personal Access Token) to interact/authenticate with the APIs. An API Key can be generated and acquired from the API menu in [settings](https://my.vultr.com/settings/#settingsapi).
 
 ### Initialize
+
 ```js
 const VultrNode = require('@vultr/vultr-node')
 
@@ -31,9 +31,10 @@ const vultr = VultrNode.initialize({
 ```
 
 ### Calling Endpoints
+
 ```js
 // Call endpoints using Promises
-vultr.account.getInfo().then(response => {
+vultr.account.getInfo().then((response) => {
   console.log(response)
 })
 ```
@@ -57,5 +58,6 @@ Feel free to send pull requests our way! Please see the [contributing guidelines
 This project is licensed under the MIT License - see the [LICENSE](LICENSE.md) file for details.
 
 ## Authors
-* [**Spencer Kordecki**](https://github.com/spencerkordecki)
-* [**Fady Farid**](https://github.com/afady)
+
+- [**Spencer Kordecki**](https://github.com/spencerkordecki)
+- [**Fady Farid**](https://github.com/afady)

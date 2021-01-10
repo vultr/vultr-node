@@ -1,77 +1,134 @@
 const util = require('../util')
 
-const mock = {
-  list: {
-    domain: 'example.com',
-    date_created: '2014-12-11 16:20:59'
-  },
-  records: [
-    {
-      type: 'A',
-      name: '',
-      data: '127.0.0.1',
-      priority: 0,
-      RECORDID: 1265276,
-      ttl: 300
-    },
-    {
-      type: 'CNAME',
-      name: '*',
-      data: 'example.com',
-      priority: 0,
-      RECORDID: 1265277,
-      ttl: 300
-    }
-  ],
-  dnsSecInfo: [
-    'example.com IN DNSKEY 257 3 13 kRrxANp7YTGqVbaWtMy8hhsK0jcG4ajjICZKMb4fKv79Vx/RSn76vNjzIT7/Uo0BXil01Fk8RRQc4nWZctGJBA==',
-    'example.com IN DS 27933 13 1 2d9ac457e5c11a104e25d971d0a6254562bddde7',
-    'example.com IN DS 27933 13 2 8858e7b0dfb881280ce2ca1e0eafcd93d5b53687c21da284d4f8799ba82208a9'
-  ],
-  getSOA: {
-    nsprimary: 'ns1.vultr.com',
-    email: 'dnsadm@vultr.com'
-  }
-}
-
 const mockParameters = {
   createDomain: {
-    domain: 'example.com',
-    serverip: '10.0.0.0'
+    domain: 'vultr.com'
+  },
+  getDomain: {
+    'dns-domain': 'vultr.com'
   },
   deleteDomain: {
-    domain: 'example.com'
+    'dns-domain': 'vultr.com'
   },
-  records: {
-    domain: 'example.com'
+  updateDomain: {
+    'dns-domain': 'vultr.com',
+    dns_sec: 'enabled'
   },
-  deleteRecord: {
-    domain: 'example.com',
-    RECORDID: 1265277
+  getSoaInfo: {
+    'dns-domain': 'vultr.com'
+  },
+  updateSoaInfo: {
+    'dns-domain': 'vultr.com'
+  },
+  getDnsSecInfo: {
+    'dns-domain': 'vultr.com'
   },
   createRecord: {
-    domain: 'example.com',
-    name: 'vultr',
+    'dns-domain': 'vultr.com',
+    name: 'www',
     type: 'A',
-    data: '192.0.2.1'
+    data: '127.0.0.1'
+  },
+  listRecords: {
+    'dns-domain': 'vultr.com'
+  },
+  getRecord: {
+    'dns-domain': 'vultr.com',
+    'record-id': 'cb676a46-66fd-4dfb-b839-443f2e6c0b60'
   },
   updateRecord: {
-    domain: 'example.com',
-    RECORDID: 126577
+    'dns-domain': 'vultr.com',
+    'record-id': 'cb676a46-66fd-4dfb-b839-443f2e6c0b60'
   },
-  enableDNSSec: {
-    domain: 'example.com',
-    enable: 'yes'
-  },
-  dnsSecInfo: {
-    domain: 'example.com'
-  },
-  getSOA: {
-    domain: 'example.com'
-  },
-  updateSOA: {
-    domain: 'example.com'
+  deleteRecord: {
+    'dns-domain': 'vultr.com',
+    'record-id': 'cb676a46-66fd-4dfb-b839-443f2e6c0b60'
   }
 }
 
-util.createTestSuite('dns', mock, mockParameters)
+const mockResponses = {
+  listDomains: {
+    domains: [
+      {
+        domain: 'vultr.com',
+        date_created: '2020-10-10T01:56:20+00:00'
+      }
+    ],
+    meta: {
+      total: 1,
+      links: {
+        next: '',
+        prev: ''
+      }
+    }
+  },
+  createDomain: {
+    domain: {
+      domain: 'vultr.com',
+      date_created: '2020-10-10T01:56:20+00:00'
+    }
+  },
+  getDomain: {
+    domain: {
+      domain: 'vultr.com',
+      date_created: '2020-10-10T01:56:20+00:00'
+    }
+  },
+  updateDomain: {
+    dns_sec: 'enabled'
+  },
+  getSoaInfo: {
+    dns_soa: {
+      nsprimary: 'ns1.vultr.com',
+      email: 'dnsadm@vultr.com'
+    }
+  },
+  getDnsSecInfo: {
+    dns_sec: [
+      'example.com IN DNSKEY 257 3 13 kRrxANp7YTGqVbaWtMy8hhsK0jcG4ajjICZKMb4fKv79Vx/RSn76vNjzIT7/Uo0BXil01Fk8RRQc4nWZctGJBA==',
+      'example.com IN DS 27933 13 1 2d9ac457e5c11a104e25d971d0a6254562bddde7',
+      'example.com IN DS 27933 13 2 8858e7b0dfb881280ce2ca1e0eafcd93d5b53687c21da284d4f8799ba82208a9'
+    ]
+  },
+  createRecord: {
+    record: {
+      id: 'cb676a46-66fd-4dfb-b839-443f2e6c0b60',
+      type: 'A',
+      name: 'www',
+      data: '127.0.0.1',
+      priority: 0,
+      ttl: 300
+    }
+  },
+  listRecords: {
+    records: [
+      {
+        id: 'cb676a46-66fd-4dfb-b839-443f2e6c0b60',
+        type: 'A',
+        name: '',
+        data: '127.0.0.1',
+        priority: 0,
+        ttl: 300
+      }
+    ],
+    meta: {
+      total: 1,
+      links: {
+        next: '',
+        prev: ''
+      }
+    }
+  },
+  getRecord: {
+    record: {
+      id: 'cb676a46-66fd-4dfb-b839-443f2e6c0b60',
+      type: 'A',
+      name: 'www',
+      data: '127.0.0.1',
+      priority: 0,
+      ttl: 300
+    }
+  }
+}
+
+util.createTestSuite('dns', mockParameters, mockResponses)

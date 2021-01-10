@@ -1,45 +1,59 @@
 const util = require('../util')
 
-const mock = {
-  create: { ISOID: 24 },
-  list: {
-    '24': {
-      ISOID: 24,
-      date_created: '2014-04-01 14:10:09',
-      filename: 'CentOS-6.5-x86_64-minimal.iso',
-      size: 9342976,
-      md5sum: 'ec0669895a250f803e1709d0402fc411',
+const mockParameters = {
+  createIso: {
+    url: 'https://someurl.com/my-iso.iso'
+  },
+  getIso: {
+    'iso-id': 'cb676a46-66fd-4dfb-b839-443f2e6c0b60'
+  },
+  deleteIso: {
+    'iso-id': 'cb676a46-66fd-4dfb-b839-443f2e6c0b60'
+  }
+}
+
+const mockResponses = {
+  listIsos: {
+    isos: [
+      {
+        id: 'cb676a46-66fd-4dfb-b839-443f2e6c0b60',
+        date_created: '2020-10-10T01:56:20+00:00',
+        filename: 'my-iso.iso',
+        size: 120586240,
+        md5sum: '77ba289bdc966ec996278a5a740d96d8',
+        sha512sum:
+          '2b31b6fcab34d6ea9a6b293601c39b90cb044e5679fcc5f71838d389459527079ce2b2cd9595e8cc727c7818f9166e8caa326ddaf832dcf8444162291da6214e',
+        status: 'complete'
+      }
+    ],
+    meta: {
+      total: 1,
+      links: {
+        next: '',
+        prev: ''
+      }
+    }
+  },
+  createIso: {
+    iso: {
+      id: 'cb676a46-66fd-4dfb-b839-443f2e6c0b60',
+      date_created: '2020-10-10T01:56:20+00:00',
+      filename: 'my-iso.iso',
+      status: 'pending'
+    }
+  },
+  getIso: {
+    iso: {
+      id: 'cb676a46-66fd-4dfb-b839-443f2e6c0b60',
+      date_created: '2020-10-10T01:56:20+00:00',
+      filename: 'alpine-standard-3.12.0-x86.iso',
+      size: 120586240,
+      md5sum: '77ba289bdc966ec996278a5a740d96d8',
       sha512sum:
-        '1741f890bce04613f60b4f2b16fb8070c31640c53d4dbb4271b22610150928743eda1207f031b0b5bdd240ef1a6ed21fd5e6a2d192b9c87eff60b6d9698b8260',
+        '2b31b6fcab34d6ea9a6b293601c39b90cb044e5679fcc5f71838d389459527079ce2b2cd9595e8cc727c7818f9166e8caa326ddaf832dcf8444162291da6214e',
       status: 'complete'
     }
-  },
-  listPublic: {
-    '494966': {
-      ISOID: 494966,
-      name: 'Arch Linux',
-      description: '2018.10.01 x86_64'
-    },
-    '507903': {
-      ISOID: 507903,
-      name: 'OpenBSD 6.4',
-      description: 'amd64'
-    },
-    '522881': {
-      ISOID: 522881,
-      name: 'Ubuntu 18.10',
-      description: '18.10 x86_64'
-    }
   }
 }
 
-const mockParameters = {
-  create: {
-    url: 'https://templeos.org/Downloads/TempleOSLite.ISO'
-  },
-  delete: {
-    ISOID: 24
-  }
-}
-
-util.createTestSuite('iso', mock, mockParameters)
+util.createTestSuite('iso', mockParameters, mockResponses)
