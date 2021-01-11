@@ -34,7 +34,7 @@ const vultr = VultrNode.initialize({
 
 ```js
 // Call endpoints using Promises
-vultr.account.getInfo().then((response) => {
+vultr.account.getAccountInfo().then((response) => {
   console.log(response)
 })
 ```
@@ -45,7 +45,7 @@ This project follows [SemVer](https://semver.org/) for versioning. For the versi
 
 ## Documentation
 
-This implements the V1 Vultr API. For documentation on all endpoints, please visit https://www.vultr.com/api/
+This implements Vultr API V2. For documentation on all endpoints, please visit https://www.vultr.com/api/v2/. To use Vultr API V1, please use the version of the library on the [V1 branch](https://github.com/vultr/vultr-node/tree/v1), or any version of this library before 2.0.0.
 
 For documentation specific to this client please visit https://vultr.github.io/vultr-node
 
