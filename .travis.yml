@@ -13,7 +13,7 @@ script:
 
 deploy:
   provider: npm
-  email: ddymko@vultr.com
+  email: opensource@vultr.com
   api_key: $NPM_TOKEN
   on:
     tags: true
