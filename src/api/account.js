@@ -1,12 +1,12 @@
 /**
  * Methods for interacting with the account endpoints<br>
- * {@link https://www.vultr.com/api/v2/#tag/account}
+ * {@link https://www.vultr.com/api/#tag/account}
  * @namespace account
  */
 
 /**
  * Get your Vultr account, permissions, and billing information.<br>
- * {@link https://www.vultr.com/api/v2/#operation/get-account}
+ * {@link https://www.vultr.com/api/#operation/get-account}
  * @function getAccountInfo
  * @memberof account
  * @instance

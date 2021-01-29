@@ -1,12 +1,12 @@
 /**
  * Methods for interacting with the region endpoints<br>
- * {@link https://www.vultr.com/api/v2/#tag/region}
+ * {@link https://www.vultr.com/api/#tag/region}
  * @namespace regions
  */
 
 /**
  * List all regions available at Vultr.<br>
- * {@link https://www.vultr.com/api/v2/#operation/list-regions}
+ * {@link https://www.vultr.com/api/#operation/list-regions}
  * @function listRegions
  * @memberof regions
  * @instance
@@ -22,7 +22,7 @@ exports.listRegions = {
 
 /**
  * List all available plans in the specified region.<br>
- * {@link https://www.vultr.com/api/v2/#operation/list-available-compute-region}
+ * {@link https://www.vultr.com/api/#operation/list-available-compute-region}
  * @function listAvailableComputeInRegion
  * @memberof regions
  * @instance

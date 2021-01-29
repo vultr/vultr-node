@@ -1,12 +1,12 @@
 /**
  * Methods for interacting with the snapshot endpoints<br>
- * {@link https://www.vultr.com/api/v2/#tag/ssh}
+ * {@link https://www.vultr.com/api/#tag/ssh}
  * @namespace sshKeys
  */
 
 /**
  * Get information about a specified SSH key.<br>
- * {@link https://www.vultr.com/api/v2/#operation/get-ssh-key}
+ * {@link https://www.vultr.com/api/#operation/get-ssh-key}
  * @function getSshKey
  * @memberof sshKeys
  * @instance
@@ -26,7 +26,7 @@ exports.getSshKey = {
 
 /**
  * Update information for the specified SSH key.<br>
- * {@link https://www.vultr.com/api/v2/#operation/update-ssh-key}
+ * {@link https://www.vultr.com/api/#operation/update-ssh-key}
  * @function updateSshKey
  * @memberof sshKeys
  * @instance
@@ -48,7 +48,7 @@ exports.updateSshKey = {
 
 /**
  * Delete the specified SSH key.<br>
- * {@link https://www.vultr.com/api/v2/#operation/delete-ssh-key}
+ * {@link https://www.vultr.com/api/#operation/delete-ssh-key}
  * @function deleteSshKey
  * @memberof sshKeys
  * @instance
@@ -68,7 +68,7 @@ exports.deleteSshKey = {
 
 /**
  * List all SSH keys on the account.<br>
- * {@link https://www.vultr.com/api/v2/#operation/list-ssh-keys}
+ * {@link https://www.vultr.com/api/#operation/list-ssh-keys}
  * @function listSshKeys
  * @memberof sshKeys
  * @instance
@@ -85,7 +85,7 @@ exports.listSshKeys = {
 
 /**
  * Create a new SSH key.<br>
- * {@link https://www.vultr.com/api/v2/#operation/create-ssh-key}
+ * {@link https://www.vultr.com/api/#operation/create-ssh-key}
  * @function createSshKey
  * @memberof sshKeys
  * @instance
