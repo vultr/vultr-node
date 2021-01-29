@@ -45,7 +45,7 @@ This project follows [SemVer](https://semver.org/) for versioning. For the versi
 
 ## Documentation
 
-This implements Vultr API V2. For documentation on all endpoints, please visit https://www.vultr.com/api/v2/. To use Vultr API V1, please use the version of the library on the [V1 branch](https://github.com/vultr/vultr-node/tree/v1), or any version of this library before 2.0.0.
+This implements Vultr API V2. For documentation on all endpoints, please visit https://www.vultr.com/api/. To use Vultr API V1, please use the version of the library on the [V1 branch](https://github.com/vultr/vultr-node/tree/v1), or any version of this library before 2.0.0.
 
 For documentation specific to this client please visit https://vultr.github.io/vultr-node
 

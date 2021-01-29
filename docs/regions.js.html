@@ -27,122 +27,44 @@
     <section>
         <article>
             <pre class="prettyprint source linenums"><code>/**
- * Methods for interacting with the Regions endpoints&lt;br>
- * {@link https://www.vultr.com/api/#regions}
+ * Methods for interacting with the region endpoints&lt;br>
+ * {@link https://www.vultr.com/api/#tag/region}
  * @namespace regions
  */
 
 /**
- * Retrieve a list of all active plans. Plans that are no longer available will not be shown.&lt;br>
- * {@link https://www.vultr.com/api/#regions_region_list}
- * @function list
+ * List all regions available at Vultr.&lt;br>
+ * {@link https://www.vultr.com/api/#operation/list-regions}
+ * @function listRegions
  * @memberof regions
  * @instance
- * @param {object} parameters
- * @param {string} [parameters.availability] - 'yes' or 'no'. If 'yes', include the current availability with each region entry.
  */
-exports.list = {
-  url: '/regions/list',
+exports.listRegions = {
+  url: '/regions',
   requestType: 'GET',
-  apiKeyRequired: false,
   parameters: {
-    availability: {
-      type: 'string',
-      required: false
-    }
+    per_page: { type: 'string' },
+    cursor: { type: 'string' }
   }
 }
 
 /**
- * Retrieve a list of the VPSPLANIDs currently available in this location.&lt;br>
- * If your account has special plans available, you will need to pass your API key in order to see them. For all other accounts, the API key is not required.&lt;br>
- * {@link https://www.vultr.com/api/#regions_region_availability}
- * @function availability
+ * List all available plans in the specified region.&lt;br>
+ * {@link https://www.vultr.com/api/#operation/list-available-compute-region}
+ * @function listAvailableComputeInRegion
  * @memberof regions
  * @instance
- * @param {object} parameters
- * @param {number} parameters.DCID - Location to check availability.
- * @param {string} [parameters.type] - The type of plans for which to include availability. Possible values: "all", "vc2", "ssd", "vdc2", "dedicated".
  */
-exports.availability = {
-  url: '/regions/availability',
+exports.listAvailableComputeInRegion = {
+  url: '/regions/{region-id}/availability',
   requestType: 'GET',
-  apiKeyRequired: false,
   parameters: {
-    DCID: {
-      type: 'number',
+    'region-id': {
+      type: 'string',
+      path: true,
       required: true
     },
-    type: {
-      type: 'string',
-      required: false
-    }
-  }
-}
-
-/**
- * Retrieve a list of the METALPLANIDs currently available in this location.&lt;br>
- * If your account has special plans available, you will need to pass your API key in order to see them. For all other accounts, the API key is not required.&lt;br>
- * {@link https://www.vultr.com/api/#regions_region_availability_baremetal}
- * @function availabilityBareMetal
- * @memberof regions
- * @instance
- * @param {object} parameters
- * @param {number} parameters.DCID - Location to check availability.
- */
-exports.availabilityBareMetal = {
-  url: '/regions/availability_baremetal',
-  requestType: 'GET',
-  apiKeyRequired: true,
-  parameters: {
-    DCID: {
-      type: 'number',
-      required: true
-    }
-  }
-}
-
-/**
- * Retrieve a list of the vc2 VPSPLANIDs currently available in this location.&lt;br>
- * If your account has special plans available, you will need to pass your API key in order to see them. For all other accounts, the API key is not required.&lt;br>
- * {@link https://www.vultr.com/api/#regions_region_availability_vc2}
- * @function availabilityVc2
- * @memberof regions
- * @instance
- * @param {object} parameters
- * @param {number} parameters.DCID - Location to check availability.
- */
-exports.availabilityVc2 = {
-  url: '/regions/availability_vc2',
-  requestType: 'GET',
-  apiKeyRequired: false,
-  parameters: {
-    DCID: {
-      type: 'number',
-      required: true
-    }
-  }
-}
-
-/**
- * Retrieve a list of the vdc2 VPSPLANIDs currently available in this location.&lt;br>
- * If your account has special plans available, you will need to pass your API key in order to see them. For all other accounts, the API key is not required.&lt;br>
- * {@link https://www.vultr.com/api/#regions_region_availability_vdc2}
- * @function availabilityVdc2
- * @memberof regions
- * @instance
- * @param {object} parameters
- * @param {number} parameters.DCID - Location to check availability.
- */
-exports.availabilityVdc2 = {
-  url: '/regions/availability_vdc2',
-  requestType: 'GET',
-  apiKeyRequired: false,
-  parameters: {
-    DCID: {
-      type: 'number',
-      required: true
-    }
+    type: { type: 'string' }
   }
 }
 </code></pre>
@@ -155,13 +77,13 @@ exports.availabilityVdc2 = {
 </div>
 
 <nav>
-    <h2><a href="index.html">Home</a></h2><h3>Namespaces</h3><ul><li><a href="account.html">account</a></li><li><a href="api.html">api</a></li><li><a href="app.html">app</a></li><li><a href="backup.html">backup</a></li><li><a href="baremetal.html">baremetal</a></li><li><a href="block.html">block</a></li><li><a href="dns.html">dns</a></li><li><a href="firewall.html">firewall</a></li><li><a href="iso.html">iso</a></li><li><a href="loadBalancer.html">loadBalancer</a></li><li><a href="network.html">network</a></li><li><a href="objectStorage.html">objectStorage</a></li><li><a href="os.html">os</a></li><li><a href="plans.html">plans</a></li><li><a href="regions.html">regions</a></li><li><a href="reservedIp.html">reservedIp</a></li><li><a href="server.html">server</a></li><li><a href="snapshot.html">snapshot</a></li><li><a href="sshkey.html">sshkey</a></li><li><a href="startupScript.html">startupScript</a></li><li><a href="user.html">user</a></li></ul>
+    <h2><a href="index.html">Home</a></h2><h3>Namespaces</h3><ul><li><a href="account.html">account</a></li><li><a href="applications.html">applications</a></li><li><a href="backup.html">backup</a></li><li><a href="bareMetal.html">bareMetal</a></li><li><a href="blockStorage.html">blockStorage</a></li><li><a href="dns.html">dns</a></li><li><a href="firewall.html">firewall</a></li><li><a href="instances.html">instances</a></li><li><a href="iso.html">iso</a></li><li><a href="loadBalancers.html">loadBalancers</a></li><li><a href="objectStorage.html">objectStorage</a></li><li><a href="operatingSystems.html">operatingSystems</a></li><li><a href="plans.html">plans</a></li><li><a href="privateNetworks.html">privateNetworks</a></li><li><a href="regions.html">regions</a></li><li><a href="reservedIps.html">reservedIps</a></li><li><a href="snapshots.html">snapshots</a></li><li><a href="sshKeys.html">sshKeys</a></li><li><a href="startupScripts.html">startupScripts</a></li><li><a href="users.html">users</a></li></ul>
 </nav>
 
 <br class="clear">
 
 <footer>
-    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 3.6.4</a> on Sat Apr 25 2020 13:08:06 GMT-0400 (Eastern Daylight Time)
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 3.6.6</a> on Fri Jan 29 2021 13:06:50 GMT-0500 (Eastern Standard Time)
 </footer>
 
 <script> prettyPrint(); </script>

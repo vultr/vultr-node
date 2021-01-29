@@ -38,7 +38,7 @@
     
         
             <div class="description">Methods for interacting with the DNS endpoints<br>
-<a href="https://www.vultr.com/api/#dns">https://www.vultr.com/api/#dns</a></div>
+<a href="https://www.vultr.com/api/#tag/dns">https://www.vultr.com/api/#tag/dns</a></div>
         
 
         
@@ -112,7 +112,7 @@
     
 
     
-    <h4 class="name" id="createDomain"><span class="type-signature"></span>createDomain<span class="signature">(parameters)</span><span class="type-signature"></span></h4>
+    <h4 class="name" id="createDomain"><span class="type-signature"></span>createDomain<span class="signature">()</span><span class="type-signature"></span></h4>
     
 
     
@@ -120,8 +120,9 @@
 
 
 <div class="description">
-    Create a domain name in DNS.<br>
-<a href="https://www.vultr.com/api/#dns_create_domain">https://www.vultr.com/api/#dns_create_domain</a>
+    Create a DNS domain for the specified domain. If no IP address is
+specified, a domain with no records will be created.<br>
+<a href="https://www.vultr.com/api/#operation/create-dns-domain">https://www.vultr.com/api/#operation/create-dns-domain</a>
 </div>
 
 
@@ -132,125 +133,716 @@
 
 
 
-    <h5>Parameters:</h5>
-    
-
-<table class="params">
-    <thead>
-    <tr>
-        
-        <th>Name</th>
-        
-
-        <th>Type</th>
-
-        
-
-        
-
-        <th class="last">Description</th>
-    </tr>
-    </thead>
-
-    <tbody>
-    
-
-        <tr>
-            
-                <td class="name"><code>parameters</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">object</span>
 
 
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last">
-                <h6>Properties</h6>
-                
-
-<table class="params">
-    <thead>
-    <tr>
-        
-        <th>Name</th>
-        
-
-        <th>Type</th>
-
-        
-
-        
-
-        <th class="last">Description</th>
-    </tr>
-    </thead>
-
-    <tbody>
-    
-
-        <tr>
-            
-                <td class="name"><code>domain</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">string</span>
 
 
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last">Domain name to create.</td>
-        </tr>
+<dl class="details">
 
     
 
-        <tr>
-            
-                <td class="name"><code>serverip</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">string</span>
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last">Server IP to use when creating default records (A and MX).</td>
-        </tr>
+    
 
     
-    </tbody>
-</table>
-
-            </td>
-        </tr>
 
     
-    </tbody>
-</table>
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="dns.js.html">dns.js</a>, <a href="dns.js.html#line24">line 24</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id="createRecord"><span class="type-signature"></span>createRecord<span class="signature">()</span><span class="type-signature"></span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    Create a new DNS record.<br>
+<a href="https://www.vultr.com/api/#operation/create-dns-domain-record">https://www.vultr.com/api/#operation/create-dns-domain-record</a>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="dns.js.html">dns.js</a>, <a href="dns.js.html#line170">line 170</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id="deleteDomain"><span class="type-signature"></span>deleteDomain<span class="signature">()</span><span class="type-signature"></span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    Delete the specified DNS domain.<br>
+<a href="https://www.vultr.com/api/#operation/delete-dns-domain">https://www.vultr.com/api/#operation/delete-dns-domain</a>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="dns.js.html">dns.js</a>, <a href="dns.js.html#line65">line 65</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id="deleteRecord"><span class="type-signature"></span>deleteRecord<span class="signature">()</span><span class="type-signature"></span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    Delete a specified DNS record.<br>
+<a href="https://www.vultr.com/api/#operation/delete-dns-domain-record">https://www.vultr.com/api/#operation/delete-dns-domain-record</a>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="dns.js.html">dns.js</a>, <a href="dns.js.html#line275">line 275</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id="getDnsSecInfo"><span class="type-signature"></span>getDnsSecInfo<span class="signature">()</span><span class="type-signature"></span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    Get the DNSSEC information for the specified DNS domain.<br>
+<a href="https://www.vultr.com/api/#operation/get-dns-domain-dnssec">https://www.vultr.com/api/#operation/get-dns-domain-dnssec</a>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="dns.js.html">dns.js</a>, <a href="dns.js.html#line150">line 150</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id="getDomain"><span class="type-signature"></span>getDomain<span class="signature">()</span><span class="type-signature"></span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    Get information for the specified DNS domain.<br>
+<a href="https://www.vultr.com/api/#operation/get-dns-domain">https://www.vultr.com/api/#operation/get-dns-domain</a>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="dns.js.html">dns.js</a>, <a href="dns.js.html#line46">line 46</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id="getRecord"><span class="type-signature"></span>getRecord<span class="signature">()</span><span class="type-signature"></span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    Get the specified DNS record for the specified DNS domain.<br>
+<a href="https://www.vultr.com/api/#operation/get-dns-domain-record">https://www.vultr.com/api/#operation/get-dns-domain-record</a>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="dns.js.html">dns.js</a>, <a href="dns.js.html#line221">line 221</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id="getSoaInfo"><span class="type-signature"></span>getSoaInfo<span class="signature">()</span><span class="type-signature"></span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    Get SOA information for the specified DNS domain.<br>
+<a href="https://www.vultr.com/api/#operation/get-dns-domain-soa">https://www.vultr.com/api/#operation/get-dns-domain-soa</a>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="dns.js.html">dns.js</a>, <a href="dns.js.html#line108">line 108</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id="listDomains"><span class="type-signature"></span>listDomains<span class="signature">()</span><span class="type-signature"></span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    List all DNS domains on the account.<br>
+<a href="https://www.vultr.com/api/#operation/list-dns-domains">https://www.vultr.com/api/#operation/list-dns-domains</a>
+</div>
+
+
+
+
+
+
+
 
 
 
@@ -322,7 +914,7 @@
     
 
     
-    <h4 class="name" id="createRecord"><span class="type-signature"></span>createRecord<span class="signature">(parameters)</span><span class="type-signature"></span></h4>
+    <h4 class="name" id="listRecords"><span class="type-signature"></span>listRecords<span class="signature">()</span><span class="type-signature"></span></h4>
     
 
     
@@ -330,8 +922,8 @@
 
 
 <div class="description">
-    Add a DNS record.<br>
-<a href="https://www.vultr.com/api/#dns_create_record">https://www.vultr.com/api/#dns_create_record</a>
+    List all DNS records.<br>
+<a href="https://www.vultr.com/api/#operation/list-dns-domain-records">https://www.vultr.com/api/#operation/list-dns-domain-records</a>
 </div>
 
 
@@ -340,273 +932,6 @@
 
 
 
-
-
-    <h5>Parameters:</h5>
-    
-
-<table class="params">
-    <thead>
-    <tr>
-        
-        <th>Name</th>
-        
-
-        <th>Type</th>
-
-        
-
-        
-
-        <th class="last">Description</th>
-    </tr>
-    </thead>
-
-    <tbody>
-    
-
-        <tr>
-            
-                <td class="name"><code>parameters</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">object</span>
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last">
-                <h6>Properties</h6>
-                
-
-<table class="params">
-    <thead>
-    <tr>
-        
-        <th>Name</th>
-        
-
-        <th>Type</th>
-
-        
-        <th>Attributes</th>
-        
-
-        
-
-        <th class="last">Description</th>
-    </tr>
-    </thead>
-
-    <tbody>
-    
-
-        <tr>
-            
-                <td class="name"><code>domain</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">string</span>
-
-
-            
-            </td>
-
-            
-                <td class="attributes">
-                
-
-                
-
-                
-                </td>
-            
-
-            
-
-            <td class="description last">Domain name to add record to.</td>
-        </tr>
-
-    
-
-        <tr>
-            
-                <td class="name"><code>name</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">string</span>
-
-
-            
-            </td>
-
-            
-                <td class="attributes">
-                
-
-                
-
-                
-                </td>
-            
-
-            
-
-            <td class="description last">Name (subdomain) of record.</td>
-        </tr>
-
-    
-
-        <tr>
-            
-                <td class="name"><code>type</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">string</span>
-
-
-            
-            </td>
-
-            
-                <td class="attributes">
-                
-
-                
-
-                
-                </td>
-            
-
-            
-
-            <td class="description last">Type (A, AAAA, MX, etc) of record.</td>
-        </tr>
-
-    
-
-        <tr>
-            
-                <td class="name"><code>data</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">string</span>
-
-
-            
-            </td>
-
-            
-                <td class="attributes">
-                
-
-                
-
-                
-                </td>
-            
-
-            
-
-            <td class="description last">Data for this record.</td>
-        </tr>
-
-    
-
-        <tr>
-            
-                <td class="name"><code>ttl</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">number</span>
-
-
-            
-            </td>
-
-            
-                <td class="attributes">
-                
-                    &lt;optional><br>
-                
-
-                
-
-                
-                </td>
-            
-
-            
-
-            <td class="description last">TTL of this record.</td>
-        </tr>
-
-    
-
-        <tr>
-            
-                <td class="name"><code>priority</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">number</span>
-
-
-            
-            </td>
-
-            
-                <td class="attributes">
-                
-                    &lt;optional><br>
-                
-
-                
-
-                
-                </td>
-            
-
-            
-
-            <td class="description last">(only required for MX and SRV) Priority of this record (omit the priority from the data).</td>
-        </tr>
-
-    
-    </tbody>
-</table>
-
-            </td>
-        </tr>
-
-    
-    </tbody>
-</table>
 
 
 
@@ -642,7 +967,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="dns.js.html">dns.js</a>, <a href="dns.js.html#line109">line 109</a>
+        <a href="dns.js.html">dns.js</a>, <a href="dns.js.html#line199">line 199</a>
     </li></ul></dd>
     
 
@@ -678,7 +1003,7 @@
     
 
     
-    <h4 class="name" id="deleteDomain"><span class="type-signature"></span>deleteDomain<span class="signature">(parameters)</span><span class="type-signature"></span></h4>
+    <h4 class="name" id="updateDomain"><span class="type-signature"></span>updateDomain<span class="signature">()</span><span class="type-signature"></span></h4>
     
 
     
@@ -686,8 +1011,8 @@
 
 
 <div class="description">
-    Delete a domain name and all associated records.<br>
-<a href="https://www.vultr.com/api/#dns_delete_domain">https://www.vultr.com/api/#dns_delete_domain</a>
+    Update the specified DNS domain to enable or disable DNS security.<br>
+<a href="https://www.vultr.com/api/#operation/update-dns-domain">https://www.vultr.com/api/#operation/update-dns-domain</a>
 </div>
 
 
@@ -696,104 +1021,6 @@
 
 
 
-
-
-    <h5>Parameters:</h5>
-    
-
-<table class="params">
-    <thead>
-    <tr>
-        
-        <th>Name</th>
-        
-
-        <th>Type</th>
-
-        
-
-        
-
-        <th class="last">Description</th>
-    </tr>
-    </thead>
-
-    <tbody>
-    
-
-        <tr>
-            
-                <td class="name"><code>parameters</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">object</span>
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last">
-                <h6>Properties</h6>
-                
-
-<table class="params">
-    <thead>
-    <tr>
-        
-        <th>Name</th>
-        
-
-        <th>Type</th>
-
-        
-
-        
-
-        <th class="last">Description</th>
-    </tr>
-    </thead>
-
-    <tbody>
-    
-
-        <tr>
-            
-                <td class="name"><code>domain</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">string</span>
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last">Domain name to delete.</td>
-        </tr>
-
-    
-    </tbody>
-</table>
-
-            </td>
-        </tr>
-
-    
-    </tbody>
-</table>
 
 
 
@@ -829,7 +1056,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="dns.js.html">dns.js</a>, <a href="dns.js.html#line33">line 33</a>
+        <a href="dns.js.html">dns.js</a>, <a href="dns.js.html#line85">line 85</a>
     </li></ul></dd>
     
 
@@ -865,7 +1092,7 @@
     
 
     
-    <h4 class="name" id="deleteRecord"><span class="type-signature"></span>deleteRecord<span class="signature">()</span><span class="type-signature"></span></h4>
+    <h4 class="name" id="updateRecord"><span class="type-signature"></span>updateRecord<span class="signature">()</span><span class="type-signature"></span></h4>
     
 
     
@@ -873,8 +1100,8 @@
 
 
 <div class="description">
-    Delete an individual DNS record.<br>
-<a href="https://www.vultr.com/api/#dns_delete_record">https://www.vultr.com/api/#dns_delete_record</a>
+    Update information for the specified DNS record.<br>
+<a href="https://www.vultr.com/api/#operation/update-dns-domain-record">https://www.vultr.com/api/#operation/update-dns-domain-record</a>
 </div>
 
 
@@ -918,7 +1145,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="dns.js.html">dns.js</a>, <a href="dns.js.html#line86">line 86</a>
+        <a href="dns.js.html">dns.js</a>, <a href="dns.js.html#line246">line 246</a>
     </li></ul></dd>
     
 
@@ -954,7 +1181,7 @@
     
 
     
-    <h4 class="name" id="dnsSecInfo"><span class="type-signature"></span>dnsSecInfo<span class="signature">(parameters)</span><span class="type-signature"></span></h4>
+    <h4 class="name" id="updateSoaInfo"><span class="type-signature"></span>updateSoaInfo<span class="signature">()</span><span class="type-signature"></span></h4>
     
 
     
@@ -962,592 +1189,8 @@
 
 
 <div class="description">
-    Get the DNSSEC keys (if enabled) for a domain.<br>
-<a href="https://www.vultr.com/api/#dns_dnssec_info">https://www.vultr.com/api/#dns_dnssec_info</a>
-</div>
-
-
-
-
-
-
-
-
-
-    <h5>Parameters:</h5>
-    
-
-<table class="params">
-    <thead>
-    <tr>
-        
-        <th>Name</th>
-        
-
-        <th>Type</th>
-
-        
-
-        
-
-        <th class="last">Description</th>
-    </tr>
-    </thead>
-
-    <tbody>
-    
-
-        <tr>
-            
-                <td class="name"><code>parameters</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">object</span>
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last">
-                <h6>Properties</h6>
-                
-
-<table class="params">
-    <thead>
-    <tr>
-        
-        <th>Name</th>
-        
-
-        <th>Type</th>
-
-        
-
-        
-
-        <th class="last">Description</th>
-    </tr>
-    </thead>
-
-    <tbody>
-    
-
-        <tr>
-            
-                <td class="name"><code>domain</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">string</span>
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last">Domain from which to gather DNSSEC keys.</td>
-        </tr>
-
-    
-    </tbody>
-</table>
-
-            </td>
-        </tr>
-
-    
-    </tbody>
-</table>
-
-
-
-
-
-
-<dl class="details">
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="dns.js.html">dns.js</a>, <a href="dns.js.html#line227">line 227</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-        
-            
-
-    
-
-    
-    <h4 class="name" id="enableDNSSec"><span class="type-signature"></span>enableDNSSec<span class="signature">(parameters)</span><span class="type-signature"></span></h4>
-    
-
-    
-
-
-
-<div class="description">
-    Enable or disable DNSSEC for a domain.<br>
-<a href="https://www.vultr.com/api/#dns_dnssec_enable">https://www.vultr.com/api/#dns_dnssec_enable</a>
-</div>
-
-
-
-
-
-
-
-
-
-    <h5>Parameters:</h5>
-    
-
-<table class="params">
-    <thead>
-    <tr>
-        
-        <th>Name</th>
-        
-
-        <th>Type</th>
-
-        
-
-        
-
-        <th class="last">Description</th>
-    </tr>
-    </thead>
-
-    <tbody>
-    
-
-        <tr>
-            
-                <td class="name"><code>parameters</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">object</span>
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last">
-                <h6>Properties</h6>
-                
-
-<table class="params">
-    <thead>
-    <tr>
-        
-        <th>Name</th>
-        
-
-        <th>Type</th>
-
-        
-
-        
-
-        <th class="last">Description</th>
-    </tr>
-    </thead>
-
-    <tbody>
-    
-
-        <tr>
-            
-                <td class="name"><code>domain</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">string</span>
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last">Domain name to update record.</td>
-        </tr>
-
-    
-
-        <tr>
-            
-                <td class="name"><code>enable</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">string</span>
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last">'yes' or 'no'. If yes, DNSSEC will be enabled for the given domain.</td>
-        </tr>
-
-    
-    </tbody>
-</table>
-
-            </td>
-        </tr>
-
-    
-    </tbody>
-</table>
-
-
-
-
-
-
-<dl class="details">
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="dns.js.html">dns.js</a>, <a href="dns.js.html#line201">line 201</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-        
-            
-
-    
-
-    
-    <h4 class="name" id="getSOA"><span class="type-signature"></span>getSOA<span class="signature">(parameters)</span><span class="type-signature"></span></h4>
-    
-
-    
-
-
-
-<div class="description">
-    Get the SOA record information for a domain.<br>
-<a href="https://www.vultr.com/api/#dns_soa_info">https://www.vultr.com/api/#dns_soa_info</a>
-</div>
-
-
-
-
-
-
-
-
-
-    <h5>Parameters:</h5>
-    
-
-<table class="params">
-    <thead>
-    <tr>
-        
-        <th>Name</th>
-        
-
-        <th>Type</th>
-
-        
-
-        
-
-        <th class="last">Description</th>
-    </tr>
-    </thead>
-
-    <tbody>
-    
-
-        <tr>
-            
-                <td class="name"><code>parameters</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">object</span>
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last">
-                <h6>Properties</h6>
-                
-
-<table class="params">
-    <thead>
-    <tr>
-        
-        <th>Name</th>
-        
-
-        <th>Type</th>
-
-        
-
-        
-
-        <th class="last">Description</th>
-    </tr>
-    </thead>
-
-    <tbody>
-    
-
-        <tr>
-            
-                <td class="name"><code>domain</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">string</span>
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last">Domain from which to gather DNSSEC keys.</td>
-        </tr>
-
-    
-    </tbody>
-</table>
-
-            </td>
-        </tr>
-
-    
-    </tbody>
-</table>
-
-
-
-
-
-
-<dl class="details">
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="dns.js.html">dns.js</a>, <a href="dns.js.html#line248">line 248</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-        
-            
-
-    
-
-    
-    <h4 class="name" id="list"><span class="type-signature"></span>list<span class="signature">()</span><span class="type-signature"></span></h4>
-    
-
-    
-
-
-
-<div class="description">
-    List all domains associated with the current account.<br>
-<a href="https://www.vultr.com/api/#dns_dns_list">https://www.vultr.com/api/#dns_dns_list</a>
+    Update SOA information for the specified DNS domain.<br>
+<a href="https://www.vultr.com/api/#operation/update-dns-domain-soa">https://www.vultr.com/api/#operation/update-dns-domain-soa</a>
 </div>
 
 
@@ -1591,719 +1234,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="dns.js.html">dns.js</a>, <a href="dns.js.html#line54">line 54</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-        
-            
-
-    
-
-    
-    <h4 class="name" id="records"><span class="type-signature"></span>records<span class="signature">()</span><span class="type-signature"></span></h4>
-    
-
-    
-
-
-
-<div class="description">
-    List all the records associated with a particular domain..<br>
-<a href="https://www.vultr.com/api/#dns_records">https://www.vultr.com/api/#dns_records</a>
-</div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-<dl class="details">
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="dns.js.html">dns.js</a>, <a href="dns.js.html#line67">line 67</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-        
-            
-
-    
-
-    
-    <h4 class="name" id="updateRecord"><span class="type-signature"></span>updateRecord<span class="signature">(parameters)</span><span class="type-signature"></span></h4>
-    
-
-    
-
-
-
-<div class="description">
-    Update a DNS record.<br>
-<a href="https://www.vultr.com/api/#dns_update_record">https://www.vultr.com/api/#dns_update_record</a>
-</div>
-
-
-
-
-
-
-
-
-
-    <h5>Parameters:</h5>
-    
-
-<table class="params">
-    <thead>
-    <tr>
-        
-        <th>Name</th>
-        
-
-        <th>Type</th>
-
-        
-
-        
-
-        <th class="last">Description</th>
-    </tr>
-    </thead>
-
-    <tbody>
-    
-
-        <tr>
-            
-                <td class="name"><code>parameters</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">object</span>
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last">
-                <h6>Properties</h6>
-                
-
-<table class="params">
-    <thead>
-    <tr>
-        
-        <th>Name</th>
-        
-
-        <th>Type</th>
-
-        
-        <th>Attributes</th>
-        
-
-        
-
-        <th class="last">Description</th>
-    </tr>
-    </thead>
-
-    <tbody>
-    
-
-        <tr>
-            
-                <td class="name"><code>domain</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">string</span>
-
-
-            
-            </td>
-
-            
-                <td class="attributes">
-                
-
-                
-
-                
-                </td>
-            
-
-            
-
-            <td class="description last">Domain name to update record.</td>
-        </tr>
-
-    
-
-        <tr>
-            
-                <td class="name"><code>RECORDID</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">number</span>
-
-
-            
-            </td>
-
-            
-                <td class="attributes">
-                
-
-                
-
-                
-                </td>
-            
-
-            
-
-            <td class="description last">ID of record to update.</td>
-        </tr>
-
-    
-
-        <tr>
-            
-                <td class="name"><code>name</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">string</span>
-
-
-            
-            </td>
-
-            
-                <td class="attributes">
-                
-                    &lt;optional><br>
-                
-
-                
-
-                
-                </td>
-            
-
-            
-
-            <td class="description last">Name (subdomain) of record.</td>
-        </tr>
-
-    
-
-        <tr>
-            
-                <td class="name"><code>data</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">string</span>
-
-
-            
-            </td>
-
-            
-                <td class="attributes">
-                
-                    &lt;optional><br>
-                
-
-                
-
-                
-                </td>
-            
-
-            
-
-            <td class="description last">Data for this record.</td>
-        </tr>
-
-    
-
-        <tr>
-            
-                <td class="name"><code>ttl</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">number</span>
-
-
-            
-            </td>
-
-            
-                <td class="attributes">
-                
-                    &lt;optional><br>
-                
-
-                
-
-                
-                </td>
-            
-
-            
-
-            <td class="description last">TTL of this record.</td>
-        </tr>
-
-    
-
-        <tr>
-            
-                <td class="name"><code>priority</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">number</span>
-
-
-            
-            </td>
-
-            
-                <td class="attributes">
-                
-                    &lt;optional><br>
-                
-
-                
-
-                
-                </td>
-            
-
-            
-
-            <td class="description last">(only required for MX and SRV) Priority of this record (omit the priority from the data).</td>
-        </tr>
-
-    
-    </tbody>
-</table>
-
-            </td>
-        </tr>
-
-    
-    </tbody>
-</table>
-
-
-
-
-
-
-<dl class="details">
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="dns.js.html">dns.js</a>, <a href="dns.js.html#line155">line 155</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-        
-            
-
-    
-
-    
-    <h4 class="name" id="updateSOA"><span class="type-signature"></span>updateSOA<span class="signature">(parameters)</span><span class="type-signature"></span></h4>
-    
-
-    
-
-
-
-<div class="description">
-    Update the SOA record information for a domain.<br>
-<a href="https://www.vultr.com/api/#dns_soa_update">https://www.vultr.com/api/#dns_soa_update</a>
-</div>
-
-
-
-
-
-
-
-
-
-    <h5>Parameters:</h5>
-    
-
-<table class="params">
-    <thead>
-    <tr>
-        
-        <th>Name</th>
-        
-
-        <th>Type</th>
-
-        
-
-        
-
-        <th class="last">Description</th>
-    </tr>
-    </thead>
-
-    <tbody>
-    
-
-        <tr>
-            
-                <td class="name"><code>parameters</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">object</span>
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last">
-                <h6>Properties</h6>
-                
-
-<table class="params">
-    <thead>
-    <tr>
-        
-        <th>Name</th>
-        
-
-        <th>Type</th>
-
-        
-        <th>Attributes</th>
-        
-
-        
-
-        <th class="last">Description</th>
-    </tr>
-    </thead>
-
-    <tbody>
-    
-
-        <tr>
-            
-                <td class="name"><code>domain</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">string</span>
-
-
-            
-            </td>
-
-            
-                <td class="attributes">
-                
-
-                
-
-                
-                </td>
-            
-
-            
-
-            <td class="description last">Domain from which to gather DNSSEC keys.</td>
-        </tr>
-
-    
-
-        <tr>
-            
-                <td class="name"><code>nsprimary</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">string</span>
-
-
-            
-            </td>
-
-            
-                <td class="attributes">
-                
-                    &lt;optional><br>
-                
-
-                
-
-                
-                </td>
-            
-
-            
-
-            <td class="description last">Primary nameserver to store in the SOA record.</td>
-        </tr>
-
-    
-
-        <tr>
-            
-                <td class="name"><code>email</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">string</span>
-
-
-            
-            </td>
-
-            
-                <td class="attributes">
-                
-                    &lt;optional><br>
-                
-
-                
-
-                
-                </td>
-            
-
-            
-
-            <td class="description last">Administrative email to store in the SOA record.</td>
-        </tr>
-
-    
-    </tbody>
-</table>
-
-            </td>
-        </tr>
-
-    
-    </tbody>
-</table>
-
-
-
-
-
-
-<dl class="details">
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="dns.js.html">dns.js</a>, <a href="dns.js.html#line269">line 269</a>
+        <a href="dns.js.html">dns.js</a>, <a href="dns.js.html#line128">line 128</a>
     </li></ul></dd>
     
 
@@ -2349,13 +1280,13 @@
 </div>
 
 <nav>
-    <h2><a href="index.html">Home</a></h2><h3>Namespaces</h3><ul><li><a href="account.html">account</a></li><li><a href="api.html">api</a></li><li><a href="app.html">app</a></li><li><a href="backup.html">backup</a></li><li><a href="baremetal.html">baremetal</a></li><li><a href="block.html">block</a></li><li><a href="dns.html">dns</a></li><li><a href="firewall.html">firewall</a></li><li><a href="iso.html">iso</a></li><li><a href="loadBalancer.html">loadBalancer</a></li><li><a href="network.html">network</a></li><li><a href="objectStorage.html">objectStorage</a></li><li><a href="os.html">os</a></li><li><a href="plans.html">plans</a></li><li><a href="regions.html">regions</a></li><li><a href="reservedIp.html">reservedIp</a></li><li><a href="server.html">server</a></li><li><a href="snapshot.html">snapshot</a></li><li><a href="sshkey.html">sshkey</a></li><li><a href="startupScript.html">startupScript</a></li><li><a href="user.html">user</a></li></ul>
+    <h2><a href="index.html">Home</a></h2><h3>Namespaces</h3><ul><li><a href="account.html">account</a></li><li><a href="applications.html">applications</a></li><li><a href="backup.html">backup</a></li><li><a href="bareMetal.html">bareMetal</a></li><li><a href="blockStorage.html">blockStorage</a></li><li><a href="dns.html">dns</a></li><li><a href="firewall.html">firewall</a></li><li><a href="instances.html">instances</a></li><li><a href="iso.html">iso</a></li><li><a href="loadBalancers.html">loadBalancers</a></li><li><a href="objectStorage.html">objectStorage</a></li><li><a href="operatingSystems.html">operatingSystems</a></li><li><a href="plans.html">plans</a></li><li><a href="privateNetworks.html">privateNetworks</a></li><li><a href="regions.html">regions</a></li><li><a href="reservedIps.html">reservedIps</a></li><li><a href="snapshots.html">snapshots</a></li><li><a href="sshKeys.html">sshKeys</a></li><li><a href="startupScripts.html">startupScripts</a></li><li><a href="users.html">users</a></li></ul>
 </nav>
 
 <br class="clear">
 
 <footer>
-    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 3.6.4</a> on Sat Apr 25 2020 13:08:06 GMT-0400 (Eastern Daylight Time)
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 3.6.6</a> on Fri Jan 29 2021 13:06:50 GMT-0500 (Eastern Standard Time)
 </footer>
 
 <script> prettyPrint(); </script>

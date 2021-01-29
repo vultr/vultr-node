@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>JSDoc: Source: iso.js</title>
+    <title>JSDoc: Source: startup-scripts.js</title>
 
     <script src="scripts/prettify/prettify.js"> </script>
     <script src="scripts/prettify/lang-css.js"> </script>
@@ -17,7 +17,7 @@
 
 <div id="main">
 
-    <h1 class="page-title">Source: iso.js</h1>
+    <h1 class="page-title">Source: startup-scripts.js</h1>
 
     
 
@@ -27,20 +27,83 @@
     <section>
         <article>
             <pre class="prettyprint source linenums"><code>/**
- * Methods for interacting with the ISO endpoints&lt;br>
- * {@link https://www.vultr.com/api/#tag/iso}
- * @namespace iso
+ * Methods for interacting with the startup scripts endpoints&lt;br>
+ * {@link https://www.vultr.com/api/#tag/startup}
+ * @namespace startupScripts
  */
 
 /**
- * List all ISOs in the account.&lt;br>
- * {@link https://www.vultr.com/api/#operation/list-isos}
- * @function listIsos
- * @memberof iso
+ * Get information for the specified startup script.&lt;br>
+ * {@link https://www.vultr.com/api/#operation/get-startup-script}
+ * @function getStartupScript
+ * @memberof startupScripts
  * @instance
  */
-exports.listIsos = {
-  url: '/iso',
+exports.getStartupScript = {
+  url: '/startup-scripts/{startup-id}',
+  requestType: 'POST',
+  apiKeyRequired: true,
+  parameters: {
+    'startup-id': {
+      type: 'string',
+      path: true,
+      required: true
+    }
+  }
+}
+
+/**
+ * Delete a specified startup script.&lt;br>
+ * {@link https://www.vultr.com/api/#operation/delete-startup-script}
+ * @function deleteStartupScript
+ * @memberof startupScripts
+ * @instance
+ */
+exports.deleteStartupScript = {
+  url: '/sctartup-scripts/{startup-id}',
+  requestType: 'DELETE',
+  apiKeyRequired: true,
+  parameters: {
+    'startup-id': {
+      type: 'string',
+      path: true,
+      required: true
+    }
+  }
+}
+
+/**
+ * Update information for the specified startup script.&lt;br>
+ * {@link https://www.vultr.com/api/#operation/update-startup-script}
+ * @function updateStartupScript
+ * @memberof startupScripts
+ * @instance
+ */
+exports.updateStartupScript = {
+  url: '/sctartup-scripts/{startup-id}',
+  requestType: 'PATCH',
+  apiKeyRequired: true,
+  parameters: {
+    'startup-id': {
+      type: 'string',
+      path: true,
+      required: true
+    },
+    name: { type: 'string' },
+    script: { type: 'string' },
+    type: { type: 'string' }
+  }
+}
+
+/**
+ * List all startup scripts on the account.&lt;br>
+ * {@link https://www.vultr.com/api/#operation/list-startup-scripts}
+ * @function listStartupScripts
+ * @memberof startupScripts
+ * @instance
+ */
+exports.listStartupScripts = {
+  url: '/startup-scripts',
   requestType: 'GET',
   apiKeyRequired: true,
   parameters: {
@@ -50,74 +113,27 @@ exports.listIsos = {
 }
 
 /**
- * Create a new ISO in the account from a URL.&lt;br>
- * {@link https://www.vultr.com/api/#operation/create-iso}
- * @function createIso
- * @memberof iso
+ * Create a new startup script.&lt;br>
+ * {@link https://www.vultr.com/api/#operation/create-startup-script}
+ * @function createStartupScript
+ * @memberof startupScripts
  * @instance
  */
-exports.createIso = {
-  url: '/iso',
+exports.createStartupScript = {
+  url: '/startup-scripts',
   requestType: 'POST',
   apiKeyRequired: true,
   parameters: {
-    url: {
+    name: {
       type: 'string',
       required: true
-    }
-  }
-}
-
-/**
- * Get information about the specified ISO.&lt;br>
- * {@link https://www.vultr.com/api/#operation/iso-get}
- * @function getIso
- * @memberof iso
- * @instance
- */
-exports.getIso = {
-  url: '/iso/{iso-id}',
-  requestType: 'POST',
-  apiKeyRequired: true,
-  parameters: {
-    'iso-id': {
+    },
+    script: {
       type: 'string',
-      path: true,
       required: true
-    }
+    },
+    type: { type: 'string' }
   }
-}
-
-/**
- * Delete the specified ISO from the account.&lt;br>
- * {@link https://www.vultr.com/api/#operation/delete-iso}
- * @function deleteIso
- * @memberof iso
- * @instance
- */
-exports.deleteIso = {
-  url: '/iso/{iso-id}',
-  requestType: 'DELETE',
-  apiKeyRequired: true,
-  parameters: {
-    'iso-id': {
-      type: 'string',
-      path: true,
-      required: true
-    }
-  }
-}
-
-/**
- * List all Vultr public ISOs.&lt;br>
- * {@link https://www.vultr.com/api/#operation/list-public-isos}
- * @function listPublicIsos
- * @memberof iso
- * @instance
- */
-exports.listPublicIsos = {
-  url: '/iso-public',
-  requestType: 'GET'
 }
 </code></pre>
         </article>

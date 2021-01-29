@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>JSDoc: Source: iso.js</title>
+    <title>JSDoc: Source: users.js</title>
 
     <script src="scripts/prettify/prettify.js"> </script>
     <script src="scripts/prettify/lang-css.js"> </script>
@@ -17,7 +17,7 @@
 
 <div id="main">
 
-    <h1 class="page-title">Source: iso.js</h1>
+    <h1 class="page-title">Source: users.js</h1>
 
     
 
@@ -27,20 +27,85 @@
     <section>
         <article>
             <pre class="prettyprint source linenums"><code>/**
- * Methods for interacting with the ISO endpoints&lt;br>
- * {@link https://www.vultr.com/api/#tag/iso}
- * @namespace iso
+ * Methods for interacting with the users endpoints&lt;br>
+ * {@link https://www.vultr.com/api/#tag/users}
+ * @namespace users
  */
 
 /**
- * List all ISOs in the account.&lt;br>
- * {@link https://www.vultr.com/api/#operation/list-isos}
- * @function listIsos
- * @memberof iso
+ * Get information about the specified user.&lt;br>
+ * {@link https://www.vultr.com/api/#operation/get-user}
+ * @function getUser
+ * @memberof users
  * @instance
  */
-exports.listIsos = {
-  url: '/iso',
+exports.getUser = {
+  url: '/users/{user-id}',
+  requestType: 'GET',
+  apiKeyRequired: true,
+  parameters: {
+    'user-id': {
+      type: 'string',
+      path: true,
+      required: true
+    }
+  }
+}
+
+/**
+ * Delete the specified user.&lt;br>
+ * {@link https://www.vultr.com/api/#operation/delete-user}
+ * @function deleteUser
+ * @memberof users
+ * @instance
+ */
+exports.deleteUser = {
+  url: '/users/{user-id}',
+  requestType: 'DELETE',
+  apiKeyRequired: true,
+  parameters: {
+    'user-id': {
+      type: 'string',
+      path: true,
+      required: true
+    }
+  }
+}
+
+/**
+ * Update information for the specified user.&lt;br>
+ * {@link https://www.vultr.com/api/#operation/update-user}
+ * @function updateUser
+ * @memberof users
+ * @instance
+ */
+exports.updateUser = {
+  url: '/users/{user-id}',
+  requestType: 'PATCH',
+  apiKeyRequired: true,
+  parameters: {
+    'user-id': {
+      type: 'string',
+      path: true,
+      required: true
+    },
+    email: { type: 'string' },
+    name: { type: 'string' },
+    password: { type: 'string' },
+    api_enabled: { type: 'boolean' },
+    acls: { type: 'array' }
+  }
+}
+
+/**
+ * Get a list of all users on the account.&lt;br>
+ * {@link https://www.vultr.com/api/#operation/list-users}
+ * @function getUsers
+ * @memberof users
+ * @instance
+ */
+exports.getUsers = {
+  url: '/users',
   requestType: 'GET',
   apiKeyRequired: true,
   parameters: {
@@ -50,74 +115,32 @@ exports.listIsos = {
 }
 
 /**
- * Create a new ISO in the account from a URL.&lt;br>
- * {@link https://www.vultr.com/api/#operation/create-iso}
- * @function createIso
- * @memberof iso
+ * Create a new user on the account.&lt;br>
+ * {@link https://www.vultr.com/api/#operation/create-user}
+ * @function createUser
+ * @memberof users
  * @instance
  */
-exports.createIso = {
-  url: '/iso',
+exports.createUser = {
+  url: '/users',
   requestType: 'POST',
   apiKeyRequired: true,
   parameters: {
-    url: {
+    email: {
       type: 'string',
       required: true
-    }
-  }
-}
-
-/**
- * Get information about the specified ISO.&lt;br>
- * {@link https://www.vultr.com/api/#operation/iso-get}
- * @function getIso
- * @memberof iso
- * @instance
- */
-exports.getIso = {
-  url: '/iso/{iso-id}',
-  requestType: 'POST',
-  apiKeyRequired: true,
-  parameters: {
-    'iso-id': {
+    },
+    name: {
       type: 'string',
-      path: true,
       required: true
-    }
-  }
-}
-
-/**
- * Delete the specified ISO from the account.&lt;br>
- * {@link https://www.vultr.com/api/#operation/delete-iso}
- * @function deleteIso
- * @memberof iso
- * @instance
- */
-exports.deleteIso = {
-  url: '/iso/{iso-id}',
-  requestType: 'DELETE',
-  apiKeyRequired: true,
-  parameters: {
-    'iso-id': {
+    },
+    password: {
       type: 'string',
-      path: true,
       required: true
-    }
+    },
+    api_enabled: { type: 'boolean' },
+    acls: { type: 'array' }
   }
-}
-
-/**
- * List all Vultr public ISOs.&lt;br>
- * {@link https://www.vultr.com/api/#operation/list-public-isos}
- * @function listPublicIsos
- * @memberof iso
- * @instance
- */
-exports.listPublicIsos = {
-  url: '/iso-public',
-  requestType: 'GET'
 }
 </code></pre>
         </article>

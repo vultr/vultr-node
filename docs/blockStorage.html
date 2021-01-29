@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>JSDoc: Namespace: objectStorage</title>
+    <title>JSDoc: Namespace: blockStorage</title>
 
     <script src="scripts/prettify/prettify.js"> </script>
     <script src="scripts/prettify/lang-css.js"> </script>
@@ -17,7 +17,7 @@
 
 <div id="main">
 
-    <h1 class="page-title">Namespace: objectStorage</h1>
+    <h1 class="page-title">Namespace: blockStorage</h1>
 
     
 
@@ -28,7 +28,7 @@
 
 <header>
     
-        <h2>objectStorage</h2>
+        <h2>blockStorage</h2>
         
     
 </header>
@@ -37,8 +37,8 @@
     <div class="container-overview">
     
         
-            <div class="description">Methods for interacting with the object storage endpoints<br>
-<a href="https://www.vultr.com/api/#tag/s3">https://www.vultr.com/api/#tag/s3</a></div>
+            <div class="description">Methods for interacting with the block storage endpoints<br>
+<a href="https://www.vultr.com/api/#block">https://www.vultr.com/api/#block</a></div>
         
 
         
@@ -73,7 +73,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="object-storage.js.html">object-storage.js</a>, <a href="object-storage.js.html#line1">line 1</a>
+        <a href="block-storage.js.html">block-storage.js</a>, <a href="block-storage.js.html#line1">line 1</a>
     </li></ul></dd>
     
 
@@ -112,7 +112,7 @@
     
 
     
-    <h4 class="name" id="deleteObjectStorage"><span class="type-signature"></span>deleteObjectStorage<span class="signature">()</span><span class="type-signature"></span></h4>
+    <h4 class="name" id="attachStorage"><span class="type-signature"></span>attachStorage<span class="signature">()</span><span class="type-signature"></span></h4>
     
 
     
@@ -120,8 +120,8 @@
 
 
 <div class="description">
-    Delete an object storage volume.<br>
-<a href="https://www.vultr.com/api/#operation/delete-object-storage">https://www.vultr.com/api/#operation/delete-object-storage</a>
+    Attach a specified block storage volume to an instance.<br>
+<a href="https://www.vultr.com/api/#operation/attach-block">https://www.vultr.com/api/#operation/attach-block</a>
 </div>
 
 
@@ -165,7 +165,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="object-storage.js.html">object-storage.js</a>, <a href="object-storage.js.html#line64">line 64</a>
+        <a href="block-storage.js.html">block-storage.js</a>, <a href="block-storage.js.html#line108">line 108</a>
     </li></ul></dd>
     
 
@@ -201,7 +201,7 @@
     
 
     
-    <h4 class="name" id="getAllClusters"><span class="type-signature"></span>getAllClusters<span class="signature">()</span><span class="type-signature"></span></h4>
+    <h4 class="name" id="createStorage"><span class="type-signature"></span>createStorage<span class="signature">()</span><span class="type-signature"></span></h4>
     
 
     
@@ -209,8 +209,8 @@
 
 
 <div class="description">
-    Get a list of all object storage clusters.<br>
-<a href="https://www.vultr.com/api/#operation/list-object-storage-clusters">https://www.vultr.com/api/#operation/list-object-storage-clusters</a>
+    Create a new block storage volume.<br>
+<a href="https://www.vultr.com/api/#operation/create-block">https://www.vultr.com/api/#operation/create-block</a>
 </div>
 
 
@@ -254,7 +254,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="object-storage.js.html">object-storage.js</a>, <a href="object-storage.js.html#line128">line 128</a>
+        <a href="block-storage.js.html">block-storage.js</a>, <a href="block-storage.js.html#line24">line 24</a>
     </li></ul></dd>
     
 
@@ -290,7 +290,7 @@
     
 
     
-    <h4 class="name" id="getObjectStorage"><span class="type-signature"></span>getObjectStorage<span class="signature">()</span><span class="type-signature"></span></h4>
+    <h4 class="name" id="deleteStorage"><span class="type-signature"></span>deleteStorage<span class="signature">()</span><span class="type-signature"></span></h4>
     
 
     
@@ -298,8 +298,8 @@
 
 
 <div class="description">
-    Get information about the specified object sotrage volume.<br>
-<a href="https://www.vultr.com/api/#operation/get-object-storage">https://www.vultr.com/api/#operation/get-object-storage</a>
+    Delete the specified block storage volume.<br>
+<a href="https://www.vultr.com/api/#operation/delete-block">https://www.vultr.com/api/#operation/delete-block</a>
 </div>
 
 
@@ -343,7 +343,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="object-storage.js.html">object-storage.js</a>, <a href="object-storage.js.html#line44">line 44</a>
+        <a href="block-storage.js.html">block-storage.js</a>, <a href="block-storage.js.html#line67">line 67</a>
     </li></ul></dd>
     
 
@@ -379,7 +379,7 @@
     
 
     
-    <h4 class="name" id="listObjectStorages"><span class="type-signature"></span>listObjectStorages<span class="signature">()</span><span class="type-signature"></span></h4>
+    <h4 class="name" id="detachStorage"><span class="type-signature"></span>detachStorage<span class="signature">()</span><span class="type-signature"></span></h4>
     
 
     
@@ -387,8 +387,8 @@
 
 
 <div class="description">
-    List all object storage volumes on the account.<br>
-<a href="https://www.vultr.com/api/#operation/list-object-storages">https://www.vultr.com/api/#operation/list-object-storages</a>
+    Detach a block storage volume.<br>
+<a href="https://www.vultr.com/api/#operation/detach-block">https://www.vultr.com/api/#operation/detach-block</a>
 </div>
 
 
@@ -432,7 +432,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="object-storage.js.html">object-storage.js</a>, <a href="object-storage.js.html#line7">line 7</a>
+        <a href="block-storage.js.html">block-storage.js</a>, <a href="block-storage.js.html#line130">line 130</a>
     </li></ul></dd>
     
 
@@ -468,7 +468,7 @@
     
 
     
-    <h4 class="name" id="regenerateObjectStorageKeys"><span class="type-signature"></span>regenerateObjectStorageKeys<span class="signature">()</span><span class="type-signature"></span></h4>
+    <h4 class="name" id="getStorage"><span class="type-signature"></span>getStorage<span class="signature">()</span><span class="type-signature"></span></h4>
     
 
     
@@ -476,8 +476,8 @@
 
 
 <div class="description">
-    Regenerate keys for the specified object storage volume.<br>
-<a href="https://www.vultr.com/api/#operation/regenerate-object-storage-keys">https://www.vultr.com/api/#operation/regenerate-object-storage-keys</a>
+    Get information for a specified block storage volume.<br>
+<a href="https://www.vultr.com/api/#operation/get-block">https://www.vultr.com/api/#operation/get-block</a>
 </div>
 
 
@@ -521,7 +521,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="object-storage.js.html">object-storage.js</a>, <a href="object-storage.js.html#line108">line 108</a>
+        <a href="block-storage.js.html">block-storage.js</a>, <a href="block-storage.js.html#line48">line 48</a>
     </li></ul></dd>
     
 
@@ -557,7 +557,7 @@
     
 
     
-    <h4 class="name" id="updateObjectStorage"><span class="type-signature"></span>updateObjectStorage<span class="signature">()</span><span class="type-signature"></span></h4>
+    <h4 class="name" id="listStorages"><span class="type-signature"></span>listStorages<span class="signature">()</span><span class="type-signature"></span></h4>
     
 
     
@@ -565,8 +565,8 @@
 
 
 <div class="description">
-    Update information for the specified object storage volume.<br>
-<a href="https://www.vultr.com/api/#operation/update-object-storage">https://www.vultr.com/api/#operation/update-object-storage</a>
+    List all block storage volumes in the account.<br>
+<a href="https://www.vultr.com/api/#operation/list-blocks">https://www.vultr.com/api/#operation/list-blocks</a>
 </div>
 
 
@@ -610,7 +610,96 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="object-storage.js.html">object-storage.js</a>, <a href="object-storage.js.html#line84">line 84</a>
+        <a href="block-storage.js.html">block-storage.js</a>, <a href="block-storage.js.html#line7">line 7</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id="updateStorage"><span class="type-signature"></span>updateStorage<span class="signature">()</span><span class="type-signature"></span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    Update the specified block storage volume.<br>
+<a href="https://www.vultr.com/api/#operation/update-block">https://www.vultr.com/api/#operation/update-block</a>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="block-storage.js.html">block-storage.js</a>, <a href="block-storage.js.html#line86">line 86</a>
     </li></ul></dd>
     
 

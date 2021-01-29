@@ -6,7 +6,7 @@
 
 /**
  * List all block storage volumes in the account.<br>
- * {@link https://www.vultr.com/api/v2/#operation/list-blocks}
+ * {@link https://www.vultr.com/api/#operation/list-blocks}
  * @function listStorages
  * @memberof blockStorage
  * @instance
@@ -23,7 +23,7 @@ exports.listStorages = {
 
 /**
   Create a new block storage volume.<br>
- * {@link https://www.vultr.com/api/v2/#operation/create-block}
+ * {@link https://www.vultr.com/api/#operation/create-block}
  * @function createStorage
  * @memberof blockStorage
  * @instance
@@ -47,7 +47,7 @@ exports.createStorage = {
 
 /**
  * Get information for a specified block storage volume.<br>
- * {@link https://www.vultr.com/api/v2/#operation/get-block}
+ * {@link https://www.vultr.com/api/#operation/get-block}
  * @function getStorage
  * @memberof blockStorage
  * @instance
@@ -66,7 +66,7 @@ exports.getStorage = {
 
 /**
  * Delete the specified block storage volume.<br>
- * {@link https://www.vultr.com/api/v2/#operation/delete-block}
+ * {@link https://www.vultr.com/api/#operation/delete-block}
  * @function deleteStorage
  * @memberof blockStorage
  * @instance
@@ -85,7 +85,7 @@ exports.deleteStorage = {
 
 /**
  * Update the specified block storage volume.<br>
- * {@link https://www.vultr.com/api/v2/#operation/update-block}
+ * {@link https://www.vultr.com/api/#operation/update-block}
  * @function updateStorage
  * @memberof blockStorage
  * @instance
@@ -107,7 +107,7 @@ exports.updateStorage = {
 
 /**
  * Attach a specified block storage volume to an instance.<br>
- * {@link https://www.vultr.com/api/v2/#operation/attach-block}
+ * {@link https://www.vultr.com/api/#operation/attach-block}
  * @function attachStorage
  * @memberof blockStorage
  * @instance
@@ -129,7 +129,7 @@ exports.attachStorage = {
 
 /**
  * Detach a block storage volume.<br>
- * {@link https://www.vultr.com/api/v2/#operation/detach-block}
+ * {@link https://www.vultr.com/api/#operation/detach-block}
  * @function detachStorage
  * @memberof blockStorage
  * @instance

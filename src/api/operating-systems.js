@@ -1,12 +1,12 @@
 /**
  * Methods for interacting with the operating system endpoints<br>
- * {@link https://www.vultr.com/api/v2/#tag/os}
+ * {@link https://www.vultr.com/api/#tag/os}
  * @namespace operatingSystems
  */
 
 /**
  * Get a list of all OS images available to install from Vultr.<br>
- * {@link https://www.vultr.com/api/v2/#operation/list-os}
+ * {@link https://www.vultr.com/api/#operation/list-os}
  * @function listImages
  * @memberof operatingSystems
  * @instance

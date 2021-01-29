@@ -1,12 +1,12 @@
 /**
  * Methods for interacting with the snapshot endpoints<br>
- * {@link https://www.vultr.com/api/v2/#tag/snapshot}
+ * {@link https://www.vultr.com/api/#tag/snapshot}
  * @namespace snapshots
  */
 
 /**
  * Delete the specified snapshot.<br>
- * {@link https://www.vultr.com/api/v2/#operation/delete-snapshot}
+ * {@link https://www.vultr.com/api/#operation/delete-snapshot}
  * @function deleteSnapshot
  * @memberof snapshots
  * @instance
@@ -26,7 +26,7 @@ exports.deleteSnapshot = {
 
 /**
  * Get information about the specified snapshot.<br>
- * {@link https://www.vultr.com/api/v2/#operation/get-snapshot}
+ * {@link https://www.vultr.com/api/#operation/get-snapshot}
  * @function getSnapshot
  * @memberof snapshots
  * @instance
@@ -46,7 +46,7 @@ exports.getSnapshot = {
 
 /**
  * Update information for the specified snapshot.<br>
- * {@link https://www.vultr.com/api/v2/#operation/put-snapshots-snapshot-id}
+ * {@link https://www.vultr.com/api/#operation/put-snapshots-snapshot-id}
  * @function updateSnapshot
  * @memberof snapshots
  * @instance
@@ -70,7 +70,7 @@ exports.updateSnapshot = {
 
 /**
  * List all snapshots on the account.<br>
- * {@link https://www.vultr.com/api/v2/#operation/list-snapshots}
+ * {@link https://www.vultr.com/api/#operation/list-snapshots}
  * @function listSnapshots
  * @memberof snapshots
  * @instance
@@ -87,7 +87,7 @@ exports.listSnapshots = {
 
 /**
  * Create a new snapshot.<br>
- * {@link https://www.vultr.com/api/v2/#operation/create-snapshot}
+ * {@link https://www.vultr.com/api/#operation/create-snapshot}
  * @function createSnapshot
  * @memberof snapshots
  * @instance
@@ -107,7 +107,7 @@ exports.createSnapshot = {
 
 /**
  * Create a new snapshot from a specified URL.<br>
- * {@link https://www.vultr.com/api/v2/#operation/create-snapshot-create-from-url}
+ * {@link https://www.vultr.com/api/#operation/create-snapshot-create-from-url}
  * @function createSnapshotFromUrl
  * @memberof snapshots
  * @instance

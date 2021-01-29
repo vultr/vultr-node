@@ -37,8 +37,8 @@
     <div class="container-overview">
     
         
-            <div class="description">Methods for interacting with the ISO Image endpoints<br>
-<a href="https://www.vultr.com/api/#iso">https://www.vultr.com/api/#iso</a></div>
+            <div class="description">Methods for interacting with the ISO endpoints<br>
+<a href="https://www.vultr.com/api/#tag/iso">https://www.vultr.com/api/#tag/iso</a></div>
         
 
         
@@ -112,7 +112,7 @@
     
 
     
-    <h4 class="name" id="create"><span class="type-signature"></span>create<span class="signature">(parameters)</span><span class="type-signature"></span></h4>
+    <h4 class="name" id="createIso"><span class="type-signature"></span>createIso<span class="signature">()</span><span class="type-signature"></span></h4>
     
 
     
@@ -120,8 +120,8 @@
 
 
 <div class="description">
-    Create a new ISO image on the current account. The ISO image will be downloaded from a given URL.<br>
-<a href="https://www.vultr.com/api/#iso_create_from_url">https://www.vultr.com/api/#iso_create_from_url</a>
+    Create a new ISO in the account from a URL.<br>
+<a href="https://www.vultr.com/api/#operation/create-iso">https://www.vultr.com/api/#operation/create-iso</a>
 </div>
 
 
@@ -132,102 +132,271 @@
 
 
 
-    <h5>Parameters:</h5>
-    
-
-<table class="params">
-    <thead>
-    <tr>
-        
-        <th>Name</th>
-        
-
-        <th>Type</th>
-
-        
-
-        
-
-        <th class="last">Description</th>
-    </tr>
-    </thead>
-
-    <tbody>
-    
-
-        <tr>
-            
-                <td class="name"><code>parameters</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">object</span>
 
 
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last">
-                <h6>Properties</h6>
-                
-
-<table class="params">
-    <thead>
-    <tr>
-        
-        <th>Name</th>
-        
-
-        <th>Type</th>
-
-        
-
-        
-
-        <th class="last">Description</th>
-    </tr>
-    </thead>
-
-    <tbody>
-    
-
-        <tr>
-            
-                <td class="name"><code>url</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">string</span>
 
 
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last">Remote URL from where the ISO will be downloaded.</td>
-        </tr>
+<dl class="details">
 
     
-    </tbody>
-</table>
-
-            </td>
-        </tr>
 
     
-    </tbody>
-</table>
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="iso.js.html">iso.js</a>, <a href="iso.js.html#line24">line 24</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id="deleteIso"><span class="type-signature"></span>deleteIso<span class="signature">()</span><span class="type-signature"></span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    Delete the specified ISO from the account.<br>
+<a href="https://www.vultr.com/api/#operation/delete-iso">https://www.vultr.com/api/#operation/delete-iso</a>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="iso.js.html">iso.js</a>, <a href="iso.js.html#line63">line 63</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id="getIso"><span class="type-signature"></span>getIso<span class="signature">()</span><span class="type-signature"></span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    Get information about the specified ISO.<br>
+<a href="https://www.vultr.com/api/#operation/iso-get">https://www.vultr.com/api/#operation/iso-get</a>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="iso.js.html">iso.js</a>, <a href="iso.js.html#line43">line 43</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id="listIsos"><span class="type-signature"></span>listIsos<span class="signature">()</span><span class="type-signature"></span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    List all ISOs in the account.<br>
+<a href="https://www.vultr.com/api/#operation/list-isos">https://www.vultr.com/api/#operation/list-isos</a>
+</div>
+
+
+
+
+
+
+
 
 
 
@@ -299,7 +468,7 @@
     
 
     
-    <h4 class="name" id="delete"><span class="type-signature"></span>delete<span class="signature">(parameters)</span><span class="type-signature"></span></h4>
+    <h4 class="name" id="listPublicIsos"><span class="type-signature"></span>listPublicIsos<span class="signature">()</span><span class="type-signature"></span></h4>
     
 
     
@@ -307,195 +476,8 @@
 
 
 <div class="description">
-    Delete an ISO image. There is no going back from this call.<br>
-<a href="https://www.vultr.com/api/#iso_destroy">https://www.vultr.com/api/#iso_destroy</a>
-</div>
-
-
-
-
-
-
-
-
-
-    <h5>Parameters:</h5>
-    
-
-<table class="params">
-    <thead>
-    <tr>
-        
-        <th>Name</th>
-        
-
-        <th>Type</th>
-
-        
-
-        
-
-        <th class="last">Description</th>
-    </tr>
-    </thead>
-
-    <tbody>
-    
-
-        <tr>
-            
-                <td class="name"><code>parameters</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">object</span>
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last">
-                <h6>Properties</h6>
-                
-
-<table class="params">
-    <thead>
-    <tr>
-        
-        <th>Name</th>
-        
-
-        <th>Type</th>
-
-        
-
-        
-
-        <th class="last">Description</th>
-    </tr>
-    </thead>
-
-    <tbody>
-    
-
-        <tr>
-            
-                <td class="name"><code>ISOID</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">number</span>
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last">Unique identifier for this ISO image.</td>
-        </tr>
-
-    
-    </tbody>
-</table>
-
-            </td>
-        </tr>
-
-    
-    </tbody>
-</table>
-
-
-
-
-
-
-<dl class="details">
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="iso.js.html">iso.js</a>, <a href="iso.js.html#line28">line 28</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-        
-            
-
-    
-
-    
-    <h4 class="name" id="list"><span class="type-signature"></span>list<span class="signature">()</span><span class="type-signature"></span></h4>
-    
-
-    
-
-
-
-<div class="description">
-    List all ISOs currently available on this account.<br>
-<a href="https://www.vultr.com/api/#iso_iso_list">https://www.vultr.com/api/#iso_iso_list</a>
+    List all Vultr public ISOs.<br>
+<a href="https://www.vultr.com/api/#operation/list-public-isos">https://www.vultr.com/api/#operation/list-public-isos</a>
 </div>
 
 
@@ -539,96 +521,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="iso.js.html">iso.js</a>, <a href="iso.js.html#line49">line 49</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-        
-            
-
-    
-
-    
-    <h4 class="name" id="listPublic"><span class="type-signature"></span>listPublic<span class="signature">()</span><span class="type-signature"></span></h4>
-    
-
-    
-
-
-
-<div class="description">
-    List public ISOs offered in the Vultr ISO library.<br>
-<a href="https://www.vultr.com/api/#iso_list_public">https://www.vultr.com/api/#iso_list_public</a>
-</div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-<dl class="details">
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="iso.js.html">iso.js</a>, <a href="iso.js.html#line62">line 62</a>
+        <a href="iso.js.html">iso.js</a>, <a href="iso.js.html#line83">line 83</a>
     </li></ul></dd>
     
 
@@ -674,13 +567,13 @@
 </div>
 
 <nav>
-    <h2><a href="index.html">Home</a></h2><h3>Namespaces</h3><ul><li><a href="account.html">account</a></li><li><a href="api.html">api</a></li><li><a href="app.html">app</a></li><li><a href="backup.html">backup</a></li><li><a href="baremetal.html">baremetal</a></li><li><a href="block.html">block</a></li><li><a href="dns.html">dns</a></li><li><a href="firewall.html">firewall</a></li><li><a href="iso.html">iso</a></li><li><a href="loadBalancer.html">loadBalancer</a></li><li><a href="network.html">network</a></li><li><a href="objectStorage.html">objectStorage</a></li><li><a href="os.html">os</a></li><li><a href="plans.html">plans</a></li><li><a href="regions.html">regions</a></li><li><a href="reservedIp.html">reservedIp</a></li><li><a href="server.html">server</a></li><li><a href="snapshot.html">snapshot</a></li><li><a href="sshkey.html">sshkey</a></li><li><a href="startupScript.html">startupScript</a></li><li><a href="user.html">user</a></li></ul>
+    <h2><a href="index.html">Home</a></h2><h3>Namespaces</h3><ul><li><a href="account.html">account</a></li><li><a href="applications.html">applications</a></li><li><a href="backup.html">backup</a></li><li><a href="bareMetal.html">bareMetal</a></li><li><a href="blockStorage.html">blockStorage</a></li><li><a href="dns.html">dns</a></li><li><a href="firewall.html">firewall</a></li><li><a href="instances.html">instances</a></li><li><a href="iso.html">iso</a></li><li><a href="loadBalancers.html">loadBalancers</a></li><li><a href="objectStorage.html">objectStorage</a></li><li><a href="operatingSystems.html">operatingSystems</a></li><li><a href="plans.html">plans</a></li><li><a href="privateNetworks.html">privateNetworks</a></li><li><a href="regions.html">regions</a></li><li><a href="reservedIps.html">reservedIps</a></li><li><a href="snapshots.html">snapshots</a></li><li><a href="sshKeys.html">sshKeys</a></li><li><a href="startupScripts.html">startupScripts</a></li><li><a href="users.html">users</a></li></ul>
 </nav>
 
 <br class="clear">
 
 <footer>
-    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 3.6.4</a> on Sat Apr 25 2020 13:08:06 GMT-0400 (Eastern Daylight Time)
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 3.6.6</a> on Fri Jan 29 2021 13:06:50 GMT-0500 (Eastern Standard Time)
 </footer>
 
 <script> prettyPrint(); </script>

@@ -1,12 +1,12 @@
 /**
  * Methods for interacting with the DNS endpoints<br>
- * {@link https://www.vultr.com/api/v2/#tag/dns}
+ * {@link https://www.vultr.com/api/#tag/dns}
  * @namespace dns
  */
 
 /**
  * List all DNS domains on the account.<br>
- * {@link https://www.vultr.com/api/v2/#operation/list-dns-domains}
+ * {@link https://www.vultr.com/api/#operation/list-dns-domains}
  * @function listDomains
  * @memberof dns
  * @instance
@@ -24,7 +24,7 @@ exports.listDomains = {
 /**
  * Create a DNS domain for the specified domain. If no IP address is
  * specified, a domain with no records will be created.<br>
- * {@link https://www.vultr.com/api/v2/#operation/create-dns-domain}
+ * {@link https://www.vultr.com/api/#operation/create-dns-domain}
  * @function createDomain
  * @memberof dns
  * @instance
@@ -45,7 +45,7 @@ exports.createDomain = {
 
 /**
  * Get information for the specified DNS domain.<br>
- * {@link https://www.vultr.com/api/v2/#operation/get-dns-domain}
+ * {@link https://www.vultr.com/api/#operation/get-dns-domain}
  * @function getDomain
  * @memberof dns
  * @instance
@@ -64,7 +64,7 @@ exports.getDomain = {
 
 /**
  * Delete the specified DNS domain.<br>
- * {@link https://www.vultr.com/api/v2/#operation/delete-dns-domain}
+ * {@link https://www.vultr.com/api/#operation/delete-dns-domain}
  * @function deleteDomain
  * @memberof dns
  * @instance
@@ -84,7 +84,7 @@ exports.deleteDomain = {
 
 /**
  * Update the specified DNS domain to enable or disable DNS security.<br>
- * {@link https://www.vultr.com/api/v2/#operation/update-dns-domain}
+ * {@link https://www.vultr.com/api/#operation/update-dns-domain}
  * @function updateDomain
  * @memberof dns
  * @instance
@@ -107,7 +107,7 @@ exports.updateDomain = {
 
 /**
  * Get SOA information for the specified DNS domain.<br>
- * {@link https://www.vultr.com/api/v2/#operation/get-dns-domain-soa}
+ * {@link https://www.vultr.com/api/#operation/get-dns-domain-soa}
  * @function getSoaInfo
  * @memberof dns
  * @instance
@@ -127,7 +127,7 @@ exports.getSoaInfo = {
 
 /**
  * Update SOA information for the specified DNS domain.<br>
- * {@link https://www.vultr.com/api/v2/#operation/update-dns-domain-soa}
+ * {@link https://www.vultr.com/api/#operation/update-dns-domain-soa}
  * @function updateSoaInfo
  * @memberof dns
  * @instance
@@ -149,7 +149,7 @@ exports.updateSoaInfo = {
 
 /**
  * Get the DNSSEC information for the specified DNS domain.<br>
- * {@link https://www.vultr.com/api/v2/#operation/get-dns-domain-dnssec}
+ * {@link https://www.vultr.com/api/#operation/get-dns-domain-dnssec}
  * @function getDnsSecInfo
  * @memberof dns
  * @instance
@@ -169,7 +169,7 @@ exports.getDnsSecInfo = {
 
 /**
  * Create a new DNS record.<br>
- * {@link https://www.vultr.com/api/v2/#operation/create-dns-domain-record}
+ * {@link https://www.vultr.com/api/#operation/create-dns-domain-record}
  * @function createRecord
  * @memberof dns
  * @instance
@@ -198,7 +198,7 @@ exports.createRecord = {
 
 /**
  * List all DNS records.<br>
- * {@link https://www.vultr.com/api/v2/#operation/list-dns-domain-records}
+ * {@link https://www.vultr.com/api/#operation/list-dns-domain-records}
  * @function listRecords
  * @memberof dns
  * @instance
@@ -220,7 +220,7 @@ exports.listRecords = {
 
 /**
  * Get the specified DNS record for the specified DNS domain.<br>
- * {@link https://www.vultr.com/api/v2/#operation/get-dns-domain-record}
+ * {@link https://www.vultr.com/api/#operation/get-dns-domain-record}
  * @function getRecord
  * @memberof dns
  * @instance
@@ -245,7 +245,7 @@ exports.getRecord = {
 
 /**
  * Update information for the specified DNS record.<br>
- * {@link https://www.vultr.com/api/v2/#operation/update-dns-domain-record}
+ * {@link https://www.vultr.com/api/#operation/update-dns-domain-record}
  * @function updateRecord
  * @memberof dns
  * @instance
@@ -274,7 +274,7 @@ exports.updateRecord = {
 
 /**
  * Delete a specified DNS record.<br>
- * {@link https://www.vultr.com/api/v2/#operation/delete-dns-domain-record}
+ * {@link https://www.vultr.com/api/#operation/delete-dns-domain-record}
  * @function deleteRecord
  * @memberof dns
  * @instance

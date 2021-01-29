@@ -1,12 +1,12 @@
 /**
  * Methods for interacting with the users endpoints<br>
- * {@link https://www.vultr.com/api/v2/#tag/users}
+ * {@link https://www.vultr.com/api/#tag/users}
  * @namespace users
  */
 
 /**
  * Get information about the specified user.<br>
- * {@link https://www.vultr.com/api/v2/#operation/get-user}
+ * {@link https://www.vultr.com/api/#operation/get-user}
  * @function getUser
  * @memberof users
  * @instance
@@ -26,7 +26,7 @@ exports.getUser = {
 
 /**
  * Delete the specified user.<br>
- * {@link https://www.vultr.com/api/v2/#operation/delete-user}
+ * {@link https://www.vultr.com/api/#operation/delete-user}
  * @function deleteUser
  * @memberof users
  * @instance
@@ -46,7 +46,7 @@ exports.deleteUser = {
 
 /**
  * Update information for the specified user.<br>
- * {@link https://www.vultr.com/api/v2/#operation/update-user}
+ * {@link https://www.vultr.com/api/#operation/update-user}
  * @function updateUser
  * @memberof users
  * @instance
@@ -71,7 +71,7 @@ exports.updateUser = {
 
 /**
  * Get a list of all users on the account.<br>
- * {@link https://www.vultr.com/api/v2/#operation/list-users}
+ * {@link https://www.vultr.com/api/#operation/list-users}
  * @function getUsers
  * @memberof users
  * @instance
@@ -88,7 +88,7 @@ exports.getUsers = {
 
 /**
  * Create a new user on the account.<br>
- * {@link https://www.vultr.com/api/v2/#operation/create-user}
+ * {@link https://www.vultr.com/api/#operation/create-user}
  * @function createUser
  * @memberof users
  * @instance

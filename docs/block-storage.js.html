@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>JSDoc: Source: iso.js</title>
+    <title>JSDoc: Source: block-storage.js</title>
 
     <script src="scripts/prettify/prettify.js"> </script>
     <script src="scripts/prettify/lang-css.js"> </script>
@@ -17,7 +17,7 @@
 
 <div id="main">
 
-    <h1 class="page-title">Source: iso.js</h1>
+    <h1 class="page-title">Source: block-storage.js</h1>
 
     
 
@@ -27,20 +27,20 @@
     <section>
         <article>
             <pre class="prettyprint source linenums"><code>/**
- * Methods for interacting with the ISO endpoints&lt;br>
- * {@link https://www.vultr.com/api/#tag/iso}
- * @namespace iso
+ * Methods for interacting with the block storage endpoints&lt;br>
+ * {@link https://www.vultr.com/api/#block}
+ * @namespace blockStorage
  */
 
 /**
- * List all ISOs in the account.&lt;br>
- * {@link https://www.vultr.com/api/#operation/list-isos}
- * @function listIsos
- * @memberof iso
+ * List all block storage volumes in the account.&lt;br>
+ * {@link https://www.vultr.com/api/#operation/list-blocks}
+ * @function listStorages
+ * @memberof blockStorage
  * @instance
  */
-exports.listIsos = {
-  url: '/iso',
+exports.listStorages = {
+  url: '/blocks',
   requestType: 'GET',
   apiKeyRequired: true,
   parameters: {
@@ -50,18 +50,42 @@ exports.listIsos = {
 }
 
 /**
- * Create a new ISO in the account from a URL.&lt;br>
- * {@link https://www.vultr.com/api/#operation/create-iso}
- * @function createIso
- * @memberof iso
+  Create a new block storage volume.&lt;br>
+ * {@link https://www.vultr.com/api/#operation/create-block}
+ * @function createStorage
+ * @memberof blockStorage
  * @instance
  */
-exports.createIso = {
-  url: '/iso',
+exports.createStorage = {
+  url: '/blocks',
   requestType: 'POST',
   apiKeyRequired: true,
   parameters: {
-    url: {
+    region: {
+      type: 'string',
+      required: true
+    },
+    size_gb: {
+      type: 'number',
+      required: true
+    },
+    label: { type: 'string' }
+  }
+}
+
+/**
+ * Get information for a specified block storage volume.&lt;br>
+ * {@link https://www.vultr.com/api/#operation/get-block}
+ * @function getStorage
+ * @memberof blockStorage
+ * @instance
+ */
+exports.getStorage = {
+  url: '/blocks/{block-id}',
+  requestType: 'GET',
+  apiKeyRequired: true,
+  parameters: {
+    'block-id': {
       type: 'string',
       required: true
     }
@@ -69,55 +93,84 @@ exports.createIso = {
 }
 
 /**
- * Get information about the specified ISO.&lt;br>
- * {@link https://www.vultr.com/api/#operation/iso-get}
- * @function getIso
- * @memberof iso
+ * Delete the specified block storage volume.&lt;br>
+ * {@link https://www.vultr.com/api/#operation/delete-block}
+ * @function deleteStorage
+ * @memberof blockStorage
  * @instance
  */
-exports.getIso = {
-  url: '/iso/{iso-id}',
-  requestType: 'POST',
-  apiKeyRequired: true,
-  parameters: {
-    'iso-id': {
-      type: 'string',
-      path: true,
-      required: true
-    }
-  }
-}
-
-/**
- * Delete the specified ISO from the account.&lt;br>
- * {@link https://www.vultr.com/api/#operation/delete-iso}
- * @function deleteIso
- * @memberof iso
- * @instance
- */
-exports.deleteIso = {
-  url: '/iso/{iso-id}',
+exports.deleteStorage = {
+  url: '/blocks/{block-id}',
   requestType: 'DELETE',
   apiKeyRequired: true,
   parameters: {
-    'iso-id': {
+    'block-id': {
       type: 'string',
-      path: true,
       required: true
     }
   }
 }
 
 /**
- * List all Vultr public ISOs.&lt;br>
- * {@link https://www.vultr.com/api/#operation/list-public-isos}
- * @function listPublicIsos
- * @memberof iso
+ * Update the specified block storage volume.&lt;br>
+ * {@link https://www.vultr.com/api/#operation/update-block}
+ * @function updateStorage
+ * @memberof blockStorage
  * @instance
  */
-exports.listPublicIsos = {
-  url: '/iso-public',
-  requestType: 'GET'
+exports.updateStorage = {
+  url: '/blocks/{block-id}',
+  requestType: 'PATCH',
+  apiKeyRequired: true,
+  parameters: {
+    'block-id': {
+      type: 'string',
+      path: true,
+      required: true
+    },
+    label: { type: 'string' },
+    size_gb: { type: 'number' }
+  }
+}
+
+/**
+ * Attach a specified block storage volume to an instance.&lt;br>
+ * {@link https://www.vultr.com/api/#operation/attach-block}
+ * @function attachStorage
+ * @memberof blockStorage
+ * @instance
+ */
+exports.attachStorage = {
+  url: '/blocks/{block-id}/attach',
+  requestType: 'POST',
+  'block-id': {
+    type: 'string',
+    path: true,
+    required: true
+  },
+  instance_id: {
+    type: 'string',
+    required: true
+  },
+  live: { type: 'boolean' }
+}
+
+/**
+ * Detach a block storage volume.&lt;br>
+ * {@link https://www.vultr.com/api/#operation/detach-block}
+ * @function detachStorage
+ * @memberof blockStorage
+ * @instance
+ */
+exports.detachStorage = {
+  url: '/blocks/{block-id}',
+  requestType: 'POST',
+  'block-id': {
+    type: 'string',
+    path: true,
+    required: true
+  },
+  live: { type: 'boolean' }
 }
 </code></pre>
         </article>

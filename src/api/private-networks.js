@@ -1,12 +1,12 @@
 /**
  * Methods for interacting with the private network endpoints<br>
- * {@link https://www.vultr.com/api/v2/#tag/private-Networks}
+ * {@link https://www.vultr.com/api/#tag/private-Networks}
  * @namespace privateNetworks
  */
 
 /**
  * Get information about the specified private network.<br>
- * {@link https://www.vultr.com/api/v2/#operation/get-network}
+ * {@link https://www.vultr.com/api/#operation/get-network}
  * @function getPrivateNetwork
  * @memberof privateNetworks
  * @instance
@@ -26,7 +26,7 @@ exports.getPrivateNetwork = {
 
 /**
  * Delete a specified private network.<br>
- * {@link https://www.vultr.com/api/v2/#operation/delete-network}
+ * {@link https://www.vultr.com/api/#operation/delete-network}
  * @function deletePrivateNetwork
  * @memberof privateNetworks
  * @instance
@@ -46,7 +46,7 @@ exports.deletePrivateNetwork = {
 
 /**
  * Update information on the specified private network.<br>
- * {@link https://www.vultr.com/api/v2/#operation/update-network}
+ * {@link https://www.vultr.com/api/#operation/update-network}
  * @function updatePrivateNetwork
  * @memberof privateNetworks
  * @instance
@@ -70,7 +70,7 @@ exports.updatePrivateNetwork = {
 
 /**
  * List all private works on the account.<br>
- * {@link https://www.vultr.com/api/v2/#operation/list-networks}
+ * {@link https://www.vultr.com/api/#operation/list-networks}
  * @function listPrivateNetworks
  * @memberof privateNetworks
  * @instance
@@ -87,7 +87,7 @@ exports.listPrivateNetworks = {
 
 /**
  * Create a new private network in a specified region.<br>
- * {@link https://www.vultr.com/api/v2/#operation/create-network}
+ * {@link https://www.vultr.com/api/#operation/create-network}
  * @function createPrivateNetwork
  * @memberof privateNetworks
  * @instance

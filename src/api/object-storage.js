@@ -1,12 +1,12 @@
 /**
  * Methods for interacting with the object storage endpoints<br>
- * {@link https://www.vultr.com/api/v2/#tag/s3}
+ * {@link https://www.vultr.com/api/#tag/s3}
  * @namespace objectStorage
  */
 
 /**
  * List all object storage volumes on the account.<br>
- * {@link https://www.vultr.com/api/v2/#operation/list-object-storages}
+ * {@link https://www.vultr.com/api/#operation/list-object-storages}
  * @function listObjectStorages
  * @memberof objectStorage
  * @instance
@@ -23,7 +23,7 @@ exports.listObjectStorages = {
 
 /**
  * Create an object storage volume.<br>
- * {@link https://www.vultr.com/api/v2/#operation/create-object-storage}
+ * {@link https://www.vultr.com/api/#operation/create-object-storage}
  * @function
  * @memberof objectStorage
  * @instance
@@ -43,7 +43,7 @@ exports.createObjectStorage = {
 
 /**
  * Get information about the specified object sotrage volume.<br>
- * {@link https://www.vultr.com/api/v2/#operation/get-object-storage}
+ * {@link https://www.vultr.com/api/#operation/get-object-storage}
  * @function getObjectStorage
  * @memberof objectStorage
  * @instance
@@ -63,7 +63,7 @@ exports.getObjectStorage = {
 
 /**
  * Delete an object storage volume.<br>
- * {@link https://www.vultr.com/api/v2/#operation/delete-object-storage}
+ * {@link https://www.vultr.com/api/#operation/delete-object-storage}
  * @function deleteObjectStorage
  * @memberof objectStorage
  * @instance
@@ -83,7 +83,7 @@ exports.deleteObjectStorage = {
 
 /**
  * Update information for the specified object storage volume.<br>
- * {@link https://www.vultr.com/api/v2/#operation/update-object-storage}
+ * {@link https://www.vultr.com/api/#operation/update-object-storage}
  * @function updateObjectStorage
  * @memberof objectStorage
  * @instance
@@ -107,7 +107,7 @@ exports.updateObjectStorage = {
 
 /**
  * Regenerate keys for the specified object storage volume.<br>
- * {@link https://www.vultr.com/api/v2/#operation/regenerate-object-storage-keys}
+ * {@link https://www.vultr.com/api/#operation/regenerate-object-storage-keys}
  * @function regenerateObjectStorageKeys
  * @memberof objectStorage
  * @instance
@@ -127,7 +127,7 @@ exports.regenerateObjectStorageKeys = {
 
 /**
  * Get a list of all object storage clusters.<br>
- * {@link https://www.vultr.com/api/v2/#operation/list-object-storage-clusters}
+ * {@link https://www.vultr.com/api/#operation/list-object-storage-clusters}
  * @function getAllClusters
  * @memberof objectStorage
  * @instance

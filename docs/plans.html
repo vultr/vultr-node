@@ -37,8 +37,8 @@
     <div class="container-overview">
     
         
-            <div class="description">Methods for interacting with the Plans endpoints<br>
-<a href="https://www.vultr.com/api/#plans">https://www.vultr.com/api/#plans</a></div>
+            <div class="description">Methods for interacting with the plan endpoints<br>
+<a href="https://www.vultr.com/api/#tag/plans">https://www.vultr.com/api/#tag/plans</a></div>
         
 
         
@@ -112,7 +112,7 @@
     
 
     
-    <h4 class="name" id="list"><span class="type-signature"></span>list<span class="signature">(parameters)</span><span class="type-signature"></span></h4>
+    <h4 class="name" id="listBareMetalPlans"><span class="type-signature"></span>listBareMetalPlans<span class="signature">()</span><span class="type-signature"></span></h4>
     
 
     
@@ -120,8 +120,8 @@
 
 
 <div class="description">
-    Retrieve a list of all active plans. Plans that are no longer available will not be shown.<br>
-<a href="https://www.vultr.com/api/#plans_plan_list">https://www.vultr.com/api/#plans_plan_list</a>
+    Get a list of all available Vultr bare metal plans.<br>
+<a href="https://www.vultr.com/api/#operation/list-metal-plans">https://www.vultr.com/api/#operation/list-metal-plans</a>
 </div>
 
 
@@ -132,114 +132,93 @@
 
 
 
-    <h5>Parameters:</h5>
-    
-
-<table class="params">
-    <thead>
-    <tr>
-        
-        <th>Name</th>
-        
-
-        <th>Type</th>
-
-        
-
-        
-
-        <th class="last">Description</th>
-    </tr>
-    </thead>
-
-    <tbody>
-    
-
-        <tr>
-            
-                <td class="name"><code>parameters</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">object</span>
 
 
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last">
-                <h6>Properties</h6>
-                
-
-<table class="params">
-    <thead>
-    <tr>
-        
-        <th>Name</th>
-        
-
-        <th>Type</th>
-
-        
-        <th>Attributes</th>
-        
-
-        
-
-        <th class="last">Description</th>
-    </tr>
-    </thead>
-
-    <tbody>
-    
-
-        <tr>
-            
-                <td class="name"><code>type</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">string</span>
 
 
-            
-            </td>
-
-            
-                <td class="attributes">
-                
-                    &lt;optional><br>
-                
-
-                
-
-                
-                </td>
-            
-
-            
-
-            <td class="description last">The type of plans to return. Possible values: "all", "vc2", "ssd", "vdc2", "dedicated", "vc2z".</td>
-        </tr>
+<dl class="details">
 
     
-    </tbody>
-</table>
-
-            </td>
-        </tr>
 
     
-    </tbody>
-</table>
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="plans.js.html">plans.js</a>, <a href="plans.js.html#line23">line 23</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id="listPlans"><span class="type-signature"></span>listPlans<span class="signature">()</span><span class="type-signature"></span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    Get a list of allavailable Vultr instance plans.<br>
+<a href="https://www.vultr.com/api/#operation/list-plans">https://www.vultr.com/api/#operation/list-plans</a>
+</div>
+
+
+
+
+
+
+
 
 
 
@@ -306,362 +285,6 @@
 
 
         
-            
-
-    
-
-    
-    <h4 class="name" id="listBareMetal"><span class="type-signature"></span>listBareMetal<span class="signature">()</span><span class="type-signature"></span></h4>
-    
-
-    
-
-
-
-<div class="description">
-    Retrieve a list of all active bare metal plans. Plans that are no longer available will not be shown.<br>
-<a href="https://www.vultr.com/api/#plans_plan_list_baremetal">https://www.vultr.com/api/#plans_plan_list_baremetal</a>
-</div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-<dl class="details">
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="plans.js.html">plans.js</a>, <a href="plans.js.html#line28">line 28</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-        
-            
-
-    
-
-    
-    <h4 class="name" id="listVc2"><span class="type-signature"></span>listVc2<span class="signature">()</span><span class="type-signature"></span></h4>
-    
-
-    
-
-
-
-<div class="description">
-    Retrieve a list of all active vc2 plans. Plans that are no longer available will not be shown.<br>
-<a href="https://www.vultr.com/api/#plans_plan_list_vc2">https://www.vultr.com/api/#plans_plan_list_vc2</a>
-</div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-<dl class="details">
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="plans.js.html">plans.js</a>, <a href="plans.js.html#line41">line 41</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-        
-            
-
-    
-
-    
-    <h4 class="name" id="listVc2z"><span class="type-signature"></span>listVc2z<span class="signature">()</span><span class="type-signature"></span></h4>
-    
-
-    
-
-
-
-<div class="description">
-    Retrieve a list of all active high frequency CPU plans. Plans that are no longer available will not be shown.<br>
-<a href="https://www.vultr.com/api/#plans_plan_list_vc2z">https://www.vultr.com/api/#plans_plan_list_vc2z</a>
-</div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-<dl class="details">
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="plans.js.html">plans.js</a>, <a href="plans.js.html#line67">line 67</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-        
-            
-
-    
-
-    
-    <h4 class="name" id="listVdc2"><span class="type-signature"></span>listVdc2<span class="signature">()</span><span class="type-signature"></span></h4>
-    
-
-    
-
-
-
-<div class="description">
-    Retrieve a list of all active vdc2 plans. Plans that are no longer available will not be shown.<br>
-<a href="https://www.vultr.com/api/#plans_plan_list_vdc2">https://www.vultr.com/api/#plans_plan_list_vdc2</a>
-</div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-<dl class="details">
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="plans.js.html">plans.js</a>, <a href="plans.js.html#line54">line 54</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-        
     
 
     
@@ -677,13 +300,13 @@
 </div>
 
 <nav>
-    <h2><a href="index.html">Home</a></h2><h3>Namespaces</h3><ul><li><a href="account.html">account</a></li><li><a href="api.html">api</a></li><li><a href="app.html">app</a></li><li><a href="backup.html">backup</a></li><li><a href="baremetal.html">baremetal</a></li><li><a href="block.html">block</a></li><li><a href="dns.html">dns</a></li><li><a href="firewall.html">firewall</a></li><li><a href="iso.html">iso</a></li><li><a href="loadBalancer.html">loadBalancer</a></li><li><a href="network.html">network</a></li><li><a href="objectStorage.html">objectStorage</a></li><li><a href="os.html">os</a></li><li><a href="plans.html">plans</a></li><li><a href="regions.html">regions</a></li><li><a href="reservedIp.html">reservedIp</a></li><li><a href="server.html">server</a></li><li><a href="snapshot.html">snapshot</a></li><li><a href="sshkey.html">sshkey</a></li><li><a href="startupScript.html">startupScript</a></li><li><a href="user.html">user</a></li></ul>
+    <h2><a href="index.html">Home</a></h2><h3>Namespaces</h3><ul><li><a href="account.html">account</a></li><li><a href="applications.html">applications</a></li><li><a href="backup.html">backup</a></li><li><a href="bareMetal.html">bareMetal</a></li><li><a href="blockStorage.html">blockStorage</a></li><li><a href="dns.html">dns</a></li><li><a href="firewall.html">firewall</a></li><li><a href="instances.html">instances</a></li><li><a href="iso.html">iso</a></li><li><a href="loadBalancers.html">loadBalancers</a></li><li><a href="objectStorage.html">objectStorage</a></li><li><a href="operatingSystems.html">operatingSystems</a></li><li><a href="plans.html">plans</a></li><li><a href="privateNetworks.html">privateNetworks</a></li><li><a href="regions.html">regions</a></li><li><a href="reservedIps.html">reservedIps</a></li><li><a href="snapshots.html">snapshots</a></li><li><a href="sshKeys.html">sshKeys</a></li><li><a href="startupScripts.html">startupScripts</a></li><li><a href="users.html">users</a></li></ul>
 </nav>
 
 <br class="clear">
 
 <footer>
-    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 3.6.4</a> on Sat Apr 25 2020 13:08:06 GMT-0400 (Eastern Daylight Time)
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 3.6.6</a> on Fri Jan 29 2021 13:06:50 GMT-0500 (Eastern Standard Time)
 </footer>
 
 <script> prettyPrint(); </script>
