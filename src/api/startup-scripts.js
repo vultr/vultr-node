@@ -1,11 +1,11 @@
 /**
- * Methods for interacting with the startup scripts endpoints<br>
+ * Methods for interacting with the startup scripts endpoints.
  * {@link https://www.vultr.com/api/#tag/startup}
  * @namespace startupScripts
  */
 
 /**
- * Get information for the specified startup script.<br>
+ * Get information for the specified startup script.
  * {@link https://www.vultr.com/api/#operation/get-startup-script}
  * @function getStartupScript
  * @memberof startupScripts
@@ -25,7 +25,7 @@ exports.getStartupScript = {
 }
 
 /**
- * Delete a specified startup script.<br>
+ * Delete a specified startup script.
  * {@link https://www.vultr.com/api/#operation/delete-startup-script}
  * @function deleteStartupScript
  * @memberof startupScripts
@@ -45,7 +45,7 @@ exports.deleteStartupScript = {
 }
 
 /**
- * Update information for the specified startup script.<br>
+ * Update information for the specified startup script.
  * {@link https://www.vultr.com/api/#operation/update-startup-script}
  * @function updateStartupScript
  * @memberof startupScripts
@@ -68,7 +68,7 @@ exports.updateStartupScript = {
 }
 
 /**
- * List all startup scripts on the account.<br>
+ * List all startup scripts on the account.
  * {@link https://www.vultr.com/api/#operation/list-startup-scripts}
  * @function listStartupScripts
  * @memberof startupScripts
@@ -85,7 +85,7 @@ exports.listStartupScripts = {
 }
 
 /**
- * Create a new startup script.<br>
+ * Create a new startup script.
  * {@link https://www.vultr.com/api/#operation/create-startup-script}
  * @function createStartupScript
  * @memberof startupScripts

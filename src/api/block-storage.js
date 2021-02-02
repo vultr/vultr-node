@@ -1,11 +1,11 @@
 /**
- * Methods for interacting with the block storage endpoints<br>
+ * Methods for interacting with the block storage endpoints.
  * {@link https://www.vultr.com/api/#block}
  * @namespace blockStorage
  */
 
 /**
- * List all block storage volumes in the account.<br>
+ * List all block storage volumes in the account.
  * {@link https://www.vultr.com/api/#operation/list-blocks}
  * @function listStorages
  * @memberof blockStorage
@@ -22,7 +22,7 @@ exports.listStorages = {
 }
 
 /**
-  Create a new block storage volume.<br>
+  Create a new block storage volume.
  * {@link https://www.vultr.com/api/#operation/create-block}
  * @function createStorage
  * @memberof blockStorage
@@ -46,7 +46,7 @@ exports.createStorage = {
 }
 
 /**
- * Get information for a specified block storage volume.<br>
+ * Get information for a specified block storage volume.
  * {@link https://www.vultr.com/api/#operation/get-block}
  * @function getStorage
  * @memberof blockStorage
@@ -65,7 +65,7 @@ exports.getStorage = {
 }
 
 /**
- * Delete the specified block storage volume.<br>
+ * Delete the specified block storage volume.
  * {@link https://www.vultr.com/api/#operation/delete-block}
  * @function deleteStorage
  * @memberof blockStorage
@@ -84,7 +84,7 @@ exports.deleteStorage = {
 }
 
 /**
- * Update the specified block storage volume.<br>
+ * Update the specified block storage volume.
  * {@link https://www.vultr.com/api/#operation/update-block}
  * @function updateStorage
  * @memberof blockStorage
@@ -106,7 +106,7 @@ exports.updateStorage = {
 }
 
 /**
- * Attach a specified block storage volume to an instance.<br>
+ * Attach a specified block storage volume to an instance.
  * {@link https://www.vultr.com/api/#operation/attach-block}
  * @function attachStorage
  * @memberof blockStorage
@@ -128,7 +128,7 @@ exports.attachStorage = {
 }
 
 /**
- * Detach a block storage volume.<br>
+ * Detach a block storage volume.
  * {@link https://www.vultr.com/api/#operation/detach-block}
  * @function detachStorage
  * @memberof blockStorage

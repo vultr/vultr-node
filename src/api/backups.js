@@ -1,11 +1,11 @@
 /**
- * Methods for interacting with the backup endpoints<br>
+ * Methods for interacting with the backup endpoints.
  * {@link https://www.vultr.com/api/#tag/backup}
  * @namespace backup
  */
 
 /**
- * Get information about backups in your account.<br>
+ * Get information about backups in your account.
  * {@link https://www.vultr.com/api/#operation/list-backups}
  * @function list
  * @memberof backup
@@ -23,7 +23,7 @@ exports.listBackups = {
 }
 
 /**
- * Get information for the specified backup.<br>
+ * Get information for the specified backup.
  * {@link https://www.vultr.com/api/#operation/get-backup}
  * @function get
  * @memberof backup

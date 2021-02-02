@@ -1,11 +1,11 @@
 /**
- * Methods for interacting with the snapshot endpoints<br>
+ * Methods for interacting with the snapshot endpoints.
  * {@link https://www.vultr.com/api/#tag/snapshot}
  * @namespace snapshots
  */
 
 /**
- * Delete the specified snapshot.<br>
+ * Delete the specified snapshot.
  * {@link https://www.vultr.com/api/#operation/delete-snapshot}
  * @function deleteSnapshot
  * @memberof snapshots
@@ -25,7 +25,7 @@ exports.deleteSnapshot = {
 }
 
 /**
- * Get information about the specified snapshot.<br>
+ * Get information about the specified snapshot.
  * {@link https://www.vultr.com/api/#operation/get-snapshot}
  * @function getSnapshot
  * @memberof snapshots
@@ -45,7 +45,7 @@ exports.getSnapshot = {
 }
 
 /**
- * Update information for the specified snapshot.<br>
+ * Update information for the specified snapshot.
  * {@link https://www.vultr.com/api/#operation/put-snapshots-snapshot-id}
  * @function updateSnapshot
  * @memberof snapshots
@@ -69,7 +69,7 @@ exports.updateSnapshot = {
 }
 
 /**
- * List all snapshots on the account.<br>
+ * List all snapshots on the account.
  * {@link https://www.vultr.com/api/#operation/list-snapshots}
  * @function listSnapshots
  * @memberof snapshots
@@ -86,7 +86,7 @@ exports.listSnapshots = {
 }
 
 /**
- * Create a new snapshot.<br>
+ * Create a new snapshot.
  * {@link https://www.vultr.com/api/#operation/create-snapshot}
  * @function createSnapshot
  * @memberof snapshots
@@ -106,7 +106,7 @@ exports.createSnapshot = {
 }
 
 /**
- * Create a new snapshot from a specified URL.<br>
+ * Create a new snapshot from a specified URL.
  * {@link https://www.vultr.com/api/#operation/create-snapshot-create-from-url}
  * @function createSnapshotFromUrl
  * @memberof snapshots

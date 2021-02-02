@@ -1,11 +1,11 @@
 /**
- * Methods for interacting with the reserved IP endpoints<br>
+ * Methods for interacting with the reserved IP endpoints.
  * {@link https://www.vultr.com/api/#tag/reserved-ip}
  * @namespace reservedIps
  */
 
 /**
- * Get information about the specified reserved IP address.<br>
+ * Get information about the specified reserved IP address.
  * {@link https://www.vultr.com/api/#operation/get-reserved-ip}
  * @function getReservedIp
  * @memberof reservedIps
@@ -25,7 +25,7 @@ exports.getReservedIp = {
 }
 
 /**
- * Delete the specified reserved IP address.<br>
+ * Delete the specified reserved IP address.
  * {@link https://www.vultr.com/api/#operation/delete-reserved-ip}
  * @function deleteReservedIp
  * @memberof reservedIps
@@ -45,7 +45,7 @@ exports.deleteReservedIp = {
 }
 
 /**
- * List all reserved IP addresses.<br>
+ * List all reserved IP addresses.
  * {@link https://www.vultr.com/api/#operation/list-reserved-ips}
  * @function listReservedIps
  * @memberof reservedIps
@@ -62,7 +62,7 @@ exports.listReservedIps = {
 }
 
 /**
- * Create a reserved IP address.<br>
+ * Create a reserved IP address.
  * {@link https://www.vultr.com/api/#operation/create-reserved-ip}
  * @function createReservedIp
  * @memberof reservedIps
@@ -86,7 +86,7 @@ exports.createReservedIp = {
 }
 
 /**
- * Attach a reserved IP address to the specified instance.<br>
+ * Attach a reserved IP address to the specified instance.
  * {@link https://www.vultr.com/api/#operation/attach-reserved-ip}
  * @function attachReservedIp
  * @memberof reservedIps
@@ -110,7 +110,7 @@ exports.attachReservedIp = {
 }
 
 /**
- * Detach a reserved IP address.<br>
+ * Detach a reserved IP address.
  * {@link https://www.vultr.com/api/#operation/detach-reserved-ip}
  * @function detachReservedIp
  * @memberof reservedIps
@@ -130,7 +130,7 @@ exports.detachReservedIp = {
 }
 
 /**
- * Convert the IP address of an existing instance into a reserved IP.<br>
+ * Convert the IP address of an existing instance into a reserved IP.
  * {@link https://www.vultr.com/api/#operation/convert-reserved-ip}
  * @function convertInstanceIpToReservedIp
  * @memberof reservedIps

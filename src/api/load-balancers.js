@@ -1,11 +1,11 @@
 /**
- * Methods for interacting with the load balancer endpoints<br>
+ * Methods for interacting with the load balancer endpoints.
  * {@link https://www.vultr.com/api/#tag/load-balancer}
  * @namespace loadBalancers
  */
 
 /**
- * List all load balancers on the account.<br>
+ * List all load balancers on the account.
  * {@link https://www.vultr.com/api/#operation/list-load-balancers}
  * @function listLoadBalancers
  * @memberof loadBalancers
@@ -22,7 +22,7 @@ exports.listLoadBalancers = {
 }
 
 /**
- * Create a load balancer on the account.<br>
+ * Create a load balancer on the account.
  * {@link https://www.vultr.com/api/#operation/create-load-balancer}
  * @function createLoadBalancer
  * @memberof loadBalancers
@@ -50,7 +50,7 @@ exports.createLoadBalancer = {
 }
 
 /**
- * Get information about the specified load balancer.<br>
+ * Get information about the specified load balancer.
  * {@link https://www.vultr.com/api/#operation/get-load-balancer}
  * @function getLoadBalancer
  * @memberof loadBalancers
@@ -70,7 +70,7 @@ exports.getLoadBalancer = {
 }
 
 /**
- * Update information for the specified load balancer.<br>
+ * Update information for the specified load balancer.
  * {@link https://www.vultr.com/api/#operation/update-load-balancer}
  * @function updateLoadBalancer
  * @memberof loadBalancers
@@ -98,7 +98,7 @@ exports.updateLoadBalancer = {
 }
 
 /**
- * Delete the specified load balancer.<br>
+ * Delete the specified load balancer.
  * {@link https://www.vultr.com/api/#operation/delete-load-balancer}
  * @function deleteLoadBalancer
  * @memberof loadBalancers
@@ -118,7 +118,7 @@ exports.deleteLoadBalancer = {
 }
 
 /**
- * List all forwarding rules for the specified load balancer.<br>
+ * List all forwarding rules for the specified load balancer.
  * {@link https://www.vultr.com/api/#operation/list-load-balancer-forwarding-rules}
  * @function listForwardingRules
  * @memberof loadBalancers
@@ -140,7 +140,7 @@ exports.listForwardingRules = {
 }
 
 /**
- * Create a forwarding rule for the specified forwarding rule.<br>
+ * Create a forwarding rule for the specified forwarding rule.
  * {@link https://www.vultr.com/api/#operation/create-load-balancer-forwarding-rules}
  * @function createForwardingRule
  * @memberof loadBalancers
@@ -176,7 +176,7 @@ exports.createForwardingRule = {
 }
 
 /**
- * Get information on the specified forwarding frule for the specified load balancer.<br>
+ * Get information on the specified forwarding frule for the specified load balancer.
  * {@link https://www.vultr.com/api/#operation/get-load-balancer-forwarding-rule}
  * @function getForwardingRule
  * @memberof loadBalancers
@@ -202,7 +202,7 @@ exports.getForwardingRule = {
 }
 
 /**
- * Delete the specified forwarding rule on the specified load balancer.<br>
+ * Delete the specified forwarding rule on the specified load balancer.
  * {@link https://www.vultr.com/api/#operation/delete-load-balancer-forwarding-rule}
  * @function deleteForwardingRule
  * @memberof loadBalancers

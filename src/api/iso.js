@@ -1,11 +1,11 @@
 /**
- * Methods for interacting with the ISO endpoints<br>
+ * Methods for interacting with the ISO endpoints.
  * {@link https://www.vultr.com/api/#tag/iso}
  * @namespace iso
  */
 
 /**
- * List all ISOs in the account.<br>
+ * List all ISOs in the account.
  * {@link https://www.vultr.com/api/#operation/list-isos}
  * @function listIsos
  * @memberof iso
@@ -22,7 +22,7 @@ exports.listIsos = {
 }
 
 /**
- * Create a new ISO in the account from a URL.<br>
+ * Create a new ISO in the account from a URL.
  * {@link https://www.vultr.com/api/#operation/create-iso}
  * @function createIso
  * @memberof iso
@@ -41,7 +41,7 @@ exports.createIso = {
 }
 
 /**
- * Get information about the specified ISO.<br>
+ * Get information about the specified ISO.
  * {@link https://www.vultr.com/api/#operation/iso-get}
  * @function getIso
  * @memberof iso
@@ -61,7 +61,7 @@ exports.getIso = {
 }
 
 /**
- * Delete the specified ISO from the account.<br>
+ * Delete the specified ISO from the account.
  * {@link https://www.vultr.com/api/#operation/delete-iso}
  * @function deleteIso
  * @memberof iso
@@ -81,7 +81,7 @@ exports.deleteIso = {
 }
 
 /**
- * List all Vultr public ISOs.<br>
+ * List all Vultr public ISOs.
  * {@link https://www.vultr.com/api/#operation/list-public-isos}
  * @function listPublicIsos
  * @memberof iso

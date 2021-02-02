@@ -1,11 +1,11 @@
 /**
- * Methods for interacting with the object storage endpoints<br>
+ * Methods for interacting with the object storage endpoints.
  * {@link https://www.vultr.com/api/#tag/s3}
  * @namespace objectStorage
  */
 
 /**
- * List all object storage volumes on the account.<br>
+ * List all object storage volumes on the account.
  * {@link https://www.vultr.com/api/#operation/list-object-storages}
  * @function listObjectStorages
  * @memberof objectStorage
@@ -22,7 +22,7 @@ exports.listObjectStorages = {
 }
 
 /**
- * Create an object storage volume.<br>
+ * Create an object storage volume.
  * {@link https://www.vultr.com/api/#operation/create-object-storage}
  * @function
  * @memberof objectStorage
@@ -42,7 +42,7 @@ exports.createObjectStorage = {
 }
 
 /**
- * Get information about the specified object sotrage volume.<br>
+ * Get information about the specified object sotrage volume.
  * {@link https://www.vultr.com/api/#operation/get-object-storage}
  * @function getObjectStorage
  * @memberof objectStorage
@@ -62,7 +62,7 @@ exports.getObjectStorage = {
 }
 
 /**
- * Delete an object storage volume.<br>
+ * Delete an object storage volume.
  * {@link https://www.vultr.com/api/#operation/delete-object-storage}
  * @function deleteObjectStorage
  * @memberof objectStorage
@@ -82,7 +82,7 @@ exports.deleteObjectStorage = {
 }
 
 /**
- * Update information for the specified object storage volume.<br>
+ * Update information for the specified object storage volume.
  * {@link https://www.vultr.com/api/#operation/update-object-storage}
  * @function updateObjectStorage
  * @memberof objectStorage
@@ -106,7 +106,7 @@ exports.updateObjectStorage = {
 }
 
 /**
- * Regenerate keys for the specified object storage volume.<br>
+ * Regenerate keys for the specified object storage volume.
  * {@link https://www.vultr.com/api/#operation/regenerate-object-storage-keys}
  * @function regenerateObjectStorageKeys
  * @memberof objectStorage
@@ -126,7 +126,7 @@ exports.regenerateObjectStorageKeys = {
 }
 
 /**
- * Get a list of all object storage clusters.<br>
+ * Get a list of all object storage clusters.
  * {@link https://www.vultr.com/api/#operation/list-object-storage-clusters}
  * @function getAllClusters
  * @memberof objectStorage

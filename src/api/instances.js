@@ -1,11 +1,11 @@
 /**
- * Methods for interacting with the instances endpoints<br>
+ * Methods for interacting with the instances endpoints.
  * {@link https://www.vultr.com/api/#tag/instances}
  * @namespace instances
  */
 
 /**
- * List all VPS instances in the account.<br>
+ * List all VPS instances in the account.
  * {@link https://www.vultr.com/api/#operation/list-instances}
  * @function listInstances
  * @memberof instances
@@ -25,7 +25,7 @@ exports.listInstances = {
 }
 
 /**
- * Create a VPS instance.<br>
+ * Create a VPS instance.
  * {@link https://www.vultr.com/api/#operation/create-instance}
  * @function createInstance
  * @memberof instances
@@ -67,7 +67,7 @@ exports.createInstance = {
 }
 
 /**
- * Get information about the specified VPS instance.<br>
+ * Get information about the specified VPS instance.
  * {@link https://www.vultr.com/api/#operation/get-instance}
  * @function getInstance
  * @memberof instances
@@ -87,7 +87,7 @@ exports.getInstance = {
 }
 
 /**
- * Update information for the specified VPS instance.<br>
+ * Update information for the specified VPS instance.
  * {@link https://www.vultr.com/api/#operation/update-instance}
  * @function updateInstance
  * @memberof instances
@@ -119,7 +119,7 @@ exports.updateInstance = {
 }
 
 /**
- * Delete the specified VPS instance.<br>
+ * Delete the specified VPS instance.
  * {@link https://www.vultr.com/api/#operation/delete-instance}
  * @function deleteInstance
  * @memberof instances
@@ -139,7 +139,7 @@ exports.deleteInstance = {
 }
 
 /**
- * Halt the spcified VPS instances.<br>
+ * Halt the spcified VPS instances.
  * {@link https://www.vultr.com/api/#operation/halt-instances}
  * @function haltInstances
  * @memberof instances
@@ -155,7 +155,7 @@ exports.haltInstances = {
 }
 
 /**
- * Reboot the specified instances.<br>
+ * Reboot the specified instances.
  * {@link https://www.vultr.com/api/#operation/reboot-instances}
  * @function rebootInstances
  * @memberof instances
@@ -171,7 +171,7 @@ exports.rebootInstances = {
 }
 
 /**
- * Start the specified instances.<br>
+ * Start the specified instances.
  * {@link https://www.vultr.com/api/#operation/start-instances}
  * @function startInstances
  * @memberof instances
@@ -187,7 +187,7 @@ exports.startInstances = {
 }
 
 /**
- * Start the specified instance.<br>
+ * Start the specified instance.
  * {@link https://www.vultr.com/api/#operation/start-instance}
  * @function startInstance
  * @memberof instances
@@ -207,7 +207,7 @@ exports.startInstance = {
 }
 
 /**
- * Reboot the specified instance.<br>
+ * Reboot the specified instance.
  * {@link https://www.vultr.com/api/#operation/reboot-instance}
  * @function rebootInstance
  * @memberof instances
@@ -227,7 +227,7 @@ exports.rebootInstance = {
 }
 
 /**
- * Reinstall the specified VPS instance.<br>
+ * Reinstall the specified VPS instance.
  * {@link https://www.vultr.com/api/#operation/reinstall-instance}
  * @function
  * @memberof instances
@@ -248,7 +248,7 @@ exports.reinstallInstance = {
 }
 
 /**
- * Get bandwidth information for the specified instance.<br>
+ * Get bandwidth information for the specified instance.
  * {@link https://www.vultr.com/api/#operation/get-instance-bandwidth}
  * @function getInstanceBandwidth
  * @memberof instances
@@ -269,7 +269,7 @@ exports.getInstanceBandwidth = {
 
 /**
  * Get a list of other instances in the same location as the specified
- * instance.<br>
+ * instance.
  * {@link https://www.vultr.com/api/#operation/get-instance-neighbors}
  * @function getInstanceNeighbors
  * @memberof instances
@@ -289,7 +289,7 @@ exports.getInstanceNeighbors = {
 }
 
 /**
- * List the private networks for the specified instance.<br>
+ * List the private networks for the specified instance.
  * {@link https://www.vultr.com/api/#operation/list-instance-private-networks}
  * @function listInstancePrivateNetworks
  * @memberof instances
@@ -311,7 +311,7 @@ exports.listInstancePrivateNetworks = {
 }
 
 /**
- * Get the ISO status for the specified instance.<br>
+ * Get the ISO status for the specified instance.
  * {@link https://www.vultr.com/api/#operation/get-instance-iso-status}
  * @function getInstanceIsoStatus
  * @memberof instances
@@ -331,7 +331,7 @@ exports.getInstanceIsoStatus = {
 }
 
 /**
- * Attach an ISO to the specified instance.<br>
+ * Attach an ISO to the specified instance.
  * {@link https://www.vultr.com/api/#operation/attach-instance-iso}
  * @function attachIsoToInstance
  * @memberof instances
@@ -352,7 +352,7 @@ exports.attachIsoToInstance = {
 }
 
 /**
- * Detach the specified instance's ISO.<br>
+ * Detach the specified instance's ISO.
  * {@link https://www.vultr.com/api/#operation/detach-instance-iso}
  * @function detachIsoFromInstance
  * @memberof instances
@@ -372,7 +372,7 @@ exports.detachIsoFromInstance = {
 }
 
 /**
- * Attach a private network to the specified instance.<br>
+ * Attach a private network to the specified instance.
  * {@link https://www.vultr.com/api/#operation/attach-instance-network}
  * @function attachPrivateNetworkToInstance
  * @memberof instances
@@ -393,7 +393,7 @@ exports.attachPrivateNetworkToInstance = {
 }
 
 /**
- * Detach the specified instance's private network.<br>
+ * Detach the specified instance's private network.
  * {@link https://www.vultr.com/api/#operation/detach-instance-network}
  * @function detachPrivateNetworkFromInstance
  * @memberof instances
@@ -414,7 +414,7 @@ exports.detachPrivateNetworkFromInstance = {
 }
 
 /**
- * Set a backup schedule for the specified instnace.<br>
+ * Set a backup schedule for the specified instnace.
  * {@link https://www.vultr.com/api/#operation/create-instance-backup-schedule}
  * @function setInstanceBackupSchedule
  * @memberof instances
@@ -441,7 +441,7 @@ exports.setInstanceBackupSchedule = {
 }
 
 /**
- * Retrieve the specified instance's backup schedule.<br>
+ * Retrieve the specified instance's backup schedule.
  * {@link https://www.vultr.com/api/#operation/get-instance-backup-schedule}
  * @function getInstanceBackupSchedule
  * @memberof instances
@@ -461,7 +461,7 @@ exports.getInstanceBackupSchedule = {
 }
 
 /**
- * Restore a specified instance from either a backup or snapshot.<br>
+ * Restore a specified instance from either a backup or snapshot.
  * {@link https://www.vultr.com/api/#operation/restore-instance}
  * @function restoreInstance
  * @memberof instances
@@ -483,7 +483,7 @@ exports.restoreInstance = {
 }
 
 /**
- * List IPv4 information for the specified instance.<br>
+ * List IPv4 information for the specified instance.
  * {@link https://www.vultr.com/api/#operation/get-instance-ipv4}
  * @function listInstanceIpv4Information
  * @memberof instances
@@ -506,7 +506,7 @@ exports.listInstanceIpv4Information = {
 }
 
 /**
- * Create an IPv4 address for the specified instance.<br>
+ * Create an IPv4 address for the specified instance.
  * {@link https://www.vultr.com/api/#operation/create-instance-ipv4}
  * @function createInstanceIpv4
  * @memberof instances
@@ -527,7 +527,7 @@ exports.createInstanceIpv4 = {
 }
 
 /**
- * Get IPv6 information for the specified instance.<br>
+ * Get IPv6 information for the specified instance.
  * {@link https://www.vultr.com/api/#operation/get-instance-ipv6}
  * @function getInstanceIpv6Information
  * @memberof instances
@@ -547,7 +547,7 @@ exports.getInstanceIpv6Information = {
 }
 
 /**
- * Create a reverse IPv6 entry for the specified instance.<br>
+ * Create a reverse IPv6 entry for the specified instance.
  * {@link https://www.vultr.com/api/#operation/create-instance-reverse-ipv6}
  * @function createInstanceReverseIpv6
  * @memberof instances
@@ -575,7 +575,7 @@ exports.createInstanceReverseIpv6 = {
 }
 
 /**
- * List the reverse IPv6 information for the specified instance.<br>
+ * List the reverse IPv6 information for the specified instance.
  * {@link https://www.vultr.com/api/#operation/list-instance-ipv6-reverse}
  * @function listInstanceIpv6ReverseInformation
  * @memberof instances
@@ -595,7 +595,7 @@ exports.listInstanceIpv6ReverseInformation = {
 }
 
 /**
- * Create a reverse IPc4 address for the specified instance.<br>
+ * Create a reverse IPc4 address for the specified instance.
  * {@link https://www.vultr.com/api/#operation/create-instance-reverse-ipv4}
  * @function createInstanceReverseIpv4
  * @memberof instances
@@ -623,7 +623,7 @@ exports.createInstanceReverseIpv4 = {
 }
 
 /**
- * Get the user-supplied, base64 encoded user data for the specified instance<br>
+ * Get the user-supplied, base64 encoded user data for the specified instance.
  * {@link https://www.vultr.com/api/#operation/get-instance-userdata}
  * @function getInstanceUserData
  * @memberof instances
@@ -643,7 +643,7 @@ exports.getInstanceUserData = {
 }
 
 /**
- * Halt the specified instance.<br>
+ * Halt the specified instance.
  * {@link https://www.vultr.com/api/#operation/halt-instance}
  * @function haltInstance
  * @memberof instances
@@ -663,7 +663,7 @@ exports.haltInstance = {
 }
 
 /**
- * Set a reverse DNS entry for an IPv4 address on the specified instance.<br>
+ * Set a reverse DNS entry for an IPv4 address on the specified instance.
  * {@link https://www.vultr.com/api/#operation/post-instances-instance-id-ipv4-reverse-default}
  * @function setDefaultReverseDnsEntry
  * @memberof instances
@@ -684,7 +684,7 @@ exports.setDefaultReverseDnsEntry = {
 }
 
 /**
- * Delete the IPv4 address from the specified instance.<br>
+ * Delete the IPv4 address from the specified instance.
  * {@link https://www.vultr.com/api/#operation/delete-instance-ipv4}
  * @function deleteIpv4Address
  * @memberof instances
@@ -709,7 +709,7 @@ exports.deleteIpv4Address = {
 }
 
 /**
- * Delete the specified instnace's reverse IPv6 information.<br>
+ * Delete the specified instnace's reverse IPv6 information.
  * {@link https://www.vultr.com/api/#operation/delete-instance-reverse-ipv6}
  * @function deleteInstanceReverseIpv6
  * @memberof instances
@@ -734,7 +734,7 @@ exports.deleteInstanceReverseIpv6 = {
 }
 
 /**
- * Get a list of all available upgrades for the specified instance.<br>
+ * Get a list of all available upgrades for the specified instance.
  * {@link https://www.vultr.com/api/#operation/get-instance-upgrades}
  * @function getAvailableInstanceUpgrades
  * @memberof instances

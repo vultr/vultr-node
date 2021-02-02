@@ -1,11 +1,11 @@
 /**
- * Methods for interacting with the users endpoints<br>
+ * Methods for interacting with the users endpoints.
  * {@link https://www.vultr.com/api/#tag/users}
  * @namespace users
  */
 
 /**
- * Get information about the specified user.<br>
+ * Get information about the specified user.
  * {@link https://www.vultr.com/api/#operation/get-user}
  * @function getUser
  * @memberof users
@@ -25,7 +25,7 @@ exports.getUser = {
 }
 
 /**
- * Delete the specified user.<br>
+ * Delete the specified user.
  * {@link https://www.vultr.com/api/#operation/delete-user}
  * @function deleteUser
  * @memberof users
@@ -45,7 +45,7 @@ exports.deleteUser = {
 }
 
 /**
- * Update information for the specified user.<br>
+ * Update information for the specified user.
  * {@link https://www.vultr.com/api/#operation/update-user}
  * @function updateUser
  * @memberof users
@@ -70,7 +70,7 @@ exports.updateUser = {
 }
 
 /**
- * Get a list of all users on the account.<br>
+ * Get a list of all users on the account.
  * {@link https://www.vultr.com/api/#operation/list-users}
  * @function getUsers
  * @memberof users
@@ -87,7 +87,7 @@ exports.getUsers = {
 }
 
 /**
- * Create a new user on the account.<br>
+ * Create a new user on the account.
  * {@link https://www.vultr.com/api/#operation/create-user}
  * @function createUser
  * @memberof users

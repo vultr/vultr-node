@@ -1,11 +1,11 @@
 /**
- * Methods for interacting with the bare metal endpoints<br>
+ * Methods for interacting with the bare metal endpoints.
  * {@link https://www.vultr.com/api/#tag/baremetal}
  * @namespace bareMetal
  */
 
 /**
- * List all bare metal instances on the current account.<br>
+ * List all bare metal instances on the current account.
  * {@link https://www.vultr.com/api/#operation/list-baremetals}
  * @function listInstances
  * @memberof bareMetal
@@ -22,7 +22,7 @@ exports.listInstances = {
 }
 
 /**
- * Create a new bare metal instance in the specified region with the desired plan.<br>
+ * Create a new bare metal instance in the specified region with the desired plan.
  * {@link https://www.vultr.com/api/#operation/create-baremetal}
  * @function createInstance
  * @memberof bareMetal
@@ -55,7 +55,7 @@ exports.createInstance = {
 }
 
 /**
- * Get information for a given bare metal instance.<br>
+ * Get information for a given bare metal instance.
  * {@link https://www.vultr.com/api/#operation/get-baremetal}
  * @function getInstance
  * @memberof bareMetal
@@ -75,7 +75,7 @@ exports.getInstance = {
 }
 
 /**
- * Update a bare metal instance.<br>
+ * Update a bare metal instance.
  * {@link https://www.vultr.com/api/#operation/update-baremetal}
  * @function updateInstance
  * @memberof bareMetal
@@ -101,7 +101,7 @@ exports.updateInstance = {
 }
 
 /**
- * Delete a bare metal instance.<br>
+ * Delete a bare metal instance.
  * {@link https://www.vultr.com/api/#operation/delete-baremetal}
  * @function deleteInstance
  * @memberof bareMetal
@@ -121,7 +121,7 @@ exports.deleteInstance = {
 }
 
 /**
- * Get the IPv4 information for the specified bare metal instance.<br>
+ * Get the IPv4 information for the specified bare metal instance.
  * {@link https://www.vultr.com/api/#operation/get-ipv4-baremetal}
  * @function getInstanceIpv4Addresses
  * @memberof bareMetal
@@ -141,7 +141,7 @@ exports.getInstanceIpv4Addresses = {
 }
 
 /**
- * Get the IPv6 information for the specified bare metal instance.<br>
+ * Get the IPv6 information for the specified bare metal instance.
  * {@link https://www.vultr.com/api/#operation/get-ipv6-baremetal}
  * @function getInstanceIpv6Addresses
  * @memberof bareMetal
@@ -161,7 +161,7 @@ exports.getInstanceIpv6Addresses = {
 }
 
 /**
- * Start the specified bare metal instance.<br>
+ * Start the specified bare metal instance.
  * {@link https://www.vultr.com/api/#operation/start-baremetal}
  * @function startInstance
  * @memberof bareMetal
@@ -181,7 +181,7 @@ exports.startInstance = {
 }
 
 /**
- * Reboot the specified bare metal instance.<br>
+ * Reboot the specified bare metal instance.
  * {@link https://www.vultr.com/api/#operation/reboot-baremetal}
  * @function rebootInstance
  * @memberof bareMetal
@@ -201,7 +201,7 @@ exports.rebootInstance = {
 }
 
 /**
- * Reinstall the specified bare metal instance.<br>
+ * Reinstall the specified bare metal instance.
  * {@link https://www.vultr.com/api/#operation/reinstall-baremetal}
  * @function reinstallInstance
  * @memberof bareMetal
@@ -221,7 +221,7 @@ exports.reinstallInstance = {
 }
 
 /**
- * Halt the specified bare metal instance.<br>
+ * Halt the specified bare metal instance.
  * {@link https://www.vultr.com/api/#operation/halt-baremetal}
  * @function haltInstance
  * @memberof bareMetal
@@ -241,7 +241,7 @@ exports.haltInstance = {
 }
 
 /**
- * Get bandwidth information for the specified bare metal instance.<br>
+ * Get bandwidth information for the specified bare metal instance.
  * {@link https://www.vultr.com/api/#operation/get-bandwidth-baremetal}
  * @function getInstanceBandwidth
  * @memberof bareMetal
@@ -261,7 +261,7 @@ exports.getInstanceBandwidth = {
 }
 
 /**
- * Halt the specified bare metal instances.<br>
+ * Halt the specified bare metal instances.
  * {@link https://www.vultr.com/api/#operation/halt-baremetals}
  * @function haltInstances
  * @memberof bareMetal
@@ -277,7 +277,7 @@ exports.haltInstances = {
 }
 
 /**
- * Reboot the specified bare metal instances.<br>
+ * Reboot the specified bare metal instances.
  * {@link https://www.vultr.com/api/#operation/reboot-bare-metals}
  * @function rebootInstances
  * @memberof bareMetal
@@ -293,7 +293,7 @@ exports.rebootInstances = {
 }
 
 /**
- * Start the specfied bare metal instances.<br>
+ * Start the specfied bare metal instances.
  * {@link https://www.vultr.com/api/#operation/start-bare-metals}
  * @function startInstances
  * @memberof bareMetal
@@ -310,7 +310,7 @@ exports.startInstances = {
 
 /**
  * Get the user-supplied, base64 encoded user data for the specified bare
- * metal instance.<br>
+ * metal instance.
  * {@link https://www.vultr.com/api/#operation/get-bare-metal-userdata}
  * @function getInstanceUserData
  * @memberof bareMetal
@@ -330,7 +330,7 @@ exports.getInstanceUserData = {
 }
 
 /**
- * Get a list of available upgrades for the specified bare metal instance.<br>
+ * Get a list of available upgrades for the specified bare metal instance.
  * {@link https://www.vultr.com/api/#operation/get-bare-metals-upgrades}
  * @function getInstanceAvailableUpgrades
  * @memberof bareMetal
@@ -351,7 +351,7 @@ exports.getInstanceAvailableUpgrades = {
 }
 
 /**
- * Get the VNC URL for the specified bare metal instance.<br>
+ * Get the VNC URL for the specified bare metal instance.
  * {@link https://www.vultr.com/api/#operation/get-bare-metal-vnc}
  * @function getInstanceVncUrl
  * @memberof bareMetal

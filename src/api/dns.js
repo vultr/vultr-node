@@ -1,11 +1,11 @@
 /**
- * Methods for interacting with the DNS endpoints<br>
+ * Methods for interacting with the DNS endpoints.
  * {@link https://www.vultr.com/api/#tag/dns}
  * @namespace dns
  */
 
 /**
- * List all DNS domains on the account.<br>
+ * List all DNS domains on the account.
  * {@link https://www.vultr.com/api/#operation/list-dns-domains}
  * @function listDomains
  * @memberof dns
@@ -23,7 +23,7 @@ exports.listDomains = {
 
 /**
  * Create a DNS domain for the specified domain. If no IP address is
- * specified, a domain with no records will be created.<br>
+ * specified, a domain with no records will be created.
  * {@link https://www.vultr.com/api/#operation/create-dns-domain}
  * @function createDomain
  * @memberof dns
@@ -44,7 +44,7 @@ exports.createDomain = {
 }
 
 /**
- * Get information for the specified DNS domain.<br>
+ * Get information for the specified DNS domain.
  * {@link https://www.vultr.com/api/#operation/get-dns-domain}
  * @function getDomain
  * @memberof dns
@@ -63,7 +63,7 @@ exports.getDomain = {
 }
 
 /**
- * Delete the specified DNS domain.<br>
+ * Delete the specified DNS domain.
  * {@link https://www.vultr.com/api/#operation/delete-dns-domain}
  * @function deleteDomain
  * @memberof dns
@@ -83,7 +83,7 @@ exports.deleteDomain = {
 }
 
 /**
- * Update the specified DNS domain to enable or disable DNS security.<br>
+ * Update the specified DNS domain to enable or disable DNS security.
  * {@link https://www.vultr.com/api/#operation/update-dns-domain}
  * @function updateDomain
  * @memberof dns
@@ -106,7 +106,7 @@ exports.updateDomain = {
 }
 
 /**
- * Get SOA information for the specified DNS domain.<br>
+ * Get SOA information for the specified DNS domain.
  * {@link https://www.vultr.com/api/#operation/get-dns-domain-soa}
  * @function getSoaInfo
  * @memberof dns
@@ -126,7 +126,7 @@ exports.getSoaInfo = {
 }
 
 /**
- * Update SOA information for the specified DNS domain.<br>
+ * Update SOA information for the specified DNS domain.
  * {@link https://www.vultr.com/api/#operation/update-dns-domain-soa}
  * @function updateSoaInfo
  * @memberof dns
@@ -148,7 +148,7 @@ exports.updateSoaInfo = {
 }
 
 /**
- * Get the DNSSEC information for the specified DNS domain.<br>
+ * Get the DNSSEC information for the specified DNS domain.
  * {@link https://www.vultr.com/api/#operation/get-dns-domain-dnssec}
  * @function getDnsSecInfo
  * @memberof dns
@@ -168,7 +168,7 @@ exports.getDnsSecInfo = {
 }
 
 /**
- * Create a new DNS record.<br>
+ * Create a new DNS record.
  * {@link https://www.vultr.com/api/#operation/create-dns-domain-record}
  * @function createRecord
  * @memberof dns
@@ -197,7 +197,7 @@ exports.createRecord = {
 }
 
 /**
- * List all DNS records.<br>
+ * List all DNS records.
  * {@link https://www.vultr.com/api/#operation/list-dns-domain-records}
  * @function listRecords
  * @memberof dns
@@ -219,7 +219,7 @@ exports.listRecords = {
 }
 
 /**
- * Get the specified DNS record for the specified DNS domain.<br>
+ * Get the specified DNS record for the specified DNS domain.
  * {@link https://www.vultr.com/api/#operation/get-dns-domain-record}
  * @function getRecord
  * @memberof dns
@@ -244,7 +244,7 @@ exports.getRecord = {
 }
 
 /**
- * Update information for the specified DNS record.<br>
+ * Update information for the specified DNS record.
  * {@link https://www.vultr.com/api/#operation/update-dns-domain-record}
  * @function updateRecord
  * @memberof dns
@@ -273,7 +273,7 @@ exports.updateRecord = {
 }
 
 /**
- * Delete a specified DNS record.<br>
+ * Delete a specified DNS record.
  * {@link https://www.vultr.com/api/#operation/delete-dns-domain-record}
  * @function deleteRecord
  * @memberof dns

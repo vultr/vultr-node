@@ -1,11 +1,11 @@
 /**
- * Methods for interacting with the firewall endpoints<br>
+ * Methods for interacting with the firewall endpoints.
  * {@link https://www.vultr.com/api/#tag/firewall}
  * @namespace firewall
  */
 
 /**
- * Get a list of all firewall groups.<br>
+ * Get a list of all firewall groups.
  * {@link https://www.vultr.com/api/#operation/list-firewall-groups}
  * @function listGroups
  * @memberof firewall
@@ -22,7 +22,7 @@ exports.listGroups = {
 }
 
 /**
- * Create a firewall group.<br>
+ * Create a firewall group.
  * {@link https://www.vultr.com/api/#operation/create-firewall-group}
  * @function createGroup
  * @memberof firewall
@@ -38,7 +38,7 @@ exports.createGroup = {
 }
 
 /**
- * Get info about the specified firewall group.<br>
+ * Get info about the specified firewall group.
  * {@link https://www.vultr.com/api/#operation/get-firewall-group}
  * @function getGroup
  * @memberof firewall
@@ -56,7 +56,7 @@ exports.getGroup = {
 }
 
 /**
- * Update the specified firewall group with a new description.<br>
+ * Update the specified firewall group with a new description.
  * {@link https://www.vultr.com/api/#operation/update-firewall-group}
  * @function updateGroup
  * @memberof firewall
@@ -80,7 +80,7 @@ exports.updateGroup = {
 }
 
 /**
- * Delete the specified firewall group.<br>
+ * Delete the specified firewall group.
  * {@link https://www.vultr.com/api/#operation/delete-firewall-group}
  * @function deleteGroup
  * @memberof firewall
@@ -100,7 +100,7 @@ exports.deleteGroup = {
 }
 
 /**
- * List all rules for the specified firewall group.<br>
+ * List all rules for the specified firewall group.
  * {@link https://www.vultr.com/api/#operation/list-firewall-group-rules}
  * @function listRules
  * @memberof firewall
@@ -120,7 +120,7 @@ exports.listRules = {
 }
 
 /**
- * Create new rules in the specified firewall group.<br>
+ * Create new rules in the specified firewall group.
  * {@link https://www.vultr.com/api/#operation/post-firewalls-firewall-group-id-rules}
  * @function createRules
  * @memberof firewall
@@ -159,7 +159,7 @@ exports.createRules = {
 }
 
 /**
- * Delete the specified rule in the specified firewall group.<br>
+ * Delete the specified rule in the specified firewall group.
  * {@link https://www.vultr.com/api/#operation/delete-firewall-group-rule}
  * @function deleteRule
  * @memberof firewall
@@ -184,7 +184,7 @@ exports.deleteRule = {
 }
 
 /**
- * Get the specified rule from the specified firewall group.<br>
+ * Get the specified rule from the specified firewall group.
  * {@link https://www.vultr.com/api/#operation/get-firewall-group-rule}
  * @function getRule
  * @memberof firewall

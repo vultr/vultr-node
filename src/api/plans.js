@@ -1,11 +1,11 @@
 /**
- * Methods for interacting with the plan endpoints<br>
+ * Methods for interacting with the plan endpoints.
  * {@link https://www.vultr.com/api/#tag/plans}
  * @namespace plans
  */
 
 /**
- * Get a list of allavailable Vultr instance plans.<br>
+ * Get a list of allavailable Vultr instance plans.
  * {@link https://www.vultr.com/api/#operation/list-plans}
  * @function listPlans
  * @memberof plans
@@ -21,7 +21,7 @@ exports.listPlans = {
   }
 }
 /**
- * Get a list of all available Vultr bare metal plans.<br>
+ * Get a list of all available Vultr bare metal plans.
  * {@link https://www.vultr.com/api/#operation/list-metal-plans}
  * @function listBareMetalPlans
  * @memberof plans
