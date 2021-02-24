@@ -179,6 +179,11 @@ exports.createRecord = {
   requestType: 'POST',
   apiKeyRequired: true,
   parameters: {
+    'dns-domain': {
+      type: 'string',
+      path: true,
+      required: true
+    },
     name: {
       type: 'string',
       required: true
