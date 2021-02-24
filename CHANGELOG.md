@@ -1,5 +1,9 @@
 # Change Log
 
+## [v2.0.1](https://github.com/vultr/vultr-node/compare/v1.0.4..v2.0.0) (2020-02-25)
+### Bug Fixes
+* Fixes issue create a dns record parameter missing [#434](https://github.com/vultr/vultr-node/issues/434)
+
 ## [v2.0.0](https://github.com/vultr/vultr-node/compare/v1.0.4..v2.0.0) (2020-01-11)
 * Upgrade library to use Vultr API V2 syntax and endpoints. [#388](https://github.com/vultr/vultr-node/issues/388)
 
