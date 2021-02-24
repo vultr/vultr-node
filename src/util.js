@@ -12,23 +12,23 @@ exports.makeApiRequest = (config, endpoint, userParameters) => {
   if (userParameters !== undefined) {
     const { requestType, parameters } = endpoint
 
+    // All methods may have path parameters
+    const pathParams = Object.keys(userParameters).filter(
+      (key) => parameters[key].path
+    )
+
+    if (pathParams.length) {
+      pathParams.forEach((param) => {
+        // Ex. '/bare-metals/{baremetal-id}/ipv4' becomes '/bare-metals/123456/ipv4'
+        fetchUrl = fetchUrl.replace(`{${param}}`, userParameters[param])
+      })
+    }
+
     if (requestType === 'POST') {
       // POST requests will just send all data as JSON to the endpoint
       options.body = JSON.stringify(userParameters)
       options.headers['Content-Type'] = 'application/json'
     } else {
-      // GET, DELETE, PATCH, and PUT may have path parameters
-      const pathParams = Object.keys(userParameters).filter(
-        (key) => parameters[key].path
-      )
-
-      if (pathParams.length) {
-        pathParams.forEach((param) => {
-          // Ex. '/bare-metals/{baremetal-id}/ipv4' becomes '/bare-metals/123456/ipv4'
-          fetchUrl = fetchUrl.replace(`{${param}}`, userParameters[param])
-        })
-      }
-
       if (requestType === 'GET' || requestType === 'DELETE') {
         // GET and DELETE requests may have path parameters as well as query parameters
         const queryParams = Object.keys(userParameters)
