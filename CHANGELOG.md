@@ -1,5 +1,9 @@
 # Change Log
 
+## [v2.0.2](https://github.com/vultr/vultr-node/compare/v2.0.1..v2.0.2) (2020-03-04)
+### Dependencies
+* To see all deps that were updated please check [milestone v2.0.2](https://github.com/vultr/vultr-node/milestone/35)
+
 ## [v2.0.1](https://github.com/vultr/vultr-node/compare/v2.0.0..v2.0.1) (2020-02-25)
 ### Bug Fixes
 * Unable to create DNS record [#434](https://github.com/vultr/vultr-node/issues/434)
