@@ -1,5 +1,9 @@
 # Change Log
 
+## [v2.0.3](https://github/com/vultr/vultr-node/compare/v2.0.2..v2.0.3) (2020-03-18)
+### Bug Fixes
+* instances.listInstanceIpv4Information() changed from POST to GET [#444](https://github.com/vultr/vultr-node/issues/444)
+
 ## [v2.0.2](https://github.com/vultr/vultr-node/compare/v2.0.1..v2.0.2) (2020-03-04)
 ### Dependencies
 * To see all deps that were updated please check [milestone v2.0.2](https://github.com/vultr/vultr-node/milestone/35)
