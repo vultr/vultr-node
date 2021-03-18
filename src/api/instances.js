@@ -491,7 +491,7 @@ exports.restoreInstance = {
  */
 exports.listInstanceIpv4Information = {
   url: '/instances/{instance-id}/ipv4',
-  requestType: 'POST',
+  requestType: 'GET',
   apiKeyRequired: true,
   parameters: {
     'instance-id': {
