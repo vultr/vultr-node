@@ -58,7 +58,7 @@ exports.initialize = (config) => {
               if (endpointParameter.required && !userParameter) {
                 // Parameters for the request are required, but none were passed in
                 throw new Error(`Missing parameter: ${parameter}`)
-              } else if (userParameter) {
+              } else if (userParameter || userParameter === '') {
                 if (
                   endpointParameter.type === 'array' &&
                   !Array.isArray(userParameter)
