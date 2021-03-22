@@ -44,7 +44,8 @@ exports.makeApiRequest = (config, endpoint, userParameters) => {
         const bodyParams = Object.keys(userParameters)
           .filter((key) => !parameters[key].path)
           .reduce(
-            (newObj, key) => Object.assign(newObj, { [key]: userParameters[key] }),
+            (newObj, key) =>
+              Object.assign(newObj, { [key]: userParameters[key] }),
             {}
           )
 
