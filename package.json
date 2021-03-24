@@ -1,7 +1,7 @@
 {
   "name": "@vultr/vultr-node",
   "private": false,
-  "version": "2.0.3",
+  "version": "2.0.4",
   "description": "Node module to communicate with the Vultr API",
   "main": "src/index.js",
   "scripts": {
@@ -27,12 +27,6 @@
     "url": "https://github.com/vultr/vultr-node/issues"
   },
   "homepage": "https://github.com/vultr/vultr-node#readme",
-  "husky": {
-    "hooks": {
-      "pre-commit": "npm run lint && npm run prettier && npm test",
-      "pre-push": "npm run lint && npm test"
-    }
-  },
   "devDependencies": {
     "@babel/cli": "^7.10.1",
     "@babel/core": "^7.10.2",
@@ -44,7 +38,7 @@
     "eslint-plugin-node": "^11.0.0",
     "eslint-plugin-promise": "^4.2.1",
     "eslint-plugin-standard": "^5.0.0",
-    "husky": "^5.1.3",
+    "husky": "^5.2.0",
     "jest": "^26.6.3",
     "jsdoc": "^3.6.3",
     "prettier": "^2.0.5"
