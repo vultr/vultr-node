@@ -1,5 +1,11 @@
 # Change Log
 
+## [v2.0.5](https://github.com/vultr/vultr-node/compare/v2.0.4..v2.0.5) (2020-03-24)
+### Bug Fixes
+* Remove unused Husky properties, globally install Husky for CI [#454](https://github.com/vultr/vultr-node/454)
+* Regenerate documentation pages to remove duplicates [#456](https://github.com/vultr/vultr-node/456)
+* Add label parameter to instance.updateInstance [#459](https://github.com/vultr/vultr-node/pull/459)
+
 ## [v2.0.4](https://github.com/vultr/vultr-node/compare/v2.0.3..v2.0.4) (2020-03-23)
 ### Bug Fixes 
 * Disable Husky git hooks while using CI [#447](https://github.com/vultr/vultr-node/issues/447)
