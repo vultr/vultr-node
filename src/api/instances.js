@@ -110,6 +110,7 @@ exports.updateInstance = {
     os_id: { type: 'string' },
     user_data: { type: 'string' },
     tag: { type: 'string' },
+    label: { type: 'string' },
     plan: { type: 'string' },
     ddos_protection: { type: 'boolean' },
     attach_private_network: { type: 'array' },
