@@ -32,7 +32,7 @@ exports.getStartupScript = {
  * @instance
  */
 exports.deleteStartupScript = {
-  url: '/sctartup-scripts/{startup-id}',
+  url: '/startup-scripts/{startup-id}',
   requestType: 'DELETE',
   apiKeyRequired: true,
   parameters: {
@@ -52,7 +52,7 @@ exports.deleteStartupScript = {
  * @instance
  */
 exports.updateStartupScript = {
-  url: '/sctartup-scripts/{startup-id}',
+  url: '/startup-scripts/{startup-id}',
   requestType: 'PATCH',
   apiKeyRequired: true,
   parameters: {

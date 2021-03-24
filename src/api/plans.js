@@ -16,6 +16,7 @@ exports.listPlans = {
   requestType: 'GET',
   parameters: {
     type: { type: 'string' },
+    os: { type: 'string' },
     per_page: { type: 'string' },
     cursor: { type: 'string' }
   }
