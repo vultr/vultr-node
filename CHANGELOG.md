@@ -1,5 +1,9 @@
 # Change Log
 
+## [v2.0.6](https://github.com/vultr/vultr-node/compare/v2.0.5..v2.0.6) (2020-03-25)
+### Bug Fixes
+* Add OS parameter to listPlans() and fix typos in startup scripts URLs [#460](https://github.com/vultr/vultr-node/pull/460)
+
 ## [v2.0.5](https://github.com/vultr/vultr-node/compare/v2.0.4..v2.0.5) (2020-03-24)
 ### Bug Fixes
 * Remove unused Husky properties, globally install Husky for CI [#454](https://github.com/vultr/vultr-node/454)
