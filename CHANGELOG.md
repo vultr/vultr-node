@@ -1,5 +1,9 @@
 # Change Log
 
+## [v2.0.7](https://github.com/vultr/vultr-node/compare/v2.0.6..v2.0.7) (2020-05-01)
+### Dependencies
+* To see all deps that were updated please check [milestone v2.0.7](https://github.com/vultr/vultr-node/milestone/39)
+
 ## [v2.0.6](https://github.com/vultr/vultr-node/compare/v2.0.5..v2.0.6) (2020-03-25)
 ### Bug Fixes
 * Add OS parameter to listPlans() and fix typos in startup scripts URLs [#460](https://github.com/vultr/vultr-node/pull/460)
