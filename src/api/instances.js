@@ -52,7 +52,7 @@ exports.createInstance = {
     enable_ipv6: { type: 'boolean' },
     attach_private_network: { type: 'array' },
     label: { type: 'string' },
-    sshkey_id: { type: 'string' },
+    sshkey_id: { type: 'array' },
     backups: { type: 'string' },
     app_id: { type: 'number' },
     user_data: { type: 'string' },
