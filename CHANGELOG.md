@@ -1,5 +1,9 @@
 # Change Log
 
+## [v2.0.8](https://github.com/vultr/vultr-node/compare/v2.0.7..v2.0.8) (2020-05-07)
+### Bug Fixes
+* Fix formatting of block storage endpoint parameters [#477](https://github.com/vultr/vultr-node/477)
+
 ## [v2.0.7](https://github.com/vultr/vultr-node/compare/v2.0.6..v2.0.7) (2020-05-01)
 ### Dependencies
 * To see all deps that were updated please check [milestone v2.0.7](https://github.com/vultr/vultr-node/milestone/39)
