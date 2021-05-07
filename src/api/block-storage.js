@@ -115,16 +115,19 @@ exports.updateStorage = {
 exports.attachStorage = {
   url: '/blocks/{block-id}/attach',
   requestType: 'POST',
-  'block-id': {
-    type: 'string',
-    path: true,
-    required: true
-  },
-  instance_id: {
-    type: 'string',
-    required: true
-  },
-  live: { type: 'boolean' }
+  apiKeyRequired: true,
+  parameters: {
+    'block-id': {
+      type: 'string',
+      path: true,
+      required: true
+    },
+    instance_id: {
+      type: 'string',
+      required: true
+    },
+    live: { type: 'boolean' }
+  }
 }
 
 /**
@@ -137,10 +140,13 @@ exports.attachStorage = {
 exports.detachStorage = {
   url: '/blocks/{block-id}',
   requestType: 'POST',
-  'block-id': {
-    type: 'string',
-    path: true,
-    required: true
-  },
-  live: { type: 'boolean' }
+  apiKeyRequired: true,
+  parameters: {
+    'block-id': {
+      type: 'string',
+      path: true,
+      required: true
+    },
+    live: { type: 'boolean' }
+  }
 }
