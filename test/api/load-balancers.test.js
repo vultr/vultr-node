@@ -30,6 +30,13 @@ const mockParameters = {
   deleteForwardingRule: {
     'load-balancer-id': 'cb676a46-66fd-4dfb-b839-443f2e6c0b60',
     'forwarding-rule-id': 'd42585eb85b1f69d'
+  },
+  listFirewallRules: {
+    'load-balancer-id': 'cb676a46-66fd-4dfb-b839-443f2e6c0b60'
+  },
+  getFirewallRule: {
+    'load-balancer-id': 'cb676a46-66fd-4dfb-b839-443f2e6c0b60',
+    'firewall-rule-id': 'asb123f2e6c0b60'
   }
 }
 
@@ -185,6 +192,31 @@ const mockResponses = {
       frontend_port: 8080,
       backend_protocol: 'http',
       backend_port: 80
+    }
+  },
+  listFirewallRules: {
+    firewall_rules: [
+      {
+        id: 'asb123f2e6c0b60',
+        port: 80,
+        source: '24.187.16.196/16',
+        ip_type: 'v4'
+      }
+    ],
+    meta: {
+      total: 1,
+      links: {
+        next: '',
+        prev: ''
+      }
+    }
+  },
+  getFirewallRule: {
+    firewall_rule: {
+      id: 'asb123f2e6c0b60',
+      port: 80,
+      source: '24.187.16.196/16',
+      ip_type: 'v4'
     }
   }
 }
