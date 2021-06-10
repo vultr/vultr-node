@@ -286,7 +286,9 @@ exports.initialize = (config) => {
       getForwardingRule: createRequestFunction(loadBalancers.getForwardingRule),
       deleteForwardingRule: createRequestFunction(
         loadBalancers.deleteForwardingRule
-      )
+      ),
+      listFirewallRules: createRequestFunction(loadBalancers.listFirewallRules),
+      getFirewallRule: createRequestFunction(loadBalancers.getFirewallRule)
     },
     objectStorage: {
       listObjectStorages: createRequestFunction(

@@ -45,7 +45,9 @@ exports.createLoadBalancer = {
     sticky_session: { type: 'object' },
     ssl: { type: 'object' },
     label: { type: 'string' },
-    instances: { type: 'array' }
+    instances: { type: 'array' },
+    firewall_rules: { type: 'array' },
+    private_network: { type: 'string' }
   }
 }
 
@@ -93,7 +95,10 @@ exports.updateLoadBalancer = {
     proxy_protocol: { type: 'string' },
     ssl_redirect: { type: 'string' },
     balancing_algorithm: { type: 'string' },
-    instances: { type: 'array' }
+    instances: { type: 'array' },
+    label: { type: 'string' },
+    private_network: { type: 'string' },
+    firewall_rules: { type: 'array' }
   }
 }
 
@@ -176,7 +181,7 @@ exports.createForwardingRule = {
 }
 
 /**
- * Get information on the specified forwarding frule for the specified load balancer.<br>
+ * Get information on the specified forwarding rule for the specified load balancer.<br>
  * {@link https://www.vultr.com/api/#operation/get-load-balancer-forwarding-rule}
  * @function getForwardingRule
  * @memberof loadBalancers
@@ -220,6 +225,53 @@ exports.deleteForwardingRule = {
       required: true
     },
     'forwarding-rule-id': {
+      type: 'string',
+      path: true,
+      required: true
+    }
+  }
+}
+
+/**
+ * List the firewall rules for the specified load balancer.<br>
+ * {@link https://www.vultr.com/api/#operation/list-loadbalancer-firewall-rules}
+ * @function listFirewallRules
+ * @memberof loadBalancers
+ * @instance
+ */
+exports.listFirewallRules = {
+  url: '/load-balancers/{load-balancer-id}/firewall-rules',
+  requestType: 'GET',
+  apiKeyRequired: true,
+  parameters: {
+    'load-balancer-id': {
+      type: 'string',
+      path: true,
+      required: true
+    },
+    per_page: { type: 'string' },
+    cursor: { type: 'string' }
+  }
+}
+
+/**
+ * Get information on the specified firewall rule for the specified load balancer.<br>
+ * {@link https://www.vultr.com/api/#operation/get-loadbalancer-firewall-rule}
+ * @function getFirewallRule
+ * @memberof loadBalancers
+ * @instance
+ */
+exports.getFirewallRule = {
+  url: '/load-balancers/{load-balancer-id}/firewall-rules/{firewall-rule-id}',
+  requestType: 'GET',
+  apiKeyRequired: true,
+  parameters: {
+    'load-balancer-id': {
+      type: 'string',
+      path: true,
+      required: true
+    },
+    'firewall-rule-id': {
       type: 'string',
       path: true,
       required: true
