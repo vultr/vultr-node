@@ -1,6 +1,6 @@
 # Change Log
 
-## [v2.1.0](https://github.com/vultr/vultr-node/compare/v2.0.8..v2.1.0) (2020-06-16)
+## [v2.1.0](https://github.com/vultr/vultr-node/compare/v2.0.8..v2.1.0) (2020-06-17)
 ### Features
 * Adds new load balancer endpoints and ability to add firewall parameters to existing load balance endpoints [#489](https://github.com/vultr/vultr-node/489)
 
