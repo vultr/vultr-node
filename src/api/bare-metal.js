@@ -50,7 +50,8 @@ exports.createInstance = {
     reserved_ipv4: { type: 'string' },
     os_id: { type: 'number' },
     snapshot_id: { type: 'string' },
-    application_id: { type: 'number' }
+    application_id: { type: 'number' },
+    persistent_pxe: { type: 'boolean' }
   }
 }
 
