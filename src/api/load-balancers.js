@@ -188,8 +188,7 @@ exports.createForwardingRule = {
  * @instance
  */
 exports.getForwardingRule = {
-  url:
-    '/load-balancers/{load-balancer-id}/forwarding-rules/{forwarding-rule-id}',
+  url: '/load-balancers/{load-balancer-id}/forwarding-rules/{forwarding-rule-id}',
   requestType: 'GET',
   apiKeyRequired: true,
   parameters: {
@@ -214,8 +213,7 @@ exports.getForwardingRule = {
  * @instance
  */
 exports.deleteForwardingRule = {
-  url:
-    '/load-balancers/{load-balancer-id}/forwarding-rules/{forwarding-rule-id}',
+  url: '/load-balancers/{load-balancer-id}/forwarding-rules/{forwarding-rule-id}',
   requestType: 'DELETE',
   apiKeyRequired: true,
   parameters: {
