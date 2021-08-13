@@ -3,7 +3,7 @@
   "private": false,
   "version": "2.1.1",
   "description": "Node module to communicate with the Vultr API",
-  "main": "src/index.js",
+  "main": "dist/index.js",
   "scripts": {
     "build": "babel src -d dist",
     "test": "jest",
