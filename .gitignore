@@ -89,3 +89,5 @@ typings/
 
 #Mac os
 .DS_Store
+
+dist/
