@@ -51,7 +51,7 @@ exports.createInstance = {
     os_id: { type: 'number' },
     snapshot_id: { type: 'string' },
     application_id: { type: 'number' },
-    image_id: { type: 'number' },
+    image_id: { type: 'string' },
     persistent_pxe: { type: 'boolean' }
   }
 }
