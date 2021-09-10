@@ -9,6 +9,7 @@ exports.initialize = (config) => {
   const firewall = require('./api/firewall')
   const instances = require('./api/instances')
   const iso = require('./api/iso')
+  const kubernetes = require('./api/kubernetes')
   const loadBalancers = require('./api/load-balancers')
   const objectStorage = require('./api/object-storage')
   const operatingSystems = require('./api/operating-systems')
@@ -289,6 +290,46 @@ exports.initialize = (config) => {
       ),
       listFirewallRules: createRequestFunction(loadBalancers.listFirewallRules),
       getFirewallRule: createRequestFunction(loadBalancers.getFirewallRule)
+    },
+    kubernetes: {
+      createKubernetesCluster: createRequestFunction(
+        kubernetes.createKubernetesCluster
+      ),
+      listKubernetesClusters: createRequestFunction(
+        kubernetes.listKubernetesClusters
+      ),
+      getKubernetesCluster: createRequestFunction(
+        kubernetes.getKubernetesCluster
+      ),
+      updateKubernetesCluster: createRequestFunction(
+        kubernetes.updateKubernetesCluster
+      ),
+      deleteKubernetesCluster: createRequestFunction(
+        kubernetes.deleteKubernetesCluster
+      ),
+      deleteKubernetesClusterAndResources: createRequestFunction(
+        kubernetes.deleteKubernetesClusterAndResources
+      ),
+      getKubernetesResources: createRequestFunction(
+        kubernetes.getKubernetesResources
+      ),
+      createNodePool: createRequestFunction(kubernetes.createNodePool),
+      listNodePools: createRequestFunction(kubernetes.listNodePools),
+      getNodePool: createRequestFunction(kubernetes.getNodePool),
+      updateNodePool: createRequestFunction(kubernetes.updateNodePool),
+      deleteNodePool: createRequestFunction(kubernetes.deleteNodePool),
+      deleteNodePoolInstance: createRequestFunction(
+        kubernetes.deleteNodePoolInstance
+      ),
+      recycleNodePoolInstance: createRequestFunction(
+        kubernetes.recycleNodePoolInstance
+      ),
+      getKubernetesClusterKubeconfig: createRequestFunction(
+        kubernetes.getKubernetesClusterKubeconfig
+      ),
+      getKubernetesVersions: createRequestFunction(
+        kubernetes.getKubernetesVersions
+      )
     },
     objectStorage: {
       listObjectStorages: createRequestFunction(
