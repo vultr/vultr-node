@@ -244,14 +244,14 @@ const mockResponses = {
     upgrades: {
       os: [
         {
-          id: 127,
-          name: 'CentOS 6 x64',
+          id: 900,
+          name: 'Example CentOS 6 x64',
           arch: 'x64',
           family: 'centos'
         },
         {
-          id: 147,
-          name: 'CentOS 6 i386',
+          id: 901,
+          name: 'Example CentOS 6 i386',
           arch: 'i386',
           family: 'centos'
         }
@@ -261,21 +261,43 @@ const mockResponses = {
           id: 1,
           name: 'LEMP',
           short_name: 'lemp',
-          deploy_name: 'LEMP on CentOS 6 x64'
+          deploy_name: 'LEMP on CentOS 6 x64',
+          type: 'one-click',
+          vendor: 'vultr',
+          image_id: ''
         },
         {
           id: 39,
           name: 'LEMP',
           short_name: 'lemp',
-          deploy_name: 'LEMP on CentOS 7 x64'
+          deploy_name: 'LEMP on CentOS 7 x64',
+          type: 'one-click',
+          vendor: 'vultr',
+          image_id: ''
+        },
+        {
+          id: 1028,
+          name: 'OpenLiteSpeed WordPress',
+          short_name: 'openlitespeedwordpress',
+          deploy_name: 'OpenLiteSpeed WordPress on Ubuntu 20.04 x64',
+          type: 'marketplace',
+          vendor: 'LiteSpeed_Technologies',
+          image_id: 'openlitespeed-wordpress'
         }
+      ],
+      plans: [
+        'vc2-2c-4gb',
+        'vc2-4c-8gb',
+        'vc2-6c-16gb',
+        'vc2-8c-64gb',
+        'vc2-16c-64gb',
+        'vc2-24c-97gb'
       ]
     }
   },
   getInstanceVncUrl: {
     vnc: {
-      url:
-        'https://my.vultr.com/subs/baremetal/novnc/api.php?data=djsozdXNFVGd6eVgzbXRQbXJ0eW00OTVXamJ8'
+      url: 'https://my.vultr.com/subs/baremetal/novnc/api.php?data=djsozdXNFVGd6eVgzbXRQbXJ0eW00OTVXamJ8'
     }
   }
 }

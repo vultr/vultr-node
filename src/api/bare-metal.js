@@ -51,6 +51,7 @@ exports.createInstance = {
     os_id: { type: 'number' },
     snapshot_id: { type: 'string' },
     application_id: { type: 'number' },
+    image_id: { type: 'number' },
     persistent_pxe: { type: 'boolean' }
   }
 }
@@ -97,6 +98,7 @@ exports.updateInstance = {
     tag: { type: 'string' },
     os_id: { type: 'string' },
     app_id: { type: 'string' },
+    image_id: { type: 'string' },
     enable_ipv6: { type: 'boolean' }
   }
 }

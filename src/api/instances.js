@@ -55,6 +55,7 @@ exports.createInstance = {
     sshkey_id: { type: 'array' },
     backups: { type: 'string' },
     app_id: { type: 'number' },
+    image_id: { type: 'string' },
     user_data: { type: 'string' },
     ddos_protection: { type: 'boolean' },
     activation_email: { type: 'boolean' },
@@ -104,6 +105,7 @@ exports.updateInstance = {
       required: true
     },
     app_id: { type: 'number' },
+    image_id: { type: 'string' },
     backups: { type: 'string' },
     firewall_group_id: { type: 'string' },
     enable_ipv6: { type: 'boolean' },
