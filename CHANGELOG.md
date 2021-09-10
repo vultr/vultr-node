@@ -1,5 +1,18 @@
 # Change Log
 
+## [v2.2.0](https://github.com/vultr/vultr-node/compare/v2.1.1..v2.2.0) (2020-09-10)
+### Dependencies
+* To see all deps that were updated, please check [milestone v2.0.0](https://github.com/vultr/vultr-node/milestone/43)
+
+### Features
+* Basic TypeScript support for autocompletion [#511](https://github.com/vultr/vultr-node/pull/511)
+* Add support for `persistent_pxe` for bare metal endpoints [#502](https://github.com/vultr/vultr-node/issues/502)
+* Add support for marketplace fields in bare metal, instances, and applications endpoints [#504](https://github.com/vultr/vultr-node/issues/504)
+* Add support for VKE [#512](https://github.com/vultr/vultr-node/issues/512)
+
+### Maintenance
+* Regenerated documentation to reflect new endpoints
+
 ## [v2.1.1](https://github.com/vultr/vultr-node/compare/v2.1.0..v2.1.1) (2020-07-03)
 ### Dependencies
 * To see all deps that were updated please check [milestone v2.1.1](https://github.com/vultr/vultr-node/milestone/42)
