@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>JSDoc: Source: kubernetes.js</title>
+
+    <script src="scripts/prettify/prettify.js"> </script>
+    <script src="scripts/prettify/lang-css.js"> </script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+</head>
+
+<body>
+
+<div id="main">
+
+    <h1 class="page-title">Source: kubernetes.js</h1>
+
+    
+
+
+
+    
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>/**
+ * Methods for interacting with the Kubernetes endpoints&lt;br>
+ * {@link https://www.vultr.com/api/#tag/kubernetes}
+ * @namespace kubernetes
+ */
+
+/**
+ * Creates a Kubernetes cluster.&lt;br>
+ * {@link https://www.vultr.com/api/#operation/create-kubernetes-cluster}
+ * @function createKubernetesCluster
+ * @memberof kubernetes
+ * @instance
+ */
+exports.createKubernetesCluster = {
+  url: '/kubernetes/clusters',
+  requestType: 'POST',
+  apiKeyRequired: true,
+  parameters: {
+    label: { type: 'string' },
+    region: {
+      type: 'string',
+      required: true
+    },
+    version: {
+      type: 'string',
+      required: true
+    },
+    node_pools: { type: 'array' }
+  }
+}
+
+/**
+ * Lists all currently deployed Kubernetes clusters.&lt;br>
+ * {@link https://www.vultr.com/api/#operation/list-kubernetes-clusters}
+ * @function listKubernetesClusters
+ * @memberof kubernetes
+ * @instance
+ */
+exports.listKubernetesClusters = {
+  url: '/kubernetes/clusters',
+  requestType: 'GET',
+  apiKeyRequired: true
+}
+
+/**
+ * Gets information about a specified Kubernetes cluster.&lt;br>
+ * {@link https://www.vultr.com/api/#operation/get-kubernetes-clusters}
+ * @function getKubernetesCluster
+ * @memberof kubernetes
+ * @instance
+ */
+exports.getKubernetesCluster = {
+  url: '/kubernetes/clusters/{vke-id}',
+  requestType: 'GET',
+  apiKeyRequired: true,
+  parameters: {
+    'vke-id': {
+      type: 'string',
+      required: true,
+      path: true
+    }
+  }
+}
+
+/**
+ * Updates information in an existing Kubernetes cluster.&lt;br>
+ * {@link https://www.vultr.com/api/#operation/update-kubernetes-cluster}
+ * @function updateKubernetesCluster
+ * @memberof kubernetes
+ * @instance
+ */
+exports.updateKubernetesCluster = {
+  url: '/kubernetes/clusters/{vke-id}',
+  requestType: 'PUT',
+  apiKeyRequired: true,
+  parameters: {
+    'vke-id': {
+      type: 'string',
+      required: true,
+      path: true
+    },
+    label: {
+      type: 'string',
+      required: true
+    }
+  }
+}
+
+/**
+ * Deletes a specified Kubernetes cluster.&lt;br>
+ * {@link https://www.vultr.com/api/#operation/delete-kubernetes-cluster}
+ * @function deleteKubernetesCluster
+ * @memberof kubernetes
+ * @instance
+ */
+exports.deleteKubernetesCluster = {
+  url: '/kubernetes/clusters/{vke-id}',
+  requestType: 'DELETE',
+  apiKeyRequired: true,
+  parameters: {
+    'vke-id': {
+      type: 'string',
+      required: true,
+      path: true
+    }
+  }
+}
+
+/**
+ * Deletes a specified Kubernetes cluster and all its resources.&lt;br>
+ * {@link https://www.vultr.com/api/#operation/delete-kubernetes-cluster-vke-id-delete-with-linked-resources}
+ * @function deleteKubernetesClusterAndResources
+ * @memberof kubernetes
+ * @instance
+ */
+exports.deleteKubernetesClusterAndResources = {
+  url: '/kubernetes/clusters/{vke-id}/delete-with-linked-resources',
+  requestType: 'DELETE',
+  apiKeyRequired: true,
+  parameters: {
+    'vke-id': {
+      type: 'string',
+      required: true,
+      path: true
+    }
+  }
+}
+
+/**
+ * Gets info about the block storage and load balancers deployed by the specified Kubernetes cluster.&lt;br>
+ * {@link https://www.vultr.com/api/#operation/get-kubernetes-resources}
+ * @function getKubernetesResources
+ * @memberof kubernetes
+ * @instance
+ */
+exports.getKubernetesResources = {
+  url: '/kubernetes/clusters/{vke-id}/resources',
+  requestType: 'GET',
+  apiKeyRequired: true,
+  parameters: {
+    'vke-id': {
+      type: 'string',
+      required: true,
+      path: true
+    }
+  }
+}
+
+/**
+ * Create a NodePool for an existing Kubernetes cluster.&lt;br>
+ * {@link https://www.vultr.com/api/#operation/create-nodepools}
+ * @function createNodePool
+ * @memberof kubernetes
+ * @instance
+ */
+exports.createNodePool = {
+  url: '/kubernetes/clusters/{vke-id}/node-pools',
+  requestType: 'POST',
+  apiKeyRequired: true,
+  parameters: {
+    'vke-id': {
+      type: 'string',
+      required: true,
+      path: true
+    },
+    node_quantity: {
+      type: 'number',
+      required: true
+    },
+    label: {
+      type: 'string',
+      required: true
+    },
+    plan: {
+      type: 'string',
+      required: true
+    }
+  }
+}
+
+/**
+ * List all available NodePools on a specified Kubernetes cluster.&lt;br>
+ * {@link https://www.vultr.com/api/#operation/get-nodepools}
+ * @function listNodePools
+ * @memberof kubernetes
+ * @instance
+ */
+exports.listNodePools = {
+  url: '/kubernetes/clusters/{vke-id}/node-pools',
+  requestType: 'GET',
+  apiKeyRequired: true,
+  parameters: {
+    'vke-id': {
+      type: 'string',
+      required: true,
+      path: true
+    }
+  }
+}
+
+/**
+ * Get information about the NodePool on a Kubernetes cluster.&lt;br>
+ * {@link https://www.vultr.com/api/#operation/get-nodepool}
+ * @function getNodePool
+ * @memberof kubernetes
+ * @instance
+ */
+exports.getNodePool = {
+  url: '/kubernetes/clusters/{vke-id}/node-pools/{nodepool-id}',
+  requestType: 'GET',
+  apiKeyRequired: true,
+  parameters: {
+    'vke-id': {
+      type: 'string',
+      required: true,
+      path: true
+    },
+    'nodepool-id': {
+      type: 'string',
+      required: true,
+      path: true
+    }
+  }
+}
+
+/**
+ * Updates a NodePool on an existing Kubernetes cluster.&lt;br>
+ * {@link https://www.vultr.com/api/#operation/update-nodepool}
+ * @function updateNodePool
+ * @memberof kubernetes
+ * @instance
+ */
+exports.updateNodePool = {
+  url: '/kubernetes/clusters/{vke-id}/node-pools/{nodepool-id}',
+  requestType: 'PATCH',
+  apiKeyRequired: true,
+  parameters: {
+    'vke-id': {
+      type: 'string',
+      required: true,
+      path: true
+    },
+    'nodepool-id': {
+      type: 'string',
+      required: true,
+      path: true
+    },
+    node_quantity: {
+      type: 'number',
+      required: true
+    }
+  }
+}
+
+/**
+ * Deletes a specified NodePool from a Kubernetes cluster.&lt;br>
+ * {@link https://www.vultr.com/api/#operation/delete-nodepool}
+ * @function deleteNodePool
+ * @memberof kubernetes
+ * @instance
+ */
+exports.deleteNodePool = {
+  url: '/kubernetes/clusters/{vke-id}/node-pools/{nodepool-id}',
+  requestType: 'DELETE',
+  apiKeyRequired: true,
+  parameters: {
+    'vke-id': {
+      type: 'string',
+      required: true,
+      path: true
+    },
+    'nodepool-id': {
+      type: 'string',
+      required: true,
+      path: true
+    }
+  }
+}
+
+/**
+ * Deletes a single NodePool instance from a specified NodePool.&lt;br>
+ * {@link https://www.vultr.com/api/#operation/delete-nodepool-instance}
+ * @function deleteNodePoolInstance
+ * @memberof kubernetes
+ * @instance
+ */
+exports.deleteNodePoolInstance = {
+  url: '/kubernetes/clusters/{vke-id}/node-pools/{nodepool-id}/nodes/{node-id}',
+  requestType: 'DELETE',
+  apiKeyRequired: true,
+  parameters: {
+    'vke-id': {
+      type: 'string',
+      required: true,
+      path: true
+    },
+    'nodepool-id': {
+      type: 'string',
+      required: true,
+      path: true
+    },
+    'node-id': {
+      type: 'string',
+      required: true,
+      path: true
+    }
+  }
+}
+
+/**
+ * Recycles a specified NodePool instance.&lt;br>
+ * {@link https://www.vultr.com/api/#operation/recycle-nodepool-instance}
+ * @function recycleNodePoolInstance
+ * @memberof kubernetes
+ * @instance
+ */
+exports.recycleNodePoolInstance = {
+  url: '/kubernetes/clusters/{vke-id}/node-pools/{nodepool-id}/nodes/{node-id}/recycle',
+  requestType: 'POST',
+  apiKeyRequired: true,
+  parameters: {
+    'vke-id': {
+      type: 'string',
+      required: true,
+      path: true
+    },
+    'nodepool-id': {
+      type: 'string',
+      required: true,
+      path: true
+    },
+    'node-id': {
+      type: 'string',
+      required: true,
+      path: true
+    }
+  }
+}
+
+/**
+ * Gets a specified Kubernetes cluster's Kubeconfig.&lt;br>
+ * {@link https://www.vultr.com/api/#operation/get-kubernetes-clusters-config}
+ * @function getKubernetesClusterKubeconfig
+ * @memberof kubernetes
+ * @instance
+ */
+exports.getKubernetesClusterKubeconfig = {
+  url: '/kubernetes/clusters/{vke-id}/config',
+  requestType: 'GET',
+  apiKeyRequired: true,
+  parameters: {
+    'vke-id': {
+      type: 'string',
+      required: true,
+      path: true
+    }
+  }
+}
+
+/**
+ * Get a list of all supported Kubernetes versions.&lt;br>
+ * {@link https://www.vultr.com/api/#operation/get-kubernetes-versions}
+ * @function getKubernetesVersions
+ * @memberof kubernetes
+ * @instance
+ */
+exports.getKubernetesVersions = {
+  url: '/kubernetes/versions',
+  requestType: 'GET'
+}
+</code></pre>
+        </article>
+    </section>
+
+
+
+
+</div>
+
+<nav>
+    <h2><a href="index.html">Home</a></h2><h3>Namespaces</h3><ul><li><a href="account.html">account</a></li><li><a href="applications.html">applications</a></li><li><a href="backup.html">backup</a></li><li><a href="bareMetal.html">bareMetal</a></li><li><a href="blockStorage.html">blockStorage</a></li><li><a href="dns.html">dns</a></li><li><a href="firewall.html">firewall</a></li><li><a href="instances.html">instances</a></li><li><a href="iso.html">iso</a></li><li><a href="kubernetes.html">kubernetes</a></li><li><a href="loadBalancers.html">loadBalancers</a></li><li><a href="objectStorage.html">objectStorage</a></li><li><a href="operatingSystems.html">operatingSystems</a></li><li><a href="plans.html">plans</a></li><li><a href="privateNetworks.html">privateNetworks</a></li><li><a href="regions.html">regions</a></li><li><a href="reservedIps.html">reservedIps</a></li><li><a href="snapshots.html">snapshots</a></li><li><a href="sshKeys.html">sshKeys</a></li><li><a href="startupScripts.html">startupScripts</a></li><li><a href="users.html">users</a></li></ul>
+</nav>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 3.6.7</a> on Fri Sep 10 2021 10:35:19 GMT-0400 (Eastern Daylight Time)
+</footer>
+
+<script> prettyPrint(); </script>
+<script src="scripts/linenumber.js"> </script>
+</body>
+</html>

@@ -1,55 +1,68 @@
 # Change Log
 
-## [v2.1.1](https://github.com/vultr/vultr-node/compare/v2.1.0..v2.1.1) (2020-07-03)
+## [v2.2.0](https://github.com/vultr/vultr-node/compare/v2.1.1..v2.2.0) (2021-09-10)
+### Dependencies
+* To see all deps that were updated, please check [milestone v2.2.0](https://github.com/vultr/vultr-node/milestone/43)
+
+### Features
+* Basic TypeScript support for autocompletion [#511](https://github.com/vultr/vultr-node/pull/511)
+* Add support for `persistent_pxe` for bare metal endpoints [#502](https://github.com/vultr/vultr-node/issues/502)
+* Add support for marketplace fields in bare metal, instances, and applications endpoints [#504](https://github.com/vultr/vultr-node/issues/504)
+* Add support for VKE [#512](https://github.com/vultr/vultr-node/issues/512)
+
+### Maintenance
+* Regenerated documentation to reflect new endpoints
+
+## [v2.1.1](https://github.com/vultr/vultr-node/compare/v2.1.0..v2.1.1) (2021-07-03)
 ### Dependencies
 * To see all deps that were updated please check [milestone v2.1.1](https://github.com/vultr/vultr-node/milestone/42)
 
-## [v2.1.0](https://github.com/vultr/vultr-node/compare/v2.0.8..v2.1.0) (2020-06-17)
+## [v2.1.0](https://github.com/vultr/vultr-node/compare/v2.0.8..v2.1.0) (2021-06-17)
 ### Features
 * Adds new load balancer endpoints and ability to add firewall parameters to existing load balance endpoints [#489](https://github.com/vultr/vultr-node/489)
 
 ### Dependencies
 * To see all deps that were updated please check [milestone v2.1.0](https://github.com/vultr/vultr-node/milestone/41)
 
-## [v2.0.8](https://github.com/vultr/vultr-node/compare/v2.0.7..v2.0.8) (2020-05-07)
+## [v2.0.8](https://github.com/vultr/vultr-node/compare/v2.0.7..v2.0.8) (2021-05-07)
 ### Bug Fixes
 * Fix formatting of block storage endpoint parameters [#477](https://github.com/vultr/vultr-node/477)
 
-## [v2.0.7](https://github.com/vultr/vultr-node/compare/v2.0.6..v2.0.7) (2020-05-01)
+## [v2.0.7](https://github.com/vultr/vultr-node/compare/v2.0.6..v2.0.7) (2021-05-01)
 ### Dependencies
 * To see all deps that were updated please check [milestone v2.0.7](https://github.com/vultr/vultr-node/milestone/39)
 
-## [v2.0.6](https://github.com/vultr/vultr-node/compare/v2.0.5..v2.0.6) (2020-03-25)
+## [v2.0.6](https://github.com/vultr/vultr-node/compare/v2.0.5..v2.0.6) (2021-03-25)
 ### Bug Fixes
 * Add OS parameter to listPlans() and fix typos in startup scripts URLs [#460](https://github.com/vultr/vultr-node/pull/460)
 
-## [v2.0.5](https://github.com/vultr/vultr-node/compare/v2.0.4..v2.0.5) (2020-03-24)
+## [v2.0.5](https://github.com/vultr/vultr-node/compare/v2.0.4..v2.0.5) (2021-03-24)
 ### Bug Fixes
 * Remove unused Husky properties, globally install Husky for CI [#454](https://github.com/vultr/vultr-node/454)
 * Regenerate documentation pages to remove duplicates [#456](https://github.com/vultr/vultr-node/456)
 * Add label parameter to instance.updateInstance [#459](https://github.com/vultr/vultr-node/pull/459)
 
-## [v2.0.4](https://github.com/vultr/vultr-node/compare/v2.0.3..v2.0.4) (2020-03-23)
+## [v2.0.4](https://github.com/vultr/vultr-node/compare/v2.0.3..v2.0.4) (2021-03-23)
 ### Bug Fixes 
 * Disable Husky git hooks while using CI [#447](https://github.com/vultr/vultr-node/issues/447)
 * Fix issue in PATCH/POST user parameters gathering, allow empty strings to be passed in [#451](https://github.com/vultr/vultr-node/451)
 
-## [v2.0.3](https://github/com/vultr/vultr-node/compare/v2.0.2..v2.0.3) (2020-03-18)
+## [v2.0.3](https://github/com/vultr/vultr-node/compare/v2.0.2..v2.0.3) (2021-03-18)
 ### Bug Fixes
 * instances.listInstanceIpv4Information() changed from POST to GET [#444](https://github.com/vultr/vultr-node/issues/444)
 
-## [v2.0.2](https://github.com/vultr/vultr-node/compare/v2.0.1..v2.0.2) (2020-03-04)
+## [v2.0.2](https://github.com/vultr/vultr-node/compare/v2.0.1..v2.0.2) (2021-03-04)
 ### Dependencies
 * To see all deps that were updated please check [milestone v2.0.2](https://github.com/vultr/vultr-node/milestone/35)
 
-## [v2.0.1](https://github.com/vultr/vultr-node/compare/v2.0.0..v2.0.1) (2020-02-25)
+## [v2.0.1](https://github.com/vultr/vultr-node/compare/v2.0.0..v2.0.1) (2021-02-25)
 ### Bug Fixes
 * Unable to create DNS record [#434](https://github.com/vultr/vultr-node/issues/434)
 
 ### Dependencies
 * To see all deps that were updated please check [milestone v2.0.1](https://github.com/vultr/vultr-node/milestone/34)
 
-## [v2.0.0](https://github.com/vultr/vultr-node/compare/v1.0.4..v2.0.0) (2020-01-11)
+## [v2.0.0](https://github.com/vultr/vultr-node/compare/v1.0.4..v2.0.0) (2021-01-11)
 * Upgrade library to use Vultr API V2 syntax and endpoints. [#388](https://github.com/vultr/vultr-node/issues/388)
 
 ## [v1.0.4](https://github.com/vultr/vultr-node/compare/v1.0.3..v1.0.4) (2021-01-06)
