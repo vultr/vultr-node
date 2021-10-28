@@ -10,7 +10,7 @@ install:
 
 script:
   - npm test
-  - npm build
+  - npm run build
   - jest --ci --coverage && codecov
 
 deploy:
