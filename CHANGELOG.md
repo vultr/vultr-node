@@ -1,5 +1,12 @@
 # Change Log
 
+## [v2.2.1](https://github.com/vultr/vultr-node/compare/v2.2.0..v2.2.1) (2021-11-4)
+### Dependencies
+* To see all deps that were updated, please check [milestone v2.2.1](https://github.com/vultr/vultr-node/milestone/44)
+
+### Bug Fixes
+* Fix Travis CI build to compile TypeScript before release [#532](https://github.com/vultr/vultr-node/issues/532)
+
 ## [v2.2.0](https://github.com/vultr/vultr-node/compare/v2.1.1..v2.2.0) (2021-09-10)
 ### Dependencies
 * To see all deps that were updated, please check [milestone v2.2.0](https://github.com/vultr/vultr-node/milestone/43)

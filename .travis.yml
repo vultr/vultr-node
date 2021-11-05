@@ -9,7 +9,7 @@ install:
   - npm install
 
 script:
-  - npm test
+  - npm run test
   - npm run build
   - jest --ci --coverage && codecov
 
