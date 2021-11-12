@@ -15,6 +15,7 @@ script:
 
 deploy:
   provider: npm
+  skip_cleanup: true
   email: opensource@vultr.com
   api_key: $NPM_TOKEN
   on:
