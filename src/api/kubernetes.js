@@ -174,6 +174,10 @@ exports.createNodePool = {
     plan: {
       type: 'string',
       required: true
+    },
+    tag: {
+      type: 'string',
+      required: false
     }
   }
 }
@@ -248,6 +252,10 @@ exports.updateNodePool = {
     node_quantity: {
       type: 'number',
       required: true
+    },
+    tag: {
+      type: 'string',
+      required: false
     }
   }
 }

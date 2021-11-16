@@ -9,7 +9,8 @@ const mockParameters = {
       {
         node_quantity: 2,
         label: 'my-label',
-        plan: 'vc2-1c-2gb'
+        plan: 'vc2-1c-2gb',
+        tag: 'my-tag'
       }
     ]
   },
@@ -33,7 +34,8 @@ const mockParameters = {
     'vke-id': '455dcd32-e621-48ee-a10e-0cb5f754e13e',
     node_quantity: 2,
     label: 'nodepool',
-    plan: 'vc2-1c-2gb'
+    plan: 'vc2-1c-2gb',
+    tag: 'my-tag'
   },
   listNodePools: {
     'vke-id': '455dcd32-e621-48ee-a10e-0cb5f754e13e'
@@ -85,9 +87,10 @@ const mockResponses = {
           date_created: '2021-07-07T22:57:01+00:00',
           date_updated: '2021-07-07T22:58:44+00:00',
           label: 'my-label-48770259',
-          plan_id: 'vc2-1c-2gb',
+          tag: 'my-tag',
+          plan: 'vc2-1c-2gb',
           status: 'pending',
-          count: 2,
+          node_quantity: 2,
           nodes: [
             {
               id: '43eda5c8-67f7-4c63-88bc-2f568b48b2b0',
@@ -125,9 +128,10 @@ const mockResponses = {
             date_created: '2021-07-02T12:12:44+00:00',
             date_updated: '2021-07-03T12:12:44+00:00',
             label: 'nodepool-48597451',
-            plan_id: 'vc2-1c-2gb',
+            tag: 'my-tag',
+            plan: 'vc2-1c-2gb',
             status: 'active',
-            count: 2,
+            node_quantity: 2,
             nodes: [
               {
                 id: 'cafd4673-2a62-49c4-a045-44d05ecc0a7b',
@@ -162,9 +166,10 @@ const mockResponses = {
             date_created: '2021-07-07T22:57:01+00:00',
             date_updated: '2021-07-08T12:12:44+00:00',
             label: 'my-label-48770259',
-            plan_id: 'vc2-1c-2gb',
+            tag: 'my-tag',
+            plan: 'vc2-1c-2gb',
             status: 'active',
-            count: 2,
+            node_quantity: 2,
             nodes: [
               {
                 id: '43eda5c8-67f7-4c63-88bc-2f568b48b2b0',
@@ -209,9 +214,9 @@ const mockResponses = {
           date_created: '2021-07-07T22:57:01+00:00',
           date_updated: '2021-07-08T12:12:44+00:00',
           label: 'my-label-48770259',
-          plan_id: 'vc2-1c-2gb',
+          plan: 'vc2-1c-2gb',
           status: 'active',
-          count: 2,
+          node_quantity: 2,
           nodes: [
             {
               id: '43eda5c8-67f7-4c63-88bc-2f568b48b2b0',
@@ -262,9 +267,10 @@ const mockResponses = {
       date_created: '2021-07-07T23:29:18+00:00',
       date_updated: '2021-07-08T23:29:18+00:00',
       label: 'nodepool-48770716',
-      plan_id: 'vc2-1c-2gb',
+      tag: 'my-tag',
+      plan: 'vc2-1c-2gb',
       status: 'pending',
-      count: 2,
+      node_quantity: 2,
       nodes: [
         {
           id: '2f863151-d784-4184-804e-31e4e60945bd',
@@ -288,9 +294,10 @@ const mockResponses = {
         date_created: '2021-07-07T23:27:08+00:00',
         date_updated: '2021-07-08T12:12:44+00:00',
         label: 'my-label-48770703',
-        plan_id: 'vc2-1c-2gb',
+        tag: 'my-tag',
+        plan: 'vc2-1c-2gb',
         status: 'active',
-        count: 2,
+        node_quantity: 2,
         nodes: [
           {
             id: 'f2e11430-76e5-4dc6-a1c9-ef5682c21ddf',
@@ -310,9 +317,10 @@ const mockResponses = {
         id: '4130764b-5276-4552-546f-32513239732b',
         date_created: '2021-07-07T23:29:18+00:00',
         label: 'nodepool-48770716',
-        plan_id: 'vc2-1c-2gb',
+        tag: 'my-tag',
+        plan: 'vc2-1c-2gb',
         status: 'active',
-        count: 2,
+        node_quantity: 2,
         nodes: [
           {
             id: '2f863151-d784-4184-804e-31e4e60945bd',
@@ -343,9 +351,10 @@ const mockResponses = {
       date_created: '2021-07-07T23:27:08+00:00',
       date_updated: '2021-07-08T12:12:44+00:00',
       label: 'my-label-48770703',
-      plan_id: 'vc2-1c-2gb',
+      tag: 'my-tag',
+      plan: 'vc2-1c-2gb',
       status: 'active',
-      count: 2,
+      node_quantity: 2,
       nodes: [
         {
           id: 'f2e11430-76e5-4dc6-a1c9-ef5682c21ddf',
@@ -368,9 +377,10 @@ const mockResponses = {
       date_created: '2021-07-07T23:27:08+00:00',
       date_updated: '2021-07-08T12:12:44+00:00',
       label: 'my-label-48770703',
-      plan_id: 'vc2-1c-2gb',
+      tag: 'my-tag',
+      plan: 'vc2-1c-2gb',
       status: 'active',
-      count: 1,
+      node_quantity: 1,
       nodes: [
         {
           id: 'f2e11430-76e5-4dc6-a1c9-ef5682c21ddf',
