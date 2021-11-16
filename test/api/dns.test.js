@@ -71,7 +71,8 @@ const mockResponses = {
   getDomain: {
     domain: {
       domain: 'vultr.com',
-      date_created: '2020-10-10T01:56:20+00:00'
+      date_created: '2020-10-10T01:56:20+00:00',
+      dns_sec: 'enabled'
     }
   },
   updateDomain: {
