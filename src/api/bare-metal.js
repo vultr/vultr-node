@@ -132,7 +132,7 @@ exports.deleteInstance = {
  */
 exports.getInstanceIpv4Addresses = {
   url: '/bare-metals/{baremetal-id}/ipv4',
-  requestType: '',
+  requestType: 'GET',
   apiKeyRequired: true,
   parameters: {
     'baremetal-id': {

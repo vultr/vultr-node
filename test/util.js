@@ -8,6 +8,7 @@ exports.createTestSuite = (specificationFile, mockParameters, mockResponse) => {
   const apiModule = specificationFile.replace(/-([a-z])/g, function (str) {
     return str[1].toUpperCase()
   })
+  const validRequestTypes = ['GET', 'POST', 'PATCH', 'PUT', 'DELETE']
 
   jest.mock('node-fetch', () => jest.fn())
 
@@ -24,6 +25,10 @@ exports.createTestSuite = (specificationFile, mockParameters, mockResponse) => {
             }
           }
         }
+
+        it('has a valid request type', () => {
+          expect(validRequestTypes.includes(endpoint.requestType)).toEqual(true)
+        })
 
         if (endpoint.apiKeyRequired) {
           it('requires an API key', () => {
