@@ -138,7 +138,7 @@ exports.attachStorage = {
  * @instance
  */
 exports.detachStorage = {
-  url: '/blocks/{block-id}',
+  url: '/blocks/{block-id}/detach',
   requestType: 'POST',
   apiKeyRequired: true,
   parameters: {
