@@ -1,5 +1,18 @@
 # Change Log
 
+## [v2.3.0](https://github.com/vultr/vultr-node/compare/v2.2.1..v2.3.0) (2021-12-2)
+### Dependencies
+* To see all deps that were updated, please check [milestone v2.3.0](https://github.com/vultr/vultr-node/milestone/45)
+
+### Features
+* Add support for `tag`s in Kubernetes nodepools [#534](https://github.com/vultr/vultr-node/issues/534)
+* Add support for `dns_sec` in `get-dns-domain` [#546](https://github.com/vultr/vultr-node/issues/546)
+
+### Bug Fixes
+* Add `.npmignore` to prevent npm from ignoring the `dist/` folder when pulling down the library [#532](https://github.com/vultr/vultr-node/issues/532)
+* Fixed missing request type in `getInstanceIpv4Addresses` from the bare metals endpoints [#550](https://github.com/vultr/vultr-node/issues/550)
+* Fixed request URL for `detachStorage` from the block storage endpoints [#551](https://github.com/vultr/vultr-node/issues/551)
+
 ## [v2.2.1](https://github.com/vultr/vultr-node/compare/v2.2.0..v2.2.1) (2021-11-4)
 ### Dependencies
 * To see all deps that were updated, please check [milestone v2.2.1](https://github.com/vultr/vultr-node/milestone/44)
