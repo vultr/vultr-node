@@ -11,6 +11,7 @@
 ### Bug Fixes
 * Add `.npmignore` to prevent npm from ignoring the `dist/` folder when pulling down the library [#532](https://github.com/vultr/vultr-node/issues/532)
 * Fixed missing request type in `getInstanceIpv4Addresses` from the bare metals endpoints [#550](https://github.com/vultr/vultr-node/issues/550)
+* Fixed request URL for `detachStorage` from the block storage endpoints [#551](https://github.com/vultr/vultr-node/issues/551)
 
 ## [v2.2.1](https://github.com/vultr/vultr-node/compare/v2.2.0..v2.2.1) (2021-11-4)
 ### Dependencies
