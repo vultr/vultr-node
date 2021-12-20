@@ -1,0 +1,54 @@
+name: Code Coverage test
+
+on: pull_request_target
+
+jobs:
+  coverage:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Setup node
+        uses: actions/setup-node@v2
+        with:
+          node-version: '16'
+
+      - name: Install dependencies
+        run: |
+          npm install -g jest
+          npm install -g husky
+          npm install
+
+      - name: Perform Tests
+        run: |
+          npm run test >> output.txt
+          npm run build
+          jest --ci --coverage >> output.txt
+
+      - name: Transform output
+        id: results
+        if: always()
+        run: |
+          CONTENT=$(cat output.txt)
+          CONTENT="${CONTENT//'%'/'%25'}"
+          CONTENT="${CONTENT//$'\n'/'%0A'}"
+          CONTENT="${CONTENT//$'\r'/'%0D'}"
+          echo "::set-output name=content::$CONTENT"
+
+      - name: Add Comment
+        uses: actions/github-script@v5
+        if: always()
+        with:
+          script: |
+            const output = `### Unit Tests and Coverage
+            <details><summary>Show Output</summary>
+            ${{ steps.results.outputs.content }}
+            </details>
+            *Pusher: @${{ github.actor }}, Action: \`${{ github.event_name }}\`*`;
+            await github.rest.issues.createComment({
+              issue_number: context.issue.number,
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              body: output
+            })
