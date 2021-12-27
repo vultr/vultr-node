@@ -4,6 +4,7 @@ exports.initialize = (config) => {
   const applications = require('./api/applications')
   const backups = require('./api/backups')
   const bareMetal = require('./api/bare-metal')
+  const billing = require('./api/billing')
   const blockStorage = require('./api/block-storage')
   const dns = require('./api/dns')
   const firewall = require('./api/firewall')
@@ -153,6 +154,12 @@ exports.initialize = (config) => {
         bareMetal.getInstanceAvailableUpgrades
       ),
       getInstanceVncUrl: createRequestFunction(bareMetal.getInstanceVncUrl)
+    },
+    billing: {
+      listHistory: createRequestFunction(billing.listHistory),
+      listInvoices: createRequestFunction(billing.listInvoices),
+      getInvoice: createRequestFunction(billing.getInvoice),
+      listInvoiceItems: createRequestFunction(billing.listInvoiceItems)
     },
     blockStorage: {
       listStorages: createRequestFunction(blockStorage.listStorages),
