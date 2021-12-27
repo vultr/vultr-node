@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>JSDoc: Namespace: startupScripts</title>
+    <title>JSDoc: Namespace: billing</title>
 
     <script src="scripts/prettify/prettify.js"> </script>
     <script src="scripts/prettify/lang-css.js"> </script>
@@ -17,7 +17,7 @@
 
 <div id="main">
 
-    <h1 class="page-title">Namespace: startupScripts</h1>
+    <h1 class="page-title">Namespace: billing</h1>
 
     
 
@@ -28,7 +28,7 @@
 
 <header>
     
-        <h2>startupScripts</h2>
+        <h2>billing</h2>
         
     
 </header>
@@ -37,8 +37,8 @@
     <div class="container-overview">
     
         
-            <div class="description">Methods for interacting with the startup scripts endpoints<br>
-<a href="https://www.vultr.com/api/#tag/startup">https://www.vultr.com/api/#tag/startup</a></div>
+            <div class="description">Methods for interacting with the billing endpoints<br>
+<a href="https://www.vultr.com/api/#tag/billing">https://www.vultr.com/api/#tag/billing</a></div>
         
 
         
@@ -73,7 +73,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="startup-scripts.js.html">startup-scripts.js</a>, <a href="startup-scripts.js.html#line1">line 1</a>
+        <a href="billing.js.html">billing.js</a>, <a href="billing.js.html#line1">line 1</a>
     </li></ul></dd>
     
 
@@ -112,7 +112,7 @@
     
 
     
-    <h4 class="name" id="createStartupScript"><span class="type-signature"></span>createStartupScript<span class="signature">()</span><span class="type-signature"></span></h4>
+    <h4 class="name" id="getInvoice"><span class="type-signature"></span>getInvoice<span class="signature">()</span><span class="type-signature"></span></h4>
     
 
     
@@ -120,8 +120,8 @@
 
 
 <div class="description">
-    Create a new startup script.<br>
-<a href="https://www.vultr.com/api/#operation/create-startup-script">https://www.vultr.com/api/#operation/create-startup-script</a>
+    Retrieves the invoice that matches the given invoice-id.<br>
+<a href="https://www.vultr.com/api/#operation/get-invoice">https://www.vultr.com/api/#operation/get-invoice</a>
 </div>
 
 
@@ -165,7 +165,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="startup-scripts.js.html">startup-scripts.js</a>, <a href="startup-scripts.js.html#line87">line 87</a>
+        <a href="billing.js.html">billing.js</a>, <a href="billing.js.html#line33">line 33</a>
     </li></ul></dd>
     
 
@@ -201,7 +201,7 @@
     
 
     
-    <h4 class="name" id="deleteStartupScript"><span class="type-signature"></span>deleteStartupScript<span class="signature">()</span><span class="type-signature"></span></h4>
+    <h4 class="name" id="listHistory"><span class="type-signature"></span>listHistory<span class="signature">()</span><span class="type-signature"></span></h4>
     
 
     
@@ -209,8 +209,8 @@
 
 
 <div class="description">
-    Delete a specified startup script.<br>
-<a href="https://www.vultr.com/api/#operation/delete-startup-script">https://www.vultr.com/api/#operation/delete-startup-script</a>
+    Retrieves a list of all billing history on the current account.<br>
+<a href="https://www.vultr.com/api/#operation/list-billing-history">https://www.vultr.com/api/#operation/list-billing-history</a>
 </div>
 
 
@@ -254,7 +254,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="startup-scripts.js.html">startup-scripts.js</a>, <a href="startup-scripts.js.html#line27">line 27</a>
+        <a href="billing.js.html">billing.js</a>, <a href="billing.js.html#line7">line 7</a>
     </li></ul></dd>
     
 
@@ -290,7 +290,7 @@
     
 
     
-    <h4 class="name" id="getStartupScript"><span class="type-signature"></span>getStartupScript<span class="signature">()</span><span class="type-signature"></span></h4>
+    <h4 class="name" id="listInvoiceItems"><span class="type-signature"></span>listInvoiceItems<span class="signature">()</span><span class="type-signature"></span></h4>
     
 
     
@@ -298,8 +298,8 @@
 
 
 <div class="description">
-    Get information for the specified startup script.<br>
-<a href="https://www.vultr.com/api/#operation/get-startup-script">https://www.vultr.com/api/#operation/get-startup-script</a>
+    Retrieves items in the invoice that matches the given invoice-id.<br>
+<a href="https://www.vultr.com/api/#operation/get-invoice-items">https://www.vultr.com/api/#operation/get-invoice-items</a>
 </div>
 
 
@@ -343,7 +343,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="startup-scripts.js.html">startup-scripts.js</a>, <a href="startup-scripts.js.html#line7">line 7</a>
+        <a href="billing.js.html">billing.js</a>, <a href="billing.js.html#line52">line 52</a>
     </li></ul></dd>
     
 
@@ -379,7 +379,7 @@
     
 
     
-    <h4 class="name" id="listStartupScripts"><span class="type-signature"></span>listStartupScripts<span class="signature">()</span><span class="type-signature"></span></h4>
+    <h4 class="name" id="listInvoices"><span class="type-signature"></span>listInvoices<span class="signature">()</span><span class="type-signature"></span></h4>
     
 
     
@@ -387,8 +387,8 @@
 
 
 <div class="description">
-    List all startup scripts on the account.<br>
-<a href="https://www.vultr.com/api/#operation/list-startup-scripts">https://www.vultr.com/api/#operation/list-startup-scripts</a>
+    Retrieves a list of all billing invoices on the current account.<br>
+<a href="https://www.vultr.com/api/#operation/list-invoices">https://www.vultr.com/api/#operation/list-invoices</a>
 </div>
 
 
@@ -432,96 +432,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="startup-scripts.js.html">startup-scripts.js</a>, <a href="startup-scripts.js.html#line70">line 70</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-        
-            
-
-    
-
-    
-    <h4 class="name" id="updateStartupScript"><span class="type-signature"></span>updateStartupScript<span class="signature">()</span><span class="type-signature"></span></h4>
-    
-
-    
-
-
-
-<div class="description">
-    Update information for the specified startup script.<br>
-<a href="https://www.vultr.com/api/#operation/update-startup-script">https://www.vultr.com/api/#operation/update-startup-script</a>
-</div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-<dl class="details">
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="startup-scripts.js.html">startup-scripts.js</a>, <a href="startup-scripts.js.html#line47">line 47</a>
+        <a href="billing.js.html">billing.js</a>, <a href="billing.js.html#line20">line 20</a>
     </li></ul></dd>
     
 
