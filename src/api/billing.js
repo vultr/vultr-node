@@ -44,6 +44,7 @@ exports.getInvoice = {
   parameters: {
     'invoice-id': {
       type: 'string',
+      path: true,
       required: true
     }
   }
@@ -63,6 +64,7 @@ exports.listInvoiceItems = {
   parameters: {
     'invoice-id': {
       type: 'string',
+      path: true,
       required: true
     }
   }
