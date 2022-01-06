@@ -59,6 +59,7 @@ exports.getStorage = {
   parameters: {
     'block-id': {
       type: 'string',
+      path: true,
       required: true
     }
   }
@@ -78,6 +79,7 @@ exports.deleteStorage = {
   parameters: {
     'block-id': {
       type: 'string',
+      path: true,
       required: true
     }
   }
