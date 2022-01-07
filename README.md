@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.org/vultr/vultr-node.svg?branch=master)](https://travis-ci.org/vultr/vultr-node)
+[![Build Status](https://github.com/vultr/vultr-node/actions/workflows/release.yml/badge.svg?branch=master)](https://github.com/vultr/vultr-node/actions/workflows/release.yml)
 [![codecov](https://codecov.io/gh/vultr/vultr-node/branch/master/graph/badge.svg)](https://codecov.io/gh/vultr/vultr-node)
 [![npm version](https://badge.fury.io/js/%40vultr%2Fvultr-node.svg)](https://badge.fury.io/js/%40vultr%2Fvultr-node)
 [![license](https://img.shields.io/github/license/vultr/vultr-node)](https://github.com/vultr/vultr-node/blob/master/LICENSE.md)
