@@ -81,7 +81,8 @@ exports.listSnapshots = {
   apiKeyRequired: true,
   parameters: {
     per_page: { type: 'string' },
-    cursor: { type: 'string' }
+    cursor: { type: 'string' },
+    description: { type: 'string' }
   }
 }
 
@@ -120,6 +121,7 @@ exports.createSnapshotFromUrl = {
     url: {
       type: 'string',
       required: true
-    }
+    },
+    description: { type: 'string' }
   }
 }
