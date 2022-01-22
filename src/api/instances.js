@@ -20,7 +20,8 @@ exports.listInstances = {
     cursor: { type: 'string' },
     tag: { type: 'string' },
     label: { type: 'string' },
-    main_ip: { type: 'string' }
+    main_ip: { type: 'string' },
+    region: { type: 'string' }
   }
 }
 
