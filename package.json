@@ -44,7 +44,7 @@
     "prettier": "^2.0.5"
   },
   "dependencies": {
-    "node-fetch": "^2.6.0",
+    "node-fetch": "^3.2.1",
     "typescript": "^4.3.5"
   },
   "directories": {
