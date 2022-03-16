@@ -1,5 +1,10 @@
 # Change Log
 
+## [v2.3.1](https://github.com/vultr/vultr-node/compare/v2.2.1..v2.3.0) (2021-03-16)
+
+### Dependencies
+* To see all deps that were updated, please check [milestone v2.3.1](https://github.com/vultr/vultr-node/milestone/46)
+
 ## [v2.3.0](https://github.com/vultr/vultr-node/compare/v2.2.1..v2.3.0) (2021-12-2)
 ### Dependencies
 * To see all deps that were updated, please check [milestone v2.3.0](https://github.com/vultr/vultr-node/milestone/45)
