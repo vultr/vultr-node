@@ -1,16 +1,22 @@
 # Change Log
 
-## [v2.3.3](https://github.com/vultr/vultr-node/issues/604) (2022-03-28)
+## [v2.3.3](https://github.com/vultr/vultr-node/compare/v2.3.2..v2.3.3) (2022-03-28)
 
 ### Bug Fixes
 * Add the build command before publishing for GitHub Actions workflow [#604](https://github.com/vultr/vultr-node/issues/604)
 
-## [v2.3.2](https://github.com/vultr/vultr-node/compare/v2.3.1..v2.3.2) (2022-03-16)
+## [v2.3.2](https://github.com/vultr/vultr-node/compare/v2.3.1..v2.3.2) (2022-03-24)
+
+### About This Version
+* This version contains the dependency issues listed below, but does not work due to an issue resolved in v2.3.3 with the GitHub deployment actions. Please do not use this version and instead only use v2.3.3+
 
 ### Dependencies
 * To see all deps that were updated, please check [milestone v2.3.2](https://github.com/vultr/vultr-node/milestone/47)
 
 ## [v2.3.1](https://github.com/vultr/vultr-node/compare/v2.3.0..v2.3.1) (2022-03-16)
+
+### About This Version
+* This version contains the dependency issues listed below, but does not work due to an issue resolved in v2.3.3 with the GitHub deployment actions. Please do not use this version and instead only use v2.3.3+
 
 ### Dependencies
 * To see all deps that were updated, please check [milestone v2.3.1](https://github.com/vultr/vultr-node/milestone/46)
