@@ -10,7 +10,10 @@ const mockParameters = {
         node_quantity: 2,
         label: 'my-label',
         plan: 'vc2-1c-2gb',
-        tag: 'my-tag'
+        tag: 'my-tag',
+        auto_scaler: true,
+        min_nodes: 2,
+        max_nodes: 10
       }
     ]
   },
@@ -35,7 +38,10 @@ const mockParameters = {
     node_quantity: 2,
     label: 'nodepool',
     plan: 'vc2-1c-2gb',
-    tag: 'my-tag'
+    tag: 'my-tag',
+    auto_scaler: true,
+    min_nodes: 2,
+    max_nodes: 10
   },
   listNodePools: {
     'vke-id': '455dcd32-e621-48ee-a10e-0cb5f754e13e'
@@ -91,6 +97,9 @@ const mockResponses = {
           plan: 'vc2-1c-2gb',
           status: 'pending',
           node_quantity: 2,
+          auto_scaler: true,
+          min_nodes: 2,
+          max_nodes: 10,
           nodes: [
             {
               id: '43eda5c8-67f7-4c63-88bc-2f568b48b2b0',
@@ -132,6 +141,9 @@ const mockResponses = {
             plan: 'vc2-1c-2gb',
             status: 'active',
             node_quantity: 2,
+            auto_scaler: true,
+            min_nodes: 2,
+            max_nodes: 10,
             nodes: [
               {
                 id: 'cafd4673-2a62-49c4-a045-44d05ecc0a7b',
@@ -170,6 +182,9 @@ const mockResponses = {
             plan: 'vc2-1c-2gb',
             status: 'active',
             node_quantity: 2,
+            auto_scaler: true,
+            min_nodes: 2,
+            max_nodes: 10,
             nodes: [
               {
                 id: '43eda5c8-67f7-4c63-88bc-2f568b48b2b0',
@@ -217,6 +232,9 @@ const mockResponses = {
           plan: 'vc2-1c-2gb',
           status: 'active',
           node_quantity: 2,
+          auto_scaler: true,
+          min_nodes: 2,
+          max_nodes: 10,
           nodes: [
             {
               id: '43eda5c8-67f7-4c63-88bc-2f568b48b2b0',
@@ -271,6 +289,9 @@ const mockResponses = {
       plan: 'vc2-1c-2gb',
       status: 'pending',
       node_quantity: 2,
+      auto_scaler: true,
+      min_nodes: 2,
+      max_nodes: 10,
       nodes: [
         {
           id: '2f863151-d784-4184-804e-31e4e60945bd',
@@ -298,6 +319,9 @@ const mockResponses = {
         plan: 'vc2-1c-2gb',
         status: 'active',
         node_quantity: 2,
+        auto_scaler: true,
+        min_nodes: 2,
+        max_nodes: 10,
         nodes: [
           {
             id: 'f2e11430-76e5-4dc6-a1c9-ef5682c21ddf',
@@ -321,6 +345,9 @@ const mockResponses = {
         plan: 'vc2-1c-2gb',
         status: 'active',
         node_quantity: 2,
+        auto_scaler: true,
+        min_nodes: 2,
+        max_nodes: 10,
         nodes: [
           {
             id: '2f863151-d784-4184-804e-31e4e60945bd',
@@ -355,6 +382,9 @@ const mockResponses = {
       plan: 'vc2-1c-2gb',
       status: 'active',
       node_quantity: 2,
+      auto_scaler: true,
+      min_nodes: 2,
+      max_nodes: 10,
       nodes: [
         {
           id: 'f2e11430-76e5-4dc6-a1c9-ef5682c21ddf',
@@ -381,6 +411,9 @@ const mockResponses = {
       plan: 'vc2-1c-2gb',
       status: 'active',
       node_quantity: 1,
+      auto_scaler: true,
+      min_nodes: 1,
+      max_nodes: 10,
       nodes: [
         {
           id: 'f2e11430-76e5-4dc6-a1c9-ef5682c21ddf',
