@@ -53,7 +53,7 @@ exports.deletePrivateNetwork = {
  */
 exports.updatePrivateNetwork = {
   url: '/private-networks/{network-id}',
-  requestType: 'GET',
+  requestType: 'PUT',
   apiKeyRequired: true,
   parameters: {
     'network-id': {
