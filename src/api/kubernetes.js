@@ -178,6 +178,18 @@ exports.createNodePool = {
     tag: {
       type: 'string',
       required: false
+    },
+    auto_scaler: {
+      type: 'boolean',
+      required: false
+    },
+    min_nodes: {
+      type: 'number',
+      required: false
+    },
+    max_nodes: {
+      type: 'number',
+      required: false
     }
   }
 }
@@ -255,6 +267,18 @@ exports.updateNodePool = {
     },
     tag: {
       type: 'string',
+      required: false
+    },
+    auto_scaler: {
+      type: 'boolean',
+      required: false
+    },
+    min_nodes: {
+      type: 'number',
+      required: false
+    },
+    max_nodes: {
+      type: 'number',
       required: false
     }
   }
