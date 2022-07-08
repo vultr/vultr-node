@@ -59,7 +59,18 @@ exports.makeApiRequest = (config, endpoint, userParameters) => {
     .then((response) => {
       // The request was not successful
       if (!response.ok) {
-        throw Error(response.statusText)
+        return response
+          .json()
+          .catch(() => {
+            throw Error(response.statusText)
+          })
+          .then((json) => {
+            if (json.error) {
+              throw Error(`${response.statusText}: ${json.error}`)
+            } else {
+              throw Error(response.statusText)
+            }
+          })
       }
 
       const contentType = response.headers.get('content-type')
