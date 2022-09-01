@@ -35,7 +35,7 @@
     "eslint": "^8.20.0",
     "eslint-config-standard": "^17.0.0",
     "eslint-plugin-import": "^2.21.2",
-    "eslint-plugin-jest": "^26.1.1",
+    "eslint-plugin-jest": "^27.0.1",
     "eslint-plugin-node": "^11.0.0",
     "eslint-plugin-promise": "^6.0.0",
     "husky": "^8.0.1",
