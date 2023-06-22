@@ -48,7 +48,8 @@ exports.listInstances = {
     cursor: { type: 'string' },
     tag: { type: 'string' },
     label: { type: 'string' },
-    main_ip: { type: 'string' }
+    main_ip: { type: 'string' },
+    region: { type: 'string' }
   }
 }
 
@@ -78,7 +79,7 @@ exports.createInstance = {
     script_id: { type: 'string' },
     snapshot_id: { type: 'string' },
     enable_ipv6: { type: 'boolean' },
-    attach_private_network: { type: 'array' },
+    attach_vpc: { type: 'array' },
     label: { type: 'string' },
     sshkey_id: { type: 'array' },
     backups: { type: 'string' },
@@ -91,7 +92,7 @@ exports.createInstance = {
     tag: { type: 'string' },
     firewall_group_id: { type: 'string' },
     reserved_ipv4: { type: 'string' },
-    enable_private_network: { type: 'boolean' }
+    enable_vpc: { type: 'boolean' }
   }
 }
 
@@ -143,9 +144,9 @@ exports.updateInstance = {
     label: { type: 'string' },
     plan: { type: 'string' },
     ddos_protection: { type: 'boolean' },
-    attach_private_network: { type: 'array' },
-    detach_private_network: { type: 'array' },
-    enable_private_network: { type: 'boolean' }
+    attach_vpc: { type: 'array' },
+    detach_vpc: { type: 'array' },
+    enable_vpc: { type: 'boolean' }
   }
 }
 
@@ -320,14 +321,14 @@ exports.getInstanceNeighbors = {
 }
 
 /**
- * List the private networks for the specified instance.&lt;br>
- * {@link https://www.vultr.com/api/#operation/list-instance-private-networks}
- * @function listInstancePrivateNetworks
+ * List the vpcs for the specified instance.&lt;br>
+ * {@link https://www.vultr.com/api/#operation/list-instance-vpcs}
+ * @function listInstanceVpcs
  * @memberof instances
  * @instance
  */
-exports.listInstancePrivateNetworks = {
-  url: '/instances/{instance-id}/private-networks',
+exports.listInstanceVpcs = {
+  url: '/instances/{instance-id}/vpcs',
   requestType: 'GET',
   apiKeyRequired: true,
   parameters: {
@@ -403,14 +404,14 @@ exports.detachIsoFromInstance = {
 }
 
 /**
- * Attach a private network to the specified instance.&lt;br>
- * {@link https://www.vultr.com/api/#operation/attach-instance-network}
- * @function attachPrivateNetworkToInstance
+ * Attach a vpc to the specified instance.&lt;br>
+ * {@link https://www.vultr.com/api/#operation/attach-instance-vpc}
+ * @function attachVpcToInstance
  * @memberof instances
  * @instance
  */
-exports.attachPrivateNetworkToInstance = {
-  url: '/instances/{instance-id}/private-networks/attach',
+exports.attachVpcToInstance = {
+  url: '/instances/{instance-id}/vpcs/attach',
   requestType: 'POST',
   apiKeyRequired: true,
   parameters: {
@@ -419,19 +420,19 @@ exports.attachPrivateNetworkToInstance = {
       path: true,
       required: true
     },
-    network_id: { type: 'string' }
+    vpc_id: { type: 'string' }
   }
 }
 
 /**
- * Detach the specified instance's private network.&lt;br>
- * {@link https://www.vultr.com/api/#operation/detach-instance-network}
- * @function detachPrivateNetworkFromInstance
+ * Detach the specified instance's vpc.&lt;br>
+ * {@link https://www.vultr.com/api/#operation/detach-instance-vpc}
+ * @function detachVpcFromInstance
  * @memberof instances
  * @instance
  */
-exports.detachPrivateNetworkFromInstance = {
-  url: '/instances/{instance-id}/private-networks/detach',
+exports.detachVpcFromInstance = {
+  url: '/instances/{instance-id}/vpcs/detach',
   requestType: 'POST',
   apiKeyRequired: true,
   parameters: {
@@ -440,7 +441,7 @@ exports.detachPrivateNetworkFromInstance = {
       path: true,
       required: true
     },
-    network_id: { type: 'string' }
+    vpc_id: { type: 'string' }
   }
 }
 
@@ -794,13 +795,13 @@ exports.getAvailableInstanceUpgrades = {
 </div>
 
 <nav>
-    <h2><a href="index.html">Home</a></h2><h3>Namespaces</h3><ul><li><a href="account.html">account</a></li><li><a href="applications.html">applications</a></li><li><a href="backup.html">backup</a></li><li><a href="bareMetal.html">bareMetal</a></li><li><a href="billing.html">billing</a></li><li><a href="blockStorage.html">blockStorage</a></li><li><a href="dns.html">dns</a></li><li><a href="firewall.html">firewall</a></li><li><a href="instances.html">instances</a></li><li><a href="iso.html">iso</a></li><li><a href="kubernetes.html">kubernetes</a></li><li><a href="loadBalancers.html">loadBalancers</a></li><li><a href="objectStorage.html">objectStorage</a></li><li><a href="operatingSystems.html">operatingSystems</a></li><li><a href="plans.html">plans</a></li><li><a href="privateNetworks.html">privateNetworks</a></li><li><a href="regions.html">regions</a></li><li><a href="reservedIps.html">reservedIps</a></li><li><a href="snapshots.html">snapshots</a></li><li><a href="sshKeys.html">sshKeys</a></li><li><a href="startupScripts.html">startupScripts</a></li><li><a href="users.html">users</a></li></ul>
+    <h2><a href="index.html">Home</a></h2><h3>Namespaces</h3><ul><li><a href="account.html">account</a></li><li><a href="applications.html">applications</a></li><li><a href="backup.html">backup</a></li><li><a href="bareMetal.html">bareMetal</a></li><li><a href="billing.html">billing</a></li><li><a href="blockStorage.html">blockStorage</a></li><li><a href="dns.html">dns</a></li><li><a href="firewall.html">firewall</a></li><li><a href="instances.html">instances</a></li><li><a href="iso.html">iso</a></li><li><a href="kubernetes.html">kubernetes</a></li><li><a href="loadBalancers.html">loadBalancers</a></li><li><a href="objectStorage.html">objectStorage</a></li><li><a href="operatingSystems.html">operatingSystems</a></li><li><a href="plans.html">plans</a></li><li><a href="regions.html">regions</a></li><li><a href="reservedIps.html">reservedIps</a></li><li><a href="snapshots.html">snapshots</a></li><li><a href="sshKeys.html">sshKeys</a></li><li><a href="startupScripts.html">startupScripts</a></li><li><a href="users.html">users</a></li><li><a href="vpcs.html">vpcs</a></li></ul>
 </nav>
 
 <br class="clear">
 
 <footer>
-    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 3.6.7</a> on Mon Dec 27 2021 10:33:00 GMT-0500 (Eastern Standard Time)
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 4.0.2</a> on Wed Jun 21 2023 18:10:15 GMT-0700 (Pacific Daylight Time)
 </footer>
 
 <script> prettyPrint(); </script>

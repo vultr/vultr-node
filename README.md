@@ -61,3 +61,4 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE.md) f
 
 - [**Spencer Kordecki**](https://github.com/spencerkordecki)
 - [**Fady Farid**](https://github.com/afady)
+- [**Glenn Dobson**](https://github.com/afatalerrror)

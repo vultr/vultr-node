@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>JSDoc: Namespace: objectStorage</title>
+    <title>JSDoc: Namespace: vpcs</title>
 
     <script src="scripts/prettify/prettify.js"> </script>
     <script src="scripts/prettify/lang-css.js"> </script>
@@ -17,7 +17,7 @@
 
 <div id="main">
 
-    <h1 class="page-title">Namespace: objectStorage</h1>
+    <h1 class="page-title">Namespace: vpcs</h1>
 
     
 
@@ -28,7 +28,7 @@
 
 <header>
     
-        <h2>objectStorage</h2>
+        <h2>vpcs</h2>
         
     
 </header>
@@ -37,8 +37,8 @@
     <div class="container-overview">
     
         
-            <div class="description">Methods for interacting with the object storage endpoints<br>
-<a href="https://www.vultr.com/api/#tag/s3">https://www.vultr.com/api/#tag/s3</a></div>
+            <div class="description">Methods for interacting with the vpc endpoints<br>
+<a href="https://www.vultr.com/api/#tag/VPCs">https://www.vultr.com/api/#tag/VPCs</a></div>
         
 
         
@@ -73,7 +73,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="object-storage.js.html">object-storage.js</a>, <a href="object-storage.js.html#line1">line 1</a>
+        <a href="vpcs.js.html">vpcs.js</a>, <a href="vpcs.js.html#line1">line 1</a>
     </li></ul></dd>
     
 
@@ -112,7 +112,7 @@
     
 
     
-    <h4 class="name" id="deleteObjectStorage"><span class="type-signature"></span>deleteObjectStorage<span class="signature">()</span><span class="type-signature"></span></h4>
+    <h4 class="name" id="createVpc"><span class="type-signature"></span>createVpc<span class="signature">()</span><span class="type-signature"></span></h4>
     
 
     
@@ -120,8 +120,8 @@
 
 
 <div class="description">
-    Delete an object storage volume.<br>
-<a href="https://www.vultr.com/api/#operation/delete-object-storage">https://www.vultr.com/api/#operation/delete-object-storage</a>
+    Create a new vpc in a specified region.<br>
+<a href="https://www.vultr.com/api/#operation/create-vpc">https://www.vultr.com/api/#operation/create-vpc</a>
 </div>
 
 
@@ -165,7 +165,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="object-storage.js.html">object-storage.js</a>, <a href="object-storage.js.html#line64">line 64</a>
+        <a href="vpcs.js.html">vpcs.js</a>, <a href="vpcs.js.html#line88">line 88</a>
     </li></ul></dd>
     
 
@@ -201,7 +201,7 @@
     
 
     
-    <h4 class="name" id="getAllClusters"><span class="type-signature"></span>getAllClusters<span class="signature">()</span><span class="type-signature"></span></h4>
+    <h4 class="name" id="deleteVpc"><span class="type-signature"></span>deleteVpc<span class="signature">()</span><span class="type-signature"></span></h4>
     
 
     
@@ -209,8 +209,8 @@
 
 
 <div class="description">
-    Get a list of all object storage clusters.<br>
-<a href="https://www.vultr.com/api/#operation/list-object-storage-clusters">https://www.vultr.com/api/#operation/list-object-storage-clusters</a>
+    Delete a specified vpc.<br>
+<a href="https://www.vultr.com/api/#operation/delete-vpc">https://www.vultr.com/api/#operation/delete-vpc</a>
 </div>
 
 
@@ -254,7 +254,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="object-storage.js.html">object-storage.js</a>, <a href="object-storage.js.html#line128">line 128</a>
+        <a href="vpcs.js.html">vpcs.js</a>, <a href="vpcs.js.html#line27">line 27</a>
     </li></ul></dd>
     
 
@@ -290,7 +290,7 @@
     
 
     
-    <h4 class="name" id="getObjectStorage"><span class="type-signature"></span>getObjectStorage<span class="signature">()</span><span class="type-signature"></span></h4>
+    <h4 class="name" id="getVpc"><span class="type-signature"></span>getVpc<span class="signature">()</span><span class="type-signature"></span></h4>
     
 
     
@@ -298,8 +298,8 @@
 
 
 <div class="description">
-    Get information about the specified object sotrage volume.<br>
-<a href="https://www.vultr.com/api/#operation/get-object-storage">https://www.vultr.com/api/#operation/get-object-storage</a>
+    Get information about the specified vpc.<br>
+<a href="https://www.vultr.com/api/#operation/get-vpc">https://www.vultr.com/api/#operation/get-vpc</a>
 </div>
 
 
@@ -343,7 +343,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="object-storage.js.html">object-storage.js</a>, <a href="object-storage.js.html#line44">line 44</a>
+        <a href="vpcs.js.html">vpcs.js</a>, <a href="vpcs.js.html#line7">line 7</a>
     </li></ul></dd>
     
 
@@ -379,7 +379,7 @@
     
 
     
-    <h4 class="name" id="listObjectStorages"><span class="type-signature"></span>listObjectStorages<span class="signature">()</span><span class="type-signature"></span></h4>
+    <h4 class="name" id="listVpcs"><span class="type-signature"></span>listVpcs<span class="signature">()</span><span class="type-signature"></span></h4>
     
 
     
@@ -387,8 +387,8 @@
 
 
 <div class="description">
-    List all object storage volumes on the account.<br>
-<a href="https://www.vultr.com/api/#operation/list-object-storages">https://www.vultr.com/api/#operation/list-object-storages</a>
+    List all vpcs on the account.<br>
+<a href="https://www.vultr.com/api/#operation/list-vpcs">https://www.vultr.com/api/#operation/list-vpcs</a>
 </div>
 
 
@@ -432,7 +432,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="object-storage.js.html">object-storage.js</a>, <a href="object-storage.js.html#line7">line 7</a>
+        <a href="vpcs.js.html">vpcs.js</a>, <a href="vpcs.js.html#line71">line 71</a>
     </li></ul></dd>
     
 
@@ -468,7 +468,7 @@
     
 
     
-    <h4 class="name" id="regenerateObjectStorageKeys"><span class="type-signature"></span>regenerateObjectStorageKeys<span class="signature">()</span><span class="type-signature"></span></h4>
+    <h4 class="name" id="updateVpc"><span class="type-signature"></span>updateVpc<span class="signature">()</span><span class="type-signature"></span></h4>
     
 
     
@@ -476,8 +476,8 @@
 
 
 <div class="description">
-    Regenerate keys for the specified object storage volume.<br>
-<a href="https://www.vultr.com/api/#operation/regenerate-object-storage-keys">https://www.vultr.com/api/#operation/regenerate-object-storage-keys</a>
+    Update information on the specified vpc.<br>
+<a href="https://www.vultr.com/api/#operation/update-vpc">https://www.vultr.com/api/#operation/update-vpc</a>
 </div>
 
 
@@ -521,96 +521,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="object-storage.js.html">object-storage.js</a>, <a href="object-storage.js.html#line108">line 108</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-        
-            
-
-    
-
-    
-    <h4 class="name" id="updateObjectStorage"><span class="type-signature"></span>updateObjectStorage<span class="signature">()</span><span class="type-signature"></span></h4>
-    
-
-    
-
-
-
-<div class="description">
-    Update information for the specified object storage volume.<br>
-<a href="https://www.vultr.com/api/#operation/update-object-storage">https://www.vultr.com/api/#operation/update-object-storage</a>
-</div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-<dl class="details">
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="object-storage.js.html">object-storage.js</a>, <a href="object-storage.js.html#line84">line 84</a>
+        <a href="vpcs.js.html">vpcs.js</a>, <a href="vpcs.js.html#line47">line 47</a>
     </li></ul></dd>
     
 

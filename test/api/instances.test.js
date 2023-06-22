@@ -29,7 +29,7 @@ const mockParameters = {
   getInstanceNeighbors: {
     'instance-id': 'cb676a46-66fd-4dfb-b839-443f2e6c0b60'
   },
-  listInstancePrivateNetworks: {
+  listInstanceVpcs: {
     'instance-id': 'cb676a46-66fd-4dfb-b839-443f2e6c0b60'
   },
   getInstanceIsoStatus: {
@@ -41,10 +41,10 @@ const mockParameters = {
   detachIsoFromInstance: {
     'instance-id': 'cb676a46-66fd-4dfb-b839-443f2e6c0b60'
   },
-  attachPrivateNetworkToInstance: {
+  attachVpcToInstance: {
     'instance-id': 'cb676a46-66fd-4dfb-b839-443f2e6c0b60'
   },
-  detachPrivateNetworkFromInstance: {
+  detachVpcFromInstance: {
     'instance-id': 'cb676a46-66fd-4dfb-b839-443f2e6c0b60'
   },
   setInstanceBackupSchedule: {
@@ -282,10 +282,10 @@ const mockResponses = {
       'a8047e6b-16bd-42be-8351-58df7e5ab89c'
     ]
   },
-  listInstancePrivateNetworks: {
-    private_networks: [
+  listInstanceVpcs: {
+    vpcs: [
       {
-        network_id: 'd325e78b-bcec-4d4e-b9b8-9c294f37b04d',
+        vpc_id: 'd325e78b-bcec-4d4e-b9b8-9c294f37b04d',
         mac_address: '5a:00:02:e5:3f:e3',
         ip_address: '10.1.96.4'
       }
