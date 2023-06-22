@@ -80,7 +80,7 @@ exports.listVpcs = {
   requestType: 'GET',
   apiKeyRequired: true,
   parameters: {
-    per_page: { type: 'string' },
+    per_page: { type: 'number' },
     cursor: { type: 'string' }
   }
 }
@@ -103,6 +103,6 @@ exports.createVpc = {
     },
     description: { type: 'string' },
     v4_subnet: { type: 'string' },
-    v4_subnet_mask: { type: 'string' }
+    v4_subnet_mask: { type: 'number' }
   }
 }

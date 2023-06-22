@@ -214,9 +214,7 @@ exports.initialize = (config) => {
       getInstanceNeighbors: createRequestFunction(
         instances.getInstanceNeighbors
       ),
-      listInstanceVpcs: createRequestFunction(
-        instances.listInstanceVpcs
-      ),
+      listInstanceVpcs: createRequestFunction(instances.listInstanceVpcs),
       getInstanceIsoStatus: createRequestFunction(
         instances.getInstanceIsoStatus
       ),
@@ -224,9 +222,7 @@ exports.initialize = (config) => {
       detachIsoFromInstance: createRequestFunction(
         instances.detachIsoFromInstance
       ),
-      attachVpcToInstance: createRequestFunction(
-        instances.attachVpcToInstance
-      ),
+      attachVpcToInstance: createRequestFunction(instances.attachVpcToInstance),
       detachVpcFromInstance: createRequestFunction(
         instances.detachVpcFromInstance
       ),
