@@ -400,3 +400,47 @@ exports.getKubernetesVersions = {
   url: '/kubernetes/versions',
   requestType: 'GET'
 }
+
+/**
+ * Start a Kubernetes cluster upgrade.
+ * {@link https://www.vultr.com/api/#operation/start-kubernetes-cluster-upgrade}
+ * @function upgrades
+ * @memberof kubernetes
+ * @instance
+ */
+exports.upgrades = {
+  url: '/kubernetes/clusters/{vke-id}/upgrades',
+  requestType: 'POST',
+  apiKeyRequired: true,
+  parameters: {
+    'vke-id': {
+      type: 'string',
+      required: true,
+      path: true
+    },
+    upgrade_version: {
+      type: 'string',
+      required: true
+    }
+  }
+}
+
+/**
+ * Get the available upgrades for the specified Kubernetes cluster.
+ * {@link https://www.vultr.com/api/#operation/get-kubernetes-available-upgrades}
+ * @function getKubernetesAvailableUpgrades
+ * @memberof kubernetes
+ * @instance
+ */
+exports.getKubernetesAvailableUpgrades = {
+  url: '/kubernetes/clusters/{vke-id}/available-upgrades',
+  requestType: 'GET',
+  apiKeyRequired: true,
+  parameters: {
+    'vke-id': {
+      type: 'string',
+      required: true,
+      path: true
+    }
+  }
+}

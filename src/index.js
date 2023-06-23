@@ -332,6 +332,12 @@ exports.initialize = (config) => {
       ),
       getKubernetesVersions: createRequestFunction(
         kubernetes.getKubernetesVersions
+      ),
+      upgrades: createRequestFunction(
+        kubernetes.upgrades
+      ),
+      getKubernetesAvailableUpgrades: createRequestFunction(
+        kubernetes.getKubernetesAvailableUpgrades
       )
     },
     objectStorage: {
