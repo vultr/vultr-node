@@ -47,7 +47,7 @@ exports.createLoadBalancer = {
     label: { type: 'string' },
     instances: { type: 'array' },
     firewall_rules: { type: 'array' },
-    private_network: { type: 'string' }
+    vpc: { type: 'string' }
   }
 }
 
@@ -97,7 +97,7 @@ exports.updateLoadBalancer = {
     balancing_algorithm: { type: 'string' },
     instances: { type: 'array' },
     label: { type: 'string' },
-    private_network: { type: 'string' },
+    vpc: { type: 'string' },
     firewall_rules: { type: 'array' }
   }
 }

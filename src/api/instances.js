@@ -51,7 +51,7 @@ exports.createInstance = {
     script_id: { type: 'string' },
     snapshot_id: { type: 'string' },
     enable_ipv6: { type: 'boolean' },
-    attach_private_network: { type: 'array' },
+    attach_vpc: { type: 'array' },
     label: { type: 'string' },
     sshkey_id: { type: 'array' },
     backups: { type: 'string' },
@@ -64,7 +64,7 @@ exports.createInstance = {
     tag: { type: 'string' },
     firewall_group_id: { type: 'string' },
     reserved_ipv4: { type: 'string' },
-    enable_private_network: { type: 'boolean' }
+    enable_vpc: { type: 'boolean' }
   }
 }
 
@@ -116,9 +116,9 @@ exports.updateInstance = {
     label: { type: 'string' },
     plan: { type: 'string' },
     ddos_protection: { type: 'boolean' },
-    attach_private_network: { type: 'array' },
-    detach_private_network: { type: 'array' },
-    enable_private_network: { type: 'boolean' }
+    attach_vpc: { type: 'array' },
+    detach_vpc: { type: 'array' },
+    enable_vpc: { type: 'boolean' }
   }
 }
 
@@ -293,14 +293,14 @@ exports.getInstanceNeighbors = {
 }
 
 /**
- * List the private networks for the specified instance.<br>
- * {@link https://www.vultr.com/api/#operation/list-instance-private-networks}
- * @function listInstancePrivateNetworks
+ * List the vpcs for the specified instance.<br>
+ * {@link https://www.vultr.com/api/#operation/list-instance-vpcs}
+ * @function listInstanceVpcs
  * @memberof instances
  * @instance
  */
-exports.listInstancePrivateNetworks = {
-  url: '/instances/{instance-id}/private-networks',
+exports.listInstanceVpcs = {
+  url: '/instances/{instance-id}/vpcs',
   requestType: 'GET',
   apiKeyRequired: true,
   parameters: {
@@ -376,14 +376,14 @@ exports.detachIsoFromInstance = {
 }
 
 /**
- * Attach a private network to the specified instance.<br>
- * {@link https://www.vultr.com/api/#operation/attach-instance-network}
- * @function attachPrivateNetworkToInstance
+ * Attach a vpc to the specified instance.<br>
+ * {@link https://www.vultr.com/api/#operation/attach-instance-vpc}
+ * @function attachVpcToInstance
  * @memberof instances
  * @instance
  */
-exports.attachPrivateNetworkToInstance = {
-  url: '/instances/{instance-id}/private-networks/attach',
+exports.attachVpcToInstance = {
+  url: '/instances/{instance-id}/vpcs/attach',
   requestType: 'POST',
   apiKeyRequired: true,
   parameters: {
@@ -392,19 +392,19 @@ exports.attachPrivateNetworkToInstance = {
       path: true,
       required: true
     },
-    network_id: { type: 'string' }
+    vpc_id: { type: 'string' }
   }
 }
 
 /**
- * Detach the specified instance's private network.<br>
- * {@link https://www.vultr.com/api/#operation/detach-instance-network}
- * @function detachPrivateNetworkFromInstance
+ * Detach the specified instance's vpc.<br>
+ * {@link https://www.vultr.com/api/#operation/detach-instance-vpc}
+ * @function detachVpcFromInstance
  * @memberof instances
  * @instance
  */
-exports.detachPrivateNetworkFromInstance = {
-  url: '/instances/{instance-id}/private-networks/detach',
+exports.detachVpcFromInstance = {
+  url: '/instances/{instance-id}/vpcs/detach',
   requestType: 'POST',
   apiKeyRequired: true,
   parameters: {
@@ -413,7 +413,7 @@ exports.detachPrivateNetworkFromInstance = {
       path: true,
       required: true
     },
-    network_id: { type: 'string' }
+    vpc_id: { type: 'string' }
   }
 }
 

@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>JSDoc: Source: plans.js</title>
+    <title>JSDoc: Source: vpcs.js</title>
 
     <script src="scripts/prettify/prettify.js"> </script>
     <script src="scripts/prettify/lang-css.js"> </script>
@@ -17,7 +17,7 @@
 
 <div id="main">
 
-    <h1 class="page-title">Source: plans.js</h1>
+    <h1 class="page-title">Source: vpcs.js</h1>
 
     
 
@@ -27,41 +27,111 @@
     <section>
         <article>
             <pre class="prettyprint source linenums"><code>/**
- * Methods for interacting with the plan endpoints&lt;br>
- * {@link https://www.vultr.com/api/#tag/plans}
- * @namespace plans
+ * Methods for interacting with the vpc endpoints&lt;br>
+ * {@link https://www.vultr.com/api/#tag/VPCs}
+ * @namespace vpcs
  */
 
 /**
- * Get a list of allavailable Vultr instance plans.&lt;br>
- * {@link https://www.vultr.com/api/#operation/list-plans}
- * @function listPlans
- * @memberof plans
+ * Get information about the specified vpc.&lt;br>
+ * {@link https://www.vultr.com/api/#operation/get-vpc}
+ * @function getVpc
+ * @memberof vpcs
  * @instance
  */
-exports.listPlans = {
-  url: '/plans',
+exports.getVpc = {
+  url: '/vpcs/{vpc-id}',
   requestType: 'GET',
+  apiKeyRequired: true,
   parameters: {
-    type: { type: 'string' },
-    os: { type: 'string' },
-    per_page: { type: 'string' },
+    'vpc-id': {
+      type: 'string',
+      path: true,
+      required: true
+    }
+  }
+}
+
+/**
+ * Delete a specified vpc.&lt;br>
+ * {@link https://www.vultr.com/api/#operation/delete-vpc}
+ * @function deleteVpc
+ * @memberof vpcs
+ * @instance
+ */
+exports.deleteVpc = {
+  url: '/vpcs/{vpc-id}',
+  requestType: 'DELETE',
+  apiKeyRequired: true,
+  parameters: {
+    'vpc-id': {
+      type: 'string',
+      path: true,
+      required: true
+    }
+  }
+}
+
+/**
+ * Update information on the specified vpc.&lt;br>
+ * {@link https://www.vultr.com/api/#operation/update-vpc}
+ * @function updateVpc
+ * @memberof vpcs
+ * @instance
+ */
+exports.updateVpc = {
+  url: '/vpcs/{vpc-id}',
+  requestType: 'PUT',
+  apiKeyRequired: true,
+  parameters: {
+    'vpc-id': {
+      type: 'string',
+      path: true,
+      required: true
+    },
+    description: {
+      type: 'string',
+      required: true
+    }
+  }
+}
+
+/**
+ * List all vpcs on the account.&lt;br>
+ * {@link https://www.vultr.com/api/#operation/list-vpcs}
+ * @function listVpcs
+ * @memberof vpcs
+ * @instance
+ */
+exports.listVpcs = {
+  url: '/vpcs',
+  requestType: 'GET',
+  apiKeyRequired: true,
+  parameters: {
+    per_page: { type: 'number' },
     cursor: { type: 'string' }
   }
 }
+
 /**
- * Get a list of all available Vultr bare metal plans.&lt;br>
- * {@link https://www.vultr.com/api/#operation/list-metal-plans}
- * @function listBareMetalPlans
- * @memberof plans
+ * Create a new vpc in a specified region.&lt;br>
+ * {@link https://www.vultr.com/api/#operation/create-vpc}
+ * @function createVpc
+ * @memberof vpcs
  * @instance
  */
-exports.listBareMetalPlans = {
-  url: '/plans-metal',
-  requestType: 'GET',
+exports.createVpc = {
+  url: '/vpcs',
+  requestType: 'POST',
+  apiKeyRequired: true,
   parameters: {
-    per_page: { type: 'string' },
-    cursor: { type: 'string' }
+    region: {
+      type: 'string',
+      required: true
+    },
+    description: { type: 'string' },
+    v4_subnet: { type: 'string' },
+    v4_subnet_mask: { type: 'number' }
   }
 }
 </code></pre>

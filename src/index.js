@@ -15,13 +15,13 @@ exports.initialize = (config) => {
   const objectStorage = require('./api/object-storage')
   const operatingSystems = require('./api/operating-systems')
   const plans = require('./api/plans')
-  const privateNetworks = require('./api/private-networks')
   const regions = require('./api/regions')
   const reservedIps = require('./api/reserved-ips')
   const snapshots = require('./api/snapshots')
   const sshKeys = require('./api/ssh-keys')
   const startupScripts = require('./api/startup-scripts')
   const users = require('./api/users')
+  const vpcs = require('./api/vpcs')
   const userConfiguration = config
 
   /**
@@ -214,9 +214,7 @@ exports.initialize = (config) => {
       getInstanceNeighbors: createRequestFunction(
         instances.getInstanceNeighbors
       ),
-      listInstancePrivateNetworks: createRequestFunction(
-        instances.listInstancePrivateNetworks
-      ),
+      listInstanceVpcs: createRequestFunction(instances.listInstanceVpcs),
       getInstanceIsoStatus: createRequestFunction(
         instances.getInstanceIsoStatus
       ),
@@ -224,11 +222,9 @@ exports.initialize = (config) => {
       detachIsoFromInstance: createRequestFunction(
         instances.detachIsoFromInstance
       ),
-      attachPrivateNetworkToInstance: createRequestFunction(
-        instances.attachPrivateNetworkToInstance
-      ),
-      detachPrivateNetworkFromInstance: createRequestFunction(
-        instances.detachPrivateNetworkFromInstance
+      attachVpcToInstance: createRequestFunction(instances.attachVpcToInstance),
+      detachVpcFromInstance: createRequestFunction(
+        instances.detachVpcFromInstance
       ),
       setInstanceBackupSchedule: createRequestFunction(
         instances.setInstanceBackupSchedule
@@ -336,6 +332,12 @@ exports.initialize = (config) => {
       ),
       getKubernetesVersions: createRequestFunction(
         kubernetes.getKubernetesVersions
+      ),
+      upgrades: createRequestFunction(
+        kubernetes.upgrades
+      ),
+      getKubernetesAvailableUpgrades: createRequestFunction(
+        kubernetes.getKubernetesAvailableUpgrades
       )
     },
     objectStorage: {
@@ -363,23 +365,6 @@ exports.initialize = (config) => {
     plans: {
       listPlans: createRequestFunction(plans.listPlans),
       listBareMetalPlans: createRequestFunction(plans.listBareMetalPlans)
-    },
-    privateNetworks: {
-      getPrivateNetwork: createRequestFunction(
-        privateNetworks.getPrivateNetwork
-      ),
-      deletePrivateNetwork: createRequestFunction(
-        privateNetworks.deletePrivateNetwork
-      ),
-      updatePrivateNetwork: createRequestFunction(
-        privateNetworks.updatePrivateNetwork
-      ),
-      listPrivateNetworks: createRequestFunction(
-        privateNetworks.listPrivateNetworks
-      ),
-      createPrivateNetwork: createRequestFunction(
-        privateNetworks.createPrivateNetwork
-      )
     },
     regions: {
       listRegions: createRequestFunction(regions.listRegions),
@@ -436,6 +421,13 @@ exports.initialize = (config) => {
       updateUser: createRequestFunction(users.updateUser),
       getUsers: createRequestFunction(users.getUsers),
       createUser: createRequestFunction(users.createUser)
+    },
+    vpcs: {
+      getVpc: createRequestFunction(vpcs.getVpc),
+      deleteVpc: createRequestFunction(vpcs.deleteVpc),
+      updateVpc: createRequestFunction(vpcs.updateVpc),
+      listVpcs: createRequestFunction(vpcs.listVpcs),
+      createVpc: createRequestFunction(vpcs.createVpc)
     }
   }
 }
