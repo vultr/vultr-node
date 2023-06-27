@@ -1,5 +1,14 @@
 # Change Log
 
+## [v2.4.0](https://github.com/vultr/vultr-node/compare/v2.3.3..v2.4.0) (2023-06-26)
+
+### Features
+* Deprecated PrivateNetwork endpoints and added VPC endpoints [#623](https://github.com/vultr/vultr-node/issues/623)
+* Added support for Kubernetes upgrade endpoints [#622](https://github.com/vultr/vultr-node/issues/622)
+
+### Dependencies
+* To see all deps that were updated, please check [milestone v2.4.0](https://github.com/vultr/vultr-node/milestone/48)
+
 ## [v2.3.3](https://github.com/vultr/vultr-node/compare/v2.3.2..v2.3.3) (2022-03-28)
 
 ### Bug Fixes
