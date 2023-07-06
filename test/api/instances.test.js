@@ -170,7 +170,8 @@ const mockResponses = {
         os_id: 362,
         app_id: 0,
         firewall_group_id: '',
-        features: ['ddos_protection', 'ipv6', 'auto_backups']
+        features: ['ddos_protection', 'ipv6', 'auto_backups'],
+        tags: ['a tag','another']
       }
     ]
   },
@@ -231,7 +232,8 @@ const mockResponses = {
       os_id: 387,
       app_id: 0,
       firewall_group_id: '',
-      features: ['ddos_protection', 'ipv6', 'auto_backups']
+      features: ['ddos_protection', 'ipv6', 'auto_backups'],
+      tags: ['a tag','another']
     }
   },
   reinstallInstance: {

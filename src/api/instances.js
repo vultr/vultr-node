@@ -62,6 +62,7 @@ exports.createInstance = {
     activation_email: { type: 'boolean' },
     hostname: { type: 'string' },
     tag: { type: 'string' },
+    tags: { type: 'array' },
     firewall_group_id: { type: 'string' },
     reserved_ipv4: { type: 'string' },
     enable_vpc: { type: 'boolean' }
@@ -113,6 +114,7 @@ exports.updateInstance = {
     os_id: { type: 'string' },
     user_data: { type: 'string' },
     tag: { type: 'string' },
+    tags: { type: 'array' },
     label: { type: 'string' },
     plan: { type: 'string' },
     ddos_protection: { type: 'boolean' },
