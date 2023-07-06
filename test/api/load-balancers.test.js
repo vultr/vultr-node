@@ -116,6 +116,8 @@ const mockResponses = {
         healthy_threshold: 3
       },
       has_ssl: false,
+      http2: false,
+      nodes: 1,	
       forwarding_rules: [
         {
           id: '73d85156c2c3129d',
