@@ -8,8 +8,8 @@ const mockParameters = {
     'reserved-ip': 'cb676a46-66fd-4dfb-b839-443f2e6c0b604'
   },
   updateReservedIp: {
-	'reserved-ip': 'cb676a46-66fd-4dfb-b839-443f2e6c0b604',
-	'label': 'Example Label'
+    'reserved-ip': 'cb676a46-66fd-4dfb-b839-443f2e6c0b604',
+    label: 'Example Label'
   },
   createReservedIp: {
     region: 'ewr',
@@ -80,15 +80,15 @@ const mockResponses = {
     }
   },
   updateReservedIp: {
-	reserved_ip: {
-		id: 'string',
-		region: 'string',
-		ip_type: 'string',
-		subnet: 'string',
-		subnet_size: 0,
-		label: 'Example Label',
-		instance_id: 'string'
-	}
+    reserved_ip: {
+      id: 'string',
+      region: 'string',
+      ip_type: 'string',
+      subnet: 'string',
+      subnet_size: 0,
+      label: 'Example Label',
+      instance_id: 'string'
+    }
   },
   convertInstanceIpToReservedIp: {
     reserved_ip: {

@@ -74,7 +74,7 @@ const mockParameters = {
   },
   upgrades: {
     'vke-id': '455dcd32-e621-48ee-a10e-0cb5f754e13e',
-	'upgrade_version': "v1.22.8+3"
+    upgrade_version: 'v1.22.8+3'
   },
   getKubernetesAvailableUpgrades: {
     'vke-id': '455dcd32-e621-48ee-a10e-0cb5f754e13e'
@@ -438,7 +438,7 @@ const mockResponses = {
     versions: ['v1.20.0+1']
   },
   getKubernetesAvailableUpgrades: {
-	available_upgrades: ["v1.22.8+3","v1.21.11+3"]
+    available_upgrades: ['v1.22.8+3', 'v1.21.11+3']
   }
 }
 

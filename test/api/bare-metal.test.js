@@ -90,31 +90,31 @@ const mockResponses = {
     }
   },
   createInstance: {
-	bare_metal: {
-		id: 'cb676a46-66fd-4dfb-b839-443f2e6c0b60',
-		os: 'Application',
-		ram: '32768 MB',
-		disk: '2x 240GB SSD',
-		main_ip: '',
-		cpu_count: 4,
-		region: 'ams',
-		date_created: '2020-10-10T01:56:20+00:00',
-		status: 'pending',
-		netmask_v4: '',
-		gateway_v4: '',
-		plan: 'vbm-4c-32gb',
-		v6_network: '',
-		v6_main_ip: '',
-		v6_network_size: 0,
-		label: 'Example Bare Metal',
-		mac_address: 2199756823533,
-		tag: 'Example Tag',
-		tags: ["Another tag"],
-		os_id: 186,
-		app_id: 3,
-		image_id: '',
-		features: ["ipv6"]
-	}
+    bare_metal: {
+      id: 'cb676a46-66fd-4dfb-b839-443f2e6c0b60',
+      os: 'Application',
+      ram: '32768 MB',
+      disk: '2x 240GB SSD',
+      main_ip: '',
+      cpu_count: 4,
+      region: 'ams',
+      date_created: '2020-10-10T01:56:20+00:00',
+      status: 'pending',
+      netmask_v4: '',
+      gateway_v4: '',
+      plan: 'vbm-4c-32gb',
+      v6_network: '',
+      v6_main_ip: '',
+      v6_network_size: 0,
+      label: 'Example Bare Metal',
+      mac_address: 2199756823533,
+      tag: 'Example Tag',
+      tags: ['Another tag'],
+      os_id: 186,
+      app_id: 3,
+      image_id: '',
+      features: ['ipv6']
+    }
   },
   getInstance: {
     bare_metal: {
@@ -161,7 +161,7 @@ const mockResponses = {
       mac_address: 2199756823533,
       label: 'api bm',
       tag: '',
-	  tags: ["Another tag"],
+      tags: ['Another tag'],
       os_id: 186,
       app_id: 3,
       features: ['ipv6']

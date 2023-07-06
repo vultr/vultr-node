@@ -55,8 +55,8 @@ const mockResponses = {
       region: 'ewr',
       attached_to_instance: 0,
       label: 'my label',
-	  mount_id: 'ewr-example112233',
-	  block_type: 'high_perf'
+      mount_id: 'ewr-example112233',
+      block_type: 'high_perf'
     }
   },
   getStorage: {
