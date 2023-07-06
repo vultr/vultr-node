@@ -54,7 +54,9 @@ const mockResponses = {
       size_gb: 50,
       region: 'ewr',
       attached_to_instance: 0,
-      label: 'my label'
+      label: 'my label',
+	  mount_id: 'ewr-example112233',
+	  block_type: 'high_perf'
     }
   },
   getStorage: {

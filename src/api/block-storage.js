@@ -41,7 +41,8 @@ exports.createStorage = {
       type: 'number',
       required: true
     },
-    label: { type: 'string' }
+    label: { type: 'string' },
+    block_type: { type: 'string' }
   }
 }
 
