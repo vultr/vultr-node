@@ -45,6 +45,30 @@ exports.deleteReservedIp = {
 }
 
 /**
+ * Update information on a Reserved IP.<br>
+ * {@link https://www.vultr.com/api/#operation/patch-reserved-ips-reserved-ip}
+ * @function updateReservedIp
+ * @memberof reservedIps
+ * @instance
+ */
+exports.updateReservedIp = {
+  url: '/reserved-ips/{reserved-ip}',
+  requestType: 'PATCH',
+  apiKeyRequired: true,
+  parameters: {
+    'reserved-ip': {
+      type: 'string',
+      path: true,
+      required: true
+    },
+    label: {
+      type: 'string',
+      required: true
+    }
+  }
+}
+
+/**
  * List all reserved IP addresses.<br>
  * {@link https://www.vultr.com/api/#operation/list-reserved-ips}
  * @function listReservedIps
