@@ -196,7 +196,6 @@ exports.createDatabaseUser = {
     },
     username: {
       type: 'string',
-      path: true,
       required: true
     },
     password: { type: 'string' },
@@ -426,7 +425,7 @@ exports.startMaintenanceUpdates = {
  */
 exports.listServiceAlerts = {
   url: '/databases/{database-id}/alerts',
-  requestType: 'GET',
+  requestType: 'POST',
   apiKeyRequired: true,
   parameters: {
     'database-id': {

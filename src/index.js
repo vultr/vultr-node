@@ -58,7 +58,7 @@ exports.initialize = (config) => {
               const endpointParameter = endpoint.parameters[parameter]
               const userParameter = parameters[parameter]
 
-              if (endpointParameter.required && !userParameter) {
+              if (endpointParameter.required && typeof userParameter === 'undefined') {
                 // Parameters for the request are required, but none were passed in
                 throw new Error(`Missing parameter: ${parameter}`)
               } else if (userParameter || userParameter === '') {
