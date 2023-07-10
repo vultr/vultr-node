@@ -1,5 +1,19 @@
 # Change Log
 
+## [v2.5.0](https://github.com/vultr/vultr-node/compare/v2.4.0...v2.5.0) (2023-07-10)
+
+### Features
+* Update Bare Metal params
+* Update Block Storage params
+* Update Instances params
+* Update Load Balancer params
+* Add Reserved IP endpoint
+* Add DBAAS endpoints
+* Update Docs
+* Re-Lint test folder
+* Updated package/lock with new version
+* Bug Fixes
+
 ## [v2.4.0](https://github.com/vultr/vultr-node/compare/v2.3.3..v2.4.0) (2023-06-26)
 
 ### Features
