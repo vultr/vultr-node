@@ -6,6 +6,7 @@ exports.initialize = (config) => {
   const bareMetal = require('./api/bare-metal')
   const billing = require('./api/billing')
   const blockStorage = require('./api/block-storage')
+  const databases = require('./api/databases')
   const dns = require('./api/dns')
   const firewall = require('./api/firewall')
   const instances = require('./api/instances')
@@ -57,7 +58,7 @@ exports.initialize = (config) => {
               const endpointParameter = endpoint.parameters[parameter]
               const userParameter = parameters[parameter]
 
-              if (endpointParameter.required && !userParameter) {
+              if (endpointParameter.required && typeof userParameter === 'undefined') {
                 // Parameters for the request are required, but none were passed in
                 throw new Error(`Missing parameter: ${parameter}`)
               } else if (userParameter || userParameter === '') {
@@ -169,6 +170,66 @@ exports.initialize = (config) => {
       updateStorage: createRequestFunction(blockStorage.updateStorage),
       attachStorage: createRequestFunction(blockStorage.attachStorage),
       detachStorage: createRequestFunction(blockStorage.detachStorage)
+    },
+    databases: {
+      listPlans: createRequestFunction(databases.listPlans),
+      listDatabases: createRequestFunction(databases.listDatabases),
+      createDatabase: createRequestFunction(databases.createDatabase),
+      getDatabase: createRequestFunction(databases.getDatabase),
+      updateDatabase: createRequestFunction(databases.updateDatabase),
+      deleteDatabase: createRequestFunction(databases.deleteDatabase),
+      listDatabaseUsers: createRequestFunction(databases.listDatabaseUsers),
+      createDatabaseUser: createRequestFunction(databases.createDatabaseUser),
+      getDatabaseUser: createRequestFunction(databases.getDatabaseUser),
+      updateDatabaseUser: createRequestFunction(databases.updateDatabaseUser),
+      deleteDatabaseUser: createRequestFunction(databases.deleteDatabaseUser),
+      listDatabaseDbs: createRequestFunction(databases.listDatabaseDbs),
+      createDatabaseDb: createRequestFunction(databases.createDatabaseDb),
+      getDatabaseDb: createRequestFunction(databases.getDatabaseDb),
+      deleteDatabaseDb: createRequestFunction(databases.deleteDatabaseDb),
+      listMaintenanceUpdates: createRequestFunction(
+        databases.listMaintenanceUpdates
+      ),
+      startMaintenanceUpdates: createRequestFunction(
+        databases.startMaintenanceUpdates
+      ),
+      listServiceAlerts: createRequestFunction(databases.listServiceAlerts),
+      viewMigrationStatus: createRequestFunction(databases.viewMigrationStatus),
+      databaseStartMigration: createRequestFunction(
+        databases.databaseStartMigration
+      ),
+      databaseDetachMigration: createRequestFunction(
+        databases.databaseDetachMigration
+      ),
+      databaseAddReadReplica: createRequestFunction(
+        databases.databaseAddReadReplica
+      ),
+      getBackupInformation: createRequestFunction(
+        databases.getBackupInformation
+      ),
+      databaseRestoreFromBackup: createRequestFunction(
+        databases.databaseRestoreFromBackup
+      ),
+      databaseFork: createRequestFunction(databases.databaseFork),
+      listConnectionPools: createRequestFunction(databases.listConnectionPools),
+      createConnectionPool: createRequestFunction(
+        databases.createConnectionPool
+      ),
+      getConnectionPool: createRequestFunction(databases.getConnectionPool),
+      updateConnectionPool: createRequestFunction(
+        databases.updateConnectionPool
+      ),
+      deleteConnectionPool: createRequestFunction(
+        databases.deleteConnectionPool
+      ),
+      listAdvancedOptions: createRequestFunction(databases.listAdvancedOptions),
+      updateAdvancedOptions: createRequestFunction(
+        databases.updateAdvancedOptions
+      ),
+      listAvailableVersions: createRequestFunction(
+        databases.listAvailableVersions
+      ),
+      startVersionUpgrade: createRequestFunction(databases.startVersionUpgrade)
     },
     dns: {
       listDomains: createRequestFunction(dns.listDomains),
@@ -333,9 +394,7 @@ exports.initialize = (config) => {
       getKubernetesVersions: createRequestFunction(
         kubernetes.getKubernetesVersions
       ),
-      upgrades: createRequestFunction(
-        kubernetes.upgrades
-      ),
+      upgrades: createRequestFunction(kubernetes.upgrades),
       getKubernetesAvailableUpgrades: createRequestFunction(
         kubernetes.getKubernetesAvailableUpgrades
       )
@@ -375,6 +434,7 @@ exports.initialize = (config) => {
     reservedIps: {
       getReservedIp: createRequestFunction(reservedIps.getReservedIp),
       deleteReservedIp: createRequestFunction(reservedIps.deleteReservedIp),
+      updateReservedIp: createRequestFunction(reservedIps.updateReservedIp),
       listReservedIps: createRequestFunction(reservedIps.listReservedIps),
       createReservedIp: createRequestFunction(reservedIps.createReservedIp),
       attachReservedIp: createRequestFunction(reservedIps.attachReservedIp),

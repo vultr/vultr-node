@@ -47,12 +47,15 @@ exports.createInstance = {
     user_data: { type: 'string' },
     label: { type: 'string' },
     tag: { type: 'string' },
+    activation_email: { type: 'boolean' },
+    hostname: { type: 'string' },
     reserved_ipv4: { type: 'string' },
     os_id: { type: 'number' },
     snapshot_id: { type: 'string' },
-    application_id: { type: 'number' },
+    app_id: { type: 'number' },
     image_id: { type: 'string' },
-    persistent_pxe: { type: 'boolean' }
+    persistent_pxe: { type: 'boolean' },
+    tags: { type: 'array' }
   }
 }
 
@@ -96,6 +99,7 @@ exports.updateInstance = {
     user_data: { type: 'string' },
     label: { type: 'string' },
     tag: { type: 'string' },
+    tags: { type: 'array' },
     os_id: { type: 'string' },
     app_id: { type: 'string' },
     image_id: { type: 'string' },

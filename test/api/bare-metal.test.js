@@ -90,7 +90,7 @@ const mockResponses = {
     }
   },
   createInstance: {
-    baremetal: {
+    bare_metal: {
       id: 'cb676a46-66fd-4dfb-b839-443f2e6c0b60',
       os: 'Application',
       ram: '32768 MB',
@@ -106,11 +106,13 @@ const mockResponses = {
       v6_network: '',
       v6_main_ip: '',
       v6_network_size: 0,
-      label: 'api bm',
+      label: 'Example Bare Metal',
       mac_address: 2199756823533,
-      tag: '',
+      tag: 'Example Tag',
+      tags: ['Another tag'],
       os_id: 186,
       app_id: 3,
+      image_id: '',
       features: ['ipv6']
     }
   },
@@ -159,6 +161,7 @@ const mockResponses = {
       mac_address: 2199756823533,
       label: 'api bm',
       tag: '',
+      tags: ['Another tag'],
       os_id: 186,
       app_id: 3,
       features: ['ipv6']
