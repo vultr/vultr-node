@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>JSDoc: Source: object-storage.js</title>
+    <title>JSDoc: Source: vpc2.js</title>
 
     <script src="scripts/prettify/prettify.js"> </script>
     <script src="scripts/prettify/lang-css.js"> </script>
@@ -17,7 +17,7 @@
 
 <div id="main">
 
-    <h1 class="page-title">Source: object-storage.js</h1>
+    <h1 class="page-title">Source: vpc2.js</h1>
 
     
 
@@ -27,61 +27,24 @@
     <section>
         <article>
             <pre class="prettyprint source linenums"><code>/**
- * Methods for interacting with the object storage endpoints&lt;br>
- * {@link https://www.vultr.com/api/#tag/s3}
- * @namespace objectStorage
+ * Methods for interacting with the vpc2 endpoints&lt;br>
+ * {@link https://www.vultr.com/api/#tag/vpc2}
+ * @namespace vpc2
  */
 
 /**
- * List all object storage volumes on the account.&lt;br>
- * {@link https://www.vultr.com/api/#operation/list-object-storages}
- * @function listObjectStorages
- * @memberof objectStorage
+ * Get information about the specified vpc2.&lt;br>
+ * {@link https://www.vultr.com/api/#operation/get-vpc2}
+ * @function getVpc
+ * @memberof vpc2
  * @instance
  */
-exports.listObjectStorages = {
-  url: '/object-storage',
+exports.getVpc = {
+  url: '/vpc2/{vpc-id}',
   requestType: 'GET',
   apiKeyRequired: true,
   parameters: {
-    per_page: { type: 'string' },
-    cursor: { type: 'string' }
-  }
-}
-
-/**
- * Create an object storage volume.&lt;br>
- * {@link https://www.vultr.com/api/#operation/create-object-storage}
- * @function
- * @memberof objectStorage
- * @instance
- */
-exports.createObjectStorage = {
-  url: '/object-storage',
-  requestType: 'POST',
-  apiKeyRequired: true,
-  parameters: {
-    cluster_id: {
-      type: 'string',
-      required: true
-    },
-    label: { type: 'string' }
-  }
-}
-
-/**
- * Get information about the specified object sotrage volume.&lt;br>
- * {@link https://www.vultr.com/api/#operation/get-object-storage}
- * @function getObjectStorage
- * @memberof objectStorage
- * @instance
- */
-exports.getObjectStorage = {
-  url: '/object-storage/{object-storage-id}',
-  requestType: 'GET',
-  apiKeyRequired: true,
-  parameters: {
-    'object-storage-id': {
+    'vpc-id': {
       type: 'string',
       path: true,
       required: true
@@ -90,18 +53,18 @@ exports.getObjectStorage = {
 }
 
 /**
- * Delete an object storage volume.&lt;br>
- * {@link https://www.vultr.com/api/#operation/delete-object-storage}
- * @function deleteObjectStorage
- * @memberof objectStorage
+ * Delete a specified vpc2.&lt;br>
+ * {@link https://www.vultr.com/api/#operation/delete-vpc2}
+ * @function deleteVpc
+ * @memberof vpc2
  * @instance
  */
-exports.deleteObjectStorage = {
-  url: '/object-storage/{object-storage-id}',
+exports.deleteVpc = {
+  url: '/vpc2/{vpc-id}',
   requestType: 'DELETE',
   apiKeyRequired: true,
   parameters: {
-    'object-storage-id': {
+    'vpc-id': {
       type: 'string',
       path: true,
       required: true
@@ -110,23 +73,23 @@ exports.deleteObjectStorage = {
 }
 
 /**
- * Update information for the specified object storage volume.&lt;br>
- * {@link https://www.vultr.com/api/#operation/update-object-storage}
- * @function updateObjectStorage
- * @memberof objectStorage
+ * Update information on the specified vpc2.&lt;br>
+ * {@link https://www.vultr.com/api/#operation/update-vpc2}
+ * @function updateVpc
+ * @memberof vpc2
  * @instance
  */
-exports.updateObjectStorage = {
-  url: '/object-storage/{object-storage-id}',
+exports.updateVpc = {
+  url: '/vpc2/{vpc-id}',
   requestType: 'PUT',
   apiKeyRequired: true,
   parameters: {
-    'object-storage-id': {
+    'vpc-id': {
       type: 'string',
       path: true,
       required: true
     },
-    label: {
+    description: {
       type: 'string',
       required: true
     }
@@ -134,39 +97,42 @@ exports.updateObjectStorage = {
 }
 
 /**
- * Regenerate keys for the specified object storage volume.&lt;br>
- * {@link https://www.vultr.com/api/#operation/regenerate-object-storage-keys}
- * @function regenerateObjectStorageKeys
- * @memberof objectStorage
+ * List all vpc2 on the account.&lt;br>
+ * {@link https://www.vultr.com/api/#operation/list-vpc2}
+ * @function listvpc2
+ * @memberof vpc2
  * @instance
  */
-exports.regenerateObjectStorageKeys = {
-  url: '/object-storage/{object-storage-id}/regenerate-keys',
-  requestType: 'POST',
-  apiKeyRequired: true,
-  parameters: {
-    'object-storage-id': {
-      type: 'string',
-      path: true,
-      required: true
-    }
-  }
-}
-
-/**
- * Get a list of all object storage clusters.&lt;br>
- * {@link https://www.vultr.com/api/#operation/list-object-storage-clusters}
- * @function getAllClusters
- * @memberof objectStorage
- * @instance
- */
-exports.getAllClusters = {
-  url: '/object-storage/clusters',
+exports.listVpcs = {
+  url: '/vpc2',
   requestType: 'GET',
   apiKeyRequired: true,
   parameters: {
-    per_page: { type: 'string' },
+    per_page: { type: 'number' },
     cursor: { type: 'string' }
+  }
+}
+
+/**
+ * Create a new vpc2 in a specified region.&lt;br>
+ * {@link https://www.vultr.com/api/#operation/create-vpc2}
+ * @function createVpc
+ * @memberof vpc2
+ * @instance
+ */
+exports.createVpc = {
+  url: '/vpc2',
+  requestType: 'POST',
+  apiKeyRequired: true,
+  parameters: {
+    region: {
+      type: 'string',
+      required: true
+    },
+    description: { type: 'string' },
+    ip_type: { type: 'string' },
+    ip_block: { type: 'string' },
+    prefix_length: { type: 'number' }
   }
 }
 </code></pre>

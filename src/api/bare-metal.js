@@ -55,6 +55,9 @@ exports.createInstance = {
     app_id: { type: 'number' },
     image_id: { type: 'string' },
     persistent_pxe: { type: 'boolean' },
+    attach_vpc2: { type: 'array' },
+    detach_vpc2: { type: 'array' },
+    enable_vpc2: { type: 'boolean' },
     tags: { type: 'array' }
   }
 }
@@ -103,7 +106,10 @@ exports.updateInstance = {
     os_id: { type: 'string' },
     app_id: { type: 'string' },
     image_id: { type: 'string' },
-    enable_ipv6: { type: 'boolean' }
+    enable_ipv6: { type: 'boolean' },
+    attach_vpc2: { type: 'array' },
+    detach_vpc2: { type: 'array' },
+    enable_vpc2: { type: 'boolean' }
   }
 }
 

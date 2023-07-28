@@ -23,6 +23,7 @@ exports.initialize = (config) => {
   const startupScripts = require('./api/startup-scripts')
   const users = require('./api/users')
   const vpcs = require('./api/vpcs')
+  const vpc2 = require('./api/vpc2')
   const userConfiguration = config
 
   /**
@@ -58,7 +59,10 @@ exports.initialize = (config) => {
               const endpointParameter = endpoint.parameters[parameter]
               const userParameter = parameters[parameter]
 
-              if (endpointParameter.required && typeof userParameter === 'undefined') {
+              if (
+                endpointParameter.required &&
+                typeof userParameter === 'undefined'
+              ) {
                 // Parameters for the request are required, but none were passed in
                 throw new Error(`Missing parameter: ${parameter}`)
               } else if (userParameter || userParameter === '') {
@@ -488,6 +492,13 @@ exports.initialize = (config) => {
       updateVpc: createRequestFunction(vpcs.updateVpc),
       listVpcs: createRequestFunction(vpcs.listVpcs),
       createVpc: createRequestFunction(vpcs.createVpc)
+    },
+    vpc2: {
+      getVpc: createRequestFunction(vpc2.getVpc),
+      deleteVpc: createRequestFunction(vpc2.deleteVpc),
+      updateVpc: createRequestFunction(vpc2.updateVpc),
+      listVpcs: createRequestFunction(vpc2.listVpcs),
+      createVpc: createRequestFunction(vpc2.createVpc)
     }
   }
 }

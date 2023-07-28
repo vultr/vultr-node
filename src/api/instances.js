@@ -52,6 +52,7 @@ exports.createInstance = {
     snapshot_id: { type: 'string' },
     enable_ipv6: { type: 'boolean' },
     attach_vpc: { type: 'array' },
+    attach_vpc2: { type: 'array' },
     label: { type: 'string' },
     sshkey_id: { type: 'array' },
     backups: { type: 'string' },
@@ -65,7 +66,8 @@ exports.createInstance = {
     tags: { type: 'array' },
     firewall_group_id: { type: 'string' },
     reserved_ipv4: { type: 'string' },
-    enable_vpc: { type: 'boolean' }
+    enable_vpc: { type: 'boolean' },
+    enable_vp2: { type: 'boolean' }
   }
 }
 
@@ -119,8 +121,11 @@ exports.updateInstance = {
     plan: { type: 'string' },
     ddos_protection: { type: 'boolean' },
     attach_vpc: { type: 'array' },
+    attach_vp2: { type: 'array' },
     detach_vpc: { type: 'array' },
-    enable_vpc: { type: 'boolean' }
+    detach_vp2: { type: 'array' },
+    enable_vpc: { type: 'boolean' },
+    enable_vp2: { type: 'boolean' }
   }
 }
 
