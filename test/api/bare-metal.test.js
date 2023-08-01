@@ -50,6 +50,18 @@ const mockParameters = {
   },
   getInstanceVncUrl: {
     'baremetal-id': 'cb676a46-66fd-4dfb-b839-443f2e6c0b60'
+  },
+  attachVpc2ToInstance: {
+    'baremetal-id': 'cb676a46-66fd-4dfb-b839-443f2e6c0b60',
+    vpc_id: 'cb676a46-66fd-4dfb-b839-443f2e6c0b60',
+    ip_address: '10.1.144.4'
+  },
+  detachVpc2FromInstance: {
+    'baremetal-id': 'cb676a46-66fd-4dfb-b839-443f2e6c0b60',
+    vpc_id: 'cb676a46-66fd-4dfb-b839-443f2e6c0b60'
+  },
+  listInstanceVpc2: {
+    'baremetal-id': 'cb676a46-66fd-4dfb-b839-443f2e6c0b60'
   }
 }
 
@@ -302,6 +314,15 @@ const mockResponses = {
     vnc: {
       url: 'https://my.vultr.com/subs/baremetal/novnc/api.php?data=djsozdXNFVGd6eVgzbXRQbXJ0eW00OTVXamJ8'
     }
+  },
+  listInstanceVpc2: {
+    vpcs: [
+      {
+        id: 'd325e78b-bcec-4d4e-b9b8-9c294f37b04d',
+        mac_address: '00:00:5e:00:53:5e',
+        ip_address: '10.99.0.123'
+      }
+    ]
   }
 }
 

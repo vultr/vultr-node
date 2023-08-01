@@ -67,7 +67,7 @@ exports.createInstance = {
     firewall_group_id: { type: 'string' },
     reserved_ipv4: { type: 'string' },
     enable_vpc: { type: 'boolean' },
-    enable_vp2: { type: 'boolean' }
+    enable_vpc2: { type: 'boolean' }
   }
 }
 
@@ -121,11 +121,11 @@ exports.updateInstance = {
     plan: { type: 'string' },
     ddos_protection: { type: 'boolean' },
     attach_vpc: { type: 'array' },
-    attach_vp2: { type: 'array' },
+    attach_vpc2: { type: 'array' },
     detach_vpc: { type: 'array' },
-    detach_vp2: { type: 'array' },
+    detach_vpc2: { type: 'array' },
     enable_vpc: { type: 'boolean' },
-    enable_vp2: { type: 'boolean' }
+    enable_vpc2: { type: 'boolean' }
   }
 }
 
@@ -300,6 +300,28 @@ exports.getInstanceNeighbors = {
 }
 
 /**
+ * List the 2.0 vpcs for the specified instance.<br>
+ * {@link https://www.vultr.com/api/#operation/list-instance-vpc2}
+ * @function listInstanceVpc2
+ * @memberof instances
+ * @instance
+ */
+exports.listInstanceVpc2 = {
+  url: '/instances/{instance-id}/vpc2',
+  requestType: 'GET',
+  apiKeyRequired: true,
+  parameters: {
+    'instance-id': {
+      type: 'string',
+      path: true,
+      required: true
+    },
+    per_page: { type: 'string' },
+    cursor: { type: 'string' }
+  }
+}
+
+/**
  * List the vpcs for the specified instance.<br>
  * {@link https://www.vultr.com/api/#operation/list-instance-vpcs}
  * @function listInstanceVpcs
@@ -412,6 +434,48 @@ exports.attachVpcToInstance = {
  */
 exports.detachVpcFromInstance = {
   url: '/instances/{instance-id}/vpcs/detach',
+  requestType: 'POST',
+  apiKeyRequired: true,
+  parameters: {
+    'instance-id': {
+      type: 'string',
+      path: true,
+      required: true
+    },
+    vpc_id: { type: 'string' }
+  }
+}
+
+/**
+ * Attach a vpc 2.0 to the specified instance.<br>
+ * {@link https://www.vultr.com/api/#operation/attach-instance-vpc2}
+ * @function attachVpc2ToInstance
+ * @memberof instances
+ * @instance
+ */
+exports.attachVpc2ToInstance = {
+  url: '/instances/{instance-id}/vpc2/attach',
+  requestType: 'POST',
+  apiKeyRequired: true,
+  parameters: {
+    'instance-id': {
+      type: 'string',
+      path: true,
+      required: true
+    },
+    vpc_id: { type: 'string' }
+  }
+}
+
+/**
+ * Detach the specified instance's vpc 2.0.<br>
+ * {@link https://www.vultr.com/api/#operation/detach-instance-vpc2}
+ * @function detachVpc2FromInstance
+ * @memberof instances
+ * @instance
+ */
+exports.detachVpc2FromInstance = {
+  url: '/instances/{instance-id}/vpc2/detach',
   requestType: 'POST',
   apiKeyRequired: true,
   parameters: {
