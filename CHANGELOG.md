@@ -1,5 +1,11 @@
 # Change Log
 
+## [v2.6.0](https://github.com/vultr/vultr-node/compare/v2.5.0...v2.6.0) (2023-08-02)
+
+### Features
+* Add support for VPC 2.0
+* Add missing params for some instances endpoints
+
 ## [v2.5.0](https://github.com/vultr/vultr-node/compare/v2.4.0...v2.5.0) (2023-07-10)
 
 ### Features
