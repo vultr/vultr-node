@@ -55,6 +55,9 @@ exports.createInstance = {
     app_id: { type: 'number' },
     image_id: { type: 'string' },
     persistent_pxe: { type: 'boolean' },
+    attach_vpc2: { type: 'array' },
+    detach_vpc2: { type: 'array' },
+    enable_vpc2: { type: 'boolean' },
     tags: { type: 'array' }
   }
 }
@@ -103,7 +106,10 @@ exports.updateInstance = {
     os_id: { type: 'string' },
     app_id: { type: 'string' },
     image_id: { type: 'string' },
-    enable_ipv6: { type: 'boolean' }
+    enable_ipv6: { type: 'boolean' },
+    attach_vpc2: { type: 'array' },
+    detach_vpc2: { type: 'array' },
+    enable_vpc2: { type: 'boolean' }
   }
 }
 
@@ -366,6 +372,69 @@ exports.getInstanceAvailableUpgrades = {
  */
 exports.getInstanceVncUrl = {
   url: '/bare-metals/{baremetal-id}/vnc',
+  requestType: 'GET',
+  apiKeyRequired: true,
+  parameters: {
+    'baremetal-id': {
+      type: 'string',
+      path: true,
+      required: true
+    }
+  }
+}
+
+/**
+ * Attach a vpc 2.0 to the specified bare metal instance.<br>
+ * {@link https://www.vultr.com/api/#operation/attach-baremetals-vpc2}
+ * @function attachVpc2ToInstance
+ * @memberof bareMetal
+ * @instance
+ */
+exports.attachVpc2ToInstance = {
+  url: '/bare-metals/{baremetal-id}/vpc2/attach',
+  requestType: 'POST',
+  apiKeyRequired: true,
+  parameters: {
+    'baremetal-id': {
+      type: 'string',
+      path: true,
+      required: true
+    },
+    vpc_id: { type: 'string' },
+    ip_address: { type: 'string' }
+  }
+}
+
+/**
+ * Detach a vpc 2.0 on the specified bare metal instance.<br>
+ * {@link https://www.vultr.com/api/#operation/detach-baremetals-vpc2}
+ * @function detachVpc2FromInstance
+ * @memberof bareMetal
+ * @instance
+ */
+exports.detachVpc2FromInstance = {
+  url: '/bare-metals/{baremetal-id}/vpc2/detach',
+  requestType: 'POST',
+  apiKeyRequired: true,
+  parameters: {
+    'baremetal-id': {
+      type: 'string',
+      path: true,
+      required: true
+    },
+    vpc_id: { type: 'string' }
+  }
+}
+
+/**
+ * List Bare Metal Instance VPC 2.0 Networks<br>
+ * {@link https://www.vultr.com/api/#operation/list-baremetal-vpc2}
+ * @function listInstanceVpc2
+ * @memberof bareMetal
+ * @instance
+ */
+exports.listInstanceVpc2 = {
+  url: '/bare-metals/{baremetal-id}/vpc2',
   requestType: 'GET',
   apiKeyRequired: true,
   parameters: {

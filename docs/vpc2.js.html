@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>JSDoc: Source: backups.js</title>
+    <title>JSDoc: Source: vpc2.js</title>
 
     <script src="scripts/prettify/prettify.js"> </script>
     <script src="scripts/prettify/lang-css.js"> </script>
@@ -17,7 +17,7 @@
 
 <div id="main">
 
-    <h1 class="page-title">Source: backups.js</h1>
+    <h1 class="page-title">Source: vpc2.js</h1>
 
     
 
@@ -27,46 +27,112 @@
     <section>
         <article>
             <pre class="prettyprint source linenums"><code>/**
- * Methods for interacting with the backup endpoints&lt;br>
- * {@link https://www.vultr.com/api/#tag/backup}
- * @namespace backup
+ * Methods for interacting with the vpc2 endpoints&lt;br>
+ * {@link https://www.vultr.com/api/#tag/vpc2}
+ * @namespace vpc2
  */
 
 /**
- * Get information about backups in your account.&lt;br>
- * {@link https://www.vultr.com/api/#operation/list-backups}
- * @function list
- * @memberof backup
+ * Get information about the specified vpc2.&lt;br>
+ * {@link https://www.vultr.com/api/#operation/get-vpc2}
+ * @function getVpc
+ * @memberof vpc2
  * @instance
  */
-exports.listBackups = {
-  url: '/backups',
+exports.getVpc = {
+  url: '/vpc2/{vpc-id}',
   requestType: 'GET',
   apiKeyRequired: true,
   parameters: {
-    instance_id: { type: 'string' },
+    'vpc-id': {
+      type: 'string',
+      path: true,
+      required: true
+    }
+  }
+}
+
+/**
+ * Delete a specified vpc2.&lt;br>
+ * {@link https://www.vultr.com/api/#operation/delete-vpc2}
+ * @function deleteVpc
+ * @memberof vpc2
+ * @instance
+ */
+exports.deleteVpc = {
+  url: '/vpc2/{vpc-id}',
+  requestType: 'DELETE',
+  apiKeyRequired: true,
+  parameters: {
+    'vpc-id': {
+      type: 'string',
+      path: true,
+      required: true
+    }
+  }
+}
+
+/**
+ * Update information on the specified vpc2.&lt;br>
+ * {@link https://www.vultr.com/api/#operation/update-vpc2}
+ * @function updateVpc
+ * @memberof vpc2
+ * @instance
+ */
+exports.updateVpc = {
+  url: '/vpc2/{vpc-id}',
+  requestType: 'PUT',
+  apiKeyRequired: true,
+  parameters: {
+    'vpc-id': {
+      type: 'string',
+      path: true,
+      required: true
+    },
+    description: {
+      type: 'string',
+      required: true
+    }
+  }
+}
+
+/**
+ * List all vpc2 on the account.&lt;br>
+ * {@link https://www.vultr.com/api/#operation/list-vpc2}
+ * @function listvpc2
+ * @memberof vpc2
+ * @instance
+ */
+exports.listVpcs = {
+  url: '/vpc2',
+  requestType: 'GET',
+  apiKeyRequired: true,
+  parameters: {
     per_page: { type: 'number' },
     cursor: { type: 'string' }
   }
 }
 
 /**
- * Get information for the specified backup.&lt;br>
- * {@link https://www.vultr.com/api/#operation/get-backup}
- * @function get
- * @memberof backup
+ * Create a new vpc2 in a specified region.&lt;br>
+ * {@link https://www.vultr.com/api/#operation/create-vpc2}
+ * @function createVpc
+ * @memberof vpc2
  * @instance
  */
-exports.getBackup = {
-  url: '/backups/{backup-id}',
-  requestType: 'GET',
+exports.createVpc = {
+  url: '/vpc2',
+  requestType: 'POST',
   apiKeyRequired: true,
   parameters: {
-    'backup-id': {
+    region: {
       type: 'string',
-      path: true,
       required: true
-    }
+    },
+    description: { type: 'string' },
+    ip_type: { type: 'string' },
+    ip_block: { type: 'string' },
+    prefix_length: { type: 'number' }
   }
 }
 </code></pre>

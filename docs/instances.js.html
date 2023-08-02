@@ -80,6 +80,7 @@ exports.createInstance = {
     snapshot_id: { type: 'string' },
     enable_ipv6: { type: 'boolean' },
     attach_vpc: { type: 'array' },
+    attach_vpc2: { type: 'array' },
     label: { type: 'string' },
     sshkey_id: { type: 'array' },
     backups: { type: 'string' },
@@ -93,7 +94,8 @@ exports.createInstance = {
     tags: { type: 'array' },
     firewall_group_id: { type: 'string' },
     reserved_ipv4: { type: 'string' },
-    enable_vpc: { type: 'boolean' }
+    enable_vpc: { type: 'boolean' },
+    enable_vpc2: { type: 'boolean' }
   }
 }
 
@@ -147,8 +149,11 @@ exports.updateInstance = {
     plan: { type: 'string' },
     ddos_protection: { type: 'boolean' },
     attach_vpc: { type: 'array' },
+    attach_vpc2: { type: 'array' },
     detach_vpc: { type: 'array' },
-    enable_vpc: { type: 'boolean' }
+    detach_vpc2: { type: 'array' },
+    enable_vpc: { type: 'boolean' },
+    enable_vpc2: { type: 'boolean' }
   }
 }
 
@@ -323,6 +328,28 @@ exports.getInstanceNeighbors = {
 }
 
 /**
+ * List the 2.0 vpcs for the specified instance.&lt;br>
+ * {@link https://www.vultr.com/api/#operation/list-instance-vpc2}
+ * @function listInstanceVpc2
+ * @memberof instances
+ * @instance
+ */
+exports.listInstanceVpc2 = {
+  url: '/instances/{instance-id}/vpc2',
+  requestType: 'GET',
+  apiKeyRequired: true,
+  parameters: {
+    'instance-id': {
+      type: 'string',
+      path: true,
+      required: true
+    },
+    per_page: { type: 'string' },
+    cursor: { type: 'string' }
+  }
+}
+
+/**
  * List the vpcs for the specified instance.&lt;br>
  * {@link https://www.vultr.com/api/#operation/list-instance-vpcs}
  * @function listInstanceVpcs
@@ -435,6 +462,48 @@ exports.attachVpcToInstance = {
  */
 exports.detachVpcFromInstance = {
   url: '/instances/{instance-id}/vpcs/detach',
+  requestType: 'POST',
+  apiKeyRequired: true,
+  parameters: {
+    'instance-id': {
+      type: 'string',
+      path: true,
+      required: true
+    },
+    vpc_id: { type: 'string' }
+  }
+}
+
+/**
+ * Attach a vpc 2.0 to the specified instance.&lt;br>
+ * {@link https://www.vultr.com/api/#operation/attach-instance-vpc2}
+ * @function attachVpc2ToInstance
+ * @memberof instances
+ * @instance
+ */
+exports.attachVpc2ToInstance = {
+  url: '/instances/{instance-id}/vpc2/attach',
+  requestType: 'POST',
+  apiKeyRequired: true,
+  parameters: {
+    'instance-id': {
+      type: 'string',
+      path: true,
+      required: true
+    },
+    vpc_id: { type: 'string' }
+  }
+}
+
+/**
+ * Detach the specified instance's vpc 2.0.&lt;br>
+ * {@link https://www.vultr.com/api/#operation/detach-instance-vpc2}
+ * @function detachVpc2FromInstance
+ * @memberof instances
+ * @instance
+ */
+exports.detachVpc2FromInstance = {
+  url: '/instances/{instance-id}/vpc2/detach',
   requestType: 'POST',
   apiKeyRequired: true,
   parameters: {
@@ -797,13 +866,13 @@ exports.getAvailableInstanceUpgrades = {
 </div>
 
 <nav>
-    <h2><a href="index.html">Home</a></h2><h3>Namespaces</h3><ul><li><a href="account.html">account</a></li><li><a href="applications.html">applications</a></li><li><a href="backup.html">backup</a></li><li><a href="bareMetal.html">bareMetal</a></li><li><a href="billing.html">billing</a></li><li><a href="blockStorage.html">blockStorage</a></li><li><a href="databases.html">databases</a></li><li><a href="dns.html">dns</a></li><li><a href="firewall.html">firewall</a></li><li><a href="instances.html">instances</a></li><li><a href="iso.html">iso</a></li><li><a href="kubernetes.html">kubernetes</a></li><li><a href="loadBalancers.html">loadBalancers</a></li><li><a href="objectStorage.html">objectStorage</a></li><li><a href="operatingSystems.html">operatingSystems</a></li><li><a href="plans.html">plans</a></li><li><a href="regions.html">regions</a></li><li><a href="reservedIps.html">reservedIps</a></li><li><a href="snapshots.html">snapshots</a></li><li><a href="sshKeys.html">sshKeys</a></li><li><a href="startupScripts.html">startupScripts</a></li><li><a href="users.html">users</a></li><li><a href="vpcs.html">vpcs</a></li></ul>
+    <h2><a href="index.html">Home</a></h2><h3>Namespaces</h3><ul><li><a href="account.html">account</a></li><li><a href="applications.html">applications</a></li><li><a href="backup.html">backup</a></li><li><a href="bareMetal.html">bareMetal</a></li><li><a href="billing.html">billing</a></li><li><a href="blockStorage.html">blockStorage</a></li><li><a href="databases.html">databases</a></li><li><a href="dns.html">dns</a></li><li><a href="firewall.html">firewall</a></li><li><a href="instances.html">instances</a></li><li><a href="iso.html">iso</a></li><li><a href="kubernetes.html">kubernetes</a></li><li><a href="loadBalancers.html">loadBalancers</a></li><li><a href="objectStorage.html">objectStorage</a></li><li><a href="operatingSystems.html">operatingSystems</a></li><li><a href="plans.html">plans</a></li><li><a href="regions.html">regions</a></li><li><a href="reservedIps.html">reservedIps</a></li><li><a href="snapshots.html">snapshots</a></li><li><a href="sshKeys.html">sshKeys</a></li><li><a href="startupScripts.html">startupScripts</a></li><li><a href="users.html">users</a></li><li><a href="vpc2.html">vpc2</a></li><li><a href="vpcs.html">vpcs</a></li></ul>
 </nav>
 
 <br class="clear">
 
 <footer>
-    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 4.0.2</a> on Wed Jul 05 2023 20:36:54 GMT-0700 (Pacific Daylight Time)
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 4.0.2</a> on Tue Aug 01 2023 12:12:11 GMT-0700 (Pacific Daylight Time)
 </footer>
 
 <script> prettyPrint(); </script>

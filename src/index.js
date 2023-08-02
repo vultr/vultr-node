@@ -23,6 +23,7 @@ exports.initialize = (config) => {
   const startupScripts = require('./api/startup-scripts')
   const users = require('./api/users')
   const vpcs = require('./api/vpcs')
+  const vpc2 = require('./api/vpc2')
   const userConfiguration = config
 
   /**
@@ -58,7 +59,10 @@ exports.initialize = (config) => {
               const endpointParameter = endpoint.parameters[parameter]
               const userParameter = parameters[parameter]
 
-              if (endpointParameter.required && typeof userParameter === 'undefined') {
+              if (
+                endpointParameter.required &&
+                typeof userParameter === 'undefined'
+              ) {
                 // Parameters for the request are required, but none were passed in
                 throw new Error(`Missing parameter: ${parameter}`)
               } else if (userParameter || userParameter === '') {
@@ -154,7 +158,14 @@ exports.initialize = (config) => {
       getInstanceAvailableUpgrades: createRequestFunction(
         bareMetal.getInstanceAvailableUpgrades
       ),
-      getInstanceVncUrl: createRequestFunction(bareMetal.getInstanceVncUrl)
+      getInstanceVncUrl: createRequestFunction(bareMetal.getInstanceVncUrl),
+      attachVpc2ToInstance: createRequestFunction(
+        bareMetal.attachVpc2ToInstance
+      ),
+      detachVpc2FromInstance: createRequestFunction(
+        bareMetal.detachVpc2FromInstance
+      ),
+      listInstanceVpc2: createRequestFunction(bareMetal.listInstanceVpc2)
     },
     billing: {
       listHistory: createRequestFunction(billing.listHistory),
@@ -276,6 +287,7 @@ exports.initialize = (config) => {
         instances.getInstanceNeighbors
       ),
       listInstanceVpcs: createRequestFunction(instances.listInstanceVpcs),
+      listInstanceVpc2: createRequestFunction(instances.listInstanceVpc2),
       getInstanceIsoStatus: createRequestFunction(
         instances.getInstanceIsoStatus
       ),
@@ -284,8 +296,14 @@ exports.initialize = (config) => {
         instances.detachIsoFromInstance
       ),
       attachVpcToInstance: createRequestFunction(instances.attachVpcToInstance),
+      attachVpc2ToInstance: createRequestFunction(
+        instances.attachVpc2ToInstance
+      ),
       detachVpcFromInstance: createRequestFunction(
         instances.detachVpcFromInstance
+      ),
+      detachVpc2FromInstance: createRequestFunction(
+        instances.detachVpc2FromInstance
       ),
       setInstanceBackupSchedule: createRequestFunction(
         instances.setInstanceBackupSchedule
@@ -488,6 +506,13 @@ exports.initialize = (config) => {
       updateVpc: createRequestFunction(vpcs.updateVpc),
       listVpcs: createRequestFunction(vpcs.listVpcs),
       createVpc: createRequestFunction(vpcs.createVpc)
+    },
+    vpc2: {
+      getVpc: createRequestFunction(vpc2.getVpc),
+      deleteVpc: createRequestFunction(vpc2.deleteVpc),
+      updateVpc: createRequestFunction(vpc2.updateVpc),
+      listVpcs: createRequestFunction(vpc2.listVpcs),
+      createVpc: createRequestFunction(vpc2.createVpc)
     }
   }
 }
