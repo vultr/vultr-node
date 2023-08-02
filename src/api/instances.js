@@ -51,6 +51,7 @@ exports.createInstance = {
     script_id: { type: 'string' },
     snapshot_id: { type: 'string' },
     enable_ipv6: { type: 'boolean' },
+    disable_public_ipv4: { type: 'boolean' },
     attach_vpc: { type: 'array' },
     attach_vpc2: { type: 'array' },
     label: { type: 'string' },
@@ -274,7 +275,8 @@ exports.getInstanceBandwidth = {
       type: 'string',
       path: true,
       required: true
-    }
+    },
+    date_range: { type: 'number' }
   }
 }
 
