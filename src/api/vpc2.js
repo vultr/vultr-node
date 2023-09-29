@@ -107,3 +107,73 @@ exports.createVpc = {
     prefix_length: { type: 'number' }
   }
 }
+
+/**
+ * Get a list of nodes attached to a VPC 2.0 network.<br>
+ * {@link https://www.vultr.com/api/#tag/VPC2/operation/list-vpc2-nodes}
+ * @function listVpcNodes
+ * @memberof vpc2
+ * @instance
+ */
+exports.listVpcNodes = {
+  url: '/vpc2/{vpc-id}/nodes',
+  requestType: 'GET',
+  apiKeyRequired: true,
+  parameters: {
+    'vpc-id': {
+      type: 'string',
+      path: true,
+      required: true
+    },
+    per_page: { type: 'number' },
+    cursor: { type: 'string' }
+  }
+}
+
+/**
+ * Attach nodes to a VPC 2.0 network<br>
+ * {@link https://www.vultr.com/api/#tag/VPC2/operation/attach-vpc2-nodes}
+ * @function attachVpcNodes
+ * @memberof vpc2
+ * @instance
+ */
+exports.attachVpcNodes = {
+  url: '/vpc2/{vpc-id}/nodes/attach',
+  requestType: 'POST',
+  apiKeyRequired: true,
+  parameters: {
+    'vpc-id': {
+      type: 'string',
+      path: true,
+      required: true
+    },
+    nodes: {
+      type: 'array',
+      required: true
+    }
+  }
+}
+
+/**
+ * Detach nodes from a VPC 2.0 network<br>
+ * {@link https://www.vultr.com/api/#tag/VPC2/operation/detach-vpc2-nodes}
+ * @function detachVpcNodes
+ * @memberof vpc2
+ * @instance
+ */
+exports.detachVpcNodes = {
+  url: '/vpc2/{vpc-id}/nodes/detach',
+  requestType: 'POST',
+  apiKeyRequired: true,
+  parameters: {
+    'vpc-id': {
+      type: 'string',
+      path: true,
+      required: true
+    },
+    nodes: {
+      type: 'array',
+      required: true
+    }
+  }
+}

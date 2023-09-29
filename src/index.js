@@ -512,7 +512,10 @@ exports.initialize = (config) => {
       deleteVpc: createRequestFunction(vpc2.deleteVpc),
       updateVpc: createRequestFunction(vpc2.updateVpc),
       listVpcs: createRequestFunction(vpc2.listVpcs),
-      createVpc: createRequestFunction(vpc2.createVpc)
+      createVpc: createRequestFunction(vpc2.createVpc),
+      listVpcNodes: createRequestFunction(vpc2.listVpcNodes),
+      attachVpcNodes: createRequestFunction(vpc2.attachVpcNodes),
+      detachVpcNodes: createRequestFunction(vpc2.detachVpcNodes)
     }
   }
 }
