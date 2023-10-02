@@ -29,7 +29,11 @@ exports.makeApiRequest = (config, endpoint, userParameters) => {
       options.body = JSON.stringify(userParameters)
       options.headers['Content-Type'] = 'application/json'
     } else {
-      if (requestType === 'GET' || requestType === 'DELETE') {
+      if (
+        requestType === 'GET' ||
+        requestType === 'DELETE' ||
+        requestType === 'OPTIONS'
+      ) {
         // GET and DELETE requests may have path parameters as well as query parameters
         const queryParams = Object.keys(userParameters)
           .filter((key) => !parameters[key].path)

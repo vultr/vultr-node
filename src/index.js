@@ -17,6 +17,7 @@ exports.initialize = (config) => {
   const operatingSystems = require('./api/operating-systems')
   const plans = require('./api/plans')
   const regions = require('./api/regions')
+  const registries = require('./api/registries')
   const reservedIps = require('./api/reserved-ips')
   const snapshots = require('./api/snapshots')
   const sshKeys = require('./api/ssh-keys')
@@ -448,6 +449,27 @@ exports.initialize = (config) => {
       listAvailableComputeInRegion: createRequestFunction(
         regions.listAvailableComputeInRegion
       )
+    },
+    registries: {
+      listRegistries: createRequestFunction(registries.listRegistries),
+      createRegistry: createRequestFunction(registries.createRegistry),
+      readRegistry: createRequestFunction(registries.readRegistry),
+      updateRegistry: createRequestFunction(registries.updateRegistry),
+      deleteRegistry: createRequestFunction(registries.deleteRegistry),
+      listRepositories: createRequestFunction(registries.listRepositories),
+      readRepository: createRequestFunction(registries.readRepository),
+      updateRepository: createRequestFunction(registries.updateRepository),
+      deleteRepository: createRequestFunction(registries.deleteRepository),
+      createRegistryDockerCredentials: createRequestFunction(
+        registries.createRegistryDockerCredentials
+      ),
+      createRegistryDockerCredentialsKubernetes: createRequestFunction(
+        registries.createRegistryDockerCredentialsKubernetes
+      ),
+      listRegistryRegions: createRequestFunction(
+        registries.listRegistryRegions
+      ),
+      listRegistryPlans: createRequestFunction(registries.listRegistryPlans)
     },
     reservedIps: {
       getReservedIp: createRequestFunction(reservedIps.getReservedIp),

@@ -28,13 +28,13 @@ jobs:
     outputs:
       new_tag: ${{ steps.tagger.outputs.new_tag }}
     steps:
-    - uses: actions/checkout@v2
+    - uses: actions/checkout@v4
       with:
         fetch-depth: '0'
 
     - name: Bump version and push tag
       id: tagger
-      uses: anothrNick/github-tag-action@1.36.0
+      uses: anothrNick/github-tag-action@1.67.0
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         WITH_V: true
@@ -45,7 +45,7 @@ jobs:
     needs: create-tag
     steps:
       - name: Checkout code
-        uses: actions/checkout@v2
+        uses: actions/checkout@v4
 
       - name: Create Release
         id: create_release
@@ -64,7 +64,7 @@ jobs:
     steps:
       -
         name: Checkout
-        uses: actions/checkout@v2
+        uses: actions/checkout@v4
         with:
           fetch-depth: 0
 

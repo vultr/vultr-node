@@ -8,7 +8,7 @@ exports.createTestSuite = (specificationFile, mockParameters, mockResponse) => {
   const apiModule = specificationFile.replace(/-([a-z])/g, function (str) {
     return str[1].toUpperCase()
   })
-  const validRequestTypes = ['GET', 'POST', 'PATCH', 'PUT', 'DELETE']
+  const validRequestTypes = ['GET', 'POST', 'PATCH', 'PUT', 'DELETE', 'OPTIONS']
 
   jest.mock('node-fetch', () => jest.fn())
 
