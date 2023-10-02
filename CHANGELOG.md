@@ -1,5 +1,12 @@
 # Change Log
 
+## [v2.7.0](https://github.com/vultr/vultr-node/compare/v2.6.0...v2.7.0) (2023-10-02)
+
+### Features
+* Added support for Vultr Container Registry
+* Added new vpc2 endpoints
+* Added new param for bare metal endpoint
+
 ## [v2.6.0](https://github.com/vultr/vultr-node/compare/v2.5.0...v2.6.0) (2023-08-02)
 
 ### Features
