@@ -17,6 +17,7 @@ exports.initialize = (config) => {
   const operatingSystems = require('./api/operating-systems')
   const plans = require('./api/plans')
   const regions = require('./api/regions')
+  const registries = require('./api/registries')
   const reservedIps = require('./api/reserved-ips')
   const snapshots = require('./api/snapshots')
   const sshKeys = require('./api/ssh-keys')
@@ -449,6 +450,27 @@ exports.initialize = (config) => {
         regions.listAvailableComputeInRegion
       )
     },
+    registries: {
+      listRegistries: createRequestFunction(registries.listRegistries),
+      createRegistry: createRequestFunction(registries.createRegistry),
+      readRegistry: createRequestFunction(registries.readRegistry),
+      updateRegistry: createRequestFunction(registries.updateRegistry),
+      deleteRegistry: createRequestFunction(registries.deleteRegistry),
+      listRepositories: createRequestFunction(registries.listRepositories),
+      readRepository: createRequestFunction(registries.readRepository),
+      updateRepository: createRequestFunction(registries.updateRepository),
+      deleteRepository: createRequestFunction(registries.deleteRepository),
+      createRegistryDockerCredentials: createRequestFunction(
+        registries.createRegistryDockerCredentials
+      ),
+      createRegistryDockerCredentialsKubernetes: createRequestFunction(
+        registries.createRegistryDockerCredentialsKubernetes
+      ),
+      listRegistryRegions: createRequestFunction(
+        registries.listRegistryRegions
+      ),
+      listRegistryPlans: createRequestFunction(registries.listRegistryPlans)
+    },
     reservedIps: {
       getReservedIp: createRequestFunction(reservedIps.getReservedIp),
       deleteReservedIp: createRequestFunction(reservedIps.deleteReservedIp),
@@ -512,7 +534,10 @@ exports.initialize = (config) => {
       deleteVpc: createRequestFunction(vpc2.deleteVpc),
       updateVpc: createRequestFunction(vpc2.updateVpc),
       listVpcs: createRequestFunction(vpc2.listVpcs),
-      createVpc: createRequestFunction(vpc2.createVpc)
+      createVpc: createRequestFunction(vpc2.createVpc),
+      listVpcNodes: createRequestFunction(vpc2.listVpcNodes),
+      attachVpcNodes: createRequestFunction(vpc2.attachVpcNodes),
+      detachVpcNodes: createRequestFunction(vpc2.detachVpcNodes)
     }
   }
 }

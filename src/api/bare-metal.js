@@ -229,7 +229,8 @@ exports.reinstallInstance = {
       type: 'string',
       path: true,
       required: true
-    }
+    },
+    hostname: { type: 'string' }
   }
 }
 
