@@ -4,6 +4,8 @@
  * @namespace vpc2
  */
 
+import { ApiEndpoint } from '../types'
+
 /**
  * Get information about the specified vpc2.<br>
  * {@link https://www.vultr.com/api/#operation/get-vpc2}
@@ -11,7 +13,7 @@
  * @memberof vpc2
  * @instance
  */
-exports.getVpc = {
+export const getVpc: ApiEndpoint = {
   url: '/vpc2/{vpc-id}',
   requestType: 'GET',
   apiKeyRequired: true,
@@ -31,7 +33,7 @@ exports.getVpc = {
  * @memberof vpc2
  * @instance
  */
-exports.deleteVpc = {
+export const deleteVpc: ApiEndpoint = {
   url: '/vpc2/{vpc-id}',
   requestType: 'DELETE',
   apiKeyRequired: true,
@@ -51,7 +53,7 @@ exports.deleteVpc = {
  * @memberof vpc2
  * @instance
  */
-exports.updateVpc = {
+export const updateVpc: ApiEndpoint = {
   url: '/vpc2/{vpc-id}',
   requestType: 'PUT',
   apiKeyRequired: true,
@@ -75,7 +77,7 @@ exports.updateVpc = {
  * @memberof vpc2
  * @instance
  */
-exports.listVpcs = {
+export const listVpcs: ApiEndpoint = {
   url: '/vpc2',
   requestType: 'GET',
   apiKeyRequired: true,
@@ -92,7 +94,7 @@ exports.listVpcs = {
  * @memberof vpc2
  * @instance
  */
-exports.createVpc = {
+export const createVpc: ApiEndpoint = {
   url: '/vpc2',
   requestType: 'POST',
   apiKeyRequired: true,
@@ -115,7 +117,7 @@ exports.createVpc = {
  * @memberof vpc2
  * @instance
  */
-exports.listVpcNodes = {
+export const listVpcNodes: ApiEndpoint = {
   url: '/vpc2/{vpc-id}/nodes',
   requestType: 'GET',
   apiKeyRequired: true,
@@ -137,7 +139,7 @@ exports.listVpcNodes = {
  * @memberof vpc2
  * @instance
  */
-exports.attachVpcNodes = {
+export const attachVpcNodes: ApiEndpoint = {
   url: '/vpc2/{vpc-id}/nodes/attach',
   requestType: 'POST',
   apiKeyRequired: true,
@@ -161,7 +163,7 @@ exports.attachVpcNodes = {
  * @memberof vpc2
  * @instance
  */
-exports.detachVpcNodes = {
+export const detachVpcNodes: ApiEndpoint = {
   url: '/vpc2/{vpc-id}/nodes/detach',
   requestType: 'POST',
   apiKeyRequired: true,

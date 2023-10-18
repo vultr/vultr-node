@@ -4,6 +4,8 @@
  * @namespace plans
  */
 
+import { ApiEndpoint } from '../types'
+
 /**
  * Get a list of allavailable Vultr instance plans.<br>
  * {@link https://www.vultr.com/api/#operation/list-plans}
@@ -11,9 +13,10 @@
  * @memberof plans
  * @instance
  */
-exports.listPlans = {
+export const listPlans: ApiEndpoint = {
   url: '/plans',
   requestType: 'GET',
+  apiKeyRequired: false,
   parameters: {
     type: { type: 'string' },
     os: { type: 'string' },
@@ -28,9 +31,10 @@ exports.listPlans = {
  * @memberof plans
  * @instance
  */
-exports.listBareMetalPlans = {
+export const listBareMetalPlans: ApiEndpoint = {
   url: '/plans-metal',
   requestType: 'GET',
+  apiKeyRequired: false,
   parameters: {
     per_page: { type: 'string' },
     cursor: { type: 'string' }

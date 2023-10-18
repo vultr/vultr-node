@@ -4,6 +4,8 @@
  * @namespace iso
  */
 
+import { ApiEndpoint } from '../types'
+
 /**
  * List all ISOs in the account.<br>
  * {@link https://www.vultr.com/api/#operation/list-isos}
@@ -11,7 +13,7 @@
  * @memberof iso
  * @instance
  */
-exports.listIsos = {
+export const listIsos: ApiEndpoint = {
   url: '/iso',
   requestType: 'GET',
   apiKeyRequired: true,
@@ -28,7 +30,7 @@ exports.listIsos = {
  * @memberof iso
  * @instance
  */
-exports.createIso = {
+export const createIso: ApiEndpoint = {
   url: '/iso',
   requestType: 'POST',
   apiKeyRequired: true,
@@ -47,7 +49,7 @@ exports.createIso = {
  * @memberof iso
  * @instance
  */
-exports.getIso = {
+export const getIso: ApiEndpoint = {
   url: '/iso/{iso-id}',
   requestType: 'POST',
   apiKeyRequired: true,
@@ -67,7 +69,7 @@ exports.getIso = {
  * @memberof iso
  * @instance
  */
-exports.deleteIso = {
+export const deleteIso: ApiEndpoint = {
   url: '/iso/{iso-id}',
   requestType: 'DELETE',
   apiKeyRequired: true,
@@ -87,7 +89,8 @@ exports.deleteIso = {
  * @memberof iso
  * @instance
  */
-exports.listPublicIsos = {
+export const listPublicIsos: ApiEndpoint = {
   url: '/iso-public',
-  requestType: 'GET'
+  requestType: 'GET',
+  apiKeyRequired: false
 }

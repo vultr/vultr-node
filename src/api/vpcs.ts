@@ -4,6 +4,8 @@
  * @namespace vpcs
  */
 
+import { ApiEndpoint } from '../types'
+
 /**
  * Get information about the specified vpc.<br>
  * {@link https://www.vultr.com/api/#operation/get-vpc}
@@ -11,7 +13,7 @@
  * @memberof vpcs
  * @instance
  */
-exports.getVpc = {
+export const getVpc: ApiEndpoint = {
   url: '/vpcs/{vpc-id}',
   requestType: 'GET',
   apiKeyRequired: true,
@@ -31,7 +33,7 @@ exports.getVpc = {
  * @memberof vpcs
  * @instance
  */
-exports.deleteVpc = {
+export const deleteVpc: ApiEndpoint = {
   url: '/vpcs/{vpc-id}',
   requestType: 'DELETE',
   apiKeyRequired: true,
@@ -51,7 +53,7 @@ exports.deleteVpc = {
  * @memberof vpcs
  * @instance
  */
-exports.updateVpc = {
+export const updateVpc: ApiEndpoint = {
   url: '/vpcs/{vpc-id}',
   requestType: 'PUT',
   apiKeyRequired: true,
@@ -75,7 +77,7 @@ exports.updateVpc = {
  * @memberof vpcs
  * @instance
  */
-exports.listVpcs = {
+export const listVpcs: ApiEndpoint = {
   url: '/vpcs',
   requestType: 'GET',
   apiKeyRequired: true,
@@ -92,7 +94,7 @@ exports.listVpcs = {
  * @memberof vpcs
  * @instance
  */
-exports.createVpc = {
+export const createVpc: ApiEndpoint = {
   url: '/vpcs',
   requestType: 'POST',
   apiKeyRequired: true,

@@ -1,18 +1,17 @@
+/* eslint-env node */
 module.exports = {
+  extends: [
+    'eslint:recommended',
+    'plugin:@typescript-eslint/recommended',
+    'plugin:jest/recommended'
+  ],
+  parser: '@typescript-eslint/parser',
+  plugins: [
+    '@typescript-eslint',
+    'jest'
+  ],
   env: {
-    es6: true,
-    node: true,
-    'jest/globals': true
+    "jest/globals": true
   },
-  extends: 'standard',
-  globals: {
-    Atomics: 'readonly',
-    SharedArrayBuffer: 'readonly'
-  },
-  parserOptions: {
-    ecmaVersion: 2018,
-    sourceType: 'module'
-  },
-  plugins: ['jest'],
-  rules: {}
-}
+  root: true,
+};

@@ -1,31 +1,33 @@
-exports.initialize = (config) => {
-  const util = require('./util')
-  const account = require('./api/account')
-  const applications = require('./api/applications')
-  const backups = require('./api/backups')
-  const bareMetal = require('./api/bare-metal')
-  const billing = require('./api/billing')
-  const blockStorage = require('./api/block-storage')
-  const databases = require('./api/databases')
-  const dns = require('./api/dns')
-  const firewall = require('./api/firewall')
-  const instances = require('./api/instances')
-  const iso = require('./api/iso')
-  const kubernetes = require('./api/kubernetes')
-  const loadBalancers = require('./api/load-balancers')
-  const objectStorage = require('./api/object-storage')
-  const operatingSystems = require('./api/operating-systems')
-  const plans = require('./api/plans')
-  const regions = require('./api/regions')
-  const registries = require('./api/registries')
-  const reservedIps = require('./api/reserved-ips')
-  const snapshots = require('./api/snapshots')
-  const sshKeys = require('./api/ssh-keys')
-  const startupScripts = require('./api/startup-scripts')
-  const users = require('./api/users')
-  const vpcs = require('./api/vpcs')
-  const vpc2 = require('./api/vpc2')
-  const userConfiguration = config
+import * as account from './api/account'
+import * as applications from './api/applications'
+import * as backups from './api/backups'
+import * as bareMetal from './api/bare-metal'
+import * as billing from './api/billing'
+import * as blockStorage from './api/block-storage'
+import * as databases from './api/databases'
+import * as dns from './api/dns'
+import * as firewall from './api/firewall'
+import * as instances from './api/instances'
+import * as iso from './api/iso'
+import * as kubernetes from './api/kubernetes'
+import * as loadBalancers from './api/load-balancers'
+import * as objectStorage from './api/object-storage'
+import * as operatingSystems from './api/operating-systems'
+import * as plans from './api/plans'
+import * as regions from './api/regions'
+import * as registries from './api/registries'
+import * as reservedIps from './api/reserved-ips'
+import * as snapshots from './api/snapshots'
+import * as sshKeys from './api/ssh-keys'
+import * as startupScripts from './api/startup-scripts'
+import * as users from './api/users'
+import * as vpc2 from './api/vpc2'
+import * as vpcs from './api/vpcs'
+import { ApiEndpoint, UserConfiguration } from './types'
+import * as util from './util'
+
+exports.initialize = (config: unknown) => {
+  const userConfiguration: UserConfiguration = config as UserConfiguration
 
   /**
    * Creates a function that allows a user to pass parameters to the functions
@@ -36,11 +38,13 @@ exports.initialize = (config) => {
    *
    * @param {String} endpoint the API endpoint configuration as defined in /api
    */
-  const createRequestFunction = (endpoint) => {
-    return (parameters) => {
+
+  // TODO: Create endpoint type and insert everywhere
+  const createRequestFunction = (endpoint: ApiEndpoint) => {
+    return (parameters: Record<string, string>) => {
       // Check if the endpoint requires an API key
       if (endpoint.apiKeyRequired) {
-        if (userConfiguration === undefined || !userConfiguration.apiKey) {
+        if (!userConfiguration) {
           // API key was not provided
           throw new Error(`API key required for ${endpoint.url}`)
         }
@@ -54,7 +58,7 @@ exports.initialize = (config) => {
             throw new Error('Parameters must be passed in as an object.')
           } else {
             // Validate the parameters the user passed in
-            const requestParameters = {}
+            const requestParameters: Record<string, string> = {}
 
             for (const parameter in endpoint.parameters) {
               const endpointParameter = endpoint.parameters[parameter]

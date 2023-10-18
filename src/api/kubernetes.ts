@@ -4,6 +4,8 @@
  * @namespace kubernetes
  */
 
+import { ApiEndpoint } from '../types'
+
 /**
  * Creates a Kubernetes cluster.<br>
  * {@link https://www.vultr.com/api/#operation/create-kubernetes-cluster}
@@ -11,7 +13,7 @@
  * @memberof kubernetes
  * @instance
  */
-exports.createKubernetesCluster = {
+export const createKubernetesCluster: ApiEndpoint = {
   url: '/kubernetes/clusters',
   requestType: 'POST',
   apiKeyRequired: true,
@@ -36,7 +38,7 @@ exports.createKubernetesCluster = {
  * @memberof kubernetes
  * @instance
  */
-exports.listKubernetesClusters = {
+export const listKubernetesClusters: ApiEndpoint = {
   url: '/kubernetes/clusters',
   requestType: 'GET',
   apiKeyRequired: true
@@ -49,7 +51,7 @@ exports.listKubernetesClusters = {
  * @memberof kubernetes
  * @instance
  */
-exports.getKubernetesCluster = {
+export const getKubernetesCluster: ApiEndpoint = {
   url: '/kubernetes/clusters/{vke-id}',
   requestType: 'GET',
   apiKeyRequired: true,
@@ -69,7 +71,7 @@ exports.getKubernetesCluster = {
  * @memberof kubernetes
  * @instance
  */
-exports.updateKubernetesCluster = {
+export const updateKubernetesCluster: ApiEndpoint = {
   url: '/kubernetes/clusters/{vke-id}',
   requestType: 'PUT',
   apiKeyRequired: true,
@@ -93,7 +95,7 @@ exports.updateKubernetesCluster = {
  * @memberof kubernetes
  * @instance
  */
-exports.deleteKubernetesCluster = {
+export const deleteKubernetesCluster: ApiEndpoint = {
   url: '/kubernetes/clusters/{vke-id}',
   requestType: 'DELETE',
   apiKeyRequired: true,
@@ -113,7 +115,7 @@ exports.deleteKubernetesCluster = {
  * @memberof kubernetes
  * @instance
  */
-exports.deleteKubernetesClusterAndResources = {
+export const deleteKubernetesClusterAndResources: ApiEndpoint = {
   url: '/kubernetes/clusters/{vke-id}/delete-with-linked-resources',
   requestType: 'DELETE',
   apiKeyRequired: true,
@@ -133,7 +135,7 @@ exports.deleteKubernetesClusterAndResources = {
  * @memberof kubernetes
  * @instance
  */
-exports.getKubernetesResources = {
+export const getKubernetesResources: ApiEndpoint = {
   url: '/kubernetes/clusters/{vke-id}/resources',
   requestType: 'GET',
   apiKeyRequired: true,
@@ -153,7 +155,7 @@ exports.getKubernetesResources = {
  * @memberof kubernetes
  * @instance
  */
-exports.createNodePool = {
+export const createNodePool: ApiEndpoint = {
   url: '/kubernetes/clusters/{vke-id}/node-pools',
   requestType: 'POST',
   apiKeyRequired: true,
@@ -201,7 +203,7 @@ exports.createNodePool = {
  * @memberof kubernetes
  * @instance
  */
-exports.listNodePools = {
+export const listNodePools: ApiEndpoint = {
   url: '/kubernetes/clusters/{vke-id}/node-pools',
   requestType: 'GET',
   apiKeyRequired: true,
@@ -221,7 +223,7 @@ exports.listNodePools = {
  * @memberof kubernetes
  * @instance
  */
-exports.getNodePool = {
+export const getNodePool: ApiEndpoint = {
   url: '/kubernetes/clusters/{vke-id}/node-pools/{nodepool-id}',
   requestType: 'GET',
   apiKeyRequired: true,
@@ -246,7 +248,7 @@ exports.getNodePool = {
  * @memberof kubernetes
  * @instance
  */
-exports.updateNodePool = {
+export const updateNodePool: ApiEndpoint = {
   url: '/kubernetes/clusters/{vke-id}/node-pools/{nodepool-id}',
   requestType: 'PATCH',
   apiKeyRequired: true,
@@ -291,7 +293,7 @@ exports.updateNodePool = {
  * @memberof kubernetes
  * @instance
  */
-exports.deleteNodePool = {
+export const deleteNodePool: ApiEndpoint = {
   url: '/kubernetes/clusters/{vke-id}/node-pools/{nodepool-id}',
   requestType: 'DELETE',
   apiKeyRequired: true,
@@ -316,7 +318,7 @@ exports.deleteNodePool = {
  * @memberof kubernetes
  * @instance
  */
-exports.deleteNodePoolInstance = {
+export const deleteNodePoolInstance: ApiEndpoint = {
   url: '/kubernetes/clusters/{vke-id}/node-pools/{nodepool-id}/nodes/{node-id}',
   requestType: 'DELETE',
   apiKeyRequired: true,
@@ -346,7 +348,7 @@ exports.deleteNodePoolInstance = {
  * @memberof kubernetes
  * @instance
  */
-exports.recycleNodePoolInstance = {
+export const recycleNodePoolInstance: ApiEndpoint = {
   url: '/kubernetes/clusters/{vke-id}/node-pools/{nodepool-id}/nodes/{node-id}/recycle',
   requestType: 'POST',
   apiKeyRequired: true,
@@ -376,7 +378,7 @@ exports.recycleNodePoolInstance = {
  * @memberof kubernetes
  * @instance
  */
-exports.getKubernetesClusterKubeconfig = {
+export const getKubernetesClusterKubeconfig: ApiEndpoint = {
   url: '/kubernetes/clusters/{vke-id}/config',
   requestType: 'GET',
   apiKeyRequired: true,
@@ -396,9 +398,10 @@ exports.getKubernetesClusterKubeconfig = {
  * @memberof kubernetes
  * @instance
  */
-exports.getKubernetesVersions = {
+export const getKubernetesVersions: ApiEndpoint = {
   url: '/kubernetes/versions',
-  requestType: 'GET'
+  requestType: 'GET',
+  apiKeyRequired: false
 }
 
 /**
@@ -408,7 +411,7 @@ exports.getKubernetesVersions = {
  * @memberof kubernetes
  * @instance
  */
-exports.upgrades = {
+export const upgrades: ApiEndpoint = {
   url: '/kubernetes/clusters/{vke-id}/upgrades',
   requestType: 'POST',
   apiKeyRequired: true,
@@ -432,7 +435,7 @@ exports.upgrades = {
  * @memberof kubernetes
  * @instance
  */
-exports.getKubernetesAvailableUpgrades = {
+export const getKubernetesAvailableUpgrades: ApiEndpoint = {
   url: '/kubernetes/clusters/{vke-id}/available-upgrades',
   requestType: 'GET',
   apiKeyRequired: true,

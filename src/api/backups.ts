@@ -4,6 +4,8 @@
  * @namespace backup
  */
 
+import { ApiEndpoint } from '../types'
+
 /**
  * Get information about backups in your account.<br>
  * {@link https://www.vultr.com/api/#operation/list-backups}
@@ -11,7 +13,7 @@
  * @memberof backup
  * @instance
  */
-exports.listBackups = {
+export const listBackups: ApiEndpoint = {
   url: '/backups',
   requestType: 'GET',
   apiKeyRequired: true,
@@ -29,7 +31,7 @@ exports.listBackups = {
  * @memberof backup
  * @instance
  */
-exports.getBackup = {
+export const getBackup: ApiEndpoint = {
   url: '/backups/{backup-id}',
   requestType: 'GET',
   apiKeyRequired: true,

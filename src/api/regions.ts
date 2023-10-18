@@ -4,6 +4,8 @@
  * @namespace regions
  */
 
+import { ApiEndpoint } from '../types'
+
 /**
  * List all regions available at Vultr.<br>
  * {@link https://www.vultr.com/api/#operation/list-regions}
@@ -11,9 +13,10 @@
  * @memberof regions
  * @instance
  */
-exports.listRegions = {
+export const listRegions: ApiEndpoint = {
   url: '/regions',
   requestType: 'GET',
+  apiKeyRequired: false,
   parameters: {
     per_page: { type: 'string' },
     cursor: { type: 'string' }
@@ -27,9 +30,10 @@ exports.listRegions = {
  * @memberof regions
  * @instance
  */
-exports.listAvailableComputeInRegion = {
+export const listAvailableComputeInRegion: ApiEndpoint = {
   url: '/regions/{region-id}/availability',
   requestType: 'GET',
+  apiKeyRequired: false,
   parameters: {
     'region-id': {
       type: 'string',

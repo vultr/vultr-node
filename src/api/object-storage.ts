@@ -4,6 +4,8 @@
  * @namespace objectStorage
  */
 
+import { ApiEndpoint } from '../types'
+
 /**
  * List all object storage volumes on the account.<br>
  * {@link https://www.vultr.com/api/#operation/list-object-storages}
@@ -11,7 +13,7 @@
  * @memberof objectStorage
  * @instance
  */
-exports.listObjectStorages = {
+export const listObjectStorages: ApiEndpoint = {
   url: '/object-storage',
   requestType: 'GET',
   apiKeyRequired: true,
@@ -28,7 +30,7 @@ exports.listObjectStorages = {
  * @memberof objectStorage
  * @instance
  */
-exports.createObjectStorage = {
+export const createObjectStorage: ApiEndpoint = {
   url: '/object-storage',
   requestType: 'POST',
   apiKeyRequired: true,
@@ -48,7 +50,7 @@ exports.createObjectStorage = {
  * @memberof objectStorage
  * @instance
  */
-exports.getObjectStorage = {
+export const getObjectStorage: ApiEndpoint = {
   url: '/object-storage/{object-storage-id}',
   requestType: 'GET',
   apiKeyRequired: true,
@@ -68,7 +70,7 @@ exports.getObjectStorage = {
  * @memberof objectStorage
  * @instance
  */
-exports.deleteObjectStorage = {
+export const deleteObjectStorage: ApiEndpoint = {
   url: '/object-storage/{object-storage-id}',
   requestType: 'DELETE',
   apiKeyRequired: true,
@@ -88,7 +90,7 @@ exports.deleteObjectStorage = {
  * @memberof objectStorage
  * @instance
  */
-exports.updateObjectStorage = {
+export const updateObjectStorage: ApiEndpoint = {
   url: '/object-storage/{object-storage-id}',
   requestType: 'PUT',
   apiKeyRequired: true,
@@ -112,7 +114,7 @@ exports.updateObjectStorage = {
  * @memberof objectStorage
  * @instance
  */
-exports.regenerateObjectStorageKeys = {
+export const regenerateObjectStorageKeys: ApiEndpoint = {
   url: '/object-storage/{object-storage-id}/regenerate-keys',
   requestType: 'POST',
   apiKeyRequired: true,
@@ -132,7 +134,7 @@ exports.regenerateObjectStorageKeys = {
  * @memberof objectStorage
  * @instance
  */
-exports.getAllClusters = {
+export const getAllClusters: ApiEndpoint = {
   url: '/object-storage/clusters',
   requestType: 'GET',
   apiKeyRequired: true,

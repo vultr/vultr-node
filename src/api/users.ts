@@ -4,6 +4,8 @@
  * @namespace users
  */
 
+import { ApiEndpoint } from '../types'
+
 /**
  * Get information about the specified user.<br>
  * {@link https://www.vultr.com/api/#operation/get-user}
@@ -11,7 +13,7 @@
  * @memberof users
  * @instance
  */
-exports.getUser = {
+export const getUser: ApiEndpoint = {
   url: '/users/{user-id}',
   requestType: 'GET',
   apiKeyRequired: true,
@@ -31,7 +33,7 @@ exports.getUser = {
  * @memberof users
  * @instance
  */
-exports.deleteUser = {
+export const deleteUser: ApiEndpoint = {
   url: '/users/{user-id}',
   requestType: 'DELETE',
   apiKeyRequired: true,
@@ -51,7 +53,7 @@ exports.deleteUser = {
  * @memberof users
  * @instance
  */
-exports.updateUser = {
+export const updateUser: ApiEndpoint = {
   url: '/users/{user-id}',
   requestType: 'PATCH',
   apiKeyRequired: true,
@@ -76,7 +78,7 @@ exports.updateUser = {
  * @memberof users
  * @instance
  */
-exports.getUsers = {
+export const getUsers: ApiEndpoint = {
   url: '/users',
   requestType: 'GET',
   apiKeyRequired: true,
@@ -93,7 +95,7 @@ exports.getUsers = {
  * @memberof users
  * @instance
  */
-exports.createUser = {
+export const createUser: ApiEndpoint = {
   url: '/users',
   requestType: 'POST',
   apiKeyRequired: true,

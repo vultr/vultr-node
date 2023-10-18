@@ -4,6 +4,8 @@
  * @namespace sshKeys
  */
 
+import { ApiEndpoint } from '../types'
+
 /**
  * Get information about a specified SSH key.<br>
  * {@link https://www.vultr.com/api/#operation/get-ssh-key}
@@ -11,7 +13,7 @@
  * @memberof sshKeys
  * @instance
  */
-exports.getSshKey = {
+export const getSshKey: ApiEndpoint = {
   url: '/ssh-keys/{ssh-key-id}',
   requestType: 'GET',
   apiKeyRequired: true,
@@ -31,7 +33,7 @@ exports.getSshKey = {
  * @memberof sshKeys
  * @instance
  */
-exports.updateSshKey = {
+export const updateSshKey: ApiEndpoint = {
   url: '/ssh-keys/{ssh-key-id}',
   requestType: 'PATCH',
   apiKeyRequired: true,
@@ -53,7 +55,7 @@ exports.updateSshKey = {
  * @memberof sshKeys
  * @instance
  */
-exports.deleteSshKey = {
+export const deleteSshKey: ApiEndpoint = {
   url: '/ssh-keys/{ssh-key-id}',
   requestType: 'DELETE',
   apiKeyRequired: true,
@@ -73,7 +75,7 @@ exports.deleteSshKey = {
  * @memberof sshKeys
  * @instance
  */
-exports.listSshKeys = {
+export const listSshKeys: ApiEndpoint = {
   url: '/ssh-keys',
   requestType: 'GET',
   apiKeyRequired: true,
@@ -90,7 +92,7 @@ exports.listSshKeys = {
  * @memberof sshKeys
  * @instance
  */
-exports.createSshKey = {
+export const createSshKey: ApiEndpoint = {
   url: '/ssh-keys',
   requestType: 'POST',
   apiKeyRequired: true,

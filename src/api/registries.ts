@@ -4,6 +4,8 @@
  * @namespace registries
  */
 
+import { ApiEndpoint } from '../types'
+
 /**
  * List All Container Registry Subscriptions for this account.<br>
  * {@link https://www.vultr.com/api/#tag/Container-Registry/operation/list-registries}
@@ -11,7 +13,7 @@
  * @memberof registries
  * @instance
  */
-exports.listRegistries = {
+export const listRegistries: ApiEndpoint = {
   url: '/registries',
   requestType: 'GET',
   apiKeyRequired: true,
@@ -28,7 +30,7 @@ exports.listRegistries = {
  * @memberof registries
  * @instance
  */
-exports.createRegistry = {
+export const createRegistry: ApiEndpoint = {
   url: '/registry',
   requestType: 'POST',
   apiKeyRequired: true,
@@ -47,7 +49,7 @@ exports.createRegistry = {
  * @memberof registries
  * @instance
  */
-exports.readRegistry = {
+export const readRegistry: ApiEndpoint = {
   url: '/registry/{registry-id}',
   requestType: 'GET',
   apiKeyRequired: true,
@@ -63,7 +65,7 @@ exports.readRegistry = {
  * @memberof registries
  * @instance
  */
-exports.updateRegistry = {
+export const updateRegistry: ApiEndpoint = {
   url: '/registry/{registry-id}',
   requestType: 'PUT',
   apiKeyRequired: true,
@@ -81,7 +83,7 @@ exports.updateRegistry = {
  * @memberof registries
  * @instance
  */
-exports.deleteRegistry = {
+export const deleteRegistry: ApiEndpoint = {
   url: '/registry/{registry-id}',
   requestType: 'DELETE',
   apiKeyRequired: true,
@@ -97,7 +99,7 @@ exports.deleteRegistry = {
  * @memberof registries
  * @instance
  */
-exports.listRepositories = {
+export const listRepositories: ApiEndpoint = {
   url: '/registry/{registry-id}/repositories',
   requestType: 'GET',
   apiKeyRequired: true,
@@ -113,7 +115,7 @@ exports.listRepositories = {
  * @memberof registries
  * @instance
  */
-exports.readRepository = {
+export const readRepository: ApiEndpoint = {
   url: '/registry/{registry-id}/repository/{repository-image}',
   requestType: 'GET',
   apiKeyRequired: true,
@@ -130,7 +132,7 @@ exports.readRepository = {
  * @memberof registries
  * @instance
  */
-exports.updateRepository = {
+export const updateRepository: ApiEndpoint = {
   url: '/registry/{registry-id}/repository/{repository-image}',
   requestType: 'PUT',
   apiKeyRequired: true,
@@ -148,7 +150,7 @@ exports.updateRepository = {
  * @memberof registries
  * @instance
  */
-exports.deleteRepository = {
+export const deleteRepository: ApiEndpoint = {
   url: '/registry/{registry-id}/repository/{repository-image}',
   requestType: 'DELETE',
   apiKeyRequired: true,
@@ -165,7 +167,7 @@ exports.deleteRepository = {
  * @memberof registries
  * @instance
  */
-exports.createRegistryDockerCredentials = {
+export const createRegistryDockerCredentials: ApiEndpoint = {
   url: '/registry/{registry-id}/docker-credentials',
   requestType: 'OPTIONS',
   apiKeyRequired: true,
@@ -183,7 +185,7 @@ exports.createRegistryDockerCredentials = {
  * @memberof registries
  * @instance
  */
-exports.createRegistryDockerCredentialsKubernetes = {
+export const createRegistryDockerCredentialsKubernetes: ApiEndpoint = {
   url: '/registry/{registry-id}/docker-credentials/kubernetes',
   requestType: 'OPTIONS',
   apiKeyRequired: true,
@@ -202,7 +204,7 @@ exports.createRegistryDockerCredentialsKubernetes = {
  * @memberof registries
  * @instance
  */
-exports.listRegistryRegions = {
+export const listRegistryRegions: ApiEndpoint = {
   url: '/registry/region/list',
   requestType: 'GET',
   apiKeyRequired: true
@@ -215,7 +217,7 @@ exports.listRegistryRegions = {
  * @memberof registries
  * @instance
  */
-exports.listRegistryPlans = {
+export const listRegistryPlans: ApiEndpoint = {
   url: '/registry/plan/list',
   requestType: 'GET',
   apiKeyRequired: true

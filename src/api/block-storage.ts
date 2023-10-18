@@ -4,6 +4,8 @@
  * @namespace blockStorage
  */
 
+import { ApiEndpoint } from '../types'
+
 /**
  * List all block storage volumes in the account.<br>
  * {@link https://www.vultr.com/api/#operation/list-blocks}
@@ -11,7 +13,7 @@
  * @memberof blockStorage
  * @instance
  */
-exports.listStorages = {
+export const listStorages: ApiEndpoint = {
   url: '/blocks',
   requestType: 'GET',
   apiKeyRequired: true,
@@ -28,7 +30,7 @@ exports.listStorages = {
  * @memberof blockStorage
  * @instance
  */
-exports.createStorage = {
+export const createStorage: ApiEndpoint = {
   url: '/blocks',
   requestType: 'POST',
   apiKeyRequired: true,
@@ -53,7 +55,7 @@ exports.createStorage = {
  * @memberof blockStorage
  * @instance
  */
-exports.getStorage = {
+export const getStorage: ApiEndpoint = {
   url: '/blocks/{block-id}',
   requestType: 'GET',
   apiKeyRequired: true,
@@ -73,7 +75,7 @@ exports.getStorage = {
  * @memberof blockStorage
  * @instance
  */
-exports.deleteStorage = {
+export const deleteStorage: ApiEndpoint = {
   url: '/blocks/{block-id}',
   requestType: 'DELETE',
   apiKeyRequired: true,
@@ -93,7 +95,7 @@ exports.deleteStorage = {
  * @memberof blockStorage
  * @instance
  */
-exports.updateStorage = {
+export const updateStorage: ApiEndpoint = {
   url: '/blocks/{block-id}',
   requestType: 'PATCH',
   apiKeyRequired: true,
@@ -115,7 +117,7 @@ exports.updateStorage = {
  * @memberof blockStorage
  * @instance
  */
-exports.attachStorage = {
+export const attachStorage: ApiEndpoint = {
   url: '/blocks/{block-id}/attach',
   requestType: 'POST',
   apiKeyRequired: true,
@@ -140,7 +142,7 @@ exports.attachStorage = {
  * @memberof blockStorage
  * @instance
  */
-exports.detachStorage = {
+export const detachStorage: ApiEndpoint = {
   url: '/blocks/{block-id}/detach',
   requestType: 'POST',
   apiKeyRequired: true,

@@ -1,8 +1,11 @@
 {
   "compilerOptions": {
-    "allowJs": true,
     "outDir": "./dist",
-    "declaration": true
+    "declaration": true,
+    "strict": true,
+    "types": [
+      "node"
+    ]
   },
   "include": ["./src"]
 }

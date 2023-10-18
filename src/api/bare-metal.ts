@@ -4,6 +4,8 @@
  * @namespace bareMetal
  */
 
+import { ApiEndpoint } from '../types'
+
 /**
  * List all bare metal instances on the current account.<br>
  * {@link https://www.vultr.com/api/#operation/list-baremetals}
@@ -11,7 +13,7 @@
  * @memberof bareMetal
  * @instance
  */
-exports.listInstances = {
+export const listInstances: ApiEndpoint = {
   url: '/bare-metals',
   requestType: 'GET',
   apiKeyRequired: true,
@@ -28,7 +30,7 @@ exports.listInstances = {
  * @memberof bareMetal
  * @instance
  */
-exports.createInstance = {
+export const createInstance: ApiEndpoint = {
   url: '/bare-metals',
   requestType: 'POST',
   apiKeyRequired: true,
@@ -69,7 +71,7 @@ exports.createInstance = {
  * @memberof bareMetal
  * @instance
  */
-exports.getInstance = {
+export const getInstance: ApiEndpoint = {
   url: '/bare-metals/{baremetal-id}',
   requestType: 'GET',
   apiKeyRequired: true,
@@ -89,7 +91,7 @@ exports.getInstance = {
  * @memberof bareMetal
  * @instance
  */
-exports.updateInstance = {
+export const updateInstance: ApiEndpoint = {
   url: '/bare-metals/{baremetal-id}',
   requestType: 'PATCH',
   apiKeyRequired: true,
@@ -120,7 +122,7 @@ exports.updateInstance = {
  * @memberof bareMetal
  * @instance
  */
-exports.deleteInstance = {
+export const deleteInstance: ApiEndpoint = {
   url: '/bare-metals/{baremetal-id}',
   requestType: 'DELETE',
   apiKeyRequired: true,
@@ -140,7 +142,7 @@ exports.deleteInstance = {
  * @memberof bareMetal
  * @instance
  */
-exports.getInstanceIpv4Addresses = {
+export const getInstanceIpv4Addresses: ApiEndpoint = {
   url: '/bare-metals/{baremetal-id}/ipv4',
   requestType: 'GET',
   apiKeyRequired: true,
@@ -160,7 +162,7 @@ exports.getInstanceIpv4Addresses = {
  * @memberof bareMetal
  * @instance
  */
-exports.getInstanceIpv6Addresses = {
+export const getInstanceIpv6Addresses: ApiEndpoint = {
   url: '/bare-metals/{baremetal-id}/ipv6',
   requestType: 'GET',
   apiKeyRequired: true,
@@ -180,7 +182,7 @@ exports.getInstanceIpv6Addresses = {
  * @memberof bareMetal
  * @instance
  */
-exports.startInstance = {
+export const startInstance: ApiEndpoint = {
   url: '/bare-metals/{baremetal-id}/start',
   requestType: 'POST',
   apiKeyRequired: true,
@@ -200,7 +202,7 @@ exports.startInstance = {
  * @memberof bareMetal
  * @instance
  */
-exports.rebootInstance = {
+export const rebootInstance: ApiEndpoint = {
   url: '/bare-metals/{baremetal-id}/reboot',
   requestType: 'POST',
   apiKeyRequired: true,
@@ -220,7 +222,7 @@ exports.rebootInstance = {
  * @memberof bareMetal
  * @instance
  */
-exports.reinstallInstance = {
+export const reinstallInstance: ApiEndpoint = {
   url: '/bare-metals/{baremetal-id}/reinstall',
   requestType: 'POST',
   apiKeyRequired: true,
@@ -241,7 +243,7 @@ exports.reinstallInstance = {
  * @memberof bareMetal
  * @instance
  */
-exports.haltInstance = {
+export const haltInstance: ApiEndpoint = {
   url: '/bare-metals/{baremetal-id}/halt',
   requestType: 'POST',
   apiKeyRequired: true,
@@ -261,7 +263,7 @@ exports.haltInstance = {
  * @memberof bareMetal
  * @instance
  */
-exports.getInstanceBandwidth = {
+export const getInstanceBandwidth: ApiEndpoint = {
   url: '/bare-metals/{baremetal-id}/bandwidth',
   requestType: 'GET',
   apiKeyRequired: true,
@@ -281,7 +283,7 @@ exports.getInstanceBandwidth = {
  * @memberof bareMetal
  * @instance
  */
-exports.haltInstances = {
+export const haltInstances: ApiEndpoint = {
   url: '/bare-metals/halt',
   requestType: 'POST',
   apiKeyRequired: true,
@@ -297,7 +299,7 @@ exports.haltInstances = {
  * @memberof bareMetal
  * @instance
  */
-exports.rebootInstances = {
+export const rebootInstances: ApiEndpoint = {
   url: '/bare-metals/reboot',
   requestType: 'POST',
   apiKeyRequired: true,
@@ -313,7 +315,7 @@ exports.rebootInstances = {
  * @memberof bareMetal
  * @instance
  */
-exports.startInstances = {
+export const startInstances: ApiEndpoint = {
   url: '/bare-metals/start',
   requestType: 'POST',
   apiKeyRequired: true,
@@ -330,7 +332,7 @@ exports.startInstances = {
  * @memberof bareMetal
  * @instance
  */
-exports.getInstanceUserData = {
+export const getInstanceUserData: ApiEndpoint = {
   url: '/bare-metals/{baremetal-id}/user-data',
   requestType: 'GET',
   apiKeyRequired: true,
@@ -350,7 +352,7 @@ exports.getInstanceUserData = {
  * @memberof bareMetal
  * @instance
  */
-exports.getInstanceAvailableUpgrades = {
+export const getInstanceAvailableUpgrades: ApiEndpoint = {
   url: '/bare-metals/{baremetal-id}/upgrades',
   requestType: 'GET',
   apiKeyRequired: true,
@@ -371,7 +373,7 @@ exports.getInstanceAvailableUpgrades = {
  * @memberof bareMetal
  * @instance
  */
-exports.getInstanceVncUrl = {
+export const getInstanceVncUrl: ApiEndpoint = {
   url: '/bare-metals/{baremetal-id}/vnc',
   requestType: 'GET',
   apiKeyRequired: true,
@@ -391,7 +393,7 @@ exports.getInstanceVncUrl = {
  * @memberof bareMetal
  * @instance
  */
-exports.attachVpc2ToInstance = {
+export const attachVpc2ToInstance: ApiEndpoint = {
   url: '/bare-metals/{baremetal-id}/vpc2/attach',
   requestType: 'POST',
   apiKeyRequired: true,
@@ -413,7 +415,7 @@ exports.attachVpc2ToInstance = {
  * @memberof bareMetal
  * @instance
  */
-exports.detachVpc2FromInstance = {
+export const detachVpc2FromInstance: ApiEndpoint = {
   url: '/bare-metals/{baremetal-id}/vpc2/detach',
   requestType: 'POST',
   apiKeyRequired: true,
@@ -434,7 +436,7 @@ exports.detachVpc2FromInstance = {
  * @memberof bareMetal
  * @instance
  */
-exports.listInstanceVpc2 = {
+export const listInstanceVpc2: ApiEndpoint = {
   url: '/bare-metals/{baremetal-id}/vpc2',
   requestType: 'GET',
   apiKeyRequired: true,

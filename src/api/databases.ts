@@ -4,6 +4,8 @@
  * @namespace databases
  */
 
+import { ApiEndpoint } from '../types'
+
 /**
  * List Managed Database Plans.<br>
  * {@link https://www.vultr.com/api/#operation/list-database-plans}
@@ -11,7 +13,7 @@
  * @memberof databases
  * @instance
  */
-exports.listPlans = {
+export const listPlans: ApiEndpoint = {
   url: '/databases/plans',
   requestType: 'GET',
   apiKeyRequired: true,
@@ -29,7 +31,7 @@ exports.listPlans = {
  * @memberof databases
  * @instance
  */
-exports.listDatabases = {
+export const listDatabases: ApiEndpoint = {
   url: '/databases',
   requestType: 'GET',
   apiKeyRequired: true,
@@ -47,7 +49,7 @@ exports.listDatabases = {
  * @memberof databases
  * @instance
  */
-exports.createDatabase = {
+export const createDatabase: ApiEndpoint = {
   url: '/databases',
   requestType: 'POST',
   apiKeyRequired: true,
@@ -91,7 +93,7 @@ exports.createDatabase = {
  * @memberof databases
  * @instance
  */
-exports.getDatabase = {
+export const getDatabase: ApiEndpoint = {
   url: '/databases/{database-id}',
   requestType: 'GET',
   apiKeyRequired: true,
@@ -111,7 +113,7 @@ exports.getDatabase = {
  * @memberof databases
  * @instance
  */
-exports.updateDatabase = {
+export const updateDatabase: ApiEndpoint = {
   url: '/databases/{database-id}',
   requestType: 'PUT',
   apiKeyRequired: true,
@@ -144,7 +146,7 @@ exports.updateDatabase = {
  * @memberof databases
  * @instance
  */
-exports.deleteDatabase = {
+export const deleteDatabase: ApiEndpoint = {
   url: '/databases/{database-id}',
   requestType: 'DELETE',
   apiKeyRequired: true,
@@ -164,7 +166,7 @@ exports.deleteDatabase = {
  * @memberof databases
  * @instance
  */
-exports.listDatabaseUsers = {
+export const listDatabaseUsers: ApiEndpoint = {
   url: '/databases/{database-id}/users',
   requestType: 'GET',
   apiKeyRequired: true,
@@ -184,7 +186,7 @@ exports.listDatabaseUsers = {
  * @memberof databases
  * @instance
  */
-exports.createDatabaseUser = {
+export const createDatabaseUser: ApiEndpoint = {
   url: '/databases/{database-id}/users',
   requestType: 'POST',
   apiKeyRequired: true,
@@ -210,7 +212,7 @@ exports.createDatabaseUser = {
  * @memberof databases
  * @instance
  */
-exports.getDatabaseUser = {
+export const getDatabaseUser: ApiEndpoint = {
   url: '/databases/{database-id}/users/{username}',
   requestType: 'GET',
   apiKeyRequired: true,
@@ -235,7 +237,7 @@ exports.getDatabaseUser = {
  * @memberof databases
  * @instance
  */
-exports.updateDatabaseUser = {
+export const updateDatabaseUser: ApiEndpoint = {
   url: '/databases/{database-id}/users/{username}',
   requestType: 'PUT',
   apiKeyRequired: true,
@@ -264,7 +266,7 @@ exports.updateDatabaseUser = {
  * @memberof databases
  * @instance
  */
-exports.deleteDatabaseUser = {
+export const deleteDatabaseUser: ApiEndpoint = {
   url: '/databases/{database-id}/users/{username}',
   requestType: 'DELETE',
   apiKeyRequired: true,
@@ -289,7 +291,7 @@ exports.deleteDatabaseUser = {
  * @memberof databases
  * @instance
  */
-exports.listDatabaseDbs = {
+export const listDatabaseDbs: ApiEndpoint = {
   url: '/databases/{database-id}/dbs',
   requestType: 'GET',
   apiKeyRequired: true,
@@ -309,7 +311,7 @@ exports.listDatabaseDbs = {
  * @memberof databases
  * @instance
  */
-exports.createDatabaseDb = {
+export const createDatabaseDb: ApiEndpoint = {
   url: '/databases/{database-id}/dbs',
   requestType: 'POST',
   apiKeyRequired: true,
@@ -333,7 +335,7 @@ exports.createDatabaseDb = {
  * @memberof databases
  * @instance
  */
-exports.getDatabaseDb = {
+export const getDatabaseDb: ApiEndpoint = {
   url: '/databases/{database-id}/dbs/{db-name}',
   requestType: 'GET',
   apiKeyRequired: true,
@@ -358,7 +360,7 @@ exports.getDatabaseDb = {
  * @memberof databases
  * @instance
  */
-exports.deleteDatabaseDb = {
+export const deleteDatabaseDb: ApiEndpoint = {
   url: '/databases/{database-id}/dbs/{db-name}',
   requestType: 'DELETE',
   apiKeyRequired: true,
@@ -383,7 +385,7 @@ exports.deleteDatabaseDb = {
  * @memberof databases
  * @instance
  */
-exports.listMaintenanceUpdates = {
+export const listMaintenanceUpdates: ApiEndpoint = {
   url: '/databases/{database-id}/maintenance',
   requestType: 'GET',
   apiKeyRequired: true,
@@ -403,7 +405,7 @@ exports.listMaintenanceUpdates = {
  * @memberof databases
  * @instance
  */
-exports.startMaintenanceUpdates = {
+export const startMaintenanceUpdates: ApiEndpoint = {
   url: '/databases/{database-id}/maintenance',
   requestType: 'POST',
   apiKeyRequired: true,
@@ -423,7 +425,7 @@ exports.startMaintenanceUpdates = {
  * @memberof databases
  * @instance
  */
-exports.listServiceAlerts = {
+export const listServiceAlerts: ApiEndpoint = {
   url: '/databases/{database-id}/alerts',
   requestType: 'POST',
   apiKeyRequired: true,
@@ -447,7 +449,7 @@ exports.listServiceAlerts = {
  * @memberof databases
  * @instance
  */
-exports.viewMigrationStatus = {
+export const viewMigrationStatus: ApiEndpoint = {
   url: '/databases/{database-id}/migration',
   requestType: 'GET',
   apiKeyRequired: true,
@@ -467,7 +469,7 @@ exports.viewMigrationStatus = {
  * @memberof databases
  * @instance
  */
-exports.databaseStartMigration = {
+export const databaseStartMigration: ApiEndpoint = {
   url: '/databases/{database-id}/migration',
   requestType: 'POST',
   apiKeyRequired: true,
@@ -513,7 +515,7 @@ exports.databaseStartMigration = {
  * @memberof databases
  * @instance
  */
-exports.databaseDetachMigration = {
+export const databaseDetachMigration: ApiEndpoint = {
   url: '/databases/{database-id}/migration',
   requestType: 'DELETE',
   apiKeyRequired: true,
@@ -533,7 +535,7 @@ exports.databaseDetachMigration = {
  * @memberof databases
  * @instance
  */
-exports.databaseAddReadReplica = {
+export const databaseAddReadReplica: ApiEndpoint = {
   url: '/databases/{database-id}/read-replica',
   requestType: 'POST',
   apiKeyRequired: true,
@@ -561,7 +563,7 @@ exports.databaseAddReadReplica = {
  * @memberof databases
  * @instance
  */
-exports.getBackupInformation = {
+export const getBackupInformation: ApiEndpoint = {
   url: '/databases/{database-id}/backups',
   requestType: 'GET',
   apiKeyRequired: true,
@@ -581,7 +583,7 @@ exports.getBackupInformation = {
  * @memberof databases
  * @instance
  */
-exports.databaseRestoreFromBackup = {
+export const databaseRestoreFromBackup: ApiEndpoint = {
   url: '/databases/{database-id}/restore',
   requestType: 'POST',
   apiKeyRequired: true,
@@ -608,7 +610,7 @@ exports.databaseRestoreFromBackup = {
  * @memberof databases
  * @instance
  */
-exports.databaseFork = {
+export const databaseFork: ApiEndpoint = {
   url: '/databases/{database-id}/fork',
   requestType: 'POST',
   apiKeyRequired: true,
@@ -643,7 +645,7 @@ exports.databaseFork = {
  * @memberof databases
  * @instance
  */
-exports.listConnectionPools = {
+export const listConnectionPools: ApiEndpoint = {
   url: '/databases/{database-id}/connection-pools',
   requestType: 'GET',
   apiKeyRequired: true,
@@ -663,7 +665,7 @@ exports.listConnectionPools = {
  * @memberof databases
  * @instance
  */
-exports.createConnectionPool = {
+export const createConnectionPool: ApiEndpoint = {
   url: '/databases/{database-id}/connection-pools',
   requestType: 'POST',
   apiKeyRequired: true,
@@ -703,7 +705,7 @@ exports.createConnectionPool = {
  * @memberof databases
  * @instance
  */
-exports.getConnectionPool = {
+export const getConnectionPool: ApiEndpoint = {
   url: '/databases/{database-id}/connection-pools/{pool-name}',
   requestType: 'GET',
   apiKeyRequired: true,
@@ -728,7 +730,7 @@ exports.getConnectionPool = {
  * @memberof databases
  * @instance
  */
-exports.updateConnectionPool = {
+export const updateConnectionPool: ApiEndpoint = {
   url: '/databases/{database-id}/connection-pools/{pool-name}',
   requestType: 'PUT',
   apiKeyRequired: true,
@@ -757,7 +759,7 @@ exports.updateConnectionPool = {
  * @memberof databases
  * @instance
  */
-exports.deleteConnectionPool = {
+export const deleteConnectionPool: ApiEndpoint = {
   url: '/databases/{database-id}/connection-pools/{pool-name}',
   requestType: 'DELETE',
   apiKeyRequired: true,
@@ -782,7 +784,7 @@ exports.deleteConnectionPool = {
  * @memberof databases
  * @instance
  */
-exports.listAdvancedOptions = {
+export const listAdvancedOptions: ApiEndpoint = {
   url: '/databases/{database-id}/advanced-options',
   requestType: 'GET',
   apiKeyRequired: true,
@@ -802,7 +804,7 @@ exports.listAdvancedOptions = {
  * @memberof databases
  * @instance
  */
-exports.updateAdvancedOptions = {
+export const updateAdvancedOptions: ApiEndpoint = {
   url: '/databases/{database-id}/advanced-options',
   requestType: 'PUT',
   apiKeyRequired: true,
@@ -866,7 +868,7 @@ exports.updateAdvancedOptions = {
  * @memberof databases
  * @instance
  */
-exports.listAvailableVersions = {
+export const listAvailableVersions: ApiEndpoint = {
   url: '/databases/{database-id}/version-upgrade',
   requestType: 'GET',
   apiKeyRequired: true,
@@ -886,7 +888,7 @@ exports.listAvailableVersions = {
  * @memberof databases
  * @instance
  */
-exports.startVersionUpgrade = {
+export const startVersionUpgrade: ApiEndpoint = {
   url: '/databases/{database-id}/version-upgrade',
   requestType: 'POST',
   apiKeyRequired: true,

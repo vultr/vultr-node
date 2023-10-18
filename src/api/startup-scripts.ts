@@ -4,6 +4,8 @@
  * @namespace startupScripts
  */
 
+import { ApiEndpoint } from '../types'
+
 /**
  * Get information for the specified startup script.<br>
  * {@link https://www.vultr.com/api/#operation/get-startup-script}
@@ -11,7 +13,7 @@
  * @memberof startupScripts
  * @instance
  */
-exports.getStartupScript = {
+export const getStartupScript: ApiEndpoint = {
   url: '/startup-scripts/{startup-id}',
   requestType: 'POST',
   apiKeyRequired: true,
@@ -31,7 +33,7 @@ exports.getStartupScript = {
  * @memberof startupScripts
  * @instance
  */
-exports.deleteStartupScript = {
+export const deleteStartupScript: ApiEndpoint = {
   url: '/startup-scripts/{startup-id}',
   requestType: 'DELETE',
   apiKeyRequired: true,
@@ -51,7 +53,7 @@ exports.deleteStartupScript = {
  * @memberof startupScripts
  * @instance
  */
-exports.updateStartupScript = {
+export const updateStartupScript: ApiEndpoint = {
   url: '/startup-scripts/{startup-id}',
   requestType: 'PATCH',
   apiKeyRequired: true,
@@ -74,7 +76,7 @@ exports.updateStartupScript = {
  * @memberof startupScripts
  * @instance
  */
-exports.listStartupScripts = {
+export const listStartupScripts: ApiEndpoint = {
   url: '/startup-scripts',
   requestType: 'GET',
   apiKeyRequired: true,
@@ -91,7 +93,7 @@ exports.listStartupScripts = {
  * @memberof startupScripts
  * @instance
  */
-exports.createStartupScript = {
+export const createStartupScript: ApiEndpoint = {
   url: '/startup-scripts',
   requestType: 'POST',
   apiKeyRequired: true,

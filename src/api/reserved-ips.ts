@@ -4,6 +4,8 @@
  * @namespace reservedIps
  */
 
+import { ApiEndpoint } from '../types'
+
 /**
  * Get information about the specified reserved IP address.<br>
  * {@link https://www.vultr.com/api/#operation/get-reserved-ip}
@@ -11,7 +13,7 @@
  * @memberof reservedIps
  * @instance
  */
-exports.getReservedIp = {
+export const getReservedIp: ApiEndpoint = {
   url: '/reserved-ips/{reserved-ip}',
   requestType: 'GET',
   apiKeyRequired: true,
@@ -31,7 +33,7 @@ exports.getReservedIp = {
  * @memberof reservedIps
  * @instance
  */
-exports.deleteReservedIp = {
+export const deleteReservedIp: ApiEndpoint = {
   url: '/reserved-ips/{reserved-ip}',
   requestType: 'DELETE',
   apiKeyRequired: true,
@@ -51,7 +53,7 @@ exports.deleteReservedIp = {
  * @memberof reservedIps
  * @instance
  */
-exports.updateReservedIp = {
+export const updateReservedIp: ApiEndpoint = {
   url: '/reserved-ips/{reserved-ip}',
   requestType: 'PATCH',
   apiKeyRequired: true,
@@ -75,7 +77,7 @@ exports.updateReservedIp = {
  * @memberof reservedIps
  * @instance
  */
-exports.listReservedIps = {
+export const listReservedIps: ApiEndpoint = {
   url: '/reserved-ips',
   requestType: 'GET',
   apiKeyRequired: true,
@@ -92,7 +94,7 @@ exports.listReservedIps = {
  * @memberof reservedIps
  * @instance
  */
-exports.createReservedIp = {
+export const createReservedIp: ApiEndpoint = {
   url: '/reserved-ips',
   requestType: 'POST',
   apiKeyRequired: true,
@@ -116,7 +118,7 @@ exports.createReservedIp = {
  * @memberof reservedIps
  * @instance
  */
-exports.attachReservedIp = {
+export const attachReservedIp: ApiEndpoint = {
   url: '/reserved-ips/{reserved-ip}/attach',
   requestType: 'POST',
   apiKeyRequired: true,
@@ -140,7 +142,7 @@ exports.attachReservedIp = {
  * @memberof reservedIps
  * @instance
  */
-exports.detachReservedIp = {
+export const detachReservedIp: ApiEndpoint = {
   url: '/reserved-ips/{reserved-ip}/detach',
   requestType: 'POST',
   apiKeyRequired: true,
@@ -160,7 +162,7 @@ exports.detachReservedIp = {
  * @memberof reservedIps
  * @instance
  */
-exports.convertInstanceIpToReservedIp = {
+export const convertInstanceIpToReservedIp: ApiEndpoint = {
   url: '/reserved-ips/convert',
   requestType: 'POST',
   apiKeyRequired: true,

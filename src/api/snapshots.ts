@@ -4,6 +4,8 @@
  * @namespace snapshots
  */
 
+import { ApiEndpoint } from '../types'
+
 /**
  * Delete the specified snapshot.<br>
  * {@link https://www.vultr.com/api/#operation/delete-snapshot}
@@ -11,7 +13,7 @@
  * @memberof snapshots
  * @instance
  */
-exports.deleteSnapshot = {
+export const deleteSnapshot: ApiEndpoint = {
   url: '/snapshots/{snapshot-id}',
   requestType: 'DELETE',
   apiKeyRequired: true,
@@ -31,7 +33,7 @@ exports.deleteSnapshot = {
  * @memberof snapshots
  * @instance
  */
-exports.getSnapshot = {
+export const getSnapshot: ApiEndpoint = {
   url: '/snapshots/{snapshot-id}',
   requestType: 'GET',
   apiKeyRequired: true,
@@ -51,7 +53,7 @@ exports.getSnapshot = {
  * @memberof snapshots
  * @instance
  */
-exports.updateSnapshot = {
+export const updateSnapshot: ApiEndpoint = {
   url: '/snapshots/{snapshot-id}',
   requestType: 'PUT',
   apiKeyRequired: true,
@@ -75,7 +77,7 @@ exports.updateSnapshot = {
  * @memberof snapshots
  * @instance
  */
-exports.listSnapshots = {
+export const listSnapshots: ApiEndpoint = {
   url: '/snapshots',
   requestType: 'GET',
   apiKeyRequired: true,
@@ -93,7 +95,7 @@ exports.listSnapshots = {
  * @memberof snapshots
  * @instance
  */
-exports.createSnapshot = {
+export const createSnapshot: ApiEndpoint = {
   url: '/snapshots',
   requestType: 'POST',
   apiKeyRequired: true,
@@ -113,7 +115,7 @@ exports.createSnapshot = {
  * @memberof snapshots
  * @instance
  */
-exports.createSnapshotFromUrl = {
+export const createSnapshotFromUrl: ApiEndpoint = {
   url: '/snapshots/create-from-url',
   requestType: 'POST',
   apiKeyRequired: true,

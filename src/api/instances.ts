@@ -4,6 +4,8 @@
  * @namespace instances
  */
 
+import { ApiEndpoint } from '../types'
+
 /**
  * List all VPS instances in the account.<br>
  * {@link https://www.vultr.com/api/#operation/list-instances}
@@ -11,7 +13,7 @@
  * @memberof instances
  * @instance
  */
-exports.listInstances = {
+export const listInstances: ApiEndpoint = {
   url: '/instances',
   requestType: 'GET',
   apiKeyRequired: true,
@@ -32,7 +34,7 @@ exports.listInstances = {
  * @memberof instances
  * @instance
  */
-exports.createInstance = {
+export const createInstance: ApiEndpoint = {
   url: '/instances',
   requestType: 'POST',
   apiKeyRequired: true,
@@ -79,7 +81,7 @@ exports.createInstance = {
  * @memberof instances
  * @instance
  */
-exports.getInstance = {
+export const getInstance: ApiEndpoint = {
   url: '/instances/{instance-id}',
   requestType: 'GET',
   apiKeyRequired: true,
@@ -99,7 +101,7 @@ exports.getInstance = {
  * @memberof instances
  * @instance
  */
-exports.updateInstance = {
+export const updateInstance: ApiEndpoint = {
   url: '/instances/{instance-id}',
   requestType: 'PATCH',
   apiKeyRequired: true,
@@ -137,7 +139,7 @@ exports.updateInstance = {
  * @memberof instances
  * @instance
  */
-exports.deleteInstance = {
+export const deleteInstance: ApiEndpoint = {
   url: '/instances/{instance-id}',
   requestType: 'DELETE',
   apiKeyRequired: true,
@@ -157,7 +159,7 @@ exports.deleteInstance = {
  * @memberof instances
  * @instance
  */
-exports.haltInstances = {
+export const haltInstances: ApiEndpoint = {
   url: '/instances/halt',
   requestType: 'POST',
   apiKeyRequired: true,
@@ -173,7 +175,7 @@ exports.haltInstances = {
  * @memberof instances
  * @instance
  */
-exports.rebootInstances = {
+export const rebootInstances: ApiEndpoint = {
   url: '/instances/reboot',
   requestType: 'POST',
   apiKeyRequired: true,
@@ -189,7 +191,7 @@ exports.rebootInstances = {
  * @memberof instances
  * @instance
  */
-exports.startInstances = {
+export const startInstances: ApiEndpoint = {
   url: '/instances/start',
   requestType: 'POST',
   apiKeyRequired: true,
@@ -205,7 +207,7 @@ exports.startInstances = {
  * @memberof instances
  * @instance
  */
-exports.startInstance = {
+export const startInstance: ApiEndpoint = {
   url: '/instances/{instance-id}/start',
   requestType: 'POST',
   apiKeyRequired: true,
@@ -225,7 +227,7 @@ exports.startInstance = {
  * @memberof instances
  * @instance
  */
-exports.rebootInstance = {
+export const rebootInstance: ApiEndpoint = {
   url: '/instances/{instance-id}/reboot',
   requestType: 'POST',
   apiKeyRequired: true,
@@ -245,7 +247,7 @@ exports.rebootInstance = {
  * @memberof instances
  * @instance
  */
-exports.reinstallInstance = {
+export const reinstallInstance: ApiEndpoint = {
   url: '/instances/{instance-id}/reinstall',
   requestType: 'POST',
   apiKeyRequired: true,
@@ -266,7 +268,7 @@ exports.reinstallInstance = {
  * @memberof instances
  * @instance
  */
-exports.getInstanceBandwidth = {
+export const getInstanceBandwidth: ApiEndpoint = {
   url: '/instances/{instance-id}/bandwidth',
   requestType: 'GET',
   apiKeyRequired: true,
@@ -288,7 +290,7 @@ exports.getInstanceBandwidth = {
  * @memberof instances
  * @instance
  */
-exports.getInstanceNeighbors = {
+export const getInstanceNeighbors: ApiEndpoint = {
   url: '/instances/{instance-id}/neighbors',
   requestType: 'GET',
   apiKeyRequired: true,
@@ -308,7 +310,7 @@ exports.getInstanceNeighbors = {
  * @memberof instances
  * @instance
  */
-exports.listInstanceVpc2 = {
+export const listInstanceVpc2: ApiEndpoint = {
   url: '/instances/{instance-id}/vpc2',
   requestType: 'GET',
   apiKeyRequired: true,
@@ -330,7 +332,7 @@ exports.listInstanceVpc2 = {
  * @memberof instances
  * @instance
  */
-exports.listInstanceVpcs = {
+export const listInstanceVpcs: ApiEndpoint = {
   url: '/instances/{instance-id}/vpcs',
   requestType: 'GET',
   apiKeyRequired: true,
@@ -352,7 +354,7 @@ exports.listInstanceVpcs = {
  * @memberof instances
  * @instance
  */
-exports.getInstanceIsoStatus = {
+export const getInstanceIsoStatus: ApiEndpoint = {
   url: '/instances/{instance-id}/iso',
   requestType: 'GET',
   apiKeyRequired: true,
@@ -372,7 +374,7 @@ exports.getInstanceIsoStatus = {
  * @memberof instances
  * @instance
  */
-exports.attachIsoToInstance = {
+export const attachIsoToInstance: ApiEndpoint = {
   url: '/instances/{instance-id}/iso/attach',
   requestType: 'POST',
   apiKeyRequired: true,
@@ -393,7 +395,7 @@ exports.attachIsoToInstance = {
  * @memberof instances
  * @instance
  */
-exports.detachIsoFromInstance = {
+export const detachIsoFromInstance: ApiEndpoint = {
   url: '/instances/{instance-id}/iso/detach',
   requestType: 'POST',
   apiKeyRequired: true,
@@ -413,7 +415,7 @@ exports.detachIsoFromInstance = {
  * @memberof instances
  * @instance
  */
-exports.attachVpcToInstance = {
+export const attachVpcToInstance: ApiEndpoint = {
   url: '/instances/{instance-id}/vpcs/attach',
   requestType: 'POST',
   apiKeyRequired: true,
@@ -434,7 +436,7 @@ exports.attachVpcToInstance = {
  * @memberof instances
  * @instance
  */
-exports.detachVpcFromInstance = {
+export const detachVpcFromInstance: ApiEndpoint = {
   url: '/instances/{instance-id}/vpcs/detach',
   requestType: 'POST',
   apiKeyRequired: true,
@@ -455,7 +457,7 @@ exports.detachVpcFromInstance = {
  * @memberof instances
  * @instance
  */
-exports.attachVpc2ToInstance = {
+export const attachVpc2ToInstance: ApiEndpoint = {
   url: '/instances/{instance-id}/vpc2/attach',
   requestType: 'POST',
   apiKeyRequired: true,
@@ -476,7 +478,7 @@ exports.attachVpc2ToInstance = {
  * @memberof instances
  * @instance
  */
-exports.detachVpc2FromInstance = {
+export const detachVpc2FromInstance: ApiEndpoint = {
   url: '/instances/{instance-id}/vpc2/detach',
   requestType: 'POST',
   apiKeyRequired: true,
@@ -497,7 +499,7 @@ exports.detachVpc2FromInstance = {
  * @memberof instances
  * @instance
  */
-exports.setInstanceBackupSchedule = {
+export const setInstanceBackupSchedule: ApiEndpoint = {
   url: '/instances/{instance-id}/backup-schedule',
   requestType: 'POST',
   apiKeyRequired: true,
@@ -524,7 +526,7 @@ exports.setInstanceBackupSchedule = {
  * @memberof instances
  * @instance
  */
-exports.getInstanceBackupSchedule = {
+export const getInstanceBackupSchedule: ApiEndpoint = {
   url: '/instances/{instance-id}/backup-schedule',
   requestType: 'GET',
   apiKeyRequired: true,
@@ -544,7 +546,7 @@ exports.getInstanceBackupSchedule = {
  * @memberof instances
  * @instance
  */
-exports.restoreInstance = {
+export const restoreInstance: ApiEndpoint = {
   url: '/instances/{instance-id}/restore',
   requestType: 'POST',
   apiKeyRequired: true,
@@ -566,7 +568,7 @@ exports.restoreInstance = {
  * @memberof instances
  * @instance
  */
-exports.listInstanceIpv4Information = {
+export const listInstanceIpv4Information: ApiEndpoint = {
   url: '/instances/{instance-id}/ipv4',
   requestType: 'GET',
   apiKeyRequired: true,
@@ -589,7 +591,7 @@ exports.listInstanceIpv4Information = {
  * @memberof instances
  * @instance
  */
-exports.createInstanceIpv4 = {
+export const createInstanceIpv4: ApiEndpoint = {
   url: '/instances/{instance-id}/ipv4',
   requestType: 'POST',
   apiKeyRequired: true,
@@ -610,7 +612,7 @@ exports.createInstanceIpv4 = {
  * @memberof instances
  * @instance
  */
-exports.getInstanceIpv6Information = {
+export const getInstanceIpv6Information: ApiEndpoint = {
   url: '/instances/{instance-id}/ipv6',
   requestType: 'GET',
   apiKeyRequired: true,
@@ -630,7 +632,7 @@ exports.getInstanceIpv6Information = {
  * @memberof instances
  * @instance
  */
-exports.createInstanceReverseIpv6 = {
+export const createInstanceReverseIpv6: ApiEndpoint = {
   url: '/instances/{instance-id}/ipv6/reverse',
   requestType: 'POST',
   apiKeyRequired: true,
@@ -658,7 +660,7 @@ exports.createInstanceReverseIpv6 = {
  * @memberof instances
  * @instance
  */
-exports.listInstanceIpv6ReverseInformation = {
+export const listInstanceIpv6ReverseInformation: ApiEndpoint = {
   url: '/instances/{instance-id}/ipv6/reverse',
   requestType: 'GET',
   apiKeyRequired: true,
@@ -678,7 +680,7 @@ exports.listInstanceIpv6ReverseInformation = {
  * @memberof instances
  * @instance
  */
-exports.createInstanceReverseIpv4 = {
+export const createInstanceReverseIpv4: ApiEndpoint = {
   url: '/instances/{instance-id}/ipv4/reverse',
   requestType: 'POST',
   apiKeyRequired: true,
@@ -706,7 +708,7 @@ exports.createInstanceReverseIpv4 = {
  * @memberof instances
  * @instance
  */
-exports.getInstanceUserData = {
+export const getInstanceUserData: ApiEndpoint = {
   url: '/instances/{instance-id}/user-data',
   requestType: 'GET',
   apiKeyRequired: true,
@@ -726,7 +728,7 @@ exports.getInstanceUserData = {
  * @memberof instances
  * @instance
  */
-exports.haltInstance = {
+export const haltInstance: ApiEndpoint = {
   url: '/instances/{instance-id}/halt',
   requestType: 'POST',
   apiKeyRequired: true,
@@ -746,7 +748,7 @@ exports.haltInstance = {
  * @memberof instances
  * @instance
  */
-exports.setDefaultReverseDnsEntry = {
+export const setDefaultReverseDnsEntry: ApiEndpoint = {
   url: '/instances/{instance-id}/ipv4/reverse/default',
   requestType: 'POST',
   apiKeyRequired: true,
@@ -767,7 +769,7 @@ exports.setDefaultReverseDnsEntry = {
  * @memberof instances
  * @instance
  */
-exports.deleteIpv4Address = {
+export const deleteIpv4Address: ApiEndpoint = {
   url: '/instances/{instance-id}/ipv4/{ipv4}',
   requestType: 'DELETE',
   apiKeyRequired: true,
@@ -792,7 +794,7 @@ exports.deleteIpv4Address = {
  * @memberof instances
  * @instance
  */
-exports.deleteInstanceReverseIpv6 = {
+export const deleteInstanceReverseIpv6: ApiEndpoint = {
   url: '/instances/{instance-id}/ipv6/{ipv6}',
   requestType: 'DELETE',
   apiKeyRequired: true,
@@ -817,7 +819,7 @@ exports.deleteInstanceReverseIpv6 = {
  * @memberof instances
  * @instance
  */
-exports.getAvailableInstanceUpgrades = {
+export const getAvailableInstanceUpgrades: ApiEndpoint = {
   url: '/instances/{instance-id}/upgrades',
   requestType: 'GET',
   apiKeyRequired: true,

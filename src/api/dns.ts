@@ -4,6 +4,8 @@
  * @namespace dns
  */
 
+import { ApiEndpoint } from '../types'
+
 /**
  * List all DNS domains on the account.<br>
  * {@link https://www.vultr.com/api/#operation/list-dns-domains}
@@ -11,7 +13,7 @@
  * @memberof dns
  * @instance
  */
-exports.listDomains = {
+export const listDomains: ApiEndpoint = {
   url: '/domains',
   requestType: 'GET',
   apiKeyRequired: true,
@@ -29,7 +31,7 @@ exports.listDomains = {
  * @memberof dns
  * @instance
  */
-exports.createDomain = {
+export const createDomain: ApiEndpoint = {
   url: '/domains',
   requestType: 'POST',
   apiKeyRequired: true,
@@ -50,9 +52,10 @@ exports.createDomain = {
  * @memberof dns
  * @instance
  */
-exports.getDomain = {
+export const getDomain: ApiEndpoint = {
   url: '/domains/{dns-domain}',
   requestType: 'GET',
+  apiKeyRequired: true,
   parameters: {
     'dns-domain': {
       type: 'string',
@@ -69,7 +72,7 @@ exports.getDomain = {
  * @memberof dns
  * @instance
  */
-exports.deleteDomain = {
+export const deleteDomain: ApiEndpoint = {
   url: '/domains/{dns-domain}',
   requestType: 'DELETE',
   apiKeyRequired: true,
@@ -89,9 +92,10 @@ exports.deleteDomain = {
  * @memberof dns
  * @instance
  */
-exports.updateDomain = {
+export const updateDomain: ApiEndpoint = {
   url: '/domains/{dns-domain}',
   requestType: 'PUT',
+  apiKeyRequired: true,
   parameters: {
     'dns-domain': {
       type: 'string',
@@ -112,7 +116,7 @@ exports.updateDomain = {
  * @memberof dns
  * @instance
  */
-exports.getSoaInfo = {
+export const getSoaInfo: ApiEndpoint = {
   url: '/domains/{dns-domain}/soa',
   requestType: 'GET',
   apiKeyRequired: true,
@@ -132,7 +136,7 @@ exports.getSoaInfo = {
  * @memberof dns
  * @instance
  */
-exports.updateSoaInfo = {
+export const updateSoaInfo: ApiEndpoint = {
   url: '/domains/{dns-domain}/soa',
   requestType: 'PATCH',
   apiKeyRequired: true,
@@ -154,7 +158,7 @@ exports.updateSoaInfo = {
  * @memberof dns
  * @instance
  */
-exports.getDnsSecInfo = {
+export const getDnsSecInfo: ApiEndpoint = {
   url: '/domains/{dns-domain}/dnssec',
   requestType: 'GET',
   apiKeyRequired: true,
@@ -174,7 +178,7 @@ exports.getDnsSecInfo = {
  * @memberof dns
  * @instance
  */
-exports.createRecord = {
+export const createRecord: ApiEndpoint = {
   url: '/domains/{dns-domain}/records',
   requestType: 'POST',
   apiKeyRequired: true,
@@ -208,7 +212,7 @@ exports.createRecord = {
  * @memberof dns
  * @instance
  */
-exports.listRecords = {
+export const listRecords: ApiEndpoint = {
   url: '/domains/{dns-domain}/records',
   requestType: 'GET',
   apiKeyRequired: true,
@@ -230,7 +234,7 @@ exports.listRecords = {
  * @memberof dns
  * @instance
  */
-exports.getRecord = {
+export const getRecord: ApiEndpoint = {
   url: '/domains/{dns-domain}/records/{record-id}',
   requestType: 'GET',
   apiKeyRequired: true,
@@ -255,7 +259,7 @@ exports.getRecord = {
  * @memberof dns
  * @instance
  */
-exports.updateRecord = {
+export const updateRecord: ApiEndpoint = {
   url: '/domains/{dns-domain}/records/{record-id}',
   requestType: 'PATCH',
   apiKeyRequired: true,
@@ -284,7 +288,7 @@ exports.updateRecord = {
  * @memberof dns
  * @instance
  */
-exports.deleteRecord = {
+export const deleteRecord: ApiEndpoint = {
   url: '/domains/{dns-domain}/records/{record-id}',
   requestType: 'DELETE',
   apiKeyRequired: true,

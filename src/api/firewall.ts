@@ -4,6 +4,8 @@
  * @namespace firewall
  */
 
+import { ApiEndpoint } from '../types'
+
 /**
  * Get a list of all firewall groups.<br>
  * {@link https://www.vultr.com/api/#operation/list-firewall-groups}
@@ -11,7 +13,7 @@
  * @memberof firewall
  * @instance
  */
-exports.listGroups = {
+export const listGroups: ApiEndpoint = {
   url: '/firewalls',
   requestType: 'GET',
   apiKeyRequired: true,
@@ -28,7 +30,7 @@ exports.listGroups = {
  * @memberof firewall
  * @instance
  */
-exports.createGroup = {
+export const createGroup: ApiEndpoint = {
   url: '/firewalls',
   requestType: 'POST',
   apiKeyRequired: true,
@@ -44,14 +46,16 @@ exports.createGroup = {
  * @memberof firewall
  * @instance
  */
-exports.getGroup = {
+export const getGroup: ApiEndpoint = {
   url: '/firewalls/{firewall-group-id}',
   requestType: 'GET',
   apiKeyRequired: true,
-  'firewall-group-id': {
-    type: 'string',
-    path: true,
-    required: true
+  parameters: {
+    'firewall-group-id': {
+      type: 'string',
+      path: true,
+      required: true
+    }
   }
 }
 
@@ -62,7 +66,7 @@ exports.getGroup = {
  * @memberof firewall
  * @instance
  */
-exports.updateGroup = {
+export const updateGroup: ApiEndpoint = {
   url: '/firewalls/{firewall-group-id}',
   requestType: 'PUT',
   apiKeyRequired: true,
@@ -86,7 +90,7 @@ exports.updateGroup = {
  * @memberof firewall
  * @instance
  */
-exports.deleteGroup = {
+export const deleteGroup: ApiEndpoint = {
   url: '/firewalls/{firewall-group-id}',
   requestType: 'DELETE',
   apiKeyRequired: true,
@@ -106,7 +110,7 @@ exports.deleteGroup = {
  * @memberof firewall
  * @instance
  */
-exports.listRules = {
+export const listRules: ApiEndpoint = {
   url: '/firewalls/{firewall-group-id}/rules',
   requestType: 'GET',
   apiKeyRequired: true,
@@ -126,7 +130,7 @@ exports.listRules = {
  * @memberof firewall
  * @instance
  */
-exports.createRules = {
+export const createRules: ApiEndpoint = {
   url: '/firewalls/{firewall-group-id}/rules',
   requestType: 'POST',
   apiKeyRequired: true,
@@ -165,7 +169,7 @@ exports.createRules = {
  * @memberof firewall
  * @instance
  */
-exports.deleteRule = {
+export const deleteRule: ApiEndpoint = {
   url: '/firewalls/{firewall-group-id}/rules/{firewall-rule-id}',
   requestType: 'DELETE',
   apiKeyRequired: true,
@@ -190,7 +194,7 @@ exports.deleteRule = {
  * @memberof firewall
  * @instance
  */
-exports.getRule = {
+export const getRule: ApiEndpoint = {
   url: '/firewalls/{firewall-group-id}/rules/{firewall-rule-id}',
   requestType: 'GET',
   apiKeyRequired: true,

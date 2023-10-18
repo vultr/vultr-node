@@ -4,6 +4,8 @@
  * @namespace loadBalancers
  */
 
+import { ApiEndpoint } from '../types'
+
 /**
  * List all load balancers on the account.<br>
  * {@link https://www.vultr.com/api/#operation/list-load-balancers}
@@ -11,7 +13,7 @@
  * @memberof loadBalancers
  * @instance
  */
-exports.listLoadBalancers = {
+export const listLoadBalancers: ApiEndpoint = {
   url: '/load-balancers',
   requestType: 'GET',
   apiKeyRequired: true,
@@ -28,7 +30,7 @@ exports.listLoadBalancers = {
  * @memberof loadBalancers
  * @instance
  */
-exports.createLoadBalancer = {
+export const createLoadBalancer: ApiEndpoint = {
   url: '/load-balancers',
   requestType: 'POST',
   apiKeyRequired: true,
@@ -60,7 +62,7 @@ exports.createLoadBalancer = {
  * @memberof loadBalancers
  * @instance
  */
-exports.getLoadBalancer = {
+export const getLoadBalancer: ApiEndpoint = {
   url: '/load-balancers/{load-balancer-id}',
   requestType: 'GET',
   apiKeyRequired: true,
@@ -80,7 +82,7 @@ exports.getLoadBalancer = {
  * @memberof loadBalancers
  * @instance
  */
-exports.updateLoadBalancer = {
+export const updateLoadBalancer: ApiEndpoint = {
   url: '/load-balancers/{load-balancer-id}',
   requestType: 'PATCH',
   apiKeyRequired: true,
@@ -113,7 +115,7 @@ exports.updateLoadBalancer = {
  * @memberof loadBalancers
  * @instance
  */
-exports.deleteLoadBalancer = {
+export const deleteLoadBalancer: ApiEndpoint = {
   url: '/load-balancers/{load-balancer-id}',
   requestType: 'DELETE',
   apiKeyRequired: true,
@@ -133,7 +135,7 @@ exports.deleteLoadBalancer = {
  * @memberof loadBalancers
  * @instance
  */
-exports.listForwardingRules = {
+export const listForwardingRules: ApiEndpoint = {
   url: '/load-balancers/{load-balancer-id}/forwarding-rules',
   requestType: 'GET',
   apiKeyRequired: true,
@@ -155,7 +157,7 @@ exports.listForwardingRules = {
  * @memberof loadBalancers
  * @instance
  */
-exports.createForwardingRule = {
+export const createForwardingRule: ApiEndpoint = {
   url: '/load-balancers/{load-balancer-id}/forwarding-rules',
   requestType: 'POST',
   apiKeyRequired: true,
@@ -191,7 +193,7 @@ exports.createForwardingRule = {
  * @memberof loadBalancers
  * @instance
  */
-exports.getForwardingRule = {
+export const getForwardingRule: ApiEndpoint = {
   url: '/load-balancers/{load-balancer-id}/forwarding-rules/{forwarding-rule-id}',
   requestType: 'GET',
   apiKeyRequired: true,
@@ -216,7 +218,7 @@ exports.getForwardingRule = {
  * @memberof loadBalancers
  * @instance
  */
-exports.deleteForwardingRule = {
+export const deleteForwardingRule: ApiEndpoint = {
   url: '/load-balancers/{load-balancer-id}/forwarding-rules/{forwarding-rule-id}',
   requestType: 'DELETE',
   apiKeyRequired: true,
@@ -241,7 +243,7 @@ exports.deleteForwardingRule = {
  * @memberof loadBalancers
  * @instance
  */
-exports.listFirewallRules = {
+export const listFirewallRules: ApiEndpoint = {
   url: '/load-balancers/{load-balancer-id}/firewall-rules',
   requestType: 'GET',
   apiKeyRequired: true,
@@ -263,7 +265,7 @@ exports.listFirewallRules = {
  * @memberof loadBalancers
  * @instance
  */
-exports.getFirewallRule = {
+export const getFirewallRule: ApiEndpoint = {
   url: '/load-balancers/{load-balancer-id}/firewall-rules/{firewall-rule-id}',
   requestType: 'GET',
   apiKeyRequired: true,
