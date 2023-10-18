@@ -1,7 +1,8 @@
 {
+  "extends": "@tsconfig/recommended/tsconfig.json",
   "compilerOptions": {
     "outDir": "./dist",
-    "declaration": true,
+    "composite": true,
     "strict": true,
     "types": [
       "node"
