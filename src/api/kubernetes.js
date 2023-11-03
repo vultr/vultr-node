@@ -25,6 +25,7 @@ exports.createKubernetesCluster = {
       type: 'string',
       required: true
     },
+    ha_controlplanes: { type: 'boolean' },
     node_pools: { type: 'array' }
   }
 }
