@@ -139,7 +139,8 @@ const mockResponses = {
         os_id: 362,
         app_id: 0,
         firewall_group_id: '',
-        features: ['ddos_protection', 'ipv6', 'auto_backups']
+        features: ['ddos_protection', 'ipv6', 'auto_backups'],
+        user_scheme: 'root'
       }
     ],
     meta: {
@@ -180,7 +181,8 @@ const mockResponses = {
         app_id: 0,
         firewall_group_id: '',
         features: ['ddos_protection', 'ipv6', 'auto_backups'],
-        tags: ['a tag', 'another']
+        tags: ['a tag', 'another'],
+        user_scheme: 'root'
       }
     ]
   },
@@ -211,7 +213,8 @@ const mockResponses = {
       os_id: 387,
       app_id: 0,
       firewall_group_id: '',
-      features: ['ddos_protection', 'ipv6', 'auto_backups']
+      features: ['ddos_protection', 'ipv6', 'auto_backups'],
+      user_scheme: 'root'
     }
   },
   updateInstance: {
@@ -242,7 +245,8 @@ const mockResponses = {
       app_id: 0,
       firewall_group_id: '',
       features: ['ddos_protection', 'ipv6', 'auto_backups'],
-      tags: ['a tag', 'another']
+      tags: ['a tag', 'another'],
+      user_scheme: 'root'
     }
   },
   reinstallInstance: {

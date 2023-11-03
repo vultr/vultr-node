@@ -90,7 +90,8 @@ const mockResponses = {
         mac_address: 2199756823533,
         os_id: 186,
         app_id: 3,
-        features: ['ipv6']
+        features: ['ipv6'],
+        user_scheme: 'root'
       }
     ],
     meta: {
@@ -125,7 +126,8 @@ const mockResponses = {
       os_id: 186,
       app_id: 3,
       image_id: '',
-      features: ['ipv6']
+      features: ['ipv6'],
+      user_scheme: 'root'
     }
   },
   getInstance: {
@@ -150,7 +152,8 @@ const mockResponses = {
       tag: '',
       os_id: 186,
       app_id: 3,
-      features: ['ipv6']
+      features: ['ipv6'],
+      user_scheme: 'root'
     }
   },
   updateInstance: {
@@ -176,7 +179,8 @@ const mockResponses = {
       tags: ['Another tag'],
       os_id: 186,
       app_id: 3,
-      features: ['ipv6']
+      features: ['ipv6'],
+      user_scheme: 'root'
     }
   },
   getInstanceIpv4Addresses: {
