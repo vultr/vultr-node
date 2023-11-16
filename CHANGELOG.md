@@ -1,5 +1,15 @@
 # Change Log
 
+## [v2.8.0](https://github.com/vultr/vultr-node/compare/v2.7.0...v2.8.0) (2023-10-02)
+
+### Features
+* Add user_scheme param for instances/bm
+* Add support for HA Controlplanes on Kubernetes
+* Add Dbaas Promote Read Replica endpoint
+* VKE enable_firewall param
+* Add Dbaas usage endpoint
+* Instances filter by firewall_group_id
+
 ## [v2.7.0](https://github.com/vultr/vultr-node/compare/v2.6.0...v2.7.0) (2023-10-02)
 
 ### Features
