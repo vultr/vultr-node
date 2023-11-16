@@ -21,7 +21,8 @@ exports.listInstances = {
     tag: { type: 'string' },
     label: { type: 'string' },
     main_ip: { type: 'string' },
-    region: { type: 'string' }
+    region: { type: 'string' },
+    firewall_group_id: { type: 'string' }
   }
 }
 
@@ -68,7 +69,8 @@ exports.createInstance = {
     firewall_group_id: { type: 'string' },
     reserved_ipv4: { type: 'string' },
     enable_vpc: { type: 'boolean' },
-    enable_vpc2: { type: 'boolean' }
+    enable_vpc2: { type: 'boolean' },
+    user_scheme: { type: 'string' }
   }
 }
 
@@ -126,7 +128,8 @@ exports.updateInstance = {
     detach_vpc: { type: 'array' },
     detach_vpc2: { type: 'array' },
     enable_vpc: { type: 'boolean' },
-    enable_vpc2: { type: 'boolean' }
+    enable_vpc2: { type: 'boolean' },
+    user_scheme: { type: 'string' }
   }
 }
 

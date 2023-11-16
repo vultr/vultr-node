@@ -19,6 +19,9 @@ const mockParameters = {
   deleteDatabase: {
     'database-id': '999c4ed0-f2e4-4f2a-a951-de358ceb9ab5'
   },
+  usage: {
+    'database-id': '999c4ed0-f2e4-4f2a-a951-de358ceb9ab5'
+  },
   listDatabaseUsers: {
     'database-id': '999c4ed0-f2e4-4f2a-a951-de358ceb9ab5'
   },
@@ -86,6 +89,9 @@ const mockParameters = {
     'database-id': '999c4ed0-f2e4-4f2a-a951-de358ceb9ab5',
     region: 'ewr',
     label: 'new_read_replica_label'
+  },
+  databasePromoteReadReplica: {
+    'database-id': '999c4ed0-f2e4-4f2a-a951-de358ceb9ab5'
   },
   getBackupInformation: {
     'database-id': '999c4ed0-f2e4-4f2a-a951-de358ceb9ab5'
@@ -327,6 +333,23 @@ const mockResponses = {
       mysql_slow_query_log: false,
       cluster_time_zone: 'America/New_York',
       read_replicas: ['...']
+    }
+  },
+  usage: {
+    usage: {
+      disk: {
+        current_gb: 1.25,
+        max_gb: 55,
+        percentage: 2.27
+      },
+      memory: {
+        current_mb: 768,
+        max_mb: 2048,
+        percentage: 37.5
+      },
+      cpu: {
+        percentage: 4.65
+      }
     }
   },
   listDatabaseUsers: {

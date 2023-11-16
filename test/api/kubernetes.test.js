@@ -85,6 +85,7 @@ const mockResponses = {
   createKubernetesCluster: {
     vke_cluster: {
       id: '455dcd32-e621-48ee-a10e-0cb5f754e13e',
+      firewall_group_id: '',
       label: 'vke',
       date_created: '2021-07-07T22:57:01+00:00',
       cluster_subnet: '10.244.0.0/16',
@@ -94,6 +95,7 @@ const mockResponses = {
       version: 'v1.20.0+1',
       region: 'lax',
       status: 'pending',
+      ha_controlplanes: false,
       node_pools: [
         {
           id: '11e4443a-f92a-46d6-94c8-61c1a1a7514e',
@@ -138,6 +140,7 @@ const mockResponses = {
         version: 'v1.20.0+1',
         region: 'ewr',
         status: 'active',
+        ha_controlplanes: false,
         node_pools: [
           {
             id: '74de1914-63ea-4a78-9da5-b7220063c701',
@@ -179,6 +182,7 @@ const mockResponses = {
         version: 'v1.20.0+1',
         region: 'lax',
         status: 'active',
+        ha_controlplanes: false,
         node_pools: [
           {
             id: '11e4443a-f92a-46d6-94c8-61c1a1a7514e',
@@ -221,6 +225,7 @@ const mockResponses = {
   getKubernetesCluster: {
     vke_cluster: {
       id: '455dcd32-e621-48ee-a10e-0cb5f754e13e',
+      firewall_group_id: '',
       label: 'vke',
       date_created: '2021-07-07T22:57:01+00:00',
       cluster_subnet: '10.244.0.0/16',
@@ -230,6 +235,7 @@ const mockResponses = {
       version: 'v1.20.0+1',
       region: 'lax',
       status: 'active',
+      ha_controlplanes: false,
       node_pools: [
         {
           id: '11e4443a-f92a-46d6-94c8-61c1a1a7514e',

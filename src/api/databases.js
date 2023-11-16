@@ -158,6 +158,26 @@ exports.deleteDatabase = {
 }
 
 /**
+ * Get disk, memory, and vCPU usage information for a Managed Database.<br>
+ * {@link https://www.vultr.com/api/#tag/managed-databases/operation/get-database-usage}
+ * @function usage
+ * @memberof databases
+ * @instance
+ */
+exports.usage = {
+  url: '/databases/{database-id}/usage',
+  requestType: 'GET',
+  apiKeyRequired: true,
+  parameters: {
+    'database-id': {
+      type: 'string',
+      path: true,
+      required: true
+    }
+  }
+}
+
+/**
  * List all database users within the Managed Database.<br>
  * {@link https://www.vultr.com/api/#operation/list-database-users}
  * @function listDatabaseUsers
@@ -549,6 +569,26 @@ exports.databaseAddReadReplica = {
     },
     label: {
       type: 'string',
+      required: true
+    }
+  }
+}
+
+/**
+ * Promote a read-only replica node to its own primary Managed Database.<br>
+ * {@link https://www.vultr.com/api/#tag/managed-databases/operation/database-promote-read-replica}
+ * @function databasePromoteReadReplica
+ * @memberof databases
+ * @instance
+ */
+exports.databasePromoteReadReplica = {
+  url: '/databases/{database-id}/promote-read-replica',
+  requestType: 'POST',
+  apiKeyRequired: true,
+  parameters: {
+    'database-id': {
+      type: 'string',
+      path: true,
       required: true
     }
   }

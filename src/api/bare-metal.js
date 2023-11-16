@@ -58,7 +58,8 @@ exports.createInstance = {
     attach_vpc2: { type: 'array' },
     detach_vpc2: { type: 'array' },
     enable_vpc2: { type: 'boolean' },
-    tags: { type: 'array' }
+    tags: { type: 'array' },
+    user_scheme: { type: 'string' }
   }
 }
 
@@ -109,7 +110,8 @@ exports.updateInstance = {
     enable_ipv6: { type: 'boolean' },
     attach_vpc2: { type: 'array' },
     detach_vpc2: { type: 'array' },
-    enable_vpc2: { type: 'boolean' }
+    enable_vpc2: { type: 'boolean' },
+    user_scheme: { type: 'string' }
   }
 }
 
