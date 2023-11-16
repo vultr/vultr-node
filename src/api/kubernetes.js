@@ -26,6 +26,7 @@ exports.createKubernetesCluster = {
       required: true
     },
     ha_controlplanes: { type: 'boolean' },
+    enable_firewall: { type: 'boolean' },
     node_pools: { type: 'array' }
   }
 }

@@ -85,6 +85,7 @@ const mockResponses = {
   createKubernetesCluster: {
     vke_cluster: {
       id: '455dcd32-e621-48ee-a10e-0cb5f754e13e',
+      firewall_group_id: '',
       label: 'vke',
       date_created: '2021-07-07T22:57:01+00:00',
       cluster_subnet: '10.244.0.0/16',
@@ -224,6 +225,7 @@ const mockResponses = {
   getKubernetesCluster: {
     vke_cluster: {
       id: '455dcd32-e621-48ee-a10e-0cb5f754e13e',
+      firewall_group_id: '',
       label: 'vke',
       date_created: '2021-07-07T22:57:01+00:00',
       cluster_subnet: '10.244.0.0/16',
