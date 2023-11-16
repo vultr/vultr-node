@@ -216,6 +216,9 @@ exports.initialize = (config) => {
       databaseAddReadReplica: createRequestFunction(
         databases.databaseAddReadReplica
       ),
+      databasePromoteReadReplica: createRequestFunction(
+        databases.databasePromoteReadReplica
+      ),
       getBackupInformation: createRequestFunction(
         databases.getBackupInformation
       ),

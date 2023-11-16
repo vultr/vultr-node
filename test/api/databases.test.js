@@ -87,6 +87,9 @@ const mockParameters = {
     region: 'ewr',
     label: 'new_read_replica_label'
   },
+  databasePromoteReadReplica: {
+    'database-id': '999c4ed0-f2e4-4f2a-a951-de358ceb9ab5'
+  },
   getBackupInformation: {
     'database-id': '999c4ed0-f2e4-4f2a-a951-de358ceb9ab5'
   },
