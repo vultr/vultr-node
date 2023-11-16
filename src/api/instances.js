@@ -21,7 +21,8 @@ exports.listInstances = {
     tag: { type: 'string' },
     label: { type: 'string' },
     main_ip: { type: 'string' },
-    region: { type: 'string' }
+    region: { type: 'string' },
+    firewall_group_id: { type: 'string' }
   }
 }
 
