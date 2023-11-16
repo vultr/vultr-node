@@ -158,6 +158,26 @@ exports.deleteDatabase = {
 }
 
 /**
+ * Get disk, memory, and vCPU usage information for a Managed Database.<br>
+ * {@link https://www.vultr.com/api/#tag/managed-databases/operation/get-database-usage}
+ * @function usage
+ * @memberof databases
+ * @instance
+ */
+exports.usage = {
+  url: '/databases/{database-id}/usage',
+  requestType: 'GET',
+  apiKeyRequired: true,
+  parameters: {
+    'database-id': {
+      type: 'string',
+      path: true,
+      required: true
+    }
+  }
+}
+
+/**
  * List all database users within the Managed Database.<br>
  * {@link https://www.vultr.com/api/#operation/list-database-users}
  * @function listDatabaseUsers

@@ -190,6 +190,7 @@ exports.initialize = (config) => {
       getDatabase: createRequestFunction(databases.getDatabase),
       updateDatabase: createRequestFunction(databases.updateDatabase),
       deleteDatabase: createRequestFunction(databases.deleteDatabase),
+      usage: createRequestFunction(databases.usage),
       listDatabaseUsers: createRequestFunction(databases.listDatabaseUsers),
       createDatabaseUser: createRequestFunction(databases.createDatabaseUser),
       getDatabaseUser: createRequestFunction(databases.getDatabaseUser),
