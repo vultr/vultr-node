@@ -1,0 +1,13 @@
+name: notify-issue
+
+on:
+  issues:
+    types: [opened]
+
+jobs:
+  pr:
+    uses: vultr/shared-actions/.github/workflows/notify-issue.yml@main
+    secrets: inherit
+    with:
+      repository: ${{ github.repository }}
+      issue_number: ${{ github.event.issue.number }}
